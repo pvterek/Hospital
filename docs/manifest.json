@@ -1,0 +1,802 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/piotr/source/repos/Hospital/Hospital/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.BackCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.BackCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.CompositeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.CompositeCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ExitCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ExitCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ICommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ICommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.MainWindowCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.MainWindowCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.AdmitPatientCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.AdmitPatientCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.AssignToDoctorCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.AssignToDoctorCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.DisplayPatientsCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.DisplayPatientsCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.ManagePatientCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.ManagePatientCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.ManagePatientsCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.ManagePatientsCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.SignOutPatientCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.SignOutPatientCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManagePatients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManagePatients.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageStaff.DisplayEmployeesCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageStaff.DisplayEmployeesCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageStaff.FireEmployeeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageStaff.FireEmployeeCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageStaff.HireEmployeeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageStaff.HireEmployeeCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageStaff.ManageStaffCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageStaff.ManageStaffCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageStaff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageStaff.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageWards.AddWardCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageWards.AddWardCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageWards.DeleteWardCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageWards.DeleteWardCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageWards.DisplayWardCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageWards.DisplayWardCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageWards.ManageWardsCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageWards.ManageWardsCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.ManageWards.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.ManageWards.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.DoctorObject.Doctor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.DoctorObject.Doctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.DoctorObject.DoctorFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.DoctorObject.DoctorFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.DoctorObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.DoctorObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.Gender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.Gender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.Health.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.Health.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.IEmployee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.IEmployee.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.IEmployeeFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.IEmployeeFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.IHasIntroduceString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.IHasIntroduceString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.NurseObject.Nurse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.NurseObject.Nurse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.NurseObject.NurseFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.NurseObject.NurseFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.NurseObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.NurseObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PatientObject.Patient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PatientObject.Patient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PatientObject.PatientFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PatientObject.PatientFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PatientObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PatientObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PersonObject.Person.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PersonObject.Person.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PersonObject.PersonFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PersonObject.PersonFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.PersonObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.PersonObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.WardObject.ManageCapacity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.WardObject.ManageCapacity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.WardObject.Ward.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.WardObject.Ward.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.WardObject.WardFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.WardObject.WardFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.WardObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.WardObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.ListMaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.ListMaker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.Storage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.Storage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.AddWardMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.AddWardMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.AdmitPatientMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.AdmitPatientMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.AssignToDoctorMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.AssignToDoctorMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.DeleteWardMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.DeleteWardMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.DisplayEmployeesMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.DisplayEmployeesMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.DisplayPatientsMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.DisplayPatientsMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.DisplayWardMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.DisplayWardMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ExitCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ExitCommandMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.FactoryMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.FactoryMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.FireEmployeeMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.FireEmployeeMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.HireEmployeeMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.HireEmployeeMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.MainWindowMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.MainWindowMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ManagePatientMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ManagePatientMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ManagePatientsMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ManagePatientsMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ManageStaffMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ManageStaffMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.ManageWardsMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.ManageWardsMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.SignOutPatientMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.SignOutPatientMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.WardObjectMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.WardObjectMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UserInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UserInterface.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
