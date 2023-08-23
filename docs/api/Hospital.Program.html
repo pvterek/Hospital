@@ -17,7 +17,7 @@
       
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/pvterek/Hospital/new/master/apiSpec/new?filename=Hospital_Program.md&amp;value=---%0Auid%3A%20Hospital.Program%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
   </head>
 
   <script type="module">
@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Program" data-uid="Hospital.Program" class="text-break">
     Class Program
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Program.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,17 +144,17 @@
 
 
 
-  <h3 id="Hospital_Program_commandManager" data-uid="Hospital.Program.commandManager">
-  commandManager
-  
+  <h3 id="Hospital_Program_commandHistory" data-uid="Hospital.Program.commandHistory">
+  commandHistory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Program.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Provides access to the main command manager used for application navigation and command execution.</p>
+  <div class="markdown level1 summary"><p>Maintains a history of executed commands in the application, allowing for potential undo navigation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal static MainWindowCommand commandManager</code></pre>
+    <pre><code class="lang-csharp hljs">public static Stack&lt;CompositeCommand&gt; commandHistory</code></pre>
   </div>
 
 
@@ -162,7 +162,7 @@
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Hospital.Commands.MainWindowCommand.html">MainWindowCommand</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.stack-1">Stack</a>&lt;<a class="xref" href="Hospital.Commands.CompositeCommand.html">CompositeCommand</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -180,25 +180,19 @@
 
   <a id="Hospital_Program_Main_" data-uid="Hospital.Program.Main*"></a>
 
-  <h3 id="Hospital_Program_Main_System_String___" data-uid="Hospital.Program.Main(System.String[])">
-  Main(string[])
-  
+  <h3 id="Hospital_Program_Main" data-uid="Hospital.Program.Main">
+  Main()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Program.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The main entry point for the Hospital application.</p>
+  <div class="markdown level1 summary"><p>The main entry point for the Hospital application. Executes the main command manager and handles any exceptions that might occur.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private static void Main(string[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">private static void Main()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd><p>The command-line arguments passed to the application.</p>
-</dd>
-  </dl>
 
 
 
@@ -215,6 +209,7 @@
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Program.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
         

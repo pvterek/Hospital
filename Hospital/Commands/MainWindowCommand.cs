@@ -40,8 +40,8 @@ namespace Hospital.Commands
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand option = UserInterface.ShowInteractiveMenu(Commands);
-            option.Execute();
+            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
+            BackCommand.Queue(command);
         }
     }
 }

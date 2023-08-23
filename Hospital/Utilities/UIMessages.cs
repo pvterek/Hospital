@@ -137,13 +137,19 @@ namespace Hospital.Utilities
         //ExitCommand
         public static class ExitCommandMessages
         {
-            public const string Introduce = "Go back";
+            public const string Introduce = "Exit!";
         }
 
         //MainWindow
         public static class MainWindowMessages
         {
             public const string Introduce = "Main window";
+        }
+
+        //BackCommand
+        public static class BackCommandMessages
+        {
+            public const string Introduce = "Go back";
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
 using Hospital.Utilities;
+using Microsoft.VisualBasic.FileIO;
 
 namespace Hospital.Commands.ManageWards
 {
@@ -40,8 +41,8 @@ namespace Hospital.Commands.ManageWards
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand option = UserInterface.ShowInteractiveMenu(Commands);
-            option.Execute();
+            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
+            BackCommand.Queue(command);
         }
     }
 }

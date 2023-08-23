@@ -525,6 +525,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.BackCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.BackCommandMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.yml",
       "output": {
         ".html": {

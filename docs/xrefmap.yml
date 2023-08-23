@@ -64,6 +64,19 @@ references:
   isSpec: "True"
   fullName: Hospital.Commands.BackCommand.Instance
   nameWithType: BackCommand.Instance
+- uid: Hospital.Commands.BackCommand.Queue(Hospital.Commands.CompositeCommand)
+  name: Queue(CompositeCommand)
+  href: api/Hospital.Commands.BackCommand.html#Hospital_Commands_BackCommand_Queue_Hospital_Commands_CompositeCommand_
+  commentId: M:Hospital.Commands.BackCommand.Queue(Hospital.Commands.CompositeCommand)
+  fullName: Hospital.Commands.BackCommand.Queue(Hospital.Commands.CompositeCommand)
+  nameWithType: BackCommand.Queue(CompositeCommand)
+- uid: Hospital.Commands.BackCommand.Queue*
+  name: Queue
+  href: api/Hospital.Commands.BackCommand.html#Hospital_Commands_BackCommand_Queue_
+  commentId: Overload:Hospital.Commands.BackCommand.Queue
+  isSpec: "True"
+  fullName: Hospital.Commands.BackCommand.Queue
+  nameWithType: BackCommand.Queue
 - uid: Hospital.Commands.BackCommand._instance
   name: _instance
   href: api/Hospital.Commands.BackCommand.html#Hospital_Commands_BackCommand__instance
@@ -1923,15 +1936,12 @@ references:
   commentId: T:Hospital.Program
   fullName: Hospital.Program
   nameWithType: Program
-- uid: Hospital.Program.Main(System.String[])
-  name: Main(string[])
-  href: api/Hospital.Program.html#Hospital_Program_Main_System_String___
-  commentId: M:Hospital.Program.Main(System.String[])
-  name.vb: Main(String())
-  fullName: Hospital.Program.Main(string[])
-  fullName.vb: Hospital.Program.Main(String())
-  nameWithType: Program.Main(string[])
-  nameWithType.vb: Program.Main(String())
+- uid: Hospital.Program.Main
+  name: Main()
+  href: api/Hospital.Program.html#Hospital_Program_Main
+  commentId: M:Hospital.Program.Main
+  fullName: Hospital.Program.Main()
+  nameWithType: Program.Main()
 - uid: Hospital.Program.Main*
   name: Main
   href: api/Hospital.Program.html#Hospital_Program_Main_
@@ -1939,12 +1949,12 @@ references:
   isSpec: "True"
   fullName: Hospital.Program.Main
   nameWithType: Program.Main
-- uid: Hospital.Program.commandManager
-  name: commandManager
-  href: api/Hospital.Program.html#Hospital_Program_commandManager
-  commentId: F:Hospital.Program.commandManager
-  fullName: Hospital.Program.commandManager
-  nameWithType: Program.commandManager
+- uid: Hospital.Program.commandHistory
+  name: commandHistory
+  href: api/Hospital.Program.html#Hospital_Program_commandHistory
+  commentId: F:Hospital.Program.commandHistory
+  fullName: Hospital.Program.commandHistory
+  nameWithType: Program.commandHistory
 - uid: Hospital.Utilities
   name: Hospital.Utilities
   href: api/Hospital.Utilities.html
@@ -2075,6 +2085,18 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
   fullName: Hospital.Utilities.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
   nameWithType: UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+- uid: Hospital.Utilities.UIMessages.BackCommandMessages
+  name: UIMessages.BackCommandMessages
+  href: api/Hospital.Utilities.UIMessages.BackCommandMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.BackCommandMessages
+  fullName: Hospital.Utilities.UIMessages.BackCommandMessages
+  nameWithType: UIMessages.BackCommandMessages
+- uid: Hospital.Utilities.UIMessages.BackCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.BackCommandMessages.html#Hospital_Utilities_UIMessages_BackCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.BackCommandMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.BackCommandMessages.Introduce
+  nameWithType: UIMessages.BackCommandMessages.Introduce
 - uid: Hospital.Utilities.UIMessages.ChangeHealthStatusMessages
   name: UIMessages.ChangeHealthStatusMessages
   href: api/Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.html

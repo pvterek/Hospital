@@ -10,20 +10,22 @@ namespace Hospital
     internal class Program
     {
         /// <summary>
-        /// Provides access to the main command manager used for application navigation and command execution.
+        /// Maintains a history of executed commands in the application, allowing for potential undo navigation.
         /// </summary>
-        internal static MainWindowCommand commandManager = MainWindowCommand.Instance;
+        public static Stack<CompositeCommand> commandHistory = new();
 
         /// <summary>
-        /// The main entry point for the Hospital application.
+        /// The main entry point for the Hospital application. Executes the main command manager and handles any exceptions that might occur.
         /// </summary>
-        /// <param name="args">The command-line arguments passed to the application.</param>
-        static void Main(string[] args)
+        static void Main()
         {
+            MainWindowCommand commandManager = MainWindowCommand.Instance;
+
             while (true)
             {
                 try
                 {
+                    commandHistory.Push(commandManager);
                     commandManager.Execute();
                 }
                 catch (Exception ex)
