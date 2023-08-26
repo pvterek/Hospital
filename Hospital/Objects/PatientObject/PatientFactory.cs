@@ -10,7 +10,7 @@ using Hospital.Utilities;
 namespace Hospital.Objects.PatientObject
 {
     /// <summary>
-    /// Represents a factory for creating <see cref="Patient"/> instances. 
+    /// Represents a factory for creating <see cref="Patient"/> objects. 
     /// It extends the base <see cref="PersonFactory"/> to include methods specific to the creation of patients.
     /// </summary>
     internal class PatientFactory : PersonFactory
@@ -18,7 +18,7 @@ namespace Hospital.Objects.PatientObject
         /// <summary>
         /// Creates a new instance of the <see cref="Patient"/> class by gathering all required details.
         /// </summary>
-        /// <returns>A new <see cref="Patient"/> instance populated with the provided details.</returns>
+        /// <returns>A new <see cref="Patient"/> object populated with the provided details.</returns>
         public static Patient CreatePatient()
         {
             Console.Clear();

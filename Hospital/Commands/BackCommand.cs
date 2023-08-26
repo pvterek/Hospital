@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Commands.LoginWindow;
 using Hospital.Utilities;
 
 namespace Hospital.Commands
 {
     /// <summary>
     /// Represents the command used to navigate back to the previous command in the application.
+    /// Inheriting from the <see cref="CompositeCommand"/> class.
     /// </summary>
     internal class BackCommand : CompositeCommand
     {
+        /// <summary>
+        /// Holds a singleton instance of the <see cref="BackCommand"/> class.
+        /// </summary>
         private static BackCommand? _instance;
 
         /// <summary>
@@ -34,12 +39,12 @@ namespace Hospital.Commands
         }
 
         /// <summary>
-        /// Adds a command to the command history and executes it, ensuring that the "Back" command itself is not added to the history.
+        /// Adds a command to the command history and executes it.
         /// </summary>
         /// <param name="command">The command to be queued and executed.</param>
         public static void Queue(CompositeCommand command)
         {
-            if (command != Instance)
+            if (command != Instance && command != LogoutCommand.Instance)
             {
                 Program.commandHistory.Push(command);
             }

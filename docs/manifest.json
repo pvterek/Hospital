@@ -45,6 +45,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.LoginWindow.CreateAccountCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.LoginWindow.CreateAccountCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.LoginWindow.LoginCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.LoginWindow.LoginCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.LoginWindow.LoginWindowCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.LoginWindow.LoginWindowCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.LoginWindow.LogoutCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.LoginWindow.LogoutCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Commands.LoginWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Commands.LoginWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Commands.MainWindowCommand.yml",
       "output": {
         ".html": {
@@ -415,6 +465,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.UserObject.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.UserObject.User.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.UserObject.UserFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.UserObject.UserFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Objects.UserObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Objects.UserObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Objects.WardObject.ManageCapacity.yml",
       "output": {
         ".html": {
@@ -475,6 +555,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.AuthenticationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.AuthenticationService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Utilities.ListMaker.yml",
       "output": {
         ".html": {
@@ -525,6 +615,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Utilities.UIMessages.BackCommandMessages.yml",
       "output": {
         ".html": {
@@ -539,6 +639,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.CreateAccountCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.CreateAccountCommandMessages.html"
         }
       },
       "version": ""
@@ -585,6 +695,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.DoctorObjectMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.DoctorObjectMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Utilities.UIMessages.ExitCommandMessages.yml",
       "output": {
         ".html": {
@@ -619,6 +739,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Hospital.Utilities.UIMessages.HireEmployeeMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.LoginCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.LoginCommandMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.LoginWindowCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.LoginWindowCommandMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.LogoutCommandMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.LogoutCommandMessages.html"
         }
       },
       "version": ""
@@ -675,10 +825,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.NurseObjectMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.NurseObjectMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.PatientObjectMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.PatientObjectMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Hospital.Utilities.UIMessages.SignOutPatientMessages.yml",
       "output": {
         ".html": {
           "relative_path": "api/Hospital.Utilities.UIMessages.SignOutPatientMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Hospital.Utilities.UIMessages.UserObjectMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Hospital.Utilities.UIMessages.UserObjectMessages.html"
         }
       },
       "version": ""

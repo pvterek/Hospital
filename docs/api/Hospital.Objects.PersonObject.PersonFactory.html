@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Objects_PersonObject_PersonFactory" data-uid="Hospital.Objects.PersonObject.PersonFactory" class="text-break">
     Class PersonFactory
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -113,6 +113,7 @@
       <div><a class="xref" href="Hospital.Objects.DoctorObject.DoctorFactory.html">DoctorFactory</a></div>
       <div><a class="xref" href="Hospital.Objects.NurseObject.NurseFactory.html">NurseFactory</a></div>
       <div><a class="xref" href="Hospital.Objects.PatientObject.PatientFactory.html">PatientFactory</a></div>
+      <div><a class="xref" href="Hospital.Objects.UserObject.UserFactory.html">UserFactory</a></div>
     </dd>
   </dl>
 
@@ -155,7 +156,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForAssignedWard" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForAssignedWard">
   AskForAssignedWard()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for ward assignment input.</p>
@@ -188,7 +189,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForBirthday" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForBirthday">
   AskForBirthday()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for a birthday input and ensures its validity.</p>
@@ -221,7 +222,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForCapacity" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForCapacity">
   AskForCapacity()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L145"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for capacity input for a specific ward and ensures its validity.</p>
@@ -254,7 +255,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForGender" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForGender">
   AskForGender()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for gender input and ensures its validity.</p>
@@ -283,11 +284,77 @@
 
 
 
+  <a id="Hospital_Objects_PersonObject_PersonFactory_AskForLogin_" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForLogin*"></a>
+
+  <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForLogin" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForLogin">
+  AskForLogin()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prompts the user to enter a login, checks if the provided login is non-empty and unique.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">internal static string AskForLogin()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A unique and non-empty user login.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_PersonObject_PersonFactory_AskForPassword_" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForPassword*"></a>
+
+  <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForPassword" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForPassword">
+  AskForPassword()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prompts the user to enter a password, checks if the provided password is non-empty and meets the length criteria.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">internal static string AskForPassword()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A password that meets the length criteria.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Hospital_Objects_PersonObject_PersonFactory_AskForPesel_" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForPesel*"></a>
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForPesel" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForPesel">
   AskForPesel()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for a PESEL input and ensures its validity.</p>
@@ -320,7 +387,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AskForValue_System_String_System_String_" data-uid="Hospital.Objects.PersonObject.PersonFactory.AskForValue(System.String,System.String)">
   AskForValue(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asks the user for input based on a provided message and validates it.</p>
@@ -362,7 +429,7 @@
 
   <h3 id="Hospital_Objects_PersonObject_PersonFactory_AssignToWard" data-uid="Hospital.Objects.PersonObject.PersonFactory.AssignToWard">
   AssignToWard()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Assigns a person to a ward based on availability.</p>
@@ -395,7 +462,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/PersonFactory.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
         

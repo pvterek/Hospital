@@ -87,7 +87,7 @@ namespace Hospital.Objects.PatientObject
             Pesel = pesel;
             Birthday = birthday;
             AssignedWard = assignedWard;
-            IntroduceString = $"{name} {surname} [{pesel}] - patient at {AssignedWard.Name}";
+            IntroduceString = string.Format(UIMessages.PatientObjectMessages.Introduce, name, surname, pesel, AssignedWard.Name);
         }
     }
 }

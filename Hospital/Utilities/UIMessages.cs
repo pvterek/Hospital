@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Hospital.Objects.PersonObject;
 
 namespace Hospital.Utilities
@@ -124,11 +125,18 @@ namespace Hospital.Utilities
             public const string NegativeValuePrompt = "The value cannot be negative or zero. Please try again.";
             public const string NotValidNumberPrompt = "Please enter a valid number.";
             public const string FullWardPrompt = "This ward is full. Create a new one!";
+            public const string EnterLoginPrompt = "Enter login: ";
+            public const string EmptyLoginPrompt = "Login can't be empty!";
+            public const string TakenLoginPrompt = "This login already exists! Try a different one";
+            public const string EnterPasswordPrompt = "Enter password: ";
+            public const string EmptyPasswordPrompt = "Login can't be empty!";
+            public const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
         }
 
         //WardObject
         public static class WardObjectMessages
         {
+            public const string Introduce = "Ward: {0} [{1}/{2}]";
             public const string ProvideNamePrompt = "Provide ward name: ";
             public const string EmptyNamePrompt = "Name can't be empty.";
             public const string NullPrompt = "Ward cannot be null.";
@@ -137,7 +145,7 @@ namespace Hospital.Utilities
         //ExitCommand
         public static class ExitCommandMessages
         {
-            public const string Introduce = "Exit!";
+            public const string Introduce = "Exit";
         }
 
         //MainWindow
@@ -150,6 +158,60 @@ namespace Hospital.Utilities
         public static class BackCommandMessages
         {
             public const string Introduce = "Go back";
+        }
+
+        //LoginWindow
+        public static class LoginWindowCommandMessages
+        {
+            public const string Introduce = "Login window";
+        }
+
+        public static class CreateAccountCommandMessages
+        {
+            public const string Introduce = "Create account";
+            public const string CreatedAccountPrompt = "User {0} created successfully!";
+        }
+
+        public static class LoginCommandMessages
+        {
+            public const string Introduce = "Login";
+            public const string WrongPasswordPrompt = "Wrong password!";
+            public const string CantFindLoginPrompt = "No user with this login found!";
+        }
+
+        public static class AuthenitactionServiceMessages
+        {
+            public const string NoUserPrompt = "There are no users, create one first";
+        }
+
+        public static class LogoutCommandMessages
+        {
+            public const string Introdcue = "Logout";
+        }
+
+        //UserObject
+        public static class UserObjectMessages
+        {
+            public const string Introduce = "Welcome {0} {1}!";
+        }
+
+        //PatientObject
+        public static class PatientObjectMessages
+        {
+            public const string Introduce = "{0} {1} [{2}] - patient at {3}.";
+        }
+
+        //NurseObject
+        public static class NurseObjectMessages
+        {
+            public const string Introduce = "{0} {1} - {2} at {3} Ward.";
+            public const string Position = "Nurse";
+        }
+
+        public static class DoctorObjectMessages
+        {
+            public const string Introduce = "{0} {1} - {2} at {3} Ward.";
+            public const string Position = "Doctor";
         }
     }
 }

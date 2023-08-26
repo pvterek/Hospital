@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Objects.UserObject;
 using Hospital.Objects.WardObject;
 using Hospital.Utilities;
 
@@ -24,7 +25,7 @@ namespace Hospital.Objects.PersonObject
             string value;
             do
             {
-                Console.WriteLine(message);
+                Console.Write(message);
                 value = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(value))
@@ -45,7 +46,7 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
-                Console.WriteLine(UIMessages.FactoryMessages.ProvideGenderPrompt);
+                Console.Write(UIMessages.FactoryMessages.ProvideGenderPrompt);
                 string input = Console.ReadLine();
 
                 if (Enum.TryParse(typeof(Gender), input, out object genderObj))
@@ -69,7 +70,7 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
-                Console.WriteLine(UIMessages.FactoryMessages.ProvideBirthdayPrompt);
+                Console.Write(UIMessages.FactoryMessages.ProvideBirthdayPrompt);
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime birthday))
                 {
                     if (!(birthday <= DateTime.Today))
@@ -125,7 +126,7 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
-                Console.WriteLine(UIMessages.FactoryMessages.ProvidePeselPrompt);
+                Console.Write(UIMessages.FactoryMessages.ProvidePeselPrompt);
                 string input = Console.ReadLine();
 
                 if (!string.IsNullOrWhiteSpace(input) && input.Length == 11 && input.All(char.IsDigit))
@@ -145,7 +146,7 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
-                Console.WriteLine(UIMessages.FactoryMessages.ProvideCapacityPrompt);
+                Console.Write(UIMessages.FactoryMessages.ProvideCapacityPrompt);
                 string input = Console.ReadLine();
 
                 if (int.TryParse(input, out int parsedInt))
@@ -162,6 +163,58 @@ namespace Hospital.Objects.PersonObject
                 else
                 {
                     Console.WriteLine(UIMessages.FactoryMessages.NotValidNumberPrompt);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to enter a login, checks if the provided login is non-empty and unique.
+        /// </summary>
+        /// <returns>A unique and non-empty user login.</returns>
+        internal static string AskForLogin()
+        {
+            while (true)
+            {
+                Console.Write(UIMessages.FactoryMessages.EnterLoginPrompt);
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine(UIMessages.FactoryMessages.EmptyLoginPrompt);
+                }
+                else if (Storage.users.Any(u => u.Login == input))
+                {
+                    Console.WriteLine(UIMessages.FactoryMessages.TakenLoginPrompt);
+                }
+                else
+                {
+                    return input;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to enter a password, checks if the provided password is non-empty and meets the length criteria.
+        /// </summary>
+        /// <returns>A password that meets the length criteria.</returns>
+        internal static string AskForPassword()
+        {
+            while (true)
+            {
+                Console.Write(UIMessages.FactoryMessages.EnterPasswordPrompt);
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine(UIMessages.FactoryMessages.EmptyPasswordPrompt);
+                }
+                else if (input.Length < 9)
+                {
+                    Console.WriteLine(UIMessages.FactoryMessages.TooShortPasswordPrompt);
+                }
+                else
+                {
+                    return input;
                 }
             }
         }

@@ -225,6 +225,240 @@ references:
   isSpec: "True"
   fullName: Hospital.Commands.ICommand.Execute
   nameWithType: ICommand.Execute
+- uid: Hospital.Commands.LoginWindow
+  name: Hospital.Commands.LoginWindow
+  href: api/Hospital.Commands.LoginWindow.html
+  commentId: N:Hospital.Commands.LoginWindow
+  fullName: Hospital.Commands.LoginWindow
+  nameWithType: Hospital.Commands.LoginWindow
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand
+  name: CreateAccountCommand
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html
+  commentId: T:Hospital.Commands.LoginWindow.CreateAccountCommand
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand
+  nameWithType: CreateAccountCommand
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.#ctor(System.String)
+  name: CreateAccountCommand(string)
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand__ctor_System_String_
+  commentId: M:Hospital.Commands.LoginWindow.CreateAccountCommand.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccountCommand(string)
+  fullName.vb: Hospital.Commands.LoginWindow.CreateAccountCommand.New(String)
+  nameWithType: CreateAccountCommand.CreateAccountCommand(string)
+  nameWithType.vb: CreateAccountCommand.New(String)
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.#ctor*
+  name: CreateAccountCommand
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand__ctor_
+  commentId: Overload:Hospital.Commands.LoginWindow.CreateAccountCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccountCommand
+  fullName.vb: Hospital.Commands.LoginWindow.CreateAccountCommand.New
+  nameWithType: CreateAccountCommand.CreateAccountCommand
+  nameWithType.vb: CreateAccountCommand.New
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_Execute
+  commentId: M:Hospital.Commands.LoginWindow.CreateAccountCommand.Execute
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.Execute()
+  nameWithType: CreateAccountCommand.Execute()
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_Execute_
+  commentId: Overload:Hospital.Commands.LoginWindow.CreateAccountCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.Execute
+  nameWithType: CreateAccountCommand.Execute
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_Instance
+  commentId: P:Hospital.Commands.LoginWindow.CreateAccountCommand.Instance
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.Instance
+  nameWithType: CreateAccountCommand.Instance
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_Instance_
+  commentId: Overload:Hospital.Commands.LoginWindow.CreateAccountCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.Instance
+  nameWithType: CreateAccountCommand.Instance
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand__instance
+  commentId: F:Hospital.Commands.LoginWindow.CreateAccountCommand._instance
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand._instance
+  nameWithType: CreateAccountCommand._instance
+- uid: Hospital.Commands.LoginWindow.LoginCommand
+  name: LoginCommand
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html
+  commentId: T:Hospital.Commands.LoginWindow.LoginCommand
+  fullName: Hospital.Commands.LoginWindow.LoginCommand
+  nameWithType: LoginCommand
+- uid: Hospital.Commands.LoginWindow.LoginCommand.#ctor
+  name: LoginCommand()
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand__ctor
+  commentId: M:Hospital.Commands.LoginWindow.LoginCommand.#ctor
+  name.vb: New()
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.LoginCommand()
+  fullName.vb: Hospital.Commands.LoginWindow.LoginCommand.New()
+  nameWithType: LoginCommand.LoginCommand()
+  nameWithType.vb: LoginCommand.New()
+- uid: Hospital.Commands.LoginWindow.LoginCommand.#ctor*
+  name: LoginCommand
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand__ctor_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.LoginCommand
+  fullName.vb: Hospital.Commands.LoginWindow.LoginCommand.New
+  nameWithType: LoginCommand.LoginCommand
+  nameWithType.vb: LoginCommand.New
+- uid: Hospital.Commands.LoginWindow.LoginCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_Execute
+  commentId: M:Hospital.Commands.LoginWindow.LoginCommand.Execute
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.Execute()
+  nameWithType: LoginCommand.Execute()
+- uid: Hospital.Commands.LoginWindow.LoginCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_Execute_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.Execute
+  nameWithType: LoginCommand.Execute
+- uid: Hospital.Commands.LoginWindow.LoginCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_Instance
+  commentId: P:Hospital.Commands.LoginWindow.LoginCommand.Instance
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.Instance
+  nameWithType: LoginCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LoginCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_Instance_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.Instance
+  nameWithType: LoginCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LoginCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand__instance
+  commentId: F:Hospital.Commands.LoginWindow.LoginCommand._instance
+  fullName: Hospital.Commands.LoginWindow.LoginCommand._instance
+  nameWithType: LoginCommand._instance
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand
+  name: LoginWindowCommand
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html
+  commentId: T:Hospital.Commands.LoginWindow.LoginWindowCommand
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand
+  nameWithType: LoginWindowCommand
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.#ctor
+  name: LoginWindowCommand()
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand__ctor
+  commentId: M:Hospital.Commands.LoginWindow.LoginWindowCommand.#ctor
+  name.vb: New()
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.LoginWindowCommand()
+  fullName.vb: Hospital.Commands.LoginWindow.LoginWindowCommand.New()
+  nameWithType: LoginWindowCommand.LoginWindowCommand()
+  nameWithType.vb: LoginWindowCommand.New()
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.#ctor*
+  name: LoginWindowCommand
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand__ctor_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginWindowCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.LoginWindowCommand
+  fullName.vb: Hospital.Commands.LoginWindow.LoginWindowCommand.New
+  nameWithType: LoginWindowCommand.LoginWindowCommand
+  nameWithType.vb: LoginWindowCommand.New
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand_Execute
+  commentId: M:Hospital.Commands.LoginWindow.LoginWindowCommand.Execute
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.Execute()
+  nameWithType: LoginWindowCommand.Execute()
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand_Execute_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginWindowCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.Execute
+  nameWithType: LoginWindowCommand.Execute
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand_Instance
+  commentId: P:Hospital.Commands.LoginWindow.LoginWindowCommand.Instance
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.Instance
+  nameWithType: LoginWindowCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand_Instance_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginWindowCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand.Instance
+  nameWithType: LoginWindowCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LoginWindowCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.LoginWindow.LoginWindowCommand.html#Hospital_Commands_LoginWindow_LoginWindowCommand__instance
+  commentId: F:Hospital.Commands.LoginWindow.LoginWindowCommand._instance
+  fullName: Hospital.Commands.LoginWindow.LoginWindowCommand._instance
+  nameWithType: LoginWindowCommand._instance
+- uid: Hospital.Commands.LoginWindow.LogoutCommand
+  name: LogoutCommand
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html
+  commentId: T:Hospital.Commands.LoginWindow.LogoutCommand
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand
+  nameWithType: LogoutCommand
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.#ctor
+  name: LogoutCommand()
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand__ctor
+  commentId: M:Hospital.Commands.LoginWindow.LogoutCommand.#ctor
+  name.vb: New()
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.LogoutCommand()
+  fullName.vb: Hospital.Commands.LoginWindow.LogoutCommand.New()
+  nameWithType: LogoutCommand.LogoutCommand()
+  nameWithType.vb: LogoutCommand.New()
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.#ctor*
+  name: LogoutCommand
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand__ctor_
+  commentId: Overload:Hospital.Commands.LoginWindow.LogoutCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.LogoutCommand
+  fullName.vb: Hospital.Commands.LoginWindow.LogoutCommand.New
+  nameWithType: LogoutCommand.LogoutCommand
+  nameWithType.vb: LogoutCommand.New
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand_Execute
+  commentId: M:Hospital.Commands.LoginWindow.LogoutCommand.Execute
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.Execute()
+  nameWithType: LogoutCommand.Execute()
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand_Execute_
+  commentId: Overload:Hospital.Commands.LoginWindow.LogoutCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.Execute
+  nameWithType: LogoutCommand.Execute
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand_Instance
+  commentId: P:Hospital.Commands.LoginWindow.LogoutCommand.Instance
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.Instance
+  nameWithType: LogoutCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LogoutCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand_Instance_
+  commentId: Overload:Hospital.Commands.LoginWindow.LogoutCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand.Instance
+  nameWithType: LogoutCommand.Instance
+- uid: Hospital.Commands.LoginWindow.LogoutCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.LoginWindow.LogoutCommand.html#Hospital_Commands_LoginWindow_LogoutCommand__instance
+  commentId: F:Hospital.Commands.LoginWindow.LogoutCommand._instance
+  fullName: Hospital.Commands.LoginWindow.LogoutCommand._instance
+  nameWithType: LogoutCommand._instance
 - uid: Hospital.Commands.MainWindowCommand
   name: MainWindowCommand
   href: api/Hospital.Commands.MainWindowCommand.html
@@ -1748,6 +1982,32 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.PersonObject.PersonFactory.AskForGender
   nameWithType: PersonFactory.AskForGender
+- uid: Hospital.Objects.PersonObject.PersonFactory.AskForLogin
+  name: AskForLogin()
+  href: api/Hospital.Objects.PersonObject.PersonFactory.html#Hospital_Objects_PersonObject_PersonFactory_AskForLogin
+  commentId: M:Hospital.Objects.PersonObject.PersonFactory.AskForLogin
+  fullName: Hospital.Objects.PersonObject.PersonFactory.AskForLogin()
+  nameWithType: PersonFactory.AskForLogin()
+- uid: Hospital.Objects.PersonObject.PersonFactory.AskForLogin*
+  name: AskForLogin
+  href: api/Hospital.Objects.PersonObject.PersonFactory.html#Hospital_Objects_PersonObject_PersonFactory_AskForLogin_
+  commentId: Overload:Hospital.Objects.PersonObject.PersonFactory.AskForLogin
+  isSpec: "True"
+  fullName: Hospital.Objects.PersonObject.PersonFactory.AskForLogin
+  nameWithType: PersonFactory.AskForLogin
+- uid: Hospital.Objects.PersonObject.PersonFactory.AskForPassword
+  name: AskForPassword()
+  href: api/Hospital.Objects.PersonObject.PersonFactory.html#Hospital_Objects_PersonObject_PersonFactory_AskForPassword
+  commentId: M:Hospital.Objects.PersonObject.PersonFactory.AskForPassword
+  fullName: Hospital.Objects.PersonObject.PersonFactory.AskForPassword()
+  nameWithType: PersonFactory.AskForPassword()
+- uid: Hospital.Objects.PersonObject.PersonFactory.AskForPassword*
+  name: AskForPassword
+  href: api/Hospital.Objects.PersonObject.PersonFactory.html#Hospital_Objects_PersonObject_PersonFactory_AskForPassword_
+  commentId: Overload:Hospital.Objects.PersonObject.PersonFactory.AskForPassword
+  isSpec: "True"
+  fullName: Hospital.Objects.PersonObject.PersonFactory.AskForPassword
+  nameWithType: PersonFactory.AskForPassword
 - uid: Hospital.Objects.PersonObject.PersonFactory.AskForPesel
   name: AskForPesel()
   href: api/Hospital.Objects.PersonObject.PersonFactory.html#Hospital_Objects_PersonObject_PersonFactory_AskForPesel
@@ -1790,6 +2050,94 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.PersonObject.PersonFactory.AssignToWard
   nameWithType: PersonFactory.AssignToWard
+- uid: Hospital.Objects.UserObject
+  name: Hospital.Objects.UserObject
+  href: api/Hospital.Objects.UserObject.html
+  commentId: N:Hospital.Objects.UserObject
+  fullName: Hospital.Objects.UserObject
+  nameWithType: Hospital.Objects.UserObject
+- uid: Hospital.Objects.UserObject.User
+  name: User
+  href: api/Hospital.Objects.UserObject.User.html
+  commentId: T:Hospital.Objects.UserObject.User
+  fullName: Hospital.Objects.UserObject.User
+  nameWithType: User
+- uid: Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,System.String)
+  name: User(string, string, Gender, DateTime, string, string)
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_System_String_System_String_
+  commentId: M:Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,System.String)
+  name.vb: New(String, String, Gender, Date, String, String)
+  fullName: Hospital.Objects.UserObject.User.User(string, string, Hospital.Objects.Gender, System.DateTime, string, string)
+  fullName.vb: Hospital.Objects.UserObject.User.New(String, String, Hospital.Objects.Gender, Date, String, String)
+  nameWithType: User.User(string, string, Gender, DateTime, string, string)
+  nameWithType.vb: User.New(String, String, Gender, Date, String, String)
+- uid: Hospital.Objects.UserObject.User.#ctor*
+  name: User
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__ctor_
+  commentId: Overload:Hospital.Objects.UserObject.User.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.UserObject.User.User
+  fullName.vb: Hospital.Objects.UserObject.User.New
+  nameWithType: User.User
+  nameWithType.vb: User.New
+- uid: Hospital.Objects.UserObject.User.Login
+  name: Login
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_Login
+  commentId: P:Hospital.Objects.UserObject.User.Login
+  fullName: Hospital.Objects.UserObject.User.Login
+  nameWithType: User.Login
+- uid: Hospital.Objects.UserObject.User.Login*
+  name: Login
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_Login_
+  commentId: Overload:Hospital.Objects.UserObject.User.Login
+  isSpec: "True"
+  fullName: Hospital.Objects.UserObject.User.Login
+  nameWithType: User.Login
+- uid: Hospital.Objects.UserObject.User.Password
+  name: Password
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_Password
+  commentId: P:Hospital.Objects.UserObject.User.Password
+  fullName: Hospital.Objects.UserObject.User.Password
+  nameWithType: User.Password
+- uid: Hospital.Objects.UserObject.User.Password*
+  name: Password
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_Password_
+  commentId: Overload:Hospital.Objects.UserObject.User.Password
+  isSpec: "True"
+  fullName: Hospital.Objects.UserObject.User.Password
+  nameWithType: User.Password
+- uid: Hospital.Objects.UserObject.User._login
+  name: _login
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__login
+  commentId: F:Hospital.Objects.UserObject.User._login
+  fullName: Hospital.Objects.UserObject.User._login
+  nameWithType: User._login
+- uid: Hospital.Objects.UserObject.User._password
+  name: _password
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__password
+  commentId: F:Hospital.Objects.UserObject.User._password
+  fullName: Hospital.Objects.UserObject.User._password
+  nameWithType: User._password
+- uid: Hospital.Objects.UserObject.UserFactory
+  name: UserFactory
+  href: api/Hospital.Objects.UserObject.UserFactory.html
+  commentId: T:Hospital.Objects.UserObject.UserFactory
+  fullName: Hospital.Objects.UserObject.UserFactory
+  nameWithType: UserFactory
+- uid: Hospital.Objects.UserObject.UserFactory.CreateUser
+  name: CreateUser()
+  href: api/Hospital.Objects.UserObject.UserFactory.html#Hospital_Objects_UserObject_UserFactory_CreateUser
+  commentId: M:Hospital.Objects.UserObject.UserFactory.CreateUser
+  fullName: Hospital.Objects.UserObject.UserFactory.CreateUser()
+  nameWithType: UserFactory.CreateUser()
+- uid: Hospital.Objects.UserObject.UserFactory.CreateUser*
+  name: CreateUser
+  href: api/Hospital.Objects.UserObject.UserFactory.html#Hospital_Objects_UserObject_UserFactory_CreateUser_
+  commentId: Overload:Hospital.Objects.UserObject.UserFactory.CreateUser
+  isSpec: "True"
+  fullName: Hospital.Objects.UserObject.UserFactory.CreateUser
+  nameWithType: UserFactory.CreateUser
 - uid: Hospital.Objects.WardObject
   name: Hospital.Objects.WardObject
   href: api/Hospital.Objects.WardObject.html
@@ -1936,6 +2284,12 @@ references:
   commentId: T:Hospital.Program
   fullName: Hospital.Program
   nameWithType: Program
+- uid: Hospital.Program.IsLoggedIn
+  name: IsLoggedIn
+  href: api/Hospital.Program.html#Hospital_Program_IsLoggedIn
+  commentId: F:Hospital.Program.IsLoggedIn
+  fullName: Hospital.Program.IsLoggedIn
+  nameWithType: Program.IsLoggedIn
 - uid: Hospital.Program.Main
   name: Main()
   href: api/Hospital.Program.html#Hospital_Program_Main
@@ -1961,6 +2315,44 @@ references:
   commentId: N:Hospital.Utilities
   fullName: Hospital.Utilities
   nameWithType: Hospital.Utilities
+- uid: Hospital.Utilities.AuthenticationService
+  name: AuthenticationService
+  href: api/Hospital.Utilities.AuthenticationService.html
+  commentId: T:Hospital.Utilities.AuthenticationService
+  fullName: Hospital.Utilities.AuthenticationService
+  nameWithType: AuthenticationService
+- uid: Hospital.Utilities.AuthenticationService.Authenticate(System.String,System.String)
+  name: Authenticate(string, string)
+  href: api/Hospital.Utilities.AuthenticationService.html#Hospital_Utilities_AuthenticationService_Authenticate_System_String_System_String_
+  commentId: M:Hospital.Utilities.AuthenticationService.Authenticate(System.String,System.String)
+  name.vb: Authenticate(String, String)
+  fullName: Hospital.Utilities.AuthenticationService.Authenticate(string, string)
+  fullName.vb: Hospital.Utilities.AuthenticationService.Authenticate(String, String)
+  nameWithType: AuthenticationService.Authenticate(string, string)
+  nameWithType.vb: AuthenticationService.Authenticate(String, String)
+- uid: Hospital.Utilities.AuthenticationService.Authenticate*
+  name: Authenticate
+  href: api/Hospital.Utilities.AuthenticationService.html#Hospital_Utilities_AuthenticationService_Authenticate_
+  commentId: Overload:Hospital.Utilities.AuthenticationService.Authenticate
+  isSpec: "True"
+  fullName: Hospital.Utilities.AuthenticationService.Authenticate
+  nameWithType: AuthenticationService.Authenticate
+- uid: Hospital.Utilities.AuthenticationService.GetUserByLogin(System.String)
+  name: GetUserByLogin(string)
+  href: api/Hospital.Utilities.AuthenticationService.html#Hospital_Utilities_AuthenticationService_GetUserByLogin_System_String_
+  commentId: M:Hospital.Utilities.AuthenticationService.GetUserByLogin(System.String)
+  name.vb: GetUserByLogin(String)
+  fullName: Hospital.Utilities.AuthenticationService.GetUserByLogin(string)
+  fullName.vb: Hospital.Utilities.AuthenticationService.GetUserByLogin(String)
+  nameWithType: AuthenticationService.GetUserByLogin(string)
+  nameWithType.vb: AuthenticationService.GetUserByLogin(String)
+- uid: Hospital.Utilities.AuthenticationService.GetUserByLogin*
+  name: GetUserByLogin
+  href: api/Hospital.Utilities.AuthenticationService.html#Hospital_Utilities_AuthenticationService_GetUserByLogin_
+  commentId: Overload:Hospital.Utilities.AuthenticationService.GetUserByLogin
+  isSpec: "True"
+  fullName: Hospital.Utilities.AuthenticationService.GetUserByLogin
+  nameWithType: AuthenticationService.GetUserByLogin
 - uid: Hospital.Utilities.ListMaker
   name: ListMaker
   href: api/Hospital.Utilities.ListMaker.html
@@ -2007,6 +2399,12 @@ references:
   commentId: F:Hospital.Utilities.Storage.patients
   fullName: Hospital.Utilities.Storage.patients
   nameWithType: Storage.patients
+- uid: Hospital.Utilities.Storage.users
+  name: users
+  href: api/Hospital.Utilities.Storage.html#Hospital_Utilities_Storage_users
+  commentId: F:Hospital.Utilities.Storage.users
+  fullName: Hospital.Utilities.Storage.users
+  nameWithType: Storage.users
 - uid: Hospital.Utilities.Storage.wards
   name: wards
   href: api/Hospital.Utilities.Storage.html#Hospital_Utilities_Storage_wards
@@ -2085,6 +2483,18 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
   fullName: Hospital.Utilities.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
   nameWithType: UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+- uid: Hospital.Utilities.UIMessages.AuthenitactionServiceMessages
+  name: UIMessages.AuthenitactionServiceMessages
+  href: api/Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.AuthenitactionServiceMessages
+  fullName: Hospital.Utilities.UIMessages.AuthenitactionServiceMessages
+  nameWithType: UIMessages.AuthenitactionServiceMessages
+- uid: Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  name: NoUserPrompt
+  href: api/Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.html#Hospital_Utilities_UIMessages_AuthenitactionServiceMessages_NoUserPrompt
+  commentId: F:Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  fullName: Hospital.Utilities.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  nameWithType: UIMessages.AuthenitactionServiceMessages.NoUserPrompt
 - uid: Hospital.Utilities.UIMessages.BackCommandMessages
   name: UIMessages.BackCommandMessages
   href: api/Hospital.Utilities.UIMessages.BackCommandMessages.html
@@ -2115,6 +2525,24 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
   fullName: Hospital.Utilities.UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
   nameWithType: UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
+- uid: Hospital.Utilities.UIMessages.CreateAccountCommandMessages
+  name: UIMessages.CreateAccountCommandMessages
+  href: api/Hospital.Utilities.UIMessages.CreateAccountCommandMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.CreateAccountCommandMessages
+  fullName: Hospital.Utilities.UIMessages.CreateAccountCommandMessages
+  nameWithType: UIMessages.CreateAccountCommandMessages
+- uid: Hospital.Utilities.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  name: CreatedAccountPrompt
+  href: api/Hospital.Utilities.UIMessages.CreateAccountCommandMessages.html#Hospital_Utilities_UIMessages_CreateAccountCommandMessages_CreatedAccountPrompt
+  commentId: F:Hospital.Utilities.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  fullName: Hospital.Utilities.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  nameWithType: UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+- uid: Hospital.Utilities.UIMessages.CreateAccountCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.CreateAccountCommandMessages.html#Hospital_Utilities_UIMessages_CreateAccountCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.CreateAccountCommandMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.CreateAccountCommandMessages.Introduce
+  nameWithType: UIMessages.CreateAccountCommandMessages.Introduce
 - uid: Hospital.Utilities.UIMessages.DeleteWardMessages
   name: UIMessages.DeleteWardMessages
   href: api/Hospital.Utilities.UIMessages.DeleteWardMessages.html
@@ -2187,6 +2615,24 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.DisplayWardMessages.Introduce
   fullName: Hospital.Utilities.UIMessages.DisplayWardMessages.Introduce
   nameWithType: UIMessages.DisplayWardMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.DoctorObjectMessages
+  name: UIMessages.DoctorObjectMessages
+  href: api/Hospital.Utilities.UIMessages.DoctorObjectMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.DoctorObjectMessages
+  fullName: Hospital.Utilities.UIMessages.DoctorObjectMessages
+  nameWithType: UIMessages.DoctorObjectMessages
+- uid: Hospital.Utilities.UIMessages.DoctorObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.DoctorObjectMessages.html#Hospital_Utilities_UIMessages_DoctorObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.DoctorObjectMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.DoctorObjectMessages.Introduce
+  nameWithType: UIMessages.DoctorObjectMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.DoctorObjectMessages.Position
+  name: Position
+  href: api/Hospital.Utilities.UIMessages.DoctorObjectMessages.html#Hospital_Utilities_UIMessages_DoctorObjectMessages_Position
+  commentId: F:Hospital.Utilities.UIMessages.DoctorObjectMessages.Position
+  fullName: Hospital.Utilities.UIMessages.DoctorObjectMessages.Position
+  nameWithType: UIMessages.DoctorObjectMessages.Position
 - uid: Hospital.Utilities.UIMessages.ExitCommandMessages
   name: UIMessages.ExitCommandMessages
   href: api/Hospital.Utilities.UIMessages.ExitCommandMessages.html
@@ -2211,6 +2657,30 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.EmptyFieldPrompt
   fullName: Hospital.Utilities.UIMessages.FactoryMessages.EmptyFieldPrompt
   nameWithType: UIMessages.FactoryMessages.EmptyFieldPrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.EmptyLoginPrompt
+  name: EmptyLoginPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_EmptyLoginPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.EmptyLoginPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.EmptyLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.EmptyLoginPrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  name: EmptyPasswordPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_EmptyPasswordPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.EmptyPasswordPrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.EnterLoginPrompt
+  name: EnterLoginPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_EnterLoginPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.EnterLoginPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.EnterLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.EnterLoginPrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.EnterPasswordPrompt
+  name: EnterPasswordPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_EnterPasswordPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.EnterPasswordPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.EnterPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.EnterPasswordPrompt
 - uid: Hospital.Utilities.UIMessages.FactoryMessages.FullWardPrompt
   name: FullWardPrompt
   href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_FullWardPrompt
@@ -2301,6 +2771,18 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.ProvideSurnamePrompt
   fullName: Hospital.Utilities.UIMessages.FactoryMessages.ProvideSurnamePrompt
   nameWithType: UIMessages.FactoryMessages.ProvideSurnamePrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.TakenLoginPrompt
+  name: TakenLoginPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_TakenLoginPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.TakenLoginPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.TakenLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.TakenLoginPrompt
+- uid: Hospital.Utilities.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  name: TooShortPasswordPrompt
+  href: api/Hospital.Utilities.UIMessages.FactoryMessages.html#Hospital_Utilities_UIMessages_FactoryMessages_TooShortPasswordPrompt
+  commentId: F:Hospital.Utilities.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  fullName: Hospital.Utilities.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.TooShortPasswordPrompt
 - uid: Hospital.Utilities.UIMessages.FireEmployeeMessages
   name: UIMessages.FireEmployeeMessages
   href: api/Hospital.Utilities.UIMessages.FireEmployeeMessages.html
@@ -2349,6 +2831,54 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.HireEmployeeMessages.Introduce
   fullName: Hospital.Utilities.UIMessages.HireEmployeeMessages.Introduce
   nameWithType: UIMessages.HireEmployeeMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.LoginCommandMessages
+  name: UIMessages.LoginCommandMessages
+  href: api/Hospital.Utilities.UIMessages.LoginCommandMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.LoginCommandMessages
+  fullName: Hospital.Utilities.UIMessages.LoginCommandMessages
+  nameWithType: UIMessages.LoginCommandMessages
+- uid: Hospital.Utilities.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  name: CantFindLoginPrompt
+  href: api/Hospital.Utilities.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UIMessages_LoginCommandMessages_CantFindLoginPrompt
+  commentId: F:Hospital.Utilities.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  fullName: Hospital.Utilities.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  nameWithType: UIMessages.LoginCommandMessages.CantFindLoginPrompt
+- uid: Hospital.Utilities.UIMessages.LoginCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UIMessages_LoginCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.LoginCommandMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.LoginCommandMessages.Introduce
+  nameWithType: UIMessages.LoginCommandMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  name: WrongPasswordPrompt
+  href: api/Hospital.Utilities.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UIMessages_LoginCommandMessages_WrongPasswordPrompt
+  commentId: F:Hospital.Utilities.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  fullName: Hospital.Utilities.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  nameWithType: UIMessages.LoginCommandMessages.WrongPasswordPrompt
+- uid: Hospital.Utilities.UIMessages.LoginWindowCommandMessages
+  name: UIMessages.LoginWindowCommandMessages
+  href: api/Hospital.Utilities.UIMessages.LoginWindowCommandMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.LoginWindowCommandMessages
+  fullName: Hospital.Utilities.UIMessages.LoginWindowCommandMessages
+  nameWithType: UIMessages.LoginWindowCommandMessages
+- uid: Hospital.Utilities.UIMessages.LoginWindowCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.LoginWindowCommandMessages.html#Hospital_Utilities_UIMessages_LoginWindowCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.LoginWindowCommandMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.LoginWindowCommandMessages.Introduce
+  nameWithType: UIMessages.LoginWindowCommandMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.LogoutCommandMessages
+  name: UIMessages.LogoutCommandMessages
+  href: api/Hospital.Utilities.UIMessages.LogoutCommandMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.LogoutCommandMessages
+  fullName: Hospital.Utilities.UIMessages.LogoutCommandMessages
+  nameWithType: UIMessages.LogoutCommandMessages
+- uid: Hospital.Utilities.UIMessages.LogoutCommandMessages.Introdcue
+  name: Introdcue
+  href: api/Hospital.Utilities.UIMessages.LogoutCommandMessages.html#Hospital_Utilities_UIMessages_LogoutCommandMessages_Introdcue
+  commentId: F:Hospital.Utilities.UIMessages.LogoutCommandMessages.Introdcue
+  fullName: Hospital.Utilities.UIMessages.LogoutCommandMessages.Introdcue
+  nameWithType: UIMessages.LogoutCommandMessages.Introdcue
 - uid: Hospital.Utilities.UIMessages.MainWindowMessages
   name: UIMessages.MainWindowMessages
   href: api/Hospital.Utilities.UIMessages.MainWindowMessages.html
@@ -2409,6 +2939,36 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.ManageWardsMessages.Introduce
   fullName: Hospital.Utilities.UIMessages.ManageWardsMessages.Introduce
   nameWithType: UIMessages.ManageWardsMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.NurseObjectMessages
+  name: UIMessages.NurseObjectMessages
+  href: api/Hospital.Utilities.UIMessages.NurseObjectMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.NurseObjectMessages
+  fullName: Hospital.Utilities.UIMessages.NurseObjectMessages
+  nameWithType: UIMessages.NurseObjectMessages
+- uid: Hospital.Utilities.UIMessages.NurseObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.NurseObjectMessages.html#Hospital_Utilities_UIMessages_NurseObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.NurseObjectMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.NurseObjectMessages.Introduce
+  nameWithType: UIMessages.NurseObjectMessages.Introduce
+- uid: Hospital.Utilities.UIMessages.NurseObjectMessages.Position
+  name: Position
+  href: api/Hospital.Utilities.UIMessages.NurseObjectMessages.html#Hospital_Utilities_UIMessages_NurseObjectMessages_Position
+  commentId: F:Hospital.Utilities.UIMessages.NurseObjectMessages.Position
+  fullName: Hospital.Utilities.UIMessages.NurseObjectMessages.Position
+  nameWithType: UIMessages.NurseObjectMessages.Position
+- uid: Hospital.Utilities.UIMessages.PatientObjectMessages
+  name: UIMessages.PatientObjectMessages
+  href: api/Hospital.Utilities.UIMessages.PatientObjectMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.PatientObjectMessages
+  fullName: Hospital.Utilities.UIMessages.PatientObjectMessages
+  nameWithType: UIMessages.PatientObjectMessages
+- uid: Hospital.Utilities.UIMessages.PatientObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.PatientObjectMessages.html#Hospital_Utilities_UIMessages_PatientObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.PatientObjectMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.PatientObjectMessages.Introduce
+  nameWithType: UIMessages.PatientObjectMessages.Introduce
 - uid: Hospital.Utilities.UIMessages.SignOutPatientMessages
   name: UIMessages.SignOutPatientMessages
   href: api/Hospital.Utilities.UIMessages.SignOutPatientMessages.html
@@ -2439,6 +2999,18 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
   fullName: Hospital.Utilities.UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
   nameWithType: UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
+- uid: Hospital.Utilities.UIMessages.UserObjectMessages
+  name: UIMessages.UserObjectMessages
+  href: api/Hospital.Utilities.UIMessages.UserObjectMessages.html
+  commentId: T:Hospital.Utilities.UIMessages.UserObjectMessages
+  fullName: Hospital.Utilities.UIMessages.UserObjectMessages
+  nameWithType: UIMessages.UserObjectMessages
+- uid: Hospital.Utilities.UIMessages.UserObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.UserObjectMessages.html#Hospital_Utilities_UIMessages_UserObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.UserObjectMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.UserObjectMessages.Introduce
+  nameWithType: UIMessages.UserObjectMessages.Introduce
 - uid: Hospital.Utilities.UIMessages.WardObjectMessages
   name: UIMessages.WardObjectMessages
   href: api/Hospital.Utilities.UIMessages.WardObjectMessages.html
@@ -2451,6 +3023,12 @@ references:
   commentId: F:Hospital.Utilities.UIMessages.WardObjectMessages.EmptyNamePrompt
   fullName: Hospital.Utilities.UIMessages.WardObjectMessages.EmptyNamePrompt
   nameWithType: UIMessages.WardObjectMessages.EmptyNamePrompt
+- uid: Hospital.Utilities.UIMessages.WardObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UIMessages.WardObjectMessages.html#Hospital_Utilities_UIMessages_WardObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UIMessages.WardObjectMessages.Introduce
+  fullName: Hospital.Utilities.UIMessages.WardObjectMessages.Introduce
+  nameWithType: UIMessages.WardObjectMessages.Introduce
 - uid: Hospital.Utilities.UIMessages.WardObjectMessages.NullPrompt
   name: NullPrompt
   href: api/Hospital.Utilities.UIMessages.WardObjectMessages.html#Hospital_Utilities_UIMessages_WardObjectMessages_NullPrompt

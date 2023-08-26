@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
 using Hospital.Objects.PatientObject;
+using Hospital.Utilities;
 
 namespace Hospital.Objects.WardObject
 {
@@ -47,7 +48,7 @@ namespace Hospital.Objects.WardObject
         { 
             Name = name;
             Capacity = capacity;
-            IntroduceString = $"Ward: {name} [{PatientsNumber}/{Capacity}]";
+            IntroduceString = string.Format(UIMessages.WardObjectMessages.Introduce, name, PatientsNumber, Capacity);
         }
     }
 }

@@ -7,6 +7,7 @@ using Hospital.Objects;
 using Hospital.Objects.DoctorObject;
 using Hospital.Objects.NurseObject;
 using Hospital.Objects.PatientObject;
+using Hospital.Objects.UserObject;
 using Hospital.Objects.WardObject;
 
 namespace Hospital.Utilities
@@ -33,12 +34,17 @@ namespace Hospital.Utilities
         internal static List<IHasIntroduceString> employees = new();
 
         /// <summary>
+        /// List of users that can manage hospital.
+        /// </summary>
+        internal static List<User> users = new();
+
+        /// <summary>
         /// Mapping of employee positions to their respective factories for creation.
         /// </summary>
         internal static Dictionary<string, IEmployeeFactory> employeeFactories = new()
         {
-            { "Doctor", new DoctorFactory() },
-            { "Nurse", new NurseFactory() }
+            { UIMessages.DoctorObjectMessages.Position, new DoctorFactory() },
+            { UIMessages.NurseObjectMessages.Position, new NurseFactory() }
         };
     }
 }

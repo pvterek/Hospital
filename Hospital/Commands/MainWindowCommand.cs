@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hospital.Commands.LoginWindow;
 using Hospital.Commands.ManagePatients;
 using Hospital.Commands.ManageStaff;
 using Hospital.Commands.ManageWards;
@@ -32,7 +33,7 @@ namespace Hospital.Commands
             Commands.Add(ManagePatientsCommand.Instance);
             Commands.Add(ManageStaffCommand.Instance);
             Commands.Add(ManageWardsCommand.Instance);
-            Commands.Add(ExitCommand.Instance);
+            Commands.Add(LogoutCommand.Instance);
         }
 
         /// <summary>

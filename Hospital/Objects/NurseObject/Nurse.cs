@@ -22,7 +22,7 @@ namespace Hospital.Objects.NurseObject
         /// <summary>
         /// Gets the position of the nurse.
         /// </summary>
-        public string Position => "Nurse";
+        public string Position => UIMessages.NurseObjectMessages.Position;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Nurse"/> class with the specified details.
@@ -35,7 +35,7 @@ namespace Hospital.Objects.NurseObject
         public Nurse(string name, string surname, Gender gender, DateTime birthday, Ward ward) : base(name, surname, gender, birthday)
         {
             AssignedWard = ward;
-            IntroduceString = $"{Name} {Surname} - {Position} at {AssignedWard.Name} Ward";
+            IntroduceString = string.Format(UIMessages.NurseObjectMessages.Introduce, name, surname, Position, AssignedWard.Name);
         }
 
         /// <summary>

@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Commands_BackCommand" data-uid="Hospital.Commands.BackCommand" class="text-break">
     Class BackCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -87,7 +87,8 @@
   <dl><dt>Assembly</dt><dd>Hospital.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents the command used to navigate back to the previous command in the application.</p>
+  <div class="markdown summary"><p>Represents the command used to navigate back to the previous command in the application.
+Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.html">CompositeCommand</a> class.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -161,7 +162,7 @@
 
   <h3 id="Hospital_Commands_BackCommand__ctor" data-uid="Hospital.Commands.BackCommand.#ctor">
   BackCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Commands.BackCommand.html">BackCommand</a> class with the specified introduction message.</p>
@@ -191,10 +192,11 @@
 
   <h3 id="Hospital_Commands_BackCommand__instance" data-uid="Hospital.Commands.BackCommand._instance">
   _instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Holds a singleton instance of the <a class="xref" href="Hospital.Commands.BackCommand.html">BackCommand</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -226,7 +228,7 @@
 
   <h3 id="Hospital_Commands_BackCommand_Instance" data-uid="Hospital.Commands.BackCommand.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the singleton instance of the <a class="xref" href="Hospital.Commands.BackCommand.html">BackCommand</a> class.</p>
@@ -262,7 +264,7 @@
 
   <h3 id="Hospital_Commands_BackCommand_Execute" data-uid="Hospital.Commands.BackCommand.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes the &quot;Back&quot; command, which navigates back to the previous command in the application's command history.</p>
@@ -289,10 +291,10 @@
 
   <h3 id="Hospital_Commands_BackCommand_Queue_Hospital_Commands_CompositeCommand_" data-uid="Hospital.Commands.BackCommand.Queue(Hospital.Commands.CompositeCommand)">
   Queue(CompositeCommand)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Adds a command to the command history and executes it, ensuring that the &quot;Back&quot; command itself is not added to the history.</p>
+  <div class="markdown level1 summary"><p>Adds a command to the command history and executes it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -322,7 +324,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/BackCommand.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
         
