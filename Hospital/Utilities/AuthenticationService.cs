@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Database;
 using Hospital.Objects.UserObject;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Utilities
 {
@@ -31,7 +33,20 @@ namespace Hospital.Utilities
         /// <returns>An object of <see cref="User"/> if found.</returns>
         public static User? GetUserByLogin(string login)
         {
-            return Storage.users.FirstOrDefault(u => u.Login == login);
+            using var session = Program.sessionFactory.OpenSession();
+
+            try
+            {
+                var users = DatabaseOperations<User>.GetAll(session);
+
+                return users?.FirstOrDefault(u => u.Login == login);
+            }
+            catch
+            {
+                UI.UI.ShowMessage(UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt);
+
+                return null;
+            }
         }
     }
 }

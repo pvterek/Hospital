@@ -256,6 +256,19 @@ references:
   fullName.vb: Hospital.Commands.LoginWindow.CreateAccountCommand.New
   nameWithType: CreateAccountCommand.CreateAccountCommand
   nameWithType.vb: CreateAccountCommand.New
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount(NHibernate.ISession)
+  name: CreateAccount(ISession)
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_CreateAccount_NHibernate_ISession_
+  commentId: M:Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount(NHibernate.ISession)
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount(NHibernate.ISession)
+  nameWithType: CreateAccountCommand.CreateAccount(ISession)
+- uid: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount*
+  name: CreateAccount
+  href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_CreateAccount_
+  commentId: Overload:Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.CreateAccountCommand.CreateAccount
+  nameWithType: CreateAccountCommand.CreateAccount
 - uid: Hospital.Commands.LoginWindow.CreateAccountCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.LoginWindow.CreateAccountCommand.html#Hospital_Commands_LoginWindow_CreateAccountCommand_Execute
@@ -313,6 +326,38 @@ references:
   fullName.vb: Hospital.Commands.LoginWindow.LoginCommand.New
   nameWithType: LoginCommand.LoginCommand
   nameWithType.vb: LoginCommand.New
+- uid: Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser(System.String,System.String)
+  name: AuthenticateUser(string, string)
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_AuthenticateUser_System_String_System_String_
+  commentId: M:Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser(System.String,System.String)
+  name.vb: AuthenticateUser(String, String)
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser(string, string)
+  fullName.vb: Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser(String, String)
+  nameWithType: LoginCommand.AuthenticateUser(string, string)
+  nameWithType.vb: LoginCommand.AuthenticateUser(String, String)
+- uid: Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser*
+  name: AuthenticateUser
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_AuthenticateUser_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.AuthenticateUser
+  nameWithType: LoginCommand.AuthenticateUser
+- uid: Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist(Hospital.Objects.UserObject.User)
+  name: CheckIfUserExist(User?)
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_CheckIfUserExist_Hospital_Objects_UserObject_User_
+  commentId: M:Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist(Hospital.Objects.UserObject.User)
+  name.vb: CheckIfUserExist(User)
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist(Hospital.Objects.UserObject.User?)
+  fullName.vb: Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist(Hospital.Objects.UserObject.User)
+  nameWithType: LoginCommand.CheckIfUserExist(User?)
+  nameWithType.vb: LoginCommand.CheckIfUserExist(User)
+- uid: Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist*
+  name: CheckIfUserExist
+  href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_CheckIfUserExist_
+  commentId: Overload:Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist
+  isSpec: "True"
+  fullName: Hospital.Commands.LoginWindow.LoginCommand.CheckIfUserExist
+  nameWithType: LoginCommand.CheckIfUserExist
 - uid: Hospital.Commands.LoginWindow.LoginCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.LoginWindow.LoginCommand.html#Hospital_Commands_LoginWindow_LoginCommand_Execute
@@ -547,6 +592,19 @@ references:
   fullName.vb: Hospital.Commands.ManagePatients.AdmitPatientCommand.New
   nameWithType: AdmitPatientCommand.AdmitPatientCommand
   nameWithType.vb: AdmitPatientCommand.New
+- uid: Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient(NHibernate.ISession)
+  name: AdmitPatient(ISession)
+  href: api/Hospital.Commands.ManagePatients.AdmitPatientCommand.html#Hospital_Commands_ManagePatients_AdmitPatientCommand_AdmitPatient_NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient(NHibernate.ISession)
+  fullName: Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient(NHibernate.ISession)
+  nameWithType: AdmitPatientCommand.AdmitPatient(ISession)
+- uid: Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient*
+  name: AdmitPatient
+  href: api/Hospital.Commands.ManagePatients.AdmitPatientCommand.html#Hospital_Commands_ManagePatients_AdmitPatientCommand_AdmitPatient_
+  commentId: Overload:Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient
+  isSpec: "True"
+  fullName: Hospital.Commands.ManagePatients.AdmitPatientCommand.AdmitPatient
+  nameWithType: AdmitPatientCommand.AdmitPatient
 - uid: Hospital.Commands.ManagePatients.AdmitPatientCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManagePatients.AdmitPatientCommand.html#Hospital_Commands_ManagePatients_AdmitPatientCommand_Execute
@@ -604,6 +662,22 @@ references:
   fullName.vb: Hospital.Commands.ManagePatients.AssignToDoctorCommand.New
   nameWithType: AssignToDoctorCommand.AssignToDoctorCommand
   nameWithType.vb: AssignToDoctorCommand.New
+- uid: Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},System.Collections.Generic.List{Hospital.Objects.DoctorObject.Doctor},NHibernate.ISession)
+  name: AssignToDoctor(List<Patient>, List<Doctor>, ISession)
+  href: api/Hospital.Commands.ManagePatients.AssignToDoctorCommand.html#Hospital_Commands_ManagePatients_AssignToDoctorCommand_AssignToDoctor_System_Collections_Generic_List_Hospital_Objects_PatientObject_Patient__System_Collections_Generic_List_Hospital_Objects_DoctorObject_Doctor__NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},System.Collections.Generic.List{Hospital.Objects.DoctorObject.Doctor},NHibernate.ISession)
+  name.vb: AssignToDoctor(List(Of Patient), List(Of Doctor), ISession)
+  fullName: Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor(System.Collections.Generic.List<Hospital.Objects.PatientObject.Patient>, System.Collections.Generic.List<Hospital.Objects.DoctorObject.Doctor>, NHibernate.ISession)
+  fullName.vb: Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor(System.Collections.Generic.List(Of Hospital.Objects.PatientObject.Patient), System.Collections.Generic.List(Of Hospital.Objects.DoctorObject.Doctor), NHibernate.ISession)
+  nameWithType: AssignToDoctorCommand.AssignToDoctor(List<Patient>, List<Doctor>, ISession)
+  nameWithType.vb: AssignToDoctorCommand.AssignToDoctor(List(Of Patient), List(Of Doctor), ISession)
+- uid: Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor*
+  name: AssignToDoctor
+  href: api/Hospital.Commands.ManagePatients.AssignToDoctorCommand.html#Hospital_Commands_ManagePatients_AssignToDoctorCommand_AssignToDoctor_
+  commentId: Overload:Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor
+  isSpec: "True"
+  fullName: Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor
+  nameWithType: AssignToDoctorCommand.AssignToDoctor
 - uid: Hospital.Commands.ManagePatients.AssignToDoctorCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManagePatients.AssignToDoctorCommand.html#Hospital_Commands_ManagePatients_AssignToDoctorCommand_Execute
@@ -661,6 +735,22 @@ references:
   fullName.vb: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.New
   nameWithType: ChangeHealthStatusCommand.ChangeHealthStatusCommand
   nameWithType.vb: ChangeHealthStatusCommand.New
+- uid: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},NHibernate.ISession)
+  name: ChangeHealthStatus(List<Patient>, ISession)
+  href: api/Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html#Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_ChangeHealthStatus_System_Collections_Generic_List_Hospital_Objects_PatientObject_Patient__NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},NHibernate.ISession)
+  name.vb: ChangeHealthStatus(List(Of Patient), ISession)
+  fullName: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus(System.Collections.Generic.List<Hospital.Objects.PatientObject.Patient>, NHibernate.ISession)
+  fullName.vb: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus(System.Collections.Generic.List(Of Hospital.Objects.PatientObject.Patient), NHibernate.ISession)
+  nameWithType: ChangeHealthStatusCommand.ChangeHealthStatus(List<Patient>, ISession)
+  nameWithType.vb: ChangeHealthStatusCommand.ChangeHealthStatus(List(Of Patient), ISession)
+- uid: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus*
+  name: ChangeHealthStatus
+  href: api/Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html#Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_ChangeHealthStatus_
+  commentId: Overload:Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus
+  isSpec: "True"
+  fullName: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus
+  nameWithType: ChangeHealthStatusCommand.ChangeHealthStatus
 - uid: Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html#Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_Execute
@@ -915,6 +1005,22 @@ references:
   isSpec: "True"
   fullName: Hospital.Commands.ManagePatients.SignOutPatientCommand.Instance
   nameWithType: SignOutPatientCommand.Instance
+- uid: Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},NHibernate.ISession)
+  name: SignOutPatient(List<Patient>, ISession)
+  href: api/Hospital.Commands.ManagePatients.SignOutPatientCommand.html#Hospital_Commands_ManagePatients_SignOutPatientCommand_SignOutPatient_System_Collections_Generic_List_Hospital_Objects_PatientObject_Patient__NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},NHibernate.ISession)
+  name.vb: SignOutPatient(List(Of Patient), ISession)
+  fullName: Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient(System.Collections.Generic.List<Hospital.Objects.PatientObject.Patient>, NHibernate.ISession)
+  fullName.vb: Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient(System.Collections.Generic.List(Of Hospital.Objects.PatientObject.Patient), NHibernate.ISession)
+  nameWithType: SignOutPatientCommand.SignOutPatient(List<Patient>, ISession)
+  nameWithType.vb: SignOutPatientCommand.SignOutPatient(List(Of Patient), ISession)
+- uid: Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient*
+  name: SignOutPatient
+  href: api/Hospital.Commands.ManagePatients.SignOutPatientCommand.html#Hospital_Commands_ManagePatients_SignOutPatientCommand_SignOutPatient_
+  commentId: Overload:Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient
+  isSpec: "True"
+  fullName: Hospital.Commands.ManagePatients.SignOutPatientCommand.SignOutPatient
+  nameWithType: SignOutPatientCommand.SignOutPatient
 - uid: Hospital.Commands.ManagePatients.SignOutPatientCommand._instance
   name: _instance
   href: api/Hospital.Commands.ManagePatients.SignOutPatientCommand.html#Hospital_Commands_ManagePatients_SignOutPatientCommand__instance
@@ -952,6 +1058,22 @@ references:
   fullName.vb: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.New
   nameWithType: DisplayEmployeesCommand.DisplayEmployeesCommand
   nameWithType.vb: DisplayEmployeesCommand.New
+- uid: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees(System.Collections.Generic.List{Hospital.Objects.Employee.IEmployee})
+  name: DisplayEmployees(List<IEmployee>)
+  href: api/Hospital.Commands.ManageStaff.DisplayEmployeesCommand.html#Hospital_Commands_ManageStaff_DisplayEmployeesCommand_DisplayEmployees_System_Collections_Generic_List_Hospital_Objects_Employee_IEmployee__
+  commentId: M:Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees(System.Collections.Generic.List{Hospital.Objects.Employee.IEmployee})
+  name.vb: DisplayEmployees(List(Of IEmployee))
+  fullName: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees(System.Collections.Generic.List<Hospital.Objects.Employee.IEmployee>)
+  fullName.vb: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees(System.Collections.Generic.List(Of Hospital.Objects.Employee.IEmployee))
+  nameWithType: DisplayEmployeesCommand.DisplayEmployees(List<IEmployee>)
+  nameWithType.vb: DisplayEmployeesCommand.DisplayEmployees(List(Of IEmployee))
+- uid: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees*
+  name: DisplayEmployees
+  href: api/Hospital.Commands.ManageStaff.DisplayEmployeesCommand.html#Hospital_Commands_ManageStaff_DisplayEmployeesCommand_DisplayEmployees_
+  commentId: Overload:Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees
+  isSpec: "True"
+  fullName: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.DisplayEmployees
+  nameWithType: DisplayEmployeesCommand.DisplayEmployees
 - uid: Hospital.Commands.ManageStaff.DisplayEmployeesCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManageStaff.DisplayEmployeesCommand.html#Hospital_Commands_ManageStaff_DisplayEmployeesCommand_Execute
@@ -1022,6 +1144,22 @@ references:
   isSpec: "True"
   fullName: Hospital.Commands.ManageStaff.FireEmployeeCommand.Execute
   nameWithType: FireEmployeeCommand.Execute
+- uid: Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee(System.Collections.Generic.List{Hospital.Objects.Employee.IEmployee},NHibernate.ISession)
+  name: FireEmployee(List<IEmployee>, ISession)
+  href: api/Hospital.Commands.ManageStaff.FireEmployeeCommand.html#Hospital_Commands_ManageStaff_FireEmployeeCommand_FireEmployee_System_Collections_Generic_List_Hospital_Objects_Employee_IEmployee__NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee(System.Collections.Generic.List{Hospital.Objects.Employee.IEmployee},NHibernate.ISession)
+  name.vb: FireEmployee(List(Of IEmployee), ISession)
+  fullName: Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee(System.Collections.Generic.List<Hospital.Objects.Employee.IEmployee>, NHibernate.ISession)
+  fullName.vb: Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee(System.Collections.Generic.List(Of Hospital.Objects.Employee.IEmployee), NHibernate.ISession)
+  nameWithType: FireEmployeeCommand.FireEmployee(List<IEmployee>, ISession)
+  nameWithType.vb: FireEmployeeCommand.FireEmployee(List(Of IEmployee), ISession)
+- uid: Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee*
+  name: FireEmployee
+  href: api/Hospital.Commands.ManageStaff.FireEmployeeCommand.html#Hospital_Commands_ManageStaff_FireEmployeeCommand_FireEmployee_
+  commentId: Overload:Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee
+  isSpec: "True"
+  fullName: Hospital.Commands.ManageStaff.FireEmployeeCommand.FireEmployee
+  nameWithType: FireEmployeeCommand.FireEmployee
 - uid: Hospital.Commands.ManageStaff.FireEmployeeCommand.Instance
   name: Instance
   href: api/Hospital.Commands.ManageStaff.FireEmployeeCommand.html#Hospital_Commands_ManageStaff_FireEmployeeCommand_Instance
@@ -1186,6 +1324,19 @@ references:
   fullName.vb: Hospital.Commands.ManageWards.AddWardCommand.New
   nameWithType: AddWardCommand.AddWardCommand
   nameWithType.vb: AddWardCommand.New
+- uid: Hospital.Commands.ManageWards.AddWardCommand.AddWard(NHibernate.ISession)
+  name: AddWard(ISession)
+  href: api/Hospital.Commands.ManageWards.AddWardCommand.html#Hospital_Commands_ManageWards_AddWardCommand_AddWard_NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManageWards.AddWardCommand.AddWard(NHibernate.ISession)
+  fullName: Hospital.Commands.ManageWards.AddWardCommand.AddWard(NHibernate.ISession)
+  nameWithType: AddWardCommand.AddWard(ISession)
+- uid: Hospital.Commands.ManageWards.AddWardCommand.AddWard*
+  name: AddWard
+  href: api/Hospital.Commands.ManageWards.AddWardCommand.html#Hospital_Commands_ManageWards_AddWardCommand_AddWard_
+  commentId: Overload:Hospital.Commands.ManageWards.AddWardCommand.AddWard
+  isSpec: "True"
+  fullName: Hospital.Commands.ManageWards.AddWardCommand.AddWard
+  nameWithType: AddWardCommand.AddWard
 - uid: Hospital.Commands.ManageWards.AddWardCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManageWards.AddWardCommand.html#Hospital_Commands_ManageWards_AddWardCommand_Execute
@@ -1243,6 +1394,19 @@ references:
   fullName.vb: Hospital.Commands.ManageWards.DeleteWardCommand.New
   nameWithType: DeleteWardCommand.DeleteWardCommand
   nameWithType.vb: DeleteWardCommand.New
+- uid: Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard(NHibernate.ISession)
+  name: DeleteWard(ISession)
+  href: api/Hospital.Commands.ManageWards.DeleteWardCommand.html#Hospital_Commands_ManageWards_DeleteWardCommand_DeleteWard_NHibernate_ISession_
+  commentId: M:Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard(NHibernate.ISession)
+  fullName: Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard(NHibernate.ISession)
+  nameWithType: DeleteWardCommand.DeleteWard(ISession)
+- uid: Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard*
+  name: DeleteWard
+  href: api/Hospital.Commands.ManageWards.DeleteWardCommand.html#Hospital_Commands_ManageWards_DeleteWardCommand_DeleteWard_
+  commentId: Overload:Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard
+  isSpec: "True"
+  fullName: Hospital.Commands.ManageWards.DeleteWardCommand.DeleteWard
+  nameWithType: DeleteWardCommand.DeleteWard
 - uid: Hospital.Commands.ManageWards.DeleteWardCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManageWards.DeleteWardCommand.html#Hospital_Commands_ManageWards_DeleteWardCommand_Execute
@@ -1300,6 +1464,22 @@ references:
   fullName.vb: Hospital.Commands.ManageWards.DisplayWardCommand.New
   nameWithType: DisplayWardCommand.DisplayWardCommand
   nameWithType.vb: DisplayWardCommand.New
+- uid: Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard(System.Collections.Generic.List{Hospital.Objects.WardObject.Ward})
+  name: DisplayWard(List<Ward>)
+  href: api/Hospital.Commands.ManageWards.DisplayWardCommand.html#Hospital_Commands_ManageWards_DisplayWardCommand_DisplayWard_System_Collections_Generic_List_Hospital_Objects_WardObject_Ward__
+  commentId: M:Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard(System.Collections.Generic.List{Hospital.Objects.WardObject.Ward})
+  name.vb: DisplayWard(List(Of Ward))
+  fullName: Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard(System.Collections.Generic.List<Hospital.Objects.WardObject.Ward>)
+  fullName.vb: Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard(System.Collections.Generic.List(Of Hospital.Objects.WardObject.Ward))
+  nameWithType: DisplayWardCommand.DisplayWard(List<Ward>)
+  nameWithType.vb: DisplayWardCommand.DisplayWard(List(Of Ward))
+- uid: Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard*
+  name: DisplayWard
+  href: api/Hospital.Commands.ManageWards.DisplayWardCommand.html#Hospital_Commands_ManageWards_DisplayWardCommand_DisplayWard_
+  commentId: Overload:Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard
+  isSpec: "True"
+  fullName: Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard
+  nameWithType: DisplayWardCommand.DisplayWard
 - uid: Hospital.Commands.ManageWards.DisplayWardCommand.Execute
   name: Execute()
   href: api/Hospital.Commands.ManageWards.DisplayWardCommand.html#Hospital_Commands_ManageWards_DisplayWardCommand_Execute
@@ -1389,6 +1569,285 @@ references:
   commentId: F:Hospital.Commands.ManageWards.ManageWardsCommand._instance
   fullName: Hospital.Commands.ManageWards.ManageWardsCommand._instance
   nameWithType: ManageWardsCommand._instance
+- uid: Hospital.Commands.Navigation
+  name: Hospital.Commands.Navigation
+  href: api/Hospital.Commands.Navigation.html
+  commentId: N:Hospital.Commands.Navigation
+  fullName: Hospital.Commands.Navigation
+  nameWithType: Hospital.Commands.Navigation
+- uid: Hospital.Commands.Navigation.ExitCommand
+  name: ExitCommand
+  href: api/Hospital.Commands.Navigation.ExitCommand.html
+  commentId: T:Hospital.Commands.Navigation.ExitCommand
+  fullName: Hospital.Commands.Navigation.ExitCommand
+  nameWithType: ExitCommand
+- uid: Hospital.Commands.Navigation.ExitCommand.#ctor(System.String)
+  name: ExitCommand(string)
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand__ctor_System_String_
+  commentId: M:Hospital.Commands.Navigation.ExitCommand.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Hospital.Commands.Navigation.ExitCommand.ExitCommand(string)
+  fullName.vb: Hospital.Commands.Navigation.ExitCommand.New(String)
+  nameWithType: ExitCommand.ExitCommand(string)
+  nameWithType.vb: ExitCommand.New(String)
+- uid: Hospital.Commands.Navigation.ExitCommand.#ctor*
+  name: ExitCommand
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand__ctor_
+  commentId: Overload:Hospital.Commands.Navigation.ExitCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.Navigation.ExitCommand.ExitCommand
+  fullName.vb: Hospital.Commands.Navigation.ExitCommand.New
+  nameWithType: ExitCommand.ExitCommand
+  nameWithType.vb: ExitCommand.New
+- uid: Hospital.Commands.Navigation.ExitCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand_Execute
+  commentId: M:Hospital.Commands.Navigation.ExitCommand.Execute
+  fullName: Hospital.Commands.Navigation.ExitCommand.Execute()
+  nameWithType: ExitCommand.Execute()
+- uid: Hospital.Commands.Navigation.ExitCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand_Execute_
+  commentId: Overload:Hospital.Commands.Navigation.ExitCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.Navigation.ExitCommand.Execute
+  nameWithType: ExitCommand.Execute
+- uid: Hospital.Commands.Navigation.ExitCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand_Instance
+  commentId: P:Hospital.Commands.Navigation.ExitCommand.Instance
+  fullName: Hospital.Commands.Navigation.ExitCommand.Instance
+  nameWithType: ExitCommand.Instance
+- uid: Hospital.Commands.Navigation.ExitCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand_Instance_
+  commentId: Overload:Hospital.Commands.Navigation.ExitCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.Navigation.ExitCommand.Instance
+  nameWithType: ExitCommand.Instance
+- uid: Hospital.Commands.Navigation.ExitCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.Navigation.ExitCommand.html#Hospital_Commands_Navigation_ExitCommand__instance
+  commentId: F:Hospital.Commands.Navigation.ExitCommand._instance
+  fullName: Hospital.Commands.Navigation.ExitCommand._instance
+  nameWithType: ExitCommand._instance
+- uid: Hospital.Commands.Navigation.NavigationCommand
+  name: NavigationCommand
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html
+  commentId: T:Hospital.Commands.Navigation.NavigationCommand
+  fullName: Hospital.Commands.Navigation.NavigationCommand
+  nameWithType: NavigationCommand
+- uid: Hospital.Commands.Navigation.NavigationCommand.#ctor
+  name: NavigationCommand()
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand__ctor
+  commentId: M:Hospital.Commands.Navigation.NavigationCommand.#ctor
+  name.vb: New()
+  fullName: Hospital.Commands.Navigation.NavigationCommand.NavigationCommand()
+  fullName.vb: Hospital.Commands.Navigation.NavigationCommand.New()
+  nameWithType: NavigationCommand.NavigationCommand()
+  nameWithType.vb: NavigationCommand.New()
+- uid: Hospital.Commands.Navigation.NavigationCommand.#ctor*
+  name: NavigationCommand
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand__ctor_
+  commentId: Overload:Hospital.Commands.Navigation.NavigationCommand.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Commands.Navigation.NavigationCommand.NavigationCommand
+  fullName.vb: Hospital.Commands.Navigation.NavigationCommand.New
+  nameWithType: NavigationCommand.NavigationCommand
+  nameWithType.vb: NavigationCommand.New
+- uid: Hospital.Commands.Navigation.NavigationCommand.Execute
+  name: Execute()
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Execute
+  commentId: M:Hospital.Commands.Navigation.NavigationCommand.Execute
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Execute()
+  nameWithType: NavigationCommand.Execute()
+- uid: Hospital.Commands.Navigation.NavigationCommand.Execute*
+  name: Execute
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Execute_
+  commentId: Overload:Hospital.Commands.Navigation.NavigationCommand.Execute
+  isSpec: "True"
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Execute
+  nameWithType: NavigationCommand.Execute
+- uid: Hospital.Commands.Navigation.NavigationCommand.Instance
+  name: Instance
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Instance
+  commentId: P:Hospital.Commands.Navigation.NavigationCommand.Instance
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Instance
+  nameWithType: NavigationCommand.Instance
+- uid: Hospital.Commands.Navigation.NavigationCommand.Instance*
+  name: Instance
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Instance_
+  commentId: Overload:Hospital.Commands.Navigation.NavigationCommand.Instance
+  isSpec: "True"
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Instance
+  nameWithType: NavigationCommand.Instance
+- uid: Hospital.Commands.Navigation.NavigationCommand.Queue(Hospital.Commands.CompositeCommand)
+  name: Queue(CompositeCommand)
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Queue_Hospital_Commands_CompositeCommand_
+  commentId: M:Hospital.Commands.Navigation.NavigationCommand.Queue(Hospital.Commands.CompositeCommand)
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Queue(Hospital.Commands.CompositeCommand)
+  nameWithType: NavigationCommand.Queue(CompositeCommand)
+- uid: Hospital.Commands.Navigation.NavigationCommand.Queue*
+  name: Queue
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand_Queue_
+  commentId: Overload:Hospital.Commands.Navigation.NavigationCommand.Queue
+  isSpec: "True"
+  fullName: Hospital.Commands.Navigation.NavigationCommand.Queue
+  nameWithType: NavigationCommand.Queue
+- uid: Hospital.Commands.Navigation.NavigationCommand._instance
+  name: _instance
+  href: api/Hospital.Commands.Navigation.NavigationCommand.html#Hospital_Commands_Navigation_NavigationCommand__instance
+  commentId: F:Hospital.Commands.Navigation.NavigationCommand._instance
+  fullName: Hospital.Commands.Navigation.NavigationCommand._instance
+  nameWithType: NavigationCommand._instance
+- uid: Hospital.Database
+  name: Hospital.Database
+  href: api/Hospital.Database.html
+  commentId: N:Hospital.Database
+  fullName: Hospital.Database
+  nameWithType: Hospital.Database
+- uid: Hospital.Database.CreateSession
+  name: CreateSession
+  href: api/Hospital.Database.CreateSession.html
+  commentId: T:Hospital.Database.CreateSession
+  fullName: Hospital.Database.CreateSession
+  nameWithType: CreateSession
+- uid: Hospital.Database.CreateSession.CreateSessionFactory
+  name: CreateSessionFactory()
+  href: api/Hospital.Database.CreateSession.html#Hospital_Database_CreateSession_CreateSessionFactory
+  commentId: M:Hospital.Database.CreateSession.CreateSessionFactory
+  fullName: Hospital.Database.CreateSession.CreateSessionFactory()
+  nameWithType: CreateSession.CreateSessionFactory()
+- uid: Hospital.Database.CreateSession.CreateSessionFactory*
+  name: CreateSessionFactory
+  href: api/Hospital.Database.CreateSession.html#Hospital_Database_CreateSession_CreateSessionFactory_
+  commentId: Overload:Hospital.Database.CreateSession.CreateSessionFactory
+  isSpec: "True"
+  fullName: Hospital.Database.CreateSession.CreateSessionFactory
+  nameWithType: CreateSession.CreateSessionFactory
+- uid: Hospital.Database.DatabaseExist
+  name: DatabaseExist
+  href: api/Hospital.Database.DatabaseExist.html
+  commentId: T:Hospital.Database.DatabaseExist
+  fullName: Hospital.Database.DatabaseExist
+  nameWithType: DatabaseExist
+- uid: Hospital.Database.DatabaseExist.Check(NHibernate.Cfg.Configuration)
+  name: Check(Configuration)
+  href: api/Hospital.Database.DatabaseExist.html#Hospital_Database_DatabaseExist_Check_NHibernate_Cfg_Configuration_
+  commentId: M:Hospital.Database.DatabaseExist.Check(NHibernate.Cfg.Configuration)
+  fullName: Hospital.Database.DatabaseExist.Check(NHibernate.Cfg.Configuration)
+  nameWithType: DatabaseExist.Check(Configuration)
+- uid: Hospital.Database.DatabaseExist.Check*
+  name: Check
+  href: api/Hospital.Database.DatabaseExist.html#Hospital_Database_DatabaseExist_Check_
+  commentId: Overload:Hospital.Database.DatabaseExist.Check
+  isSpec: "True"
+  fullName: Hospital.Database.DatabaseExist.Check
+  nameWithType: DatabaseExist.Check
+- uid: Hospital.Database.DatabaseOperations`1
+  name: DatabaseOperations<TEntity>
+  href: api/Hospital.Database.DatabaseOperations-1.html
+  commentId: T:Hospital.Database.DatabaseOperations`1
+  name.vb: DatabaseOperations(Of TEntity)
+  fullName: Hospital.Database.DatabaseOperations<TEntity>
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity)
+  nameWithType: DatabaseOperations<TEntity>
+  nameWithType.vb: DatabaseOperations(Of TEntity)
+- uid: Hospital.Database.DatabaseOperations`1.Add(`0,NHibernate.ISession)
+  name: Add(TEntity, ISession)
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Add__0_NHibernate_ISession_
+  commentId: M:Hospital.Database.DatabaseOperations`1.Add(`0,NHibernate.ISession)
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Add(TEntity, NHibernate.ISession)
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Add(TEntity, NHibernate.ISession)
+  nameWithType: DatabaseOperations<TEntity>.Add(TEntity, ISession)
+  nameWithType.vb: DatabaseOperations(Of TEntity).Add(TEntity, ISession)
+- uid: Hospital.Database.DatabaseOperations`1.Add*
+  name: Add
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Add_
+  commentId: Overload:Hospital.Database.DatabaseOperations`1.Add
+  isSpec: "True"
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Add
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Add
+  nameWithType: DatabaseOperations<TEntity>.Add
+  nameWithType.vb: DatabaseOperations(Of TEntity).Add
+- uid: Hospital.Database.DatabaseOperations`1.Delete(`0,NHibernate.ISession)
+  name: Delete(TEntity, ISession)
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Delete__0_NHibernate_ISession_
+  commentId: M:Hospital.Database.DatabaseOperations`1.Delete(`0,NHibernate.ISession)
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Delete(TEntity, NHibernate.ISession)
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Delete(TEntity, NHibernate.ISession)
+  nameWithType: DatabaseOperations<TEntity>.Delete(TEntity, ISession)
+  nameWithType.vb: DatabaseOperations(Of TEntity).Delete(TEntity, ISession)
+- uid: Hospital.Database.DatabaseOperations`1.Delete*
+  name: Delete
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Delete_
+  commentId: Overload:Hospital.Database.DatabaseOperations`1.Delete
+  isSpec: "True"
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Delete
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Delete
+  nameWithType: DatabaseOperations<TEntity>.Delete
+  nameWithType.vb: DatabaseOperations(Of TEntity).Delete
+- uid: Hospital.Database.DatabaseOperations`1.GetAll(NHibernate.ISession)
+  name: GetAll(ISession)
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_GetAll_NHibernate_ISession_
+  commentId: M:Hospital.Database.DatabaseOperations`1.GetAll(NHibernate.ISession)
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.GetAll(NHibernate.ISession)
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).GetAll(NHibernate.ISession)
+  nameWithType: DatabaseOperations<TEntity>.GetAll(ISession)
+  nameWithType.vb: DatabaseOperations(Of TEntity).GetAll(ISession)
+- uid: Hospital.Database.DatabaseOperations`1.GetAll*
+  name: GetAll
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_GetAll_
+  commentId: Overload:Hospital.Database.DatabaseOperations`1.GetAll
+  isSpec: "True"
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.GetAll
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).GetAll
+  nameWithType: DatabaseOperations<TEntity>.GetAll
+  nameWithType.vb: DatabaseOperations(Of TEntity).GetAll
+- uid: Hospital.Database.DatabaseOperations`1.Update(`0,NHibernate.ISession)
+  name: Update(TEntity, ISession)
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Update__0_NHibernate_ISession_
+  commentId: M:Hospital.Database.DatabaseOperations`1.Update(`0,NHibernate.ISession)
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Update(TEntity, NHibernate.ISession)
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Update(TEntity, NHibernate.ISession)
+  nameWithType: DatabaseOperations<TEntity>.Update(TEntity, ISession)
+  nameWithType.vb: DatabaseOperations(Of TEntity).Update(TEntity, ISession)
+- uid: Hospital.Database.DatabaseOperations`1.Update*
+  name: Update
+  href: api/Hospital.Database.DatabaseOperations-1.html#Hospital_Database_DatabaseOperations_1_Update_
+  commentId: Overload:Hospital.Database.DatabaseOperations`1.Update
+  isSpec: "True"
+  fullName: Hospital.Database.DatabaseOperations<TEntity>.Update
+  fullName.vb: Hospital.Database.DatabaseOperations(Of TEntity).Update
+  nameWithType: DatabaseOperations<TEntity>.Update
+  nameWithType.vb: DatabaseOperations(Of TEntity).Update
+- uid: Hospital.Database.DirectoryExist
+  name: DirectoryExist
+  href: api/Hospital.Database.DirectoryExist.html
+  commentId: T:Hospital.Database.DirectoryExist
+  fullName: Hospital.Database.DirectoryExist
+  nameWithType: DirectoryExist
+- uid: Hospital.Database.DirectoryExist.Create
+  name: Create()
+  href: api/Hospital.Database.DirectoryExist.html#Hospital_Database_DirectoryExist_Create
+  commentId: M:Hospital.Database.DirectoryExist.Create
+  fullName: Hospital.Database.DirectoryExist.Create()
+  nameWithType: DirectoryExist.Create()
+- uid: Hospital.Database.DirectoryExist.Create*
+  name: Create
+  href: api/Hospital.Database.DirectoryExist.html#Hospital_Database_DirectoryExist_Create_
+  commentId: Overload:Hospital.Database.DirectoryExist.Create
+  isSpec: "True"
+  fullName: Hospital.Database.DirectoryExist.Create
+  nameWithType: DirectoryExist.Create
+- uid: Hospital.Database.DirectoryExist.directoryPath
+  name: directoryPath
+  href: api/Hospital.Database.DirectoryExist.html#Hospital_Database_DirectoryExist_directoryPath
+  commentId: F:Hospital.Database.DirectoryExist.directoryPath
+  fullName: Hospital.Database.DirectoryExist.directoryPath
+  nameWithType: DirectoryExist.directoryPath
 - uid: Hospital.Objects
   name: Hospital.Objects
   href: api/Hospital.Objects.html
@@ -1407,13 +1866,22 @@ references:
   commentId: T:Hospital.Objects.DoctorObject.Doctor
   fullName: Hospital.Objects.DoctorObject.Doctor
   nameWithType: Doctor
-- uid: Hospital.Objects.DoctorObject.Doctor.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
+- uid: Hospital.Objects.DoctorObject.Doctor.#ctor
+  name: Doctor()
+  href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor__ctor
+  commentId: M:Hospital.Objects.DoctorObject.Doctor.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.DoctorObject.Doctor.Doctor()
+  fullName.vb: Hospital.Objects.DoctorObject.Doctor.New()
+  nameWithType: Doctor.Doctor()
+  nameWithType.vb: Doctor.New()
+- uid: Hospital.Objects.DoctorObject.Doctor.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
   name: Doctor(string, string, Gender, DateTime, Ward)
-  href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_
-  commentId: M:Hospital.Objects.DoctorObject.Doctor.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
+  href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_
+  commentId: M:Hospital.Objects.DoctorObject.Doctor.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
   name.vb: New(String, String, Gender, Date, Ward)
-  fullName: Hospital.Objects.DoctorObject.Doctor.Doctor(string, string, Hospital.Objects.Gender, System.DateTime, Hospital.Objects.WardObject.Ward)
-  fullName.vb: Hospital.Objects.DoctorObject.Doctor.New(String, String, Hospital.Objects.Gender, Date, Hospital.Objects.WardObject.Ward)
+  fullName: Hospital.Objects.DoctorObject.Doctor.Doctor(string, string, Hospital.Objects.PersonObject.Gender, System.DateTime, Hospital.Objects.WardObject.Ward)
+  fullName.vb: Hospital.Objects.DoctorObject.Doctor.New(String, String, Hospital.Objects.PersonObject.Gender, Date, Hospital.Objects.WardObject.Ward)
   nameWithType: Doctor.Doctor(string, string, Gender, DateTime, Ward)
   nameWithType.vb: Doctor.New(String, String, Gender, Date, Ward)
 - uid: Hospital.Objects.DoctorObject.Doctor.#ctor*
@@ -1452,6 +1920,19 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.DoctorObject.Doctor.AssignedWard
   nameWithType: Doctor.AssignedWard
+- uid: Hospital.Objects.DoctorObject.Doctor.Patients
+  name: Patients
+  href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor_Patients
+  commentId: P:Hospital.Objects.DoctorObject.Doctor.Patients
+  fullName: Hospital.Objects.DoctorObject.Doctor.Patients
+  nameWithType: Doctor.Patients
+- uid: Hospital.Objects.DoctorObject.Doctor.Patients*
+  name: Patients
+  href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor_Patients_
+  commentId: Overload:Hospital.Objects.DoctorObject.Doctor.Patients
+  isSpec: "True"
+  fullName: Hospital.Objects.DoctorObject.Doctor.Patients
+  nameWithType: Doctor.Patients
 - uid: Hospital.Objects.DoctorObject.Doctor.Position
   name: Position
   href: api/Hospital.Objects.DoctorObject.Doctor.html#Hospital_Objects_DoctorObject_Doctor_Position
@@ -1484,6 +1965,271 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.DoctorObject.DoctorFactory.CreateEmployee
   nameWithType: DoctorFactory.CreateEmployee
+- uid: Hospital.Objects.DoctorObject.DoctorMap
+  name: DoctorMap
+  href: api/Hospital.Objects.DoctorObject.DoctorMap.html
+  commentId: T:Hospital.Objects.DoctorObject.DoctorMap
+  fullName: Hospital.Objects.DoctorObject.DoctorMap
+  nameWithType: DoctorMap
+- uid: Hospital.Objects.DoctorObject.DoctorMap.#ctor
+  name: DoctorMap()
+  href: api/Hospital.Objects.DoctorObject.DoctorMap.html#Hospital_Objects_DoctorObject_DoctorMap__ctor
+  commentId: M:Hospital.Objects.DoctorObject.DoctorMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.DoctorObject.DoctorMap.DoctorMap()
+  fullName.vb: Hospital.Objects.DoctorObject.DoctorMap.New()
+  nameWithType: DoctorMap.DoctorMap()
+  nameWithType.vb: DoctorMap.New()
+- uid: Hospital.Objects.DoctorObject.DoctorMap.#ctor*
+  name: DoctorMap
+  href: api/Hospital.Objects.DoctorObject.DoctorMap.html#Hospital_Objects_DoctorObject_DoctorMap__ctor_
+  commentId: Overload:Hospital.Objects.DoctorObject.DoctorMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.DoctorObject.DoctorMap.DoctorMap
+  fullName.vb: Hospital.Objects.DoctorObject.DoctorMap.New
+  nameWithType: DoctorMap.DoctorMap
+  nameWithType.vb: DoctorMap.New
+- uid: Hospital.Objects.Employee
+  name: Hospital.Objects.Employee
+  href: api/Hospital.Objects.Employee.html
+  commentId: N:Hospital.Objects.Employee
+  fullName: Hospital.Objects.Employee
+  nameWithType: Hospital.Objects.Employee
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations
+  name: EmployeeDatabaseOperations
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html
+  commentId: T:Hospital.Objects.Employee.EmployeeDatabaseOperations
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations
+  nameWithType: EmployeeDatabaseOperations
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee(Hospital.Objects.PersonObject.Person,NHibernate.ISession)
+  name: AddEmployee(Person, ISession)
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_AddEmployee_Hospital_Objects_PersonObject_Person_NHibernate_ISession_
+  commentId: M:Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee(Hospital.Objects.PersonObject.Person,NHibernate.ISession)
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee(Hospital.Objects.PersonObject.Person, NHibernate.ISession)
+  nameWithType: EmployeeDatabaseOperations.AddEmployee(Person, ISession)
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee*
+  name: AddEmployee
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_AddEmployee_
+  commentId: Overload:Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.AddEmployee
+  nameWithType: EmployeeDatabaseOperations.AddEmployee
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee(Hospital.Objects.PersonObject.Person,NHibernate.ISession)
+  name: DeleteEmployee(Person, ISession)
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_DeleteEmployee_Hospital_Objects_PersonObject_Person_NHibernate_ISession_
+  commentId: M:Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee(Hospital.Objects.PersonObject.Person,NHibernate.ISession)
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee(Hospital.Objects.PersonObject.Person, NHibernate.ISession)
+  nameWithType: EmployeeDatabaseOperations.DeleteEmployee(Person, ISession)
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee*
+  name: DeleteEmployee
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_DeleteEmployee_
+  commentId: Overload:Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.DeleteEmployee
+  nameWithType: EmployeeDatabaseOperations.DeleteEmployee
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors(NHibernate.ISession)
+  name: GetAllDoctors(ISession)
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_GetAllDoctors_NHibernate_ISession_
+  commentId: M:Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors(NHibernate.ISession)
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors(NHibernate.ISession)
+  nameWithType: EmployeeDatabaseOperations.GetAllDoctors(ISession)
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors*
+  name: GetAllDoctors
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_GetAllDoctors_
+  commentId: Overload:Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllDoctors
+  nameWithType: EmployeeDatabaseOperations.GetAllDoctors
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees(NHibernate.ISession)
+  name: GetAllEmployees(ISession)
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_GetAllEmployees_NHibernate_ISession_
+  commentId: M:Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees(NHibernate.ISession)
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees(NHibernate.ISession)
+  nameWithType: EmployeeDatabaseOperations.GetAllEmployees(ISession)
+- uid: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees*
+  name: GetAllEmployees
+  href: api/Hospital.Objects.Employee.EmployeeDatabaseOperations.html#Hospital_Objects_Employee_EmployeeDatabaseOperations_GetAllEmployees_
+  commentId: Overload:Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.EmployeeDatabaseOperations.GetAllEmployees
+  nameWithType: EmployeeDatabaseOperations.GetAllEmployees
+- uid: Hospital.Objects.Employee.IEmployee
+  name: IEmployee
+  href: api/Hospital.Objects.Employee.IEmployee.html
+  commentId: T:Hospital.Objects.Employee.IEmployee
+  fullName: Hospital.Objects.Employee.IEmployee
+  nameWithType: IEmployee
+- uid: Hospital.Objects.Employee.IEmployee.Position
+  name: Position
+  href: api/Hospital.Objects.Employee.IEmployee.html#Hospital_Objects_Employee_IEmployee_Position
+  commentId: P:Hospital.Objects.Employee.IEmployee.Position
+  fullName: Hospital.Objects.Employee.IEmployee.Position
+  nameWithType: IEmployee.Position
+- uid: Hospital.Objects.Employee.IEmployee.Position*
+  name: Position
+  href: api/Hospital.Objects.Employee.IEmployee.html#Hospital_Objects_Employee_IEmployee_Position_
+  commentId: Overload:Hospital.Objects.Employee.IEmployee.Position
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.IEmployee.Position
+  nameWithType: IEmployee.Position
+- uid: Hospital.Objects.Employee.IEmployeeFactory
+  name: IEmployeeFactory
+  href: api/Hospital.Objects.Employee.IEmployeeFactory.html
+  commentId: T:Hospital.Objects.Employee.IEmployeeFactory
+  fullName: Hospital.Objects.Employee.IEmployeeFactory
+  nameWithType: IEmployeeFactory
+- uid: Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee
+  name: CreateEmployee()
+  href: api/Hospital.Objects.Employee.IEmployeeFactory.html#Hospital_Objects_Employee_IEmployeeFactory_CreateEmployee
+  commentId: M:Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee
+  fullName: Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee()
+  nameWithType: IEmployeeFactory.CreateEmployee()
+- uid: Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee*
+  name: CreateEmployee
+  href: api/Hospital.Objects.Employee.IEmployeeFactory.html#Hospital_Objects_Employee_IEmployeeFactory_CreateEmployee_
+  commentId: Overload:Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee
+  isSpec: "True"
+  fullName: Hospital.Objects.Employee.IEmployeeFactory.CreateEmployee
+  nameWithType: IEmployeeFactory.CreateEmployee
+- uid: Hospital.Objects.Employee.Specializations
+  name: Specializations
+  href: api/Hospital.Objects.Employee.Specializations.html
+  commentId: T:Hospital.Objects.Employee.Specializations
+  fullName: Hospital.Objects.Employee.Specializations
+  nameWithType: Specializations
+- uid: Hospital.Objects.Employee.Specializations.employeeFactories
+  name: employeeFactories
+  href: api/Hospital.Objects.Employee.Specializations.html#Hospital_Objects_Employee_Specializations_employeeFactories
+  commentId: F:Hospital.Objects.Employee.Specializations.employeeFactories
+  fullName: Hospital.Objects.Employee.Specializations.employeeFactories
+  nameWithType: Specializations.employeeFactories
+- uid: Hospital.Objects.FactoryMethods
+  name: FactoryMethods
+  href: api/Hospital.Objects.FactoryMethods.html
+  commentId: T:Hospital.Objects.FactoryMethods
+  fullName: Hospital.Objects.FactoryMethods
+  nameWithType: FactoryMethods
+- uid: Hospital.Objects.FactoryMethods.AskForAssignedWard(NHibernate.ISession)
+  name: AskForAssignedWard(ISession)
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForAssignedWard_NHibernate_ISession_
+  commentId: M:Hospital.Objects.FactoryMethods.AskForAssignedWard(NHibernate.ISession)
+  fullName: Hospital.Objects.FactoryMethods.AskForAssignedWard(NHibernate.ISession)
+  nameWithType: FactoryMethods.AskForAssignedWard(ISession)
+- uid: Hospital.Objects.FactoryMethods.AskForAssignedWard*
+  name: AskForAssignedWard
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForAssignedWard_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForAssignedWard
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForAssignedWard
+  nameWithType: FactoryMethods.AskForAssignedWard
+- uid: Hospital.Objects.FactoryMethods.AskForBirthday
+  name: AskForBirthday()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForBirthday
+  commentId: M:Hospital.Objects.FactoryMethods.AskForBirthday
+  fullName: Hospital.Objects.FactoryMethods.AskForBirthday()
+  nameWithType: FactoryMethods.AskForBirthday()
+- uid: Hospital.Objects.FactoryMethods.AskForBirthday*
+  name: AskForBirthday
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForBirthday_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForBirthday
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForBirthday
+  nameWithType: FactoryMethods.AskForBirthday
+- uid: Hospital.Objects.FactoryMethods.AskForCapacity
+  name: AskForCapacity()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForCapacity
+  commentId: M:Hospital.Objects.FactoryMethods.AskForCapacity
+  fullName: Hospital.Objects.FactoryMethods.AskForCapacity()
+  nameWithType: FactoryMethods.AskForCapacity()
+- uid: Hospital.Objects.FactoryMethods.AskForCapacity*
+  name: AskForCapacity
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForCapacity_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForCapacity
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForCapacity
+  nameWithType: FactoryMethods.AskForCapacity
+- uid: Hospital.Objects.FactoryMethods.AskForGender
+  name: AskForGender()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForGender
+  commentId: M:Hospital.Objects.FactoryMethods.AskForGender
+  fullName: Hospital.Objects.FactoryMethods.AskForGender()
+  nameWithType: FactoryMethods.AskForGender()
+- uid: Hospital.Objects.FactoryMethods.AskForGender*
+  name: AskForGender
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForGender_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForGender
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForGender
+  nameWithType: FactoryMethods.AskForGender
+- uid: Hospital.Objects.FactoryMethods.AskForLogin
+  name: AskForLogin()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForLogin
+  commentId: M:Hospital.Objects.FactoryMethods.AskForLogin
+  fullName: Hospital.Objects.FactoryMethods.AskForLogin()
+  nameWithType: FactoryMethods.AskForLogin()
+- uid: Hospital.Objects.FactoryMethods.AskForLogin*
+  name: AskForLogin
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForLogin_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForLogin
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForLogin
+  nameWithType: FactoryMethods.AskForLogin
+- uid: Hospital.Objects.FactoryMethods.AskForPassword
+  name: AskForPassword()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForPassword
+  commentId: M:Hospital.Objects.FactoryMethods.AskForPassword
+  fullName: Hospital.Objects.FactoryMethods.AskForPassword()
+  nameWithType: FactoryMethods.AskForPassword()
+- uid: Hospital.Objects.FactoryMethods.AskForPassword*
+  name: AskForPassword
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForPassword_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForPassword
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForPassword
+  nameWithType: FactoryMethods.AskForPassword
+- uid: Hospital.Objects.FactoryMethods.AskForPesel
+  name: AskForPesel()
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForPesel
+  commentId: M:Hospital.Objects.FactoryMethods.AskForPesel
+  fullName: Hospital.Objects.FactoryMethods.AskForPesel()
+  nameWithType: FactoryMethods.AskForPesel()
+- uid: Hospital.Objects.FactoryMethods.AskForPesel*
+  name: AskForPesel
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForPesel_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForPesel
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForPesel
+  nameWithType: FactoryMethods.AskForPesel
+- uid: Hospital.Objects.FactoryMethods.AskForValue(System.String,System.String)
+  name: AskForValue(string, string)
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForValue_System_String_System_String_
+  commentId: M:Hospital.Objects.FactoryMethods.AskForValue(System.String,System.String)
+  name.vb: AskForValue(String, String)
+  fullName: Hospital.Objects.FactoryMethods.AskForValue(string, string)
+  fullName.vb: Hospital.Objects.FactoryMethods.AskForValue(String, String)
+  nameWithType: FactoryMethods.AskForValue(string, string)
+  nameWithType.vb: FactoryMethods.AskForValue(String, String)
+- uid: Hospital.Objects.FactoryMethods.AskForValue*
+  name: AskForValue
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AskForValue_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AskForValue
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AskForValue
+  nameWithType: FactoryMethods.AskForValue
+- uid: Hospital.Objects.FactoryMethods.AssignToWard(NHibernate.ISession)
+  name: AssignToWard(ISession)
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AssignToWard_NHibernate_ISession_
+  commentId: M:Hospital.Objects.FactoryMethods.AssignToWard(NHibernate.ISession)
+  fullName: Hospital.Objects.FactoryMethods.AssignToWard(NHibernate.ISession)
+  nameWithType: FactoryMethods.AssignToWard(ISession)
+- uid: Hospital.Objects.FactoryMethods.AssignToWard*
+  name: AssignToWard
+  href: api/Hospital.Objects.FactoryMethods.html#Hospital_Objects_FactoryMethods_AssignToWard_
+  commentId: Overload:Hospital.Objects.FactoryMethods.AssignToWard
+  isSpec: "True"
+  fullName: Hospital.Objects.FactoryMethods.AssignToWard
+  nameWithType: FactoryMethods.AssignToWard
 - uid: Hospital.Objects.Gender
   name: Gender
   href: api/Hospital.Objects.Gender.html
@@ -1607,13 +2353,22 @@ references:
   commentId: T:Hospital.Objects.NurseObject.Nurse
   fullName: Hospital.Objects.NurseObject.Nurse
   nameWithType: Nurse
-- uid: Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
+- uid: Hospital.Objects.NurseObject.Nurse.#ctor
+  name: Nurse()
+  href: api/Hospital.Objects.NurseObject.Nurse.html#Hospital_Objects_NurseObject_Nurse__ctor
+  commentId: M:Hospital.Objects.NurseObject.Nurse.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.NurseObject.Nurse.Nurse()
+  fullName.vb: Hospital.Objects.NurseObject.Nurse.New()
+  nameWithType: Nurse.Nurse()
+  nameWithType.vb: Nurse.New()
+- uid: Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
   name: Nurse(string, string, Gender, DateTime, Ward)
-  href: api/Hospital.Objects.NurseObject.Nurse.html#Hospital_Objects_NurseObject_Nurse__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_
-  commentId: M:Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
+  href: api/Hospital.Objects.NurseObject.Nurse.html#Hospital_Objects_NurseObject_Nurse__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_
+  commentId: M:Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)
   name.vb: New(String, String, Gender, Date, Ward)
-  fullName: Hospital.Objects.NurseObject.Nurse.Nurse(string, string, Hospital.Objects.Gender, System.DateTime, Hospital.Objects.WardObject.Ward)
-  fullName.vb: Hospital.Objects.NurseObject.Nurse.New(String, String, Hospital.Objects.Gender, Date, Hospital.Objects.WardObject.Ward)
+  fullName: Hospital.Objects.NurseObject.Nurse.Nurse(string, string, Hospital.Objects.PersonObject.Gender, System.DateTime, Hospital.Objects.WardObject.Ward)
+  fullName.vb: Hospital.Objects.NurseObject.Nurse.New(String, String, Hospital.Objects.PersonObject.Gender, Date, Hospital.Objects.WardObject.Ward)
   nameWithType: Nurse.Nurse(string, string, Gender, DateTime, Ward)
   nameWithType.vb: Nurse.New(String, String, Gender, Date, Ward)
 - uid: Hospital.Objects.NurseObject.Nurse.#ctor*
@@ -1684,25 +2439,95 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.NurseObject.NurseFactory.CreateEmployee
   nameWithType: NurseFactory.CreateEmployee
+- uid: Hospital.Objects.NurseObject.NurseMap
+  name: NurseMap
+  href: api/Hospital.Objects.NurseObject.NurseMap.html
+  commentId: T:Hospital.Objects.NurseObject.NurseMap
+  fullName: Hospital.Objects.NurseObject.NurseMap
+  nameWithType: NurseMap
+- uid: Hospital.Objects.NurseObject.NurseMap.#ctor
+  name: NurseMap()
+  href: api/Hospital.Objects.NurseObject.NurseMap.html#Hospital_Objects_NurseObject_NurseMap__ctor
+  commentId: M:Hospital.Objects.NurseObject.NurseMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.NurseObject.NurseMap.NurseMap()
+  fullName.vb: Hospital.Objects.NurseObject.NurseMap.New()
+  nameWithType: NurseMap.NurseMap()
+  nameWithType.vb: NurseMap.New()
+- uid: Hospital.Objects.NurseObject.NurseMap.#ctor*
+  name: NurseMap
+  href: api/Hospital.Objects.NurseObject.NurseMap.html#Hospital_Objects_NurseObject_NurseMap__ctor_
+  commentId: Overload:Hospital.Objects.NurseObject.NurseMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.NurseObject.NurseMap.NurseMap
+  fullName.vb: Hospital.Objects.NurseObject.NurseMap.New
+  nameWithType: NurseMap.NurseMap
+  nameWithType.vb: NurseMap.New
 - uid: Hospital.Objects.PatientObject
   name: Hospital.Objects.PatientObject
   href: api/Hospital.Objects.PatientObject.html
   commentId: N:Hospital.Objects.PatientObject
   fullName: Hospital.Objects.PatientObject
   nameWithType: Hospital.Objects.PatientObject
+- uid: Hospital.Objects.PatientObject.Health
+  name: Health
+  href: api/Hospital.Objects.PatientObject.Health.html
+  commentId: T:Hospital.Objects.PatientObject.Health
+  fullName: Hospital.Objects.PatientObject.Health
+  nameWithType: Health
+- uid: Hospital.Objects.PatientObject.Health.Bad
+  name: Bad
+  href: api/Hospital.Objects.PatientObject.Health.html#Hospital_Objects_PatientObject_Health_Bad
+  commentId: F:Hospital.Objects.PatientObject.Health.Bad
+  fullName: Hospital.Objects.PatientObject.Health.Bad
+  nameWithType: Health.Bad
+- uid: Hospital.Objects.PatientObject.Health.Good
+  name: Good
+  href: api/Hospital.Objects.PatientObject.Health.html#Hospital_Objects_PatientObject_Health_Good
+  commentId: F:Hospital.Objects.PatientObject.Health.Good
+  fullName: Hospital.Objects.PatientObject.Health.Good
+  nameWithType: Health.Good
+- uid: Hospital.Objects.PatientObject.Health.Medium
+  name: Medium
+  href: api/Hospital.Objects.PatientObject.Health.html#Hospital_Objects_PatientObject_Health_Medium
+  commentId: F:Hospital.Objects.PatientObject.Health.Medium
+  fullName: Hospital.Objects.PatientObject.Health.Medium
+  nameWithType: Health.Medium
+- uid: Hospital.Objects.PatientObject.Health.VeryBad
+  name: VeryBad
+  href: api/Hospital.Objects.PatientObject.Health.html#Hospital_Objects_PatientObject_Health_VeryBad
+  commentId: F:Hospital.Objects.PatientObject.Health.VeryBad
+  fullName: Hospital.Objects.PatientObject.Health.VeryBad
+  nameWithType: Health.VeryBad
+- uid: Hospital.Objects.PatientObject.Health.VeryGood
+  name: VeryGood
+  href: api/Hospital.Objects.PatientObject.Health.html#Hospital_Objects_PatientObject_Health_VeryGood
+  commentId: F:Hospital.Objects.PatientObject.Health.VeryGood
+  fullName: Hospital.Objects.PatientObject.Health.VeryGood
+  nameWithType: Health.VeryGood
 - uid: Hospital.Objects.PatientObject.Patient
   name: Patient
   href: api/Hospital.Objects.PatientObject.Patient.html
   commentId: T:Hospital.Objects.PatientObject.Patient
   fullName: Hospital.Objects.PatientObject.Patient
   nameWithType: Patient
-- uid: Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)
+- uid: Hospital.Objects.PatientObject.Patient.#ctor
+  name: Patient()
+  href: api/Hospital.Objects.PatientObject.Patient.html#Hospital_Objects_PatientObject_Patient__ctor
+  commentId: M:Hospital.Objects.PatientObject.Patient.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.PatientObject.Patient.Patient()
+  fullName.vb: Hospital.Objects.PatientObject.Patient.New()
+  nameWithType: Patient.Patient()
+  nameWithType.vb: Patient.New()
+- uid: Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)
   name: Patient(string, string, Gender, DateTime, string, Ward)
-  href: api/Hospital.Objects.PatientObject.Patient.html#Hospital_Objects_PatientObject_Patient__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_System_String_Hospital_Objects_WardObject_Ward_
-  commentId: M:Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)
+  href: api/Hospital.Objects.PatientObject.Patient.html#Hospital_Objects_PatientObject_Patient__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_System_String_Hospital_Objects_WardObject_Ward_
+  commentId: M:Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)
   name.vb: New(String, String, Gender, Date, String, Ward)
-  fullName: Hospital.Objects.PatientObject.Patient.Patient(string, string, Hospital.Objects.Gender, System.DateTime, string, Hospital.Objects.WardObject.Ward)
-  fullName.vb: Hospital.Objects.PatientObject.Patient.New(String, String, Hospital.Objects.Gender, Date, String, Hospital.Objects.WardObject.Ward)
+  fullName: Hospital.Objects.PatientObject.Patient.Patient(string, string, Hospital.Objects.PersonObject.Gender, System.DateTime, string, Hospital.Objects.WardObject.Ward)
+  fullName.vb: Hospital.Objects.PatientObject.Patient.New(String, String, Hospital.Objects.PersonObject.Gender, Date, String, Hospital.Objects.WardObject.Ward)
   nameWithType: Patient.Patient(string, string, Gender, DateTime, string, Ward)
   nameWithType.vb: Patient.New(String, String, Gender, Date, String, Ward)
 - uid: Hospital.Objects.PatientObject.Patient.#ctor*
@@ -1779,18 +2604,63 @@ references:
   commentId: F:Hospital.Objects.PatientObject.Patient._pesel
   fullName: Hospital.Objects.PatientObject.Patient._pesel
   nameWithType: Patient._pesel
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations
+  name: PatientDatabaseOperations
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html
+  commentId: T:Hospital.Objects.PatientObject.PatientDatabaseOperations
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations
+  nameWithType: PatientDatabaseOperations
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient(Hospital.Objects.PatientObject.Patient,NHibernate.ISession)
+  name: AddPatient(Patient, ISession)
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_AddPatient_Hospital_Objects_PatientObject_Patient_NHibernate_ISession_
+  commentId: M:Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient(Hospital.Objects.PatientObject.Patient,NHibernate.ISession)
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient(Hospital.Objects.PatientObject.Patient, NHibernate.ISession)
+  nameWithType: PatientDatabaseOperations.AddPatient(Patient, ISession)
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient*
+  name: AddPatient
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_AddPatient_
+  commentId: Overload:Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient
+  isSpec: "True"
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.AddPatient
+  nameWithType: PatientDatabaseOperations.AddPatient
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient(Hospital.Objects.PatientObject.Patient,NHibernate.ISession)
+  name: DeletePatient(Patient, ISession)
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_DeletePatient_Hospital_Objects_PatientObject_Patient_NHibernate_ISession_
+  commentId: M:Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient(Hospital.Objects.PatientObject.Patient,NHibernate.ISession)
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient(Hospital.Objects.PatientObject.Patient, NHibernate.ISession)
+  nameWithType: PatientDatabaseOperations.DeletePatient(Patient, ISession)
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient*
+  name: DeletePatient
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_DeletePatient_
+  commentId: Overload:Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient
+  isSpec: "True"
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.DeletePatient
+  nameWithType: PatientDatabaseOperations.DeletePatient
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients(NHibernate.ISession)
+  name: GetAllPatients(ISession)
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_GetAllPatients_NHibernate_ISession_
+  commentId: M:Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients(NHibernate.ISession)
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients(NHibernate.ISession)
+  nameWithType: PatientDatabaseOperations.GetAllPatients(ISession)
+- uid: Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients*
+  name: GetAllPatients
+  href: api/Hospital.Objects.PatientObject.PatientDatabaseOperations.html#Hospital_Objects_PatientObject_PatientDatabaseOperations_GetAllPatients_
+  commentId: Overload:Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients
+  isSpec: "True"
+  fullName: Hospital.Objects.PatientObject.PatientDatabaseOperations.GetAllPatients
+  nameWithType: PatientDatabaseOperations.GetAllPatients
 - uid: Hospital.Objects.PatientObject.PatientFactory
   name: PatientFactory
   href: api/Hospital.Objects.PatientObject.PatientFactory.html
   commentId: T:Hospital.Objects.PatientObject.PatientFactory
   fullName: Hospital.Objects.PatientObject.PatientFactory
   nameWithType: PatientFactory
-- uid: Hospital.Objects.PatientObject.PatientFactory.CreatePatient
-  name: CreatePatient()
-  href: api/Hospital.Objects.PatientObject.PatientFactory.html#Hospital_Objects_PatientObject_PatientFactory_CreatePatient
-  commentId: M:Hospital.Objects.PatientObject.PatientFactory.CreatePatient
-  fullName: Hospital.Objects.PatientObject.PatientFactory.CreatePatient()
-  nameWithType: PatientFactory.CreatePatient()
+- uid: Hospital.Objects.PatientObject.PatientFactory.CreatePatient(NHibernate.ISession)
+  name: CreatePatient(ISession)
+  href: api/Hospital.Objects.PatientObject.PatientFactory.html#Hospital_Objects_PatientObject_PatientFactory_CreatePatient_NHibernate_ISession_
+  commentId: M:Hospital.Objects.PatientObject.PatientFactory.CreatePatient(NHibernate.ISession)
+  fullName: Hospital.Objects.PatientObject.PatientFactory.CreatePatient(NHibernate.ISession)
+  nameWithType: PatientFactory.CreatePatient(ISession)
 - uid: Hospital.Objects.PatientObject.PatientFactory.CreatePatient*
   name: CreatePatient
   href: api/Hospital.Objects.PatientObject.PatientFactory.html#Hospital_Objects_PatientObject_PatientFactory_CreatePatient_
@@ -1798,25 +2668,77 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.PatientObject.PatientFactory.CreatePatient
   nameWithType: PatientFactory.CreatePatient
+- uid: Hospital.Objects.PatientObject.PatientMap
+  name: PatientMap
+  href: api/Hospital.Objects.PatientObject.PatientMap.html
+  commentId: T:Hospital.Objects.PatientObject.PatientMap
+  fullName: Hospital.Objects.PatientObject.PatientMap
+  nameWithType: PatientMap
+- uid: Hospital.Objects.PatientObject.PatientMap.#ctor
+  name: PatientMap()
+  href: api/Hospital.Objects.PatientObject.PatientMap.html#Hospital_Objects_PatientObject_PatientMap__ctor
+  commentId: M:Hospital.Objects.PatientObject.PatientMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.PatientObject.PatientMap.PatientMap()
+  fullName.vb: Hospital.Objects.PatientObject.PatientMap.New()
+  nameWithType: PatientMap.PatientMap()
+  nameWithType.vb: PatientMap.New()
+- uid: Hospital.Objects.PatientObject.PatientMap.#ctor*
+  name: PatientMap
+  href: api/Hospital.Objects.PatientObject.PatientMap.html#Hospital_Objects_PatientObject_PatientMap__ctor_
+  commentId: Overload:Hospital.Objects.PatientObject.PatientMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.PatientObject.PatientMap.PatientMap
+  fullName.vb: Hospital.Objects.PatientObject.PatientMap.New
+  nameWithType: PatientMap.PatientMap
+  nameWithType.vb: PatientMap.New
 - uid: Hospital.Objects.PersonObject
   name: Hospital.Objects.PersonObject
   href: api/Hospital.Objects.PersonObject.html
   commentId: N:Hospital.Objects.PersonObject
   fullName: Hospital.Objects.PersonObject
   nameWithType: Hospital.Objects.PersonObject
+- uid: Hospital.Objects.PersonObject.Gender
+  name: Gender
+  href: api/Hospital.Objects.PersonObject.Gender.html
+  commentId: T:Hospital.Objects.PersonObject.Gender
+  fullName: Hospital.Objects.PersonObject.Gender
+  nameWithType: Gender
+- uid: Hospital.Objects.PersonObject.Gender.Female
+  name: Female
+  href: api/Hospital.Objects.PersonObject.Gender.html#Hospital_Objects_PersonObject_Gender_Female
+  commentId: F:Hospital.Objects.PersonObject.Gender.Female
+  fullName: Hospital.Objects.PersonObject.Gender.Female
+  nameWithType: Gender.Female
+- uid: Hospital.Objects.PersonObject.Gender.Male
+  name: Male
+  href: api/Hospital.Objects.PersonObject.Gender.html#Hospital_Objects_PersonObject_Gender_Male
+  commentId: F:Hospital.Objects.PersonObject.Gender.Male
+  fullName: Hospital.Objects.PersonObject.Gender.Male
+  nameWithType: Gender.Male
 - uid: Hospital.Objects.PersonObject.Person
   name: Person
   href: api/Hospital.Objects.PersonObject.Person.html
   commentId: T:Hospital.Objects.PersonObject.Person
   fullName: Hospital.Objects.PersonObject.Person
   nameWithType: Person
-- uid: Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime)
+- uid: Hospital.Objects.PersonObject.Person.#ctor
+  name: Person()
+  href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person__ctor
+  commentId: M:Hospital.Objects.PersonObject.Person.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.PersonObject.Person.Person()
+  fullName.vb: Hospital.Objects.PersonObject.Person.New()
+  nameWithType: Person.Person()
+  nameWithType.vb: Person.New()
+- uid: Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime)
   name: Person(string, string, Gender, DateTime)
-  href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_
-  commentId: M:Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime)
+  href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_
+  commentId: M:Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime)
   name.vb: New(String, String, Gender, Date)
-  fullName: Hospital.Objects.PersonObject.Person.Person(string, string, Hospital.Objects.Gender, System.DateTime)
-  fullName.vb: Hospital.Objects.PersonObject.Person.New(String, String, Hospital.Objects.Gender, Date)
+  fullName: Hospital.Objects.PersonObject.Person.Person(string, string, Hospital.Objects.PersonObject.Gender, System.DateTime)
+  fullName.vb: Hospital.Objects.PersonObject.Person.New(String, String, Hospital.Objects.PersonObject.Gender, Date)
   nameWithType: Person.Person(string, string, Gender, DateTime)
   nameWithType.vb: Person.New(String, String, Gender, Date)
 - uid: Hospital.Objects.PersonObject.Person.#ctor*
@@ -1855,6 +2777,19 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.PersonObject.Person.Gender
   nameWithType: Person.Gender
+- uid: Hospital.Objects.PersonObject.Person.Id
+  name: Id
+  href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_Id
+  commentId: P:Hospital.Objects.PersonObject.Person.Id
+  fullName: Hospital.Objects.PersonObject.Person.Id
+  nameWithType: Person.Id
+- uid: Hospital.Objects.PersonObject.Person.Id*
+  name: Id
+  href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_Id_
+  commentId: Overload:Hospital.Objects.PersonObject.Person.Id
+  isSpec: "True"
+  fullName: Hospital.Objects.PersonObject.Person.Id
+  nameWithType: Person.Id
 - uid: Hospital.Objects.PersonObject.Person.IntroduceString
   name: IntroduceString
   href: api/Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_IntroduceString
@@ -2050,6 +2985,31 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.PersonObject.PersonFactory.AssignToWard
   nameWithType: PersonFactory.AssignToWard
+- uid: Hospital.Objects.PersonObject.PersonMap
+  name: PersonMap
+  href: api/Hospital.Objects.PersonObject.PersonMap.html
+  commentId: T:Hospital.Objects.PersonObject.PersonMap
+  fullName: Hospital.Objects.PersonObject.PersonMap
+  nameWithType: PersonMap
+- uid: Hospital.Objects.PersonObject.PersonMap.#ctor
+  name: PersonMap()
+  href: api/Hospital.Objects.PersonObject.PersonMap.html#Hospital_Objects_PersonObject_PersonMap__ctor
+  commentId: M:Hospital.Objects.PersonObject.PersonMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.PersonObject.PersonMap.PersonMap()
+  fullName.vb: Hospital.Objects.PersonObject.PersonMap.New()
+  nameWithType: PersonMap.PersonMap()
+  nameWithType.vb: PersonMap.New()
+- uid: Hospital.Objects.PersonObject.PersonMap.#ctor*
+  name: PersonMap
+  href: api/Hospital.Objects.PersonObject.PersonMap.html#Hospital_Objects_PersonObject_PersonMap__ctor_
+  commentId: Overload:Hospital.Objects.PersonObject.PersonMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.PersonObject.PersonMap.PersonMap
+  fullName.vb: Hospital.Objects.PersonObject.PersonMap.New
+  nameWithType: PersonMap.PersonMap
+  nameWithType.vb: PersonMap.New
 - uid: Hospital.Objects.UserObject
   name: Hospital.Objects.UserObject
   href: api/Hospital.Objects.UserObject.html
@@ -2062,13 +3022,22 @@ references:
   commentId: T:Hospital.Objects.UserObject.User
   fullName: Hospital.Objects.UserObject.User
   nameWithType: User
-- uid: Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,System.String)
+- uid: Hospital.Objects.UserObject.User.#ctor
+  name: User()
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__ctor
+  commentId: M:Hospital.Objects.UserObject.User.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.UserObject.User.User()
+  fullName.vb: Hospital.Objects.UserObject.User.New()
+  nameWithType: User.User()
+  nameWithType.vb: User.New()
+- uid: Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,System.String,System.String)
   name: User(string, string, Gender, DateTime, string, string)
-  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_System_String_System_String_
-  commentId: M:Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,System.String)
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_System_String_System_String_
+  commentId: M:Hospital.Objects.UserObject.User.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,System.String,System.String)
   name.vb: New(String, String, Gender, Date, String, String)
-  fullName: Hospital.Objects.UserObject.User.User(string, string, Hospital.Objects.Gender, System.DateTime, string, string)
-  fullName.vb: Hospital.Objects.UserObject.User.New(String, String, Hospital.Objects.Gender, Date, String, String)
+  fullName: Hospital.Objects.UserObject.User.User(string, string, Hospital.Objects.PersonObject.Gender, System.DateTime, string, string)
+  fullName.vb: Hospital.Objects.UserObject.User.New(String, String, Hospital.Objects.PersonObject.Gender, Date, String, String)
   nameWithType: User.User(string, string, Gender, DateTime, string, string)
   nameWithType.vb: User.New(String, String, Gender, Date, String, String)
 - uid: Hospital.Objects.UserObject.User.#ctor*
@@ -2081,6 +3050,19 @@ references:
   fullName.vb: Hospital.Objects.UserObject.User.New
   nameWithType: User.User
   nameWithType.vb: User.New
+- uid: Hospital.Objects.UserObject.User.AssignedWard
+  name: AssignedWard
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_AssignedWard
+  commentId: P:Hospital.Objects.UserObject.User.AssignedWard
+  fullName: Hospital.Objects.UserObject.User.AssignedWard
+  nameWithType: User.AssignedWard
+- uid: Hospital.Objects.UserObject.User.AssignedWard*
+  name: AssignedWard
+  href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_AssignedWard_
+  commentId: Overload:Hospital.Objects.UserObject.User.AssignedWard
+  isSpec: "True"
+  fullName: Hospital.Objects.UserObject.User.AssignedWard
+  nameWithType: User.AssignedWard
 - uid: Hospital.Objects.UserObject.User.Login
   name: Login
   href: api/Hospital.Objects.UserObject.User.html#Hospital_Objects_UserObject_User_Login
@@ -2138,6 +3120,31 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.UserObject.UserFactory.CreateUser
   nameWithType: UserFactory.CreateUser
+- uid: Hospital.Objects.UserObject.UserMap
+  name: UserMap
+  href: api/Hospital.Objects.UserObject.UserMap.html
+  commentId: T:Hospital.Objects.UserObject.UserMap
+  fullName: Hospital.Objects.UserObject.UserMap
+  nameWithType: UserMap
+- uid: Hospital.Objects.UserObject.UserMap.#ctor
+  name: UserMap()
+  href: api/Hospital.Objects.UserObject.UserMap.html#Hospital_Objects_UserObject_UserMap__ctor
+  commentId: M:Hospital.Objects.UserObject.UserMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.UserObject.UserMap.UserMap()
+  fullName.vb: Hospital.Objects.UserObject.UserMap.New()
+  nameWithType: UserMap.UserMap()
+  nameWithType.vb: UserMap.New()
+- uid: Hospital.Objects.UserObject.UserMap.#ctor*
+  name: UserMap
+  href: api/Hospital.Objects.UserObject.UserMap.html#Hospital_Objects_UserObject_UserMap__ctor_
+  commentId: Overload:Hospital.Objects.UserObject.UserMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.UserObject.UserMap.UserMap
+  fullName.vb: Hospital.Objects.UserObject.UserMap.New
+  nameWithType: UserMap.UserMap
+  nameWithType.vb: UserMap.New
 - uid: Hospital.Objects.WardObject
   name: Hospital.Objects.WardObject
   href: api/Hospital.Objects.WardObject.html
@@ -2150,38 +3157,34 @@ references:
   commentId: T:Hospital.Objects.WardObject.ManageCapacity
   fullName: Hospital.Objects.WardObject.ManageCapacity
   nameWithType: ManageCapacity
-- uid: Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber(Hospital.Objects.WardObject.Ward,Hospital.Objects.PatientObject.Patient)
-  name: AddPatientsNumber(Ward, Patient)
-  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_AddPatientsNumber_Hospital_Objects_WardObject_Ward_Hospital_Objects_PatientObject_Patient_
-  commentId: M:Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber(Hospital.Objects.WardObject.Ward,Hospital.Objects.PatientObject.Patient)
-  fullName: Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber(Hospital.Objects.WardObject.Ward, Hospital.Objects.PatientObject.Patient)
-  nameWithType: ManageCapacity.AddPatientsNumber(Ward, Patient)
-- uid: Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber*
-  name: AddPatientsNumber
-  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_AddPatientsNumber_
-  commentId: Overload:Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber
+- uid: Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  name: UpdateWardCapacity(Ward, ISession)
+  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_UpdateWardCapacity_Hospital_Objects_WardObject_Ward_NHibernate_ISession_
+  commentId: M:Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  fullName: Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity(Hospital.Objects.WardObject.Ward, NHibernate.ISession)
+  nameWithType: ManageCapacity.UpdateWardCapacity(Ward, ISession)
+- uid: Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity*
+  name: UpdateWardCapacity
+  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_UpdateWardCapacity_
+  commentId: Overload:Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity
   isSpec: "True"
-  fullName: Hospital.Objects.WardObject.ManageCapacity.AddPatientsNumber
-  nameWithType: ManageCapacity.AddPatientsNumber
-- uid: Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber(Hospital.Objects.WardObject.Ward,Hospital.Objects.PatientObject.Patient)
-  name: RemovePatientsNumber(Ward, Patient)
-  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_RemovePatientsNumber_Hospital_Objects_WardObject_Ward_Hospital_Objects_PatientObject_Patient_
-  commentId: M:Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber(Hospital.Objects.WardObject.Ward,Hospital.Objects.PatientObject.Patient)
-  fullName: Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber(Hospital.Objects.WardObject.Ward, Hospital.Objects.PatientObject.Patient)
-  nameWithType: ManageCapacity.RemovePatientsNumber(Ward, Patient)
-- uid: Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber*
-  name: RemovePatientsNumber
-  href: api/Hospital.Objects.WardObject.ManageCapacity.html#Hospital_Objects_WardObject_ManageCapacity_RemovePatientsNumber_
-  commentId: Overload:Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber
-  isSpec: "True"
-  fullName: Hospital.Objects.WardObject.ManageCapacity.RemovePatientsNumber
-  nameWithType: ManageCapacity.RemovePatientsNumber
+  fullName: Hospital.Objects.WardObject.ManageCapacity.UpdateWardCapacity
+  nameWithType: ManageCapacity.UpdateWardCapacity
 - uid: Hospital.Objects.WardObject.Ward
   name: Ward
   href: api/Hospital.Objects.WardObject.Ward.html
   commentId: T:Hospital.Objects.WardObject.Ward
   fullName: Hospital.Objects.WardObject.Ward
   nameWithType: Ward
+- uid: Hospital.Objects.WardObject.Ward.#ctor
+  name: Ward()
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward__ctor
+  commentId: M:Hospital.Objects.WardObject.Ward.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.WardObject.Ward.Ward()
+  fullName.vb: Hospital.Objects.WardObject.Ward.New()
+  nameWithType: Ward.Ward()
+  nameWithType.vb: Ward.New()
 - uid: Hospital.Objects.WardObject.Ward.#ctor(System.String,System.Int32)
   name: Ward(string, int)
   href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward__ctor_System_String_System_Int32_
@@ -2201,6 +3204,32 @@ references:
   fullName.vb: Hospital.Objects.WardObject.Ward.New
   nameWithType: Ward.Ward
   nameWithType.vb: Ward.New
+- uid: Hospital.Objects.WardObject.Ward.AssignedEmployees
+  name: AssignedEmployees
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_AssignedEmployees
+  commentId: P:Hospital.Objects.WardObject.Ward.AssignedEmployees
+  fullName: Hospital.Objects.WardObject.Ward.AssignedEmployees
+  nameWithType: Ward.AssignedEmployees
+- uid: Hospital.Objects.WardObject.Ward.AssignedEmployees*
+  name: AssignedEmployees
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_AssignedEmployees_
+  commentId: Overload:Hospital.Objects.WardObject.Ward.AssignedEmployees
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.Ward.AssignedEmployees
+  nameWithType: Ward.AssignedEmployees
+- uid: Hospital.Objects.WardObject.Ward.AssignedPatients
+  name: AssignedPatients
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_AssignedPatients
+  commentId: P:Hospital.Objects.WardObject.Ward.AssignedPatients
+  fullName: Hospital.Objects.WardObject.Ward.AssignedPatients
+  nameWithType: Ward.AssignedPatients
+- uid: Hospital.Objects.WardObject.Ward.AssignedPatients*
+  name: AssignedPatients
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_AssignedPatients_
+  commentId: Overload:Hospital.Objects.WardObject.Ward.AssignedPatients
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.Ward.AssignedPatients
+  nameWithType: Ward.AssignedPatients
 - uid: Hospital.Objects.WardObject.Ward.Capacity
   name: Capacity
   href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_Capacity
@@ -2214,6 +3243,19 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.WardObject.Ward.Capacity
   nameWithType: Ward.Capacity
+- uid: Hospital.Objects.WardObject.Ward.Id
+  name: Id
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_Id
+  commentId: P:Hospital.Objects.WardObject.Ward.Id
+  fullName: Hospital.Objects.WardObject.Ward.Id
+  nameWithType: Ward.Id
+- uid: Hospital.Objects.WardObject.Ward.Id*
+  name: Id
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_Id_
+  commentId: Overload:Hospital.Objects.WardObject.Ward.Id
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.Ward.Id
+  nameWithType: Ward.Id
 - uid: Hospital.Objects.WardObject.Ward.IntroduceString
   name: IntroduceString
   href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_IntroduceString
@@ -2240,25 +3282,64 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.WardObject.Ward.Name
   nameWithType: Ward.Name
-- uid: Hospital.Objects.WardObject.Ward.Patients
-  name: Patients
-  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_Patients
-  commentId: P:Hospital.Objects.WardObject.Ward.Patients
-  fullName: Hospital.Objects.WardObject.Ward.Patients
-  nameWithType: Ward.Patients
-- uid: Hospital.Objects.WardObject.Ward.Patients*
-  name: Patients
-  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_Patients_
-  commentId: Overload:Hospital.Objects.WardObject.Ward.Patients
-  isSpec: "True"
-  fullName: Hospital.Objects.WardObject.Ward.Patients
-  nameWithType: Ward.Patients
 - uid: Hospital.Objects.WardObject.Ward.PatientsNumber
   name: PatientsNumber
   href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_PatientsNumber
-  commentId: F:Hospital.Objects.WardObject.Ward.PatientsNumber
+  commentId: P:Hospital.Objects.WardObject.Ward.PatientsNumber
   fullName: Hospital.Objects.WardObject.Ward.PatientsNumber
   nameWithType: Ward.PatientsNumber
+- uid: Hospital.Objects.WardObject.Ward.PatientsNumber*
+  name: PatientsNumber
+  href: api/Hospital.Objects.WardObject.Ward.html#Hospital_Objects_WardObject_Ward_PatientsNumber_
+  commentId: Overload:Hospital.Objects.WardObject.Ward.PatientsNumber
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.Ward.PatientsNumber
+  nameWithType: Ward.PatientsNumber
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations
+  name: WardDatabaseOperations
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html
+  commentId: T:Hospital.Objects.WardObject.WardDatabaseOperations
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations
+  nameWithType: WardDatabaseOperations
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.AddWard(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  name: AddWard(Ward, ISession)
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_AddWard_Hospital_Objects_WardObject_Ward_NHibernate_ISession_
+  commentId: M:Hospital.Objects.WardObject.WardDatabaseOperations.AddWard(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.AddWard(Hospital.Objects.WardObject.Ward, NHibernate.ISession)
+  nameWithType: WardDatabaseOperations.AddWard(Ward, ISession)
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.AddWard*
+  name: AddWard
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_AddWard_
+  commentId: Overload:Hospital.Objects.WardObject.WardDatabaseOperations.AddWard
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.AddWard
+  nameWithType: WardDatabaseOperations.AddWard
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  name: DeleteWard(Ward, ISession)
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_DeleteWard_Hospital_Objects_WardObject_Ward_NHibernate_ISession_
+  commentId: M:Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard(Hospital.Objects.WardObject.Ward,NHibernate.ISession)
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard(Hospital.Objects.WardObject.Ward, NHibernate.ISession)
+  nameWithType: WardDatabaseOperations.DeleteWard(Ward, ISession)
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard*
+  name: DeleteWard
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_DeleteWard_
+  commentId: Overload:Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.DeleteWard
+  nameWithType: WardDatabaseOperations.DeleteWard
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards(NHibernate.ISession)
+  name: GetAllWards(ISession)
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_GetAllWards_NHibernate_ISession_
+  commentId: M:Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards(NHibernate.ISession)
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards(NHibernate.ISession)
+  nameWithType: WardDatabaseOperations.GetAllWards(ISession)
+- uid: Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards*
+  name: GetAllWards
+  href: api/Hospital.Objects.WardObject.WardDatabaseOperations.html#Hospital_Objects_WardObject_WardDatabaseOperations_GetAllWards_
+  commentId: Overload:Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards
+  isSpec: "True"
+  fullName: Hospital.Objects.WardObject.WardDatabaseOperations.GetAllWards
+  nameWithType: WardDatabaseOperations.GetAllWards
 - uid: Hospital.Objects.WardObject.WardFactory
   name: WardFactory
   href: api/Hospital.Objects.WardObject.WardFactory.html
@@ -2278,6 +3359,31 @@ references:
   isSpec: "True"
   fullName: Hospital.Objects.WardObject.WardFactory.CreateWard
   nameWithType: WardFactory.CreateWard
+- uid: Hospital.Objects.WardObject.WardMap
+  name: WardMap
+  href: api/Hospital.Objects.WardObject.WardMap.html
+  commentId: T:Hospital.Objects.WardObject.WardMap
+  fullName: Hospital.Objects.WardObject.WardMap
+  nameWithType: WardMap
+- uid: Hospital.Objects.WardObject.WardMap.#ctor
+  name: WardMap()
+  href: api/Hospital.Objects.WardObject.WardMap.html#Hospital_Objects_WardObject_WardMap__ctor
+  commentId: M:Hospital.Objects.WardObject.WardMap.#ctor
+  name.vb: New()
+  fullName: Hospital.Objects.WardObject.WardMap.WardMap()
+  fullName.vb: Hospital.Objects.WardObject.WardMap.New()
+  nameWithType: WardMap.WardMap()
+  nameWithType.vb: WardMap.New()
+- uid: Hospital.Objects.WardObject.WardMap.#ctor*
+  name: WardMap
+  href: api/Hospital.Objects.WardObject.WardMap.html#Hospital_Objects_WardObject_WardMap__ctor_
+  commentId: Overload:Hospital.Objects.WardObject.WardMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Hospital.Objects.WardObject.WardMap.WardMap
+  fullName.vb: Hospital.Objects.WardObject.WardMap.New
+  nameWithType: WardMap.WardMap
+  nameWithType.vb: WardMap.New
 - uid: Hospital.Program
   name: Program
   href: api/Hospital.Program.html
@@ -2309,6 +3415,12 @@ references:
   commentId: F:Hospital.Program.commandHistory
   fullName: Hospital.Program.commandHistory
   nameWithType: Program.commandHistory
+- uid: Hospital.Program.sessionFactory
+  name: sessionFactory
+  href: api/Hospital.Program.html#Hospital_Program_sessionFactory
+  commentId: F:Hospital.Program.sessionFactory
+  fullName: Hospital.Program.sessionFactory
+  nameWithType: Program.sessionFactory
 - uid: Hospital.Utilities
   name: Hospital.Utilities
   href: api/Hospital.Utilities.html
@@ -2411,6 +3523,885 @@ references:
   commentId: F:Hospital.Utilities.Storage.wards
   fullName: Hospital.Utilities.Storage.wards
   nameWithType: Storage.wards
+- uid: Hospital.Utilities.UI
+  name: Hospital.Utilities.UI
+  href: api/Hospital.Utilities.UI.html
+  commentId: N:Hospital.Utilities.UI
+  fullName: Hospital.Utilities.UI
+  nameWithType: Hospital.Utilities.UI
+- uid: Hospital.Utilities.UI.ListMaker
+  name: ListMaker
+  href: api/Hospital.Utilities.UI.ListMaker.html
+  commentId: T:Hospital.Utilities.UI.ListMaker
+  fullName: Hospital.Utilities.UI.ListMaker
+  nameWithType: ListMaker
+- uid: Hospital.Utilities.UI.ListMaker.DisplayList*
+  name: DisplayList
+  href: api/Hospital.Utilities.UI.ListMaker.html#Hospital_Utilities_UI_ListMaker_DisplayList_
+  commentId: Overload:Hospital.Utilities.UI.ListMaker.DisplayList
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.ListMaker.DisplayList
+  nameWithType: ListMaker.DisplayList
+- uid: Hospital.Utilities.UI.ListMaker.DisplayList``1(System.Collections.Generic.List{``0})
+  name: DisplayList<TEntity>(List<TEntity>)
+  href: api/Hospital.Utilities.UI.ListMaker.html#Hospital_Utilities_UI_ListMaker_DisplayList__1_System_Collections_Generic_List___0__
+  commentId: M:Hospital.Utilities.UI.ListMaker.DisplayList``1(System.Collections.Generic.List{``0})
+  name.vb: DisplayList(Of TEntity)(List(Of TEntity))
+  fullName: Hospital.Utilities.UI.ListMaker.DisplayList<TEntity>(System.Collections.Generic.List<TEntity>)
+  fullName.vb: Hospital.Utilities.UI.ListMaker.DisplayList(Of TEntity)(System.Collections.Generic.List(Of TEntity))
+  nameWithType: ListMaker.DisplayList<TEntity>(List<TEntity>)
+  nameWithType.vb: ListMaker.DisplayList(Of TEntity)(List(Of TEntity))
+- uid: Hospital.Utilities.UI.UI
+  name: UI
+  href: api/Hospital.Utilities.UI.UI.html
+  commentId: T:Hospital.Utilities.UI.UI
+  fullName: Hospital.Utilities.UI.UI
+  nameWithType: UI
+- uid: Hospital.Utilities.UI.UI.DrawSelectedMenu(System.String)
+  name: DrawSelectedMenu(string)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_DrawSelectedMenu_System_String_
+  commentId: M:Hospital.Utilities.UI.UI.DrawSelectedMenu(System.String)
+  name.vb: DrawSelectedMenu(String)
+  fullName: Hospital.Utilities.UI.UI.DrawSelectedMenu(string)
+  fullName.vb: Hospital.Utilities.UI.UI.DrawSelectedMenu(String)
+  nameWithType: UI.DrawSelectedMenu(string)
+  nameWithType.vb: UI.DrawSelectedMenu(String)
+- uid: Hospital.Utilities.UI.UI.DrawSelectedMenu*
+  name: DrawSelectedMenu
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_DrawSelectedMenu_
+  commentId: Overload:Hospital.Utilities.UI.UI.DrawSelectedMenu
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.UI.DrawSelectedMenu
+  nameWithType: UI.DrawSelectedMenu
+- uid: Hospital.Utilities.UI.UI.ShowInteractiveMenu
+  name: ShowInteractiveMenu()
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowInteractiveMenu
+  commentId: M:Hospital.Utilities.UI.UI.ShowInteractiveMenu
+  fullName: Hospital.Utilities.UI.UI.ShowInteractiveMenu()
+  nameWithType: UI.ShowInteractiveMenu()
+- uid: Hospital.Utilities.UI.UI.ShowInteractiveMenu(System.Collections.Generic.List{System.String})
+  name: ShowInteractiveMenu(List<string>)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowInteractiveMenu_System_Collections_Generic_List_System_String__
+  commentId: M:Hospital.Utilities.UI.UI.ShowInteractiveMenu(System.Collections.Generic.List{System.String})
+  name.vb: ShowInteractiveMenu(List(Of String))
+  fullName: Hospital.Utilities.UI.UI.ShowInteractiveMenu(System.Collections.Generic.List<string>)
+  fullName.vb: Hospital.Utilities.UI.UI.ShowInteractiveMenu(System.Collections.Generic.List(Of String))
+  nameWithType: UI.ShowInteractiveMenu(List<string>)
+  nameWithType.vb: UI.ShowInteractiveMenu(List(Of String))
+- uid: Hospital.Utilities.UI.UI.ShowInteractiveMenu*
+  name: ShowInteractiveMenu
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowInteractiveMenu_
+  commentId: Overload:Hospital.Utilities.UI.UI.ShowInteractiveMenu
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.UI.ShowInteractiveMenu
+  nameWithType: UI.ShowInteractiveMenu
+- uid: Hospital.Utilities.UI.UI.ShowInteractiveMenu``1(System.Collections.Generic.List{``0})
+  name: ShowInteractiveMenu<T>(List<T>)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowInteractiveMenu__1_System_Collections_Generic_List___0__
+  commentId: M:Hospital.Utilities.UI.UI.ShowInteractiveMenu``1(System.Collections.Generic.List{``0})
+  name.vb: ShowInteractiveMenu(Of T)(List(Of T))
+  fullName: Hospital.Utilities.UI.UI.ShowInteractiveMenu<T>(System.Collections.Generic.List<T>)
+  fullName.vb: Hospital.Utilities.UI.UI.ShowInteractiveMenu(Of T)(System.Collections.Generic.List(Of T))
+  nameWithType: UI.ShowInteractiveMenu<T>(List<T>)
+  nameWithType.vb: UI.ShowInteractiveMenu(Of T)(List(Of T))
+- uid: Hospital.Utilities.UI.UI.ShowMessage(System.String)
+  name: ShowMessage(string)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowMessage_System_String_
+  commentId: M:Hospital.Utilities.UI.UI.ShowMessage(System.String)
+  name.vb: ShowMessage(String)
+  fullName: Hospital.Utilities.UI.UI.ShowMessage(string)
+  fullName.vb: Hospital.Utilities.UI.UI.ShowMessage(String)
+  nameWithType: UI.ShowMessage(string)
+  nameWithType.vb: UI.ShowMessage(String)
+- uid: Hospital.Utilities.UI.UI.ShowMessage(System.String,System.String)
+  name: ShowMessage(string, string)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowMessage_System_String_System_String_
+  commentId: M:Hospital.Utilities.UI.UI.ShowMessage(System.String,System.String)
+  name.vb: ShowMessage(String, String)
+  fullName: Hospital.Utilities.UI.UI.ShowMessage(string, string)
+  fullName.vb: Hospital.Utilities.UI.UI.ShowMessage(String, String)
+  nameWithType: UI.ShowMessage(string, string)
+  nameWithType.vb: UI.ShowMessage(String, String)
+- uid: Hospital.Utilities.UI.UI.ShowMessage*
+  name: ShowMessage
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_ShowMessage_
+  commentId: Overload:Hospital.Utilities.UI.UI.ShowMessage
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.UI.ShowMessage
+  nameWithType: UI.ShowMessage
+- uid: Hospital.Utilities.UI.UI.UpdateInteractiveMenu(System.Collections.Generic.List{System.String},System.Int32)
+  name: UpdateInteractiveMenu(List<string>, int)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_UpdateInteractiveMenu_System_Collections_Generic_List_System_String__System_Int32_
+  commentId: M:Hospital.Utilities.UI.UI.UpdateInteractiveMenu(System.Collections.Generic.List{System.String},System.Int32)
+  name.vb: UpdateInteractiveMenu(List(Of String), Integer)
+  fullName: Hospital.Utilities.UI.UI.UpdateInteractiveMenu(System.Collections.Generic.List<string>, int)
+  fullName.vb: Hospital.Utilities.UI.UI.UpdateInteractiveMenu(System.Collections.Generic.List(Of String), Integer)
+  nameWithType: UI.UpdateInteractiveMenu(List<string>, int)
+  nameWithType.vb: UI.UpdateInteractiveMenu(List(Of String), Integer)
+- uid: Hospital.Utilities.UI.UI.UpdateInteractiveMenu*
+  name: UpdateInteractiveMenu
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_UpdateInteractiveMenu_
+  commentId: Overload:Hospital.Utilities.UI.UI.UpdateInteractiveMenu
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.UI.UpdateInteractiveMenu
+  nameWithType: UI.UpdateInteractiveMenu
+- uid: Hospital.Utilities.UI.UI.UpdateInteractiveMenu``1(System.Collections.Generic.List{``0},System.Int32)
+  name: UpdateInteractiveMenu<T>(List<T>, int)
+  href: api/Hospital.Utilities.UI.UI.html#Hospital_Utilities_UI_UI_UpdateInteractiveMenu__1_System_Collections_Generic_List___0__System_Int32_
+  commentId: M:Hospital.Utilities.UI.UI.UpdateInteractiveMenu``1(System.Collections.Generic.List{``0},System.Int32)
+  name.vb: UpdateInteractiveMenu(Of T)(List(Of T), Integer)
+  fullName: Hospital.Utilities.UI.UI.UpdateInteractiveMenu<T>(System.Collections.Generic.List<T>, int)
+  fullName.vb: Hospital.Utilities.UI.UI.UpdateInteractiveMenu(Of T)(System.Collections.Generic.List(Of T), Integer)
+  nameWithType: UI.UpdateInteractiveMenu<T>(List<T>, int)
+  nameWithType.vb: UI.UpdateInteractiveMenu(Of T)(List(Of T), Integer)
+- uid: Hospital.Utilities.UI.UIHelper
+  name: UIHelper
+  href: api/Hospital.Utilities.UI.UIHelper.html
+  commentId: T:Hospital.Utilities.UI.UIHelper
+  fullName: Hospital.Utilities.UI.UIHelper
+  nameWithType: UIHelper
+- uid: Hospital.Utilities.UI.UIHelper.HandleError(System.String,System.Exception)
+  name: HandleError(string, Exception)
+  href: api/Hospital.Utilities.UI.UIHelper.html#Hospital_Utilities_UI_UIHelper_HandleError_System_String_System_Exception_
+  commentId: M:Hospital.Utilities.UI.UIHelper.HandleError(System.String,System.Exception)
+  name.vb: HandleError(String, Exception)
+  fullName: Hospital.Utilities.UI.UIHelper.HandleError(string, System.Exception)
+  fullName.vb: Hospital.Utilities.UI.UIHelper.HandleError(String, System.Exception)
+  nameWithType: UIHelper.HandleError(string, Exception)
+  nameWithType.vb: UIHelper.HandleError(String, Exception)
+- uid: Hospital.Utilities.UI.UIHelper.HandleError*
+  name: HandleError
+  href: api/Hospital.Utilities.UI.UIHelper.html#Hospital_Utilities_UI_UIHelper_HandleError_
+  commentId: Overload:Hospital.Utilities.UI.UIHelper.HandleError
+  isSpec: "True"
+  fullName: Hospital.Utilities.UI.UIHelper.HandleError
+  nameWithType: UIHelper.HandleError
+- uid: Hospital.Utilities.UI.UserInterface
+  name: Hospital.Utilities.UI.UserInterface
+  href: api/Hospital.Utilities.UI.UserInterface.html
+  commentId: N:Hospital.Utilities.UI.UserInterface
+  fullName: Hospital.Utilities.UI.UserInterface
+  nameWithType: Hospital.Utilities.UI.UserInterface
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages
+  name: UIMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages
+  nameWithType: UIMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages
+  name: UIMessages.AddWardMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages
+  nameWithType: UIMessages.AddWardMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.ErrorWhileCreatingPrompt
+  name: ErrorWhileCreatingPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AddWardMessages_ErrorWhileCreatingPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.ErrorWhileCreatingPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.ErrorWhileCreatingPrompt
+  nameWithType: UIMessages.AddWardMessages.ErrorWhileCreatingPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AddWardMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.Introduce
+  nameWithType: UIMessages.AddWardMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.WardCreatedPrompt
+  name: WardCreatedPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AddWardMessages_WardCreatedPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.WardCreatedPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AddWardMessages.WardCreatedPrompt
+  nameWithType: UIMessages.AddWardMessages.WardCreatedPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages
+  name: UIMessages.AdmitPatientMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages
+  nameWithType: UIMessages.AdmitPatientMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.ErrorAdmitPatientPropmt
+  name: ErrorAdmitPatientPropmt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AdmitPatientMessages_ErrorAdmitPatientPropmt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.ErrorAdmitPatientPropmt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.ErrorAdmitPatientPropmt
+  nameWithType: UIMessages.AdmitPatientMessages.ErrorAdmitPatientPropmt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AdmitPatientMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.Introduce
+  nameWithType: UIMessages.AdmitPatientMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.NoWardErrorPrompt
+  name: NoWardErrorPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AdmitPatientMessages_NoWardErrorPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.NoWardErrorPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.NoWardErrorPrompt
+  nameWithType: UIMessages.AdmitPatientMessages.NoWardErrorPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.PatientCreatedPrompt
+  name: PatientCreatedPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AdmitPatientMessages_PatientCreatedPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.PatientCreatedPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AdmitPatientMessages.PatientCreatedPrompt
+  nameWithType: UIMessages.AdmitPatientMessages.PatientCreatedPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages
+  name: UIMessages.AssignToDoctorMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages
+  nameWithType: UIMessages.AssignToDoctorMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.ErrorAssignToDoctorPrompt
+  name: ErrorAssignToDoctorPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AssignToDoctorMessages_ErrorAssignToDoctorPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.ErrorAssignToDoctorPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.ErrorAssignToDoctorPrompt
+  nameWithType: UIMessages.AssignToDoctorMessages.ErrorAssignToDoctorPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AssignToDoctorMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.Introduce
+  nameWithType: UIMessages.AssignToDoctorMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.NoDoctorsPrompt
+  name: NoDoctorsPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AssignToDoctorMessages_NoDoctorsPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.NoDoctorsPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.NoDoctorsPrompt
+  nameWithType: UIMessages.AssignToDoctorMessages.NoDoctorsPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectDoctorPrompt
+  name: SelectDoctorPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AssignToDoctorMessages_SelectDoctorPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectDoctorPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectDoctorPrompt
+  nameWithType: UIMessages.AssignToDoctorMessages.SelectDoctorPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+  name: SelectPatientPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AssignToDoctorMessages_SelectPatientPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+  nameWithType: UIMessages.AssignToDoctorMessages.SelectPatientPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages
+  name: UIMessages.AuthenitactionServiceMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages
+  nameWithType: UIMessages.AuthenitactionServiceMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt
+  name: ErrorGetUserByLoginPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AuthenitactionServiceMessages_ErrorGetUserByLoginPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt
+  nameWithType: UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  name: NoUserPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_AuthenitactionServiceMessages_NoUserPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+  nameWithType: UIMessages.AuthenitactionServiceMessages.NoUserPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages
+  name: UIMessages.BackCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages
+  nameWithType: UIMessages.BackCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_BackCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.BackCommandMessages.Introduce
+  nameWithType: UIMessages.BackCommandMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages
+  name: UIMessages.ChangeHealthStatusMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages
+  nameWithType: UIMessages.ChangeHealthStatusMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt
+  name: ErrorChangeHealthStatusPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ChangeHealthStatusMessages_ErrorChangeHealthStatusPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt
+  nameWithType: UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ChangeHealthStatusMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.Introduce
+  nameWithType: UIMessages.ChangeHealthStatusMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
+  name: SelectPatientPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ChangeHealthStatusMessages_SelectPatientPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
+  nameWithType: UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages
+  name: UIMessages.CreateAccountCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages
+  nameWithType: UIMessages.CreateAccountCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  name: CreatedAccountPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_CreateAccountCommandMessages_CreatedAccountPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+  nameWithType: UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt
+  name: ErrorCreateAccountPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_CreateAccountCommandMessages_ErrorCreateAccountPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt
+  nameWithType: UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_CreateAccountCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.CreateAccountCommandMessages.Introduce
+  nameWithType: UIMessages.CreateAccountCommandMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages
+  name: UIMessages.DeleteWardMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages
+  nameWithType: UIMessages.DeleteWardMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.ErrorWhileRemovingPrompt
+  name: ErrorWhileRemovingPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DeleteWardMessages_ErrorWhileRemovingPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.ErrorWhileRemovingPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.ErrorWhileRemovingPrompt
+  nameWithType: UIMessages.DeleteWardMessages.ErrorWhileRemovingPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DeleteWardMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.Introduce
+  nameWithType: UIMessages.DeleteWardMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.NoWardPrompt
+  name: NoWardPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DeleteWardMessages_NoWardPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.NoWardPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.NoWardPrompt
+  nameWithType: UIMessages.DeleteWardMessages.NoWardPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.WardRemovedPrompt
+  name: WardRemovedPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DeleteWardMessages_WardRemovedPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.WardRemovedPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DeleteWardMessages.WardRemovedPrompt
+  nameWithType: UIMessages.DeleteWardMessages.WardRemovedPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages
+  name: UIMessages.DisplayEmployeesMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages
+  nameWithType: UIMessages.DisplayEmployeesMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.ErrorDisplayEmployeesPrompt
+  name: ErrorDisplayEmployeesPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayEmployeesMessages_ErrorDisplayEmployeesPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.ErrorDisplayEmployeesPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.ErrorDisplayEmployeesPrompt
+  nameWithType: UIMessages.DisplayEmployeesMessages.ErrorDisplayEmployeesPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayEmployeesMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.Introduce
+  nameWithType: UIMessages.DisplayEmployeesMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt
+  name: NoEmployeesPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayEmployeesMessages_NoEmployeesPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt
+  nameWithType: UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages
+  name: UIMessages.DisplayPatientsMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages
+  nameWithType: UIMessages.DisplayPatientsMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.ErrorDisplayPatientsPrompt
+  name: ErrorDisplayPatientsPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayPatientsMessages_ErrorDisplayPatientsPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.ErrorDisplayPatientsPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.ErrorDisplayPatientsPrompt
+  nameWithType: UIMessages.DisplayPatientsMessages.ErrorDisplayPatientsPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayPatientsMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.Introduce
+  nameWithType: UIMessages.DisplayPatientsMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.NoPatientsPrompt
+  name: NoPatientsPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayPatientsMessages_NoPatientsPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.NoPatientsPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayPatientsMessages.NoPatientsPrompt
+  nameWithType: UIMessages.DisplayPatientsMessages.NoPatientsPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages
+  name: UIMessages.DisplayWardMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages
+  nameWithType: UIMessages.DisplayWardMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.ErrorDisplayWardPrompt
+  name: ErrorDisplayWardPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayWardMessages_ErrorDisplayWardPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.ErrorDisplayWardPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.ErrorDisplayWardPrompt
+  nameWithType: UIMessages.DisplayWardMessages.ErrorDisplayWardPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayWardMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.Introduce
+  nameWithType: UIMessages.DisplayWardMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.NoWardPrompt
+  name: NoWardPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DisplayWardMessages_NoWardPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.NoWardPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DisplayWardMessages.NoWardPrompt
+  nameWithType: UIMessages.DisplayWardMessages.NoWardPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages
+  name: UIMessages.DoctorObjectMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages
+  nameWithType: UIMessages.DoctorObjectMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DoctorObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Introduce
+  nameWithType: UIMessages.DoctorObjectMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Position
+  name: Position
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_DoctorObjectMessages_Position
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Position
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.DoctorObjectMessages.Position
+  nameWithType: UIMessages.DoctorObjectMessages.Position
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages
+  name: UIMessages.ExitCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages
+  nameWithType: UIMessages.ExitCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ExitCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ExitCommandMessages.Introduce
+  nameWithType: UIMessages.ExitCommandMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages
+  name: UIMessages.FactoryMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages
+  nameWithType: UIMessages.FactoryMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyFieldPrompt
+  name: EmptyFieldPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_EmptyFieldPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyFieldPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyFieldPrompt
+  nameWithType: UIMessages.FactoryMessages.EmptyFieldPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyLoginPrompt
+  name: EmptyLoginPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_EmptyLoginPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyLoginPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.EmptyLoginPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  name: EmptyPasswordPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_EmptyPasswordPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EmptyPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.EmptyPasswordPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterLoginPrompt
+  name: EnterLoginPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_EnterLoginPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterLoginPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.EnterLoginPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterPasswordPrompt
+  name: EnterPasswordPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_EnterPasswordPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterPasswordPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.EnterPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.EnterPasswordPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.FullWardPrompt
+  name: FullWardPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_FullWardPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.FullWardPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.FullWardPrompt
+  nameWithType: UIMessages.FactoryMessages.FullWardPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.GetWardsErrorPrompt
+  name: GetWardsErrorPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_GetWardsErrorPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.GetWardsErrorPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.GetWardsErrorPrompt
+  nameWithType: UIMessages.FactoryMessages.GetWardsErrorPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidBirthdayPrompt
+  name: InvalidBirthdayPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidBirthdayPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidBirthdayPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidBirthdayPrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidBirthdayPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDateFormatPrompt
+  name: InvalidDateFormatPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidDateFormatPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDateFormatPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDateFormatPrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidDateFormatPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDatePrompt
+  name: InvalidDatePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidDatePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDatePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidDatePrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidDatePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidGenderPrompt
+  name: InvalidGenderPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidGenderPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidGenderPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidGenderPrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidGenderPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidHealthPrompt
+  name: InvalidHealthPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidHealthPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidHealthPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidHealthPrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidHealthPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidPeselPrompt
+  name: InvalidPeselPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_InvalidPeselPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidPeselPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.InvalidPeselPrompt
+  nameWithType: UIMessages.FactoryMessages.InvalidPeselPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NegativeValuePrompt
+  name: NegativeValuePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_NegativeValuePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NegativeValuePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NegativeValuePrompt
+  nameWithType: UIMessages.FactoryMessages.NegativeValuePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NotValidNumberPrompt
+  name: NotValidNumberPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_NotValidNumberPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NotValidNumberPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.NotValidNumberPrompt
+  nameWithType: UIMessages.FactoryMessages.NotValidNumberPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideBirthdayPrompt
+  name: ProvideBirthdayPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvideBirthdayPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideBirthdayPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideBirthdayPrompt
+  nameWithType: UIMessages.FactoryMessages.ProvideBirthdayPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideCapacityPrompt
+  name: ProvideCapacityPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvideCapacityPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideCapacityPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideCapacityPrompt
+  nameWithType: UIMessages.FactoryMessages.ProvideCapacityPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideGenderPrompt
+  name: ProvideGenderPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvideGenderPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideGenderPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideGenderPrompt
+  nameWithType: UIMessages.FactoryMessages.ProvideGenderPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideNamePrompt
+  name: ProvideNamePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvideNamePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideNamePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideNamePrompt
+  nameWithType: UIMessages.FactoryMessages.ProvideNamePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvidePeselPrompt
+  name: ProvidePeselPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvidePeselPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvidePeselPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvidePeselPrompt
+  nameWithType: UIMessages.FactoryMessages.ProvidePeselPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideSurnamePrompt
+  name: ProvideSurnamePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_ProvideSurnamePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideSurnamePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.ProvideSurnamePrompt
+  nameWithType: UIMessages.FactoryMessages.ProvideSurnamePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TakenLoginPrompt
+  name: TakenLoginPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_TakenLoginPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TakenLoginPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TakenLoginPrompt
+  nameWithType: UIMessages.FactoryMessages.TakenLoginPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  name: TooShortPasswordPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FactoryMessages_TooShortPasswordPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FactoryMessages.TooShortPasswordPrompt
+  nameWithType: UIMessages.FactoryMessages.TooShortPasswordPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages
+  name: UIMessages.FireEmployeeMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages
+  nameWithType: UIMessages.FireEmployeeMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredErrorPrompt
+  name: EmployeeFiredErrorPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FireEmployeeMessages_EmployeeFiredErrorPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredErrorPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredErrorPrompt
+  nameWithType: UIMessages.FireEmployeeMessages.EmployeeFiredErrorPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredSuccessPrompt
+  name: EmployeeFiredSuccessPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FireEmployeeMessages_EmployeeFiredSuccessPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredSuccessPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.EmployeeFiredSuccessPrompt
+  nameWithType: UIMessages.FireEmployeeMessages.EmployeeFiredSuccessPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FireEmployeeMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.Introduce
+  nameWithType: UIMessages.FireEmployeeMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.NoEmployeesPrompt
+  name: NoEmployeesPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FireEmployeeMessages_NoEmployeesPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.NoEmployeesPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.NoEmployeesPrompt
+  nameWithType: UIMessages.FireEmployeeMessages.NoEmployeesPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.SelectEmployeePrompt
+  name: SelectEmployeePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_FireEmployeeMessages_SelectEmployeePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.SelectEmployeePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.FireEmployeeMessages.SelectEmployeePrompt
+  nameWithType: UIMessages.FireEmployeeMessages.SelectEmployeePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages
+  name: UIMessages.HireEmployeeMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages
+  nameWithType: UIMessages.HireEmployeeMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt
+  name: ErrorHireEmployeePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_HireEmployeeMessages_ErrorHireEmployeePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt
+  nameWithType: UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_HireEmployeeMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.Introduce
+  nameWithType: UIMessages.HireEmployeeMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.SuccessHireEmployeePrompt
+  name: SuccessHireEmployeePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_HireEmployeeMessages_SuccessHireEmployeePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.SuccessHireEmployeePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.HireEmployeeMessages.SuccessHireEmployeePrompt
+  nameWithType: UIMessages.HireEmployeeMessages.SuccessHireEmployeePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages
+  name: UIMessages.LoginCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages
+  nameWithType: UIMessages.LoginCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  name: CantFindLoginPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_LoginCommandMessages_CantFindLoginPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.CantFindLoginPrompt
+  nameWithType: UIMessages.LoginCommandMessages.CantFindLoginPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_LoginCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.Introduce
+  nameWithType: UIMessages.LoginCommandMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  name: WrongPasswordPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_LoginCommandMessages_WrongPasswordPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginCommandMessages.WrongPasswordPrompt
+  nameWithType: UIMessages.LoginCommandMessages.WrongPasswordPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages
+  name: UIMessages.LoginWindowCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages
+  nameWithType: UIMessages.LoginWindowCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_LoginWindowCommandMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LoginWindowCommandMessages.Introduce
+  nameWithType: UIMessages.LoginWindowCommandMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages
+  name: UIMessages.LogoutCommandMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages
+  nameWithType: UIMessages.LogoutCommandMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages.Introdcue
+  name: Introdcue
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_LogoutCommandMessages_Introdcue
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages.Introdcue
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.LogoutCommandMessages.Introdcue
+  nameWithType: UIMessages.LogoutCommandMessages.Introdcue
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages
+  name: UIMessages.MainWindowMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages
+  nameWithType: UIMessages.MainWindowMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_MainWindowMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.MainWindowMessages.Introduce
+  nameWithType: UIMessages.MainWindowMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages
+  name: UIMessages.ManagePatientMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages
+  nameWithType: UIMessages.ManagePatientMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ManagePatientMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientMessages.Introduce
+  nameWithType: UIMessages.ManagePatientMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages
+  name: UIMessages.ManagePatientsMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages
+  nameWithType: UIMessages.ManagePatientsMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ManagePatientsMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManagePatientsMessages.Introduce
+  nameWithType: UIMessages.ManagePatientsMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages
+  name: UIMessages.ManageStaffMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages
+  nameWithType: UIMessages.ManageStaffMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ManageStaffMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManageStaffMessages.Introduce
+  nameWithType: UIMessages.ManageStaffMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages
+  name: UIMessages.ManageWardsMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages
+  nameWithType: UIMessages.ManageWardsMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_ManageWardsMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.ManageWardsMessages.Introduce
+  nameWithType: UIMessages.ManageWardsMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages
+  name: UIMessages.NurseObjectMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages
+  nameWithType: UIMessages.NurseObjectMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_NurseObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Introduce
+  nameWithType: UIMessages.NurseObjectMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Position
+  name: Position
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_NurseObjectMessages_Position
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Position
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.NurseObjectMessages.Position
+  nameWithType: UIMessages.NurseObjectMessages.Position
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages
+  name: UIMessages.PatientObjectMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages
+  nameWithType: UIMessages.PatientObjectMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_PatientObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.PatientObjectMessages.Introduce
+  nameWithType: UIMessages.PatientObjectMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages
+  name: UIMessages.SignOutPatientMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages
+  nameWithType: UIMessages.SignOutPatientMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.ErrorSignOutPrompt
+  name: ErrorSignOutPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_SignOutPatientMessages_ErrorSignOutPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.ErrorSignOutPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.ErrorSignOutPrompt
+  nameWithType: UIMessages.SignOutPatientMessages.ErrorSignOutPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_SignOutPatientMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.Introduce
+  nameWithType: UIMessages.SignOutPatientMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SignOutPrompt
+  name: SignOutPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_SignOutPatientMessages_SignOutPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SignOutPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SignOutPrompt
+  nameWithType: UIMessages.SignOutPatientMessages.SignOutPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
+  name: SuccessSignOutPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_SignOutPatientMessages_SuccessSignOutPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
+  nameWithType: UIMessages.SignOutPatientMessages.SuccessSignOutPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages
+  name: UIMessages.UserObjectMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages
+  nameWithType: UIMessages.UserObjectMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_UserObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.UserObjectMessages.Introduce
+  nameWithType: UIMessages.UserObjectMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages
+  name: UIMessages.WardObjectMessages
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.html
+  commentId: T:Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages
+  nameWithType: UIMessages.WardObjectMessages
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.EmptyNamePrompt
+  name: EmptyNamePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_WardObjectMessages_EmptyNamePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.EmptyNamePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.EmptyNamePrompt
+  nameWithType: UIMessages.WardObjectMessages.EmptyNamePrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.Introduce
+  name: Introduce
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_WardObjectMessages_Introduce
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.Introduce
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.Introduce
+  nameWithType: UIMessages.WardObjectMessages.Introduce
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.NullPrompt
+  name: NullPrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_WardObjectMessages_NullPrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.NullPrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.NullPrompt
+  nameWithType: UIMessages.WardObjectMessages.NullPrompt
+- uid: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.ProvideNamePrompt
+  name: ProvideNamePrompt
+  href: api/Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.html#Hospital_Utilities_UI_UserInterface_UIMessages_WardObjectMessages_ProvideNamePrompt
+  commentId: F:Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.ProvideNamePrompt
+  fullName: Hospital.Utilities.UI.UserInterface.UIMessages.WardObjectMessages.ProvideNamePrompt
+  nameWithType: UIMessages.WardObjectMessages.ProvideNamePrompt
 - uid: Hospital.Utilities.UIMessages
   name: UIMessages
   href: api/Hospital.Utilities.UIMessages.html

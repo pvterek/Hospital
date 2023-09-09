@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Hospital.Objects.PersonObject;
 
-namespace Hospital.Utilities
+namespace Hospital.Utilities.UI.UserInterface
 {
     internal class UIMessages
     {
@@ -16,7 +16,8 @@ namespace Hospital.Utilities
         {
             public const string Introduce = "Admit a patient.";
             public const string NoWardErrorPrompt = "No wards created to assign patient! Please create one first.";
-            public const string PatientCreatedPrompt = "Patient created";
+            public const string PatientCreatedPrompt = "Patient {0} {1} admited sucesfully!";
+            public const string ErrorAdmitPatientPropmt = "Error occured while trying to admit a patient!";
         }
 
         public static class AssignToDoctorMessages
@@ -24,18 +25,22 @@ namespace Hospital.Utilities
             public const string Introduce = "Assign to doctor";
             public const string SelectPatientPrompt = "Pick what patient you want assing";
             public const string SelectDoctorPrompt = "Pick to which doctor you want assing patient";
+            public const string NoDoctorsPrompt = "There is no doctors in selected ward yet.";
+            public const string ErrorAssignToDoctorPrompt = "Error occured while trying to assign the doctor to patient!";
         }
 
         public static class ChangeHealthStatusMessages
         {
             public const string Introduce = "Change health status.";
             public const string SelectPatientPrompt = "Pick for which patient you want change health status";
+            public const string ErrorChangeHealthStatusPrompt = "Error occured while trying to change health status!";
         }
 
         public static class DisplayPatientsMessages
         {
             public const string Introduce = "Display all patients.";
             public const string NoPatientsPrompt = "There is no patients in selected ward yet.";
+            public const string ErrorDisplayPatientsPrompt = "Error occured while trying to display patients list!";
         }
 
         public static class ManagePatientMessages
@@ -53,7 +58,7 @@ namespace Hospital.Utilities
             public const string Introduce = "Sign out patient";
             public const string SignOutPrompt = "Pick which patient you want sign out.";
             public const string SuccessSignOutPrompt = "Patient {0} {1} removed sucesfully!";
-            public const string ErrorSignOutPrompt = "Error while removing patient!";
+            public const string ErrorSignOutPrompt = "Error occured while trying to remove patient!";
         }
 
         //ManageStaff
@@ -61,20 +66,23 @@ namespace Hospital.Utilities
         {
             public const string Introduce = "Display employees";
             public const string NoEmployeesPrompt = "There is no employees in selected ward yet.";
+            public const string ErrorDisplayEmployeesPrompt = "Error occured while trying to display employees!";
         }
 
         public static class FireEmployeeMessages
         {
             public const string Introduce = "Fire employee";
             public const string SelectEmployeePrompt = "Pick which employee you want to fire.";
-            public const string EmployeeFiredSuccessPrompt = "{0} was removed successfully.";
-            public const string EmployeeFiredErrorPrompt = "Error while removing the employee.";
+            public const string EmployeeFiredSuccessPrompt = "{0} {1} was fired successfully!";
+            public const string EmployeeFiredErrorPrompt = "Error occured while trying to remove the employee.";
+            public const string NoEmployeesPrompt = "There is no employees to fire.";
         }
 
         public static class HireEmployeeMessages
         {
             public const string Introduce = "Hire employee";
-            public const string HiredSuccessPrompt = "{0} hired!";
+            public const string SuccessHireEmployeePrompt = "{0} {1} hired!";
+            public const string ErrorHireEmployeePrompt = "Error occured while trying to hire employee!";
         }
 
         public static class ManageStaffMessages
@@ -86,19 +94,23 @@ namespace Hospital.Utilities
         public static class AddWardMessages
         {
             public const string Introduce = "Add ward";
-            public const string WardCreated = "Ward {0} created!";
+            public const string ErrorWhileCreatingPrompt = "Error occured while trying to create ward!";
+            public const string WardCreatedPrompt = "Ward {0} created!";
         }
 
         public static class DeleteWardMessages
         {
             public const string Introduce = "Delete ward";
-            public const string WardRemoved = "Ward removed: {0}.";
-            public const string ErrorWhileRemoving = "Error while removing ward!";
+            public const string WardRemovedPrompt = "Ward removed: {0}!";
+            public const string ErrorWhileRemovingPrompt = "Error occured while trying to remove the ward!";
+            public const string NoWardPrompt = "There are no ward that can be deleted! Please create one first.";
         }
 
         public static class DisplayWardMessages
         {
             public const string Introduce = "Display wards";
+            public const string ErrorDisplayWardPrompt = "Error occured while trying to display the wards";
+            public const string NoWardPrompt = "There are no ward that can be displayed!";
         }
 
         public static class ManageWardsMessages
@@ -131,6 +143,7 @@ namespace Hospital.Utilities
             public const string EnterPasswordPrompt = "Enter password: ";
             public const string EmptyPasswordPrompt = "Login can't be empty!";
             public const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
+            public const string GetWardsErrorPrompt = "Error occured while trying to gather wards from database!";
         }
 
         //WardObject
@@ -170,6 +183,7 @@ namespace Hospital.Utilities
         {
             public const string Introduce = "Create account";
             public const string CreatedAccountPrompt = "User {0} created successfully!";
+            public const string ErrorCreateAccountPrompt = "Error occured while trying to create an account!";
         }
 
         public static class LoginCommandMessages
@@ -182,6 +196,7 @@ namespace Hospital.Utilities
         public static class AuthenitactionServiceMessages
         {
             public const string NoUserPrompt = "There are no users, create one first";
+            public const string ErrorGetUserByLoginPrompt = "Error occured while trying to get user login";
         }
 
         public static class LogoutCommandMessages

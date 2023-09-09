@@ -92,7 +92,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal class Patient : Person, IHasIntroduceString</code></pre>
+    <pre><code class="lang-csharp hljs">public class Patient : Person, IHasIntroduceString</code></pre>
   </div>
 
 
@@ -118,6 +118,9 @@
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_Id">Person.Id</a>
+    </div>
     <div>
       <a class="xref" href="Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_IntroduceString">Person.IntroduceString</a>
     </div>
@@ -182,9 +185,36 @@
 
   <a id="Hospital_Objects_PatientObject_Patient__ctor_" data-uid="Hospital.Objects.PatientObject.Patient.#ctor*"></a>
 
-  <h3 id="Hospital_Objects_PatientObject_Patient__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_System_String_Hospital_Objects_WardObject_Ward_" data-uid="Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)">
+  <h3 id="Hospital_Objects_PatientObject_Patient__ctor" data-uid="Hospital.Objects.PatientObject.Patient.#ctor">
+  Patient()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructor needed for NHibernate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Patient()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_PatientObject_Patient__ctor_" data-uid="Hospital.Objects.PatientObject.Patient.#ctor*"></a>
+
+  <h3 id="Hospital_Objects_PatientObject_Patient__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_System_String_Hospital_Objects_WardObject_Ward_" data-uid="Hospital.Objects.PatientObject.Patient.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,System.String,Hospital.Objects.WardObject.Ward)">
   Patient(string, string, Gender, DateTime, string, Ward)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.PatientObject.Patient.html">Patient</a> class with provided properties.</p>
@@ -203,7 +233,7 @@
     <dt><code>surname</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The surname of the patient.</p>
 </dd>
-    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.Gender.html">Gender</a></dt>
+    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.PersonObject.Gender.html">Gender</a></dt>
     <dd><p>The gender of the patient.</p>
 </dd>
     <dt><code>birthday</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
@@ -235,7 +265,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient__healthStatus" data-uid="Hospital.Objects.PatientObject.Patient._healthStatus">
   _healthStatus
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -250,7 +280,7 @@
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Hospital.Objects.Health.html">Health</a>?</dt>
+    <dt><a class="xref" href="Hospital.Objects.PatientObject.Health.html">Health</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -265,7 +295,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient__pesel" data-uid="Hospital.Objects.PatientObject.Patient._pesel">
   _pesel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -300,7 +330,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient_AssignedDoctor" data-uid="Hospital.Objects.PatientObject.Patient.AssignedDoctor">
   AssignedDoctor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the doctor assigned to the patient.</p>
@@ -308,7 +338,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Doctor AssignedDoctor { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Doctor? AssignedDoctor { get; set; }</code></pre>
   </div>
 
 
@@ -332,7 +362,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient_AssignedWard" data-uid="Hospital.Objects.PatientObject.Patient.AssignedWard">
   AssignedWard
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the ward assigned to the patient.</p>
@@ -340,7 +370,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Ward AssignedWard { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Ward AssignedWard { get; set; }</code></pre>
   </div>
 
 
@@ -364,7 +394,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient_HealthStatus" data-uid="Hospital.Objects.PatientObject.Patient.HealthStatus">
   HealthStatus
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the health status of the patient, ensuring it's a valid value.</p>
@@ -372,7 +402,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Health? HealthStatus { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Health? HealthStatus { get; set; }</code></pre>
   </div>
 
 
@@ -381,7 +411,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Hospital.Objects.Health.html">Health</a>?</dt>
+    <dt><a class="xref" href="Hospital.Objects.PatientObject.Health.html">Health</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -396,7 +426,7 @@
 
   <h3 id="Hospital_Objects_PatientObject_Patient_Pesel" data-uid="Hospital.Objects.PatientObject.Patient.Pesel">
   Pesel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PatientObject/Patient.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the Patient's PESEL.
@@ -405,7 +435,7 @@ Sets the PESEL number ensuring it adheres to its defined format.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Pesel { get; private set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string Pesel { get; set; }</code></pre>
   </div>
 
 

@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Objects_WardObject_Ward" data-uid="Hospital.Objects.WardObject.Ward" class="text-break">
     Class Ward
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -92,7 +92,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal class Ward : IHasIntroduceString</code></pre>
+    <pre><code class="lang-csharp hljs">public class Ward : IHasIntroduceString</code></pre>
   </div>
 
 
@@ -151,12 +151,39 @@
 
   <a id="Hospital_Objects_WardObject_Ward__ctor_" data-uid="Hospital.Objects.WardObject.Ward.#ctor*"></a>
 
-  <h3 id="Hospital_Objects_WardObject_Ward__ctor_System_String_System_Int32_" data-uid="Hospital.Objects.WardObject.Ward.#ctor(System.String,System.Int32)">
-  Ward(string, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Hospital_Objects_WardObject_Ward__ctor" data-uid="Hospital.Objects.WardObject.Ward.#ctor">
+  Ward()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.WardObject.Ward.html">Ward</a> class with a specified name and capacity.</p>
+  <div class="markdown level1 summary"><p>Constructor needed for NHibernate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Ward()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_WardObject_Ward__ctor_" data-uid="Hospital.Objects.WardObject.Ward.#ctor*"></a>
+
+  <h3 id="Hospital_Objects_WardObject_Ward__ctor_System_String_System_Int32_" data-uid="Hospital.Objects.WardObject.Ward.#ctor(System.String,System.Int32)">
+  Ward(string, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.WardObject.Ward.html">Ward</a> class with provided properties.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -170,7 +197,7 @@
     <dd><p>The name of the ward.</p>
 </dd>
     <dt><code>capacity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The maximum number of patients the ward can hold.</p>
+    <dd><p>The capacity of the ward.</p>
 </dd>
   </dl>
 
@@ -185,28 +212,94 @@
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
+  <a id="Hospital_Objects_WardObject_Ward_AssignedEmployees_" data-uid="Hospital.Objects.WardObject.Ward.AssignedEmployees*"></a>
 
-  <h3 id="Hospital_Objects_WardObject_Ward_PatientsNumber" data-uid="Hospital.Objects.WardObject.Ward.PatientsNumber">
-  PatientsNumber
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Hospital_Objects_WardObject_Ward_AssignedEmployees" data-uid="Hospital.Objects.WardObject.Ward.AssignedEmployees">
+  AssignedEmployees
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Represents the number of patients currently in the ward.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the list of employees assigned to the ward.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal int PatientsNumber</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;Person&gt; AssignedEmployees { get; set; }</code></pre>
   </div>
 
 
 
 
-  <h4 class="section">Field Value</h4>
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Hospital.Objects.PersonObject.Person.html">Person</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_WardObject_Ward_AssignedPatients_" data-uid="Hospital.Objects.WardObject.Ward.AssignedPatients*"></a>
+
+  <h3 id="Hospital_Objects_WardObject_Ward_AssignedPatients" data-uid="Hospital.Objects.WardObject.Ward.AssignedPatients">
+  AssignedPatients
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the list of patients assigned to the ward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;Patient&gt; AssignedPatients { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Hospital.Objects.PatientObject.Patient.html">Patient</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_WardObject_Ward_Capacity_" data-uid="Hospital.Objects.WardObject.Ward.Capacity*"></a>
+
+  <h3 id="Hospital_Objects_WardObject_Ward_Capacity" data-uid="Hospital.Objects.WardObject.Ward.Capacity">
+  Capacity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the capacity of the ward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Capacity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
@@ -219,24 +312,19 @@
 
 
 
+  <a id="Hospital_Objects_WardObject_Ward_Id_" data-uid="Hospital.Objects.WardObject.Ward.Id*"></a>
 
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="Hospital_Objects_WardObject_Ward_Capacity_" data-uid="Hospital.Objects.WardObject.Ward.Capacity*"></a>
-
-  <h3 id="Hospital_Objects_WardObject_Ward_Capacity" data-uid="Hospital.Objects.WardObject.Ward.Capacity">
-  Capacity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Hospital_Objects_WardObject_Ward_Id" data-uid="Hospital.Objects.WardObject.Ward.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the maximum number of patients the ward can hold.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the unique identifier for the ward.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal int Capacity { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual int Id { get; protected set; }</code></pre>
   </div>
 
 
@@ -260,15 +348,15 @@
 
   <h3 id="Hospital_Objects_WardObject_Ward_IntroduceString" data-uid="Hospital.Objects.WardObject.Ward.IntroduceString">
   IntroduceString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the string that introduces the ward.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the introduce string for the ward.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string IntroduceString { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string IntroduceString { get; set; }</code></pre>
   </div>
 
 
@@ -292,7 +380,7 @@
 
   <h3 id="Hospital_Objects_WardObject_Ward_Name" data-uid="Hospital.Objects.WardObject.Ward.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the name of the ward.</p>
@@ -300,7 +388,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string Name { get; set; }</code></pre>
   </div>
 
 
@@ -320,19 +408,19 @@
 
 
 
-  <a id="Hospital_Objects_WardObject_Ward_Patients_" data-uid="Hospital.Objects.WardObject.Ward.Patients*"></a>
+  <a id="Hospital_Objects_WardObject_Ward_PatientsNumber_" data-uid="Hospital.Objects.WardObject.Ward.PatientsNumber*"></a>
 
-  <h3 id="Hospital_Objects_WardObject_Ward_Patients" data-uid="Hospital.Objects.WardObject.Ward.Patients">
-  Patients
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Hospital_Objects_WardObject_Ward_PatientsNumber" data-uid="Hospital.Objects.WardObject.Ward.PatientsNumber">
+  PatientsNumber
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the list of patients in the ward.</p>
+  <div class="markdown level1 summary"><p>Gets the number of assigned patients in the ward.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal List&lt;Patient&gt; Patients { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual int PatientsNumber { get; }</code></pre>
   </div>
 
 
@@ -341,7 +429,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Hospital.Objects.PatientObject.Patient.html">Patient</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -356,7 +444,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/WardObject/Ward.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
         

@@ -93,7 +93,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal abstract class Person : IHasIntroduceString</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Person : IHasIntroduceString</code></pre>
   </div>
 
 
@@ -161,12 +161,39 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <a id="Hospital_Objects_PersonObject_Person__ctor_" data-uid="Hospital.Objects.PersonObject.Person.#ctor*"></a>
 
-  <h3 id="Hospital_Objects_PersonObject_Person__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_" data-uid="Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime)">
-  Person(string, string, Gender, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Hospital_Objects_PersonObject_Person__ctor" data-uid="Hospital.Objects.PersonObject.Person.#ctor">
+  Person()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.PersonObject.Person.html">Person</a> class.</p>
+  <div class="markdown level1 summary"><p>Constructor needed for NHibernate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Person()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_PersonObject_Person__ctor_" data-uid="Hospital.Objects.PersonObject.Person.#ctor*"></a>
+
+  <h3 id="Hospital_Objects_PersonObject_Person__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_" data-uid="Hospital.Objects.PersonObject.Person.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime)">
+  Person(string, string, Gender, DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.PersonObject.Person.html">Person</a> class with specified properties.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -177,16 +204,16 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The name of the person.</p>
+    <dd><p>The first name of the person.</p>
 </dd>
     <dt><code>surname</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The surname of the person.</p>
+    <dd><p>The last name of the person.</p>
 </dd>
-    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.Gender.html">Gender</a></dt>
+    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.PersonObject.Gender.html">Gender</a></dt>
     <dd><p>The gender of the person.</p>
 </dd>
     <dt><code>birthday</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd><p>The birth date of the person.</p>
+    <dd><p>The date of birth of the person.</p>
 </dd>
   </dl>
 
@@ -208,7 +235,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_MAX_AGE" data-uid="Hospital.Objects.PersonObject.Person.MAX_AGE">
   MAX_AGE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Represents the maximum age a person can have.</p>
@@ -239,7 +266,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person__birthday" data-uid="Hospital.Objects.PersonObject.Person._birthday">
   _birthday
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -269,7 +296,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person__gender" data-uid="Hospital.Objects.PersonObject.Person._gender">
   _gender
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -284,7 +311,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Hospital.Objects.Gender.html">Gender</a></dt>
+    <dt><a class="xref" href="Hospital.Objects.PersonObject.Gender.html">Gender</a></dt>
     <dd></dd>
   </dl>
 
@@ -299,7 +326,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person__name" data-uid="Hospital.Objects.PersonObject.Person._name">
   _name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -329,7 +356,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person__surname" data-uid="Hospital.Objects.PersonObject.Person._surname">
   _surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -364,7 +391,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_Birthday" data-uid="Hospital.Objects.PersonObject.Person.Birthday">
   Birthday
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the birthday of the person. Throws an exception if the date is in the future or exceeds the maximum age.</p>
@@ -372,7 +399,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime Birthday { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual DateTime Birthday { get; set; }</code></pre>
   </div>
 
 
@@ -396,7 +423,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_Gender" data-uid="Hospital.Objects.PersonObject.Person.Gender">
   Gender
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the gender of the person. Throws an exception if the gender is not defined in the Gender enumeration.</p>
@@ -404,7 +431,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Gender Gender { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Gender Gender { get; set; }</code></pre>
   </div>
 
 
@@ -413,7 +440,39 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Hospital.Objects.Gender.html">Gender</a></dt>
+    <dt><a class="xref" href="Hospital.Objects.PersonObject.Gender.html">Gender</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_PersonObject_Person_Id_" data-uid="Hospital.Objects.PersonObject.Person.Id*"></a>
+
+  <h3 id="Hospital_Objects_PersonObject_Person_Id" data-uid="Hospital.Objects.PersonObject.Person.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the unique identifier for the person.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Id { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -428,7 +487,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_IntroduceString" data-uid="Hospital.Objects.PersonObject.Person.IntroduceString">
   IntroduceString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets a string to represent the introduction of the person.</p>
@@ -436,7 +495,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string IntroduceString { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string IntroduceString { get; set; }</code></pre>
   </div>
 
 
@@ -460,7 +519,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_Name" data-uid="Hospital.Objects.PersonObject.Person.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the name of the person. Throws an exception if the value is null or empty.</p>
@@ -468,7 +527,7 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string Name { get; set; }</code></pre>
   </div>
 
 
@@ -492,15 +551,15 @@ implements the <a class="xref" href="Hospital.Objects.IHasIntroduceString.html">
 
   <h3 id="Hospital_Objects_PersonObject_Person_Surname" data-uid="Hospital.Objects.PersonObject.Person.Surname">
   Surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/PersonObject/Person.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the surname of the person. Throws an exception if the value is null or empty.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the surname of a person. Throws an exception if the value is null or empty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Surname { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual string Surname { get; set; }</code></pre>
   </div>
 
 

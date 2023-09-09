@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Commands_ManageWards_DisplayWardCommand" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand" class="text-break">
     Class DisplayWardCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -162,7 +162,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_DisplayWardCommand__ctor" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.#ctor">
   DisplayWardCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Commands.ManageWards.DisplayWardCommand.html">DisplayWardCommand</a> class with a specific introduction message.</p>
@@ -192,7 +192,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_DisplayWardCommand__instance" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand._instance">
   _instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Holds a singleton instance of the <a class="xref" href="Hospital.Commands.ManageWards.DisplayWardCommand.html">DisplayWardCommand</a> class.</p>
@@ -228,7 +228,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_DisplayWardCommand_Instance" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the singleton instance of the <a class="xref" href="Hospital.Commands.ManageWards.DisplayWardCommand.html">DisplayWardCommand</a> class.</p>
@@ -260,14 +260,47 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </h2>
 
 
+  <a id="Hospital_Commands_ManageWards_DisplayWardCommand_DisplayWard_" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard*"></a>
+
+  <h3 id="Hospital_Commands_ManageWards_DisplayWardCommand_DisplayWard_System_Collections_Generic_List_Hospital_Objects_WardObject_Ward__" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.DisplayWard(System.Collections.Generic.List{Hospital.Objects.WardObject.Ward})">
+  DisplayWard(List&lt;Ward&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Displays a list of wards with their introduction messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void DisplayWard(List&lt;Ward&gt; wards)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wards</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Hospital.Objects.WardObject.Ward.html">Ward</a>&gt;</dt>
+    <dd><p>The list of wards to display.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Hospital_Commands_ManageWards_DisplayWardCommand_Execute_" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.Execute*"></a>
 
   <h3 id="Hospital_Commands_ManageWards_DisplayWardCommand_Execute" data-uid="Hospital.Commands.ManageWards.DisplayWardCommand.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Executes the command to display the list of wards stored in the system.</p>
+  <div class="markdown level1 summary"><p>Executes the command to display the list of wards stored in the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -291,7 +324,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/DisplayWardCommand.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
         

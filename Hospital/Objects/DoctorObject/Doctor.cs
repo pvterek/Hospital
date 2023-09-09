@@ -3,26 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Objects.Employee;
+using Hospital.Objects.PatientObject;
 using Hospital.Objects.PersonObject;
 using Hospital.Objects.WardObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.DoctorObject
 {
     /// <summary>
     /// Represents a doctor working in the hospital. Inherits from the <see cref="Person"/> class and implements the <see cref="IEmployee"/> interface.
     /// </summary>
-    internal class Doctor : Person, IEmployee
+    public class Doctor : Person, IEmployee
     {
         /// <summary>
         /// Gets the ward assigned to the doctor.
         /// </summary>
-        internal Ward AssignedWard { get; private set; }
+        public virtual Ward AssignedWard { get; set; }
 
         /// <summary>
         /// Gets the position of the doctor.
         /// </summary>
-        public string Position => UIMessages.DoctorObjectMessages.Position;
+        public static string Position => UIMessages.DoctorObjectMessages.Position;
+
+        //public virtual IList<Ward> AssignedWards { get; set; } = new List<Ward>();
+
+        /// <summary>
+        /// List of patients assigned to the doctor.
+        /// </summary>
+        public virtual IList<Patient> Patients { get; protected set; } = new List<Patient>();
+
+        /// <summary>
+        /// Constructor needed for NHibernate.
+        /// </summary>
+        protected Doctor() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Doctor"/> class with the provided parameters.
@@ -44,7 +58,7 @@ namespace Hospital.Objects.DoctorObject
         /// </summary>
         /// <param name="newWard">The ward to which the doctor is to be assigned.</param>
         /// <exception cref="ArgumentException">Thrown when the provided ward is null.</exception>
-        public void AssignToWard(Ward newWard)
+        public virtual void AssignToWard(Ward newWard)
         {
             if (newWard != null)
             {

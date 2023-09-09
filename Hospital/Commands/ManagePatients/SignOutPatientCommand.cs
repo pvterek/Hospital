@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Objects.PatientObject;
-using Hospital.Utilities;
 using Hospital.Objects.WardObject;
+using NHibernate;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
+using Hospital.Commands.Navigation;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -25,32 +28,56 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         internal static SignOutPatientCommand Instance => _instance ??= new SignOutPatientCommand();
 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SignOutPatientCommand"/> class with a specific introduction message.
         /// </summary>
         private SignOutPatientCommand() : base(UIMessages.SignOutPatientMessages.Introduce) { }
 
         /// <summary>
-        /// Executes the sign-out procedure for a patient. The patient will be removed from both the general storage and their assigned ward.
+        /// Executes the sign-out procedure for a patient. The patient will be removed from both the database and their assigned ward.
         /// </summary>
         public override void Execute()
         {
-            UserInterface.ShowMessage(UIMessages.SignOutPatientMessages.SignOutPrompt);
-            Patient patient = (Patient)UserInterface.ShowInteractiveMenu(Storage.patients);
+            using var session = Program.sessionFactory.OpenSession();
 
-            if (Storage.patients.Remove(patient))
+            try
             {
-                patient.AssignedWard.Patients.Remove(patient);
+                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
 
-                // Adjust the capacity of the ward based on the removed patient.
-                ManageCapacity.RemovePatientsNumber(patient.AssignedWard, patient);
+                if (!patients.Any())
+                {
+                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
+                }
+                else
+                {
+                    Patient patient = SignOutPatient(patients, session);
 
-                UserInterface.ShowMessage(string.Format(UIMessages.SignOutPatientMessages.SuccessSignOutPrompt, patient.Name, patient.Surname));
+                    UI.ShowMessage(string.Format(UIMessages.SignOutPatientMessages.SuccessSignOutPrompt, patient.Name, patient.Surname));
+                }
             }
-            else
+            catch (Exception ex)
             {
-                UserInterface.ShowMessage(UIMessages.SignOutPatientMessages.ErrorSignOutPrompt);
+                UIHelper.HandleError(UIMessages.SignOutPatientMessages.ErrorSignOutPrompt, ex);
             }
+
+            NavigationCommand.Instance.Execute();
+        }
+
+        /// <summary>
+        /// Signs out a patient from the system, removing them from the list of patients, database, and assigned ward.
+        /// </summary>
+        /// <param name="patients">The list of patients to choose from.</param>
+        /// <param name="session">The database session to use for the operation.</param>
+        /// <returns>The patient who has been signed out.</returns>
+        private Patient SignOutPatient(List<Patient> patients, ISession session)
+        {
+            Patient patient = UI.ShowInteractiveMenu(patients);
+
+            PatientDatabaseOperations.DeletePatient(patient, session);
+            ManageCapacity.UpdateWardCapacity(patient.AssignedWard, session);
+
+            return patient;
         }
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Commands.Navigation;
 using Hospital.Objects.UserObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -35,11 +37,11 @@ namespace Hospital.Commands.LoginWindow
         }
 
         /// <summary>
-        /// Executes the login window process, displaying the interactive menu with options for the user to select.
+        /// Executes the login window process.
         /// </summary>
         public override void Execute()
         {
-            UserInterface.ShowInteractiveMenu(Commands).Execute();
+            UI.ShowInteractiveMenu(Commands).Execute();
         }
     }
 }

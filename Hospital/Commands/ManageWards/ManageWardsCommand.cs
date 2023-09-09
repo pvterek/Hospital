@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 using Microsoft.VisualBasic.FileIO;
 
 namespace Hospital.Commands.ManageWards
@@ -33,7 +35,7 @@ namespace Hospital.Commands.ManageWards
             Commands.Add(AddWardCommand.Instance);
             Commands.Add(DeleteWardCommand.Instance);
             Commands.Add(DisplayWardCommand.Instance);
-            Commands.Add(BackCommand.Instance);
+            Commands.Add(NavigationCommand.Instance);
         }
 
         /// <summary>
@@ -41,8 +43,8 @@ namespace Hospital.Commands.ManageWards
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
-            BackCommand.Queue(command);
+            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            NavigationCommand.Queue(command);
         }
     }
 }

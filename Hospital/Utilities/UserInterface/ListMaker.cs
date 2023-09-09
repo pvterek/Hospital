@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Hospital.Objects;
 
-namespace Hospital.Utilities
+namespace Hospital.Utilities.UI
 {
     /// <summary>
     /// Provides functionalities related to displaying lists of entities that implement the <see cref="IHasIntroduceString"/> interface.
@@ -15,17 +15,17 @@ namespace Hospital.Utilities
         /// <summary>
         /// Displays a list of entities, presenting their 'IntroduceString' properties.
         /// </summary>
-        /// <param name="persons">A list of entities that implement the <see cref="IHasIntroduceString"/> interface.</param>
-        public static void DisplayList(List<IHasIntroduceString> persons)
+        /// <param name="objects">A list of entities that implement the <see cref="IHasIntroduceString"/> interface.</param>
+        public static void DisplayList<TEntity>(List<TEntity> objects) where TEntity : class
         {
             StringBuilder introduceStrings = new();
 
-            foreach (IHasIntroduceString person in persons)
+            foreach (IHasIntroduceString obj in objects.Cast<IHasIntroduceString>())
             {
-                introduceStrings.AppendLine(person.IntroduceString);
+                introduceStrings.AppendLine(obj.IntroduceString);
             }
 
-            UserInterface.ShowMessage(introduceStrings.ToString());
+            UI.ShowMessage(introduceStrings.ToString());
         }
     }
 }

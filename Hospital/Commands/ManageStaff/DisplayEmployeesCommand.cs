@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Objects.Employee;
+using Hospital.Objects.PersonObject;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManageStaff
 {
@@ -34,14 +38,39 @@ namespace Hospital.Commands.ManageStaff
         /// </summary>
         public override void Execute()
         {
-            if (Storage.employees.Count == 0)
+            using var session = Program.sessionFactory.OpenSession();
+
+            try
             {
-                UserInterface.ShowMessage(UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt);
+                List<IEmployee> employees = EmployeeDatabaseOperations.GetAllEmployees(session);
+            
+                if (!employees.Any())
+                {
+                    UI.ShowMessage(UIMessages.DisplayEmployeesMessages.NoEmployeesPrompt);
+                }
+                else
+                {
+                    DisplayEmployees(employees);
+                }    
             }
-            else
+            catch (Exception ex)
             {
-                ListMaker.DisplayList(Storage.employees);
+                UIHelper.HandleError(UIMessages.DisplayEmployeesMessages.ErrorDisplayEmployeesPrompt, ex);
             }
+
+            NavigationCommand.Instance.Execute();
+        }
+
+        /// <summary>
+        /// Displays a list of employees with their introduction messages.
+        /// </summary>
+        /// <param name="employees">The list of employees to display.</param>
+        private void DisplayEmployees(List<IEmployee> employees)
+        {
+            List<Person> personList = employees.OfType<Person>().ToList();
+            var introduceMessages = personList.Select(person => person.IntroduceString).ToList();
+
+            ListMaker.DisplayList(introduceMessages);
         }
     }
 }

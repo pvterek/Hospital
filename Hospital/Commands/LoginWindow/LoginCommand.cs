@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Objects;
 using Hospital.Objects.UserObject;
 using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
+using NHibernate.Mapping;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -34,29 +38,41 @@ namespace Hospital.Commands.LoginWindow
         /// </summary>
         public override void Execute()
         {
-            Console.Clear();
+            string login = FactoryMethods.AskForValue(UIMessages.FactoryMessages.EnterLoginPrompt, UIMessages.FactoryMessages.EmptyFieldPrompt);
+            CheckIfUserExist(AuthenticationService.GetUserByLogin(login));
 
-            Console.Write(UIMessages.FactoryMessages.EnterLoginPrompt);
-            string login = Console.ReadLine();
+            string password = FactoryMethods.AskForPassword();
 
-            User? user = AuthenticationService.GetUserByLogin(login);
+            AuthenticateUser(login, password);
+        }
 
+        /// <summary>
+        /// Checks if the user exists based on the provided user object.
+        /// </summary>
+        /// <param name="user">The user object to check.</param>
+        private void CheckIfUserExist(User? user)
+        {
             if (user == null)
             {
-                UserInterface.ShowMessage(UIMessages.LoginCommandMessages.CantFindLoginPrompt);
+                UI.ShowMessage(UIMessages.LoginCommandMessages.CantFindLoginPrompt);
                 return;
             }
+        }
 
-            Console.Write(UIMessages.FactoryMessages.EnterPasswordPrompt);
-            string password = Console.ReadLine();
-
+        /// <summary>
+        /// Authenticates the user using the given login and password.
+        /// </summary>
+        /// <param name="login">The user's login for authentication.</param>
+        /// <param name="password">The user's password for authentication.</param>
+        private void AuthenticateUser(string login, string password)
+        {
             if (AuthenticationService.Authenticate(login, password))
             {
                 Program.IsLoggedIn = true;
             }
             else
             {
-                UserInterface.ShowMessage(UIMessages.LoginCommandMessages.WrongPasswordPrompt);
+                UI.ShowMessage(UIMessages.LoginCommandMessages.WrongPasswordPrompt);
             }
         }
     }

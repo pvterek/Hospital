@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Objects.Employee;
 using Hospital.Objects.PersonObject;
 using Hospital.Objects.WardObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.NurseObject
 {
     /// <summary>
     /// Represents a nurse working in the hospital. Inherits from the <see cref="Person"/> class and implements the <see cref="IEmployee"/> interface.
     /// </summary>
-    internal class Nurse : Person, IEmployee
+    public class Nurse : Person, IEmployee
     {
         /// <summary>
         /// Gets the ward assigned to the nurse.
         /// </summary>
-        internal Ward AssignedWard { get; private set; }
+        public virtual Ward AssignedWard { get; set; }
 
         /// <summary>
         /// Gets the position of the nurse.
         /// </summary>
-        public string Position => UIMessages.NurseObjectMessages.Position;
+        public static string Position => UIMessages.NurseObjectMessages.Position;
+
+        /// <summary>
+        /// Constructor needed for NHibernate.
+        /// </summary>
+        protected Nurse() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Nurse"/> class with the specified details.
@@ -43,7 +49,7 @@ namespace Hospital.Objects.NurseObject
         /// </summary>
         /// <param name="newWard">The ward to which the nurse is to be assigned.</param>
         /// <exception cref="ArgumentException">Thrown when the provided ward is null.</exception>
-        public void AssignToWard(Ward newWard)
+        public virtual void AssignToWard(Ward newWard)
         {
             if (newWard != null)
             {

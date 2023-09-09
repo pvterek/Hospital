@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.LoginWindow;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
-namespace Hospital.Commands
+namespace Hospital.Commands.Navigation
 {
     /// <summary>
     /// Represents the command used to navigate back to the previous command in the application.
     /// Inheriting from the <see cref="CompositeCommand"/> class.
     /// </summary>
-    internal class BackCommand : CompositeCommand
+    internal class NavigationCommand : CompositeCommand
     {
         /// <summary>
-        /// Holds a singleton instance of the <see cref="BackCommand"/> class.
+        /// Holds a singleton instance of the <see cref="NavigationCommand"/> class.
         /// </summary>
-        private static BackCommand? _instance;
+        private static NavigationCommand? _instance;
 
         /// <summary>
-        /// Gets the singleton instance of the <see cref="BackCommand"/> class.
+        /// Gets the singleton instance of the <see cref="NavigationCommand"/> class.
         /// </summary>
-        internal static BackCommand Instance => _instance ??= new BackCommand();
+        internal static NavigationCommand Instance => _instance ??= new NavigationCommand();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BackCommand"/> class with the specified introduction message.
+        /// Initializes a new instance of the <see cref="NavigationCommand"/> class with the specified introduction message.
         /// </summary>
-        private BackCommand() : base(UIMessages.BackCommandMessages.Introduce) { }
+        private NavigationCommand() : base(UIMessages.BackCommandMessages.Introduce) { }
 
         /// <summary>
         /// Executes the "Back" command, which navigates back to the previous command in the application's command history.

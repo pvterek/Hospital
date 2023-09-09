@@ -8,28 +8,25 @@ using System.Xml.Linq;
 using Hospital.Objects.DoctorObject;
 using Hospital.Objects.PersonObject;
 using Hospital.Objects.WardObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.PatientObject
 {
     /// <summary>
     /// Represents a patient in the hospital, inheriting the properties of a person from the <see cref="Person"/> class.
     /// </summary>
-    internal class Patient : Person
+    public class Patient : Person
     {
-        //private readonly Guid _id = Guid.NewGuid();
-        //public Guid Id => _id;
-
         private string _pesel;
 
         /// <summary>
         /// Gets the Patient's PESEL. 
         /// Sets the PESEL number ensuring it adheres to its defined format.
         /// </summary>
-        public string Pesel
+        public virtual string Pesel
         {
             get => _pesel;
-            private set
+            set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length == 11 && value.All(char.IsDigit))
                 {
@@ -47,31 +44,40 @@ namespace Hospital.Objects.PatientObject
         /// <summary>
         /// Gets or sets the health status of the patient, ensuring it's a valid value.
         /// </summary>
-        public Health? HealthStatus
+        public virtual Health? HealthStatus
         {
             get => _healthStatus;
             set
             {
-                if (value == null || !Enum.IsDefined(typeof(Health), value))
-                {
-                    throw new ArgumentException(UIMessages.FactoryMessages.InvalidHealthPrompt);
-                }
-                else
-                {
-                    _healthStatus = value;
-                }
+                _healthStatus = value;
             }
-        }
+            //{
+            //    //if (value == null || !Enum.IsDefined(typeof(Health), value))
+            //    if (!Enum.IsDefined(typeof(Health), value))
+            //    {
+            //        throw new ArgumentException(UIMessages.FactoryMessages.InvalidHealthPrompt);
+            //    }
+            //    else
+            //    {
+            //        _healthStatus = value;
+            //    }
+            //}
+            }
 
         /// <summary>
         /// Gets or sets the ward assigned to the patient.
         /// </summary>
-        public Ward AssignedWard { get; set; }
+        public virtual Ward AssignedWard { get; set; }
 
         /// <summary>
         /// Gets or sets the doctor assigned to the patient.
         /// </summary>
-        public Doctor AssignedDoctor { get; set; }
+        public virtual Doctor? AssignedDoctor { get; set; }
+
+        /// <summary>
+        /// Constructor needed for NHibernate.
+        /// </summary>
+        public Patient() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Patient"/> class with provided properties.
@@ -82,7 +88,8 @@ namespace Hospital.Objects.PatientObject
         /// <param name="birthday">The birthday of the patient.</param>
         /// <param name="pesel">The PESEL of the patient.</param>
         /// <param name="assignedWard">The ward assigned to the patient.</param>
-        public Patient(string name, string surname, Gender gender, DateTime birthday, string pesel, Ward assignedWard) : base(name, surname, gender, birthday)
+        public Patient(string name, string surname, Gender gender, DateTime birthday, string pesel, Ward assignedWard)
+            : base(name, surname, gender, birthday)
         {
             Pesel = pesel;
             Birthday = birthday;

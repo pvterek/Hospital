@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManageStaff
 {
@@ -32,7 +34,7 @@ namespace Hospital.Commands.ManageStaff
             Commands.Add(HireEmployeeCommand.Instance);
             Commands.Add(FireEmployeeCommand.Instance);
             Commands.Add(DisplayEmployeesCommand.Instance);
-            Commands.Add(BackCommand.Instance);
+            Commands.Add(NavigationCommand.Instance);
         }
 
         /// <summary>
@@ -40,8 +42,8 @@ namespace Hospital.Commands.ManageStaff
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
-            BackCommand.Queue(command);
+            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            NavigationCommand.Queue(command);
         }
     }
 }

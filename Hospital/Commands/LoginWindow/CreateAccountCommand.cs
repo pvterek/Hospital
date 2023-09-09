@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Database;
 using Hospital.Objects.UserObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
+using NHibernate;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -31,15 +34,35 @@ namespace Hospital.Commands.LoginWindow
         public CreateAccountCommand(string introduceString) : base(introduceString) { }
 
         /// <summary>
-        /// Executes the account creation process, prompting the user for details and adding the newly created user to storage.
+        /// Executes the account creation process, prompting the user for details and adding the newly created user to database.
         /// </summary>
         public override void Execute()
         {
-            Console.Clear();
+            using var session = Program.sessionFactory.OpenSession();
 
+            try
+            {
+                User user = CreateAccount(session);
+            
+                UI.ShowMessage(string.Format(UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt, user.Login));
+            }
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt, ex);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new user account, adds it to the database, and returns the created user.
+        /// </summary>
+        /// <param name="session">The database session to use for the operation.</param>
+        /// <returns>The newly created user account.</returns>
+        private User CreateAccount(ISession session)
+        {
             User user = UserFactory.CreateUser();
-            Storage.users.Add(user);
-            UserInterface.ShowMessage(string.Format(UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt, user.Login));
+            DatabaseOperations<User>.Add(user, session);
+
+            return user;
         }
     }
 }

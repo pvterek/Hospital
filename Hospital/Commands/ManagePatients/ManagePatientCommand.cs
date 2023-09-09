@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -31,7 +33,7 @@ namespace Hospital.Commands.ManagePatients
             Commands.Add(AssignToDoctorCommand.Instance);
             Commands.Add(ChangeHealthStatusCommand.Instance);
             Commands.Add(SignOutPatientCommand.Instance);
-            Commands.Add(BackCommand.Instance);
+            Commands.Add(NavigationCommand.Instance);
         }
 
         /// <summary>
@@ -39,8 +41,8 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
-            BackCommand.Queue(command);
+            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            NavigationCommand.Queue(command);
         }
     }
 }

@@ -7,12 +7,12 @@ using Hospital.Objects.WardObject;
 using System.Collections.Generic;
 
 
-namespace Hospital.Utilities
+namespace Hospital.Utilities.UI
 {
     /// <summary>
     /// Represents the user interface functionalities for the Hospital system.
     /// </summary>
-    internal class UserInterface
+    internal class UI
     {
         /// <summary>
         /// Displays an interactive menu with items implementing IHasIntroduceString interface.
@@ -111,6 +111,22 @@ namespace Hospital.Utilities
             } while (pressedKey != ConsoleKey.Enter);
         }
 
+
+        public static void ShowMessage(string message, string exception)
+        {
+            ConsoleKey pressedKey;
+
+            Console.Clear();
+            Console.WriteLine(message);
+            //loguj exception do pliku txt
+            DrawSelectedMenu("ok!");
+            do
+            {
+                pressedKey = Console.ReadKey().Key;
+
+            } while (pressedKey != ConsoleKey.Enter);
+        }
+
         /// <summary>
         /// Refreshes the interactive menu display with items implementing IHasIntroduceString.
         /// </summary>
@@ -124,8 +140,10 @@ namespace Hospital.Utilities
             {
                 bool isSelected = i == selectedIndex;
                 if (isSelected)
+
                     DrawSelectedMenu(items[i].IntroduceString);
                 else
+
                     Console.WriteLine(items[i].IntroduceString);
             }
         }

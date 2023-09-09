@@ -1,4 +1,5 @@
-﻿using Hospital.Utilities;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -24,12 +25,12 @@ namespace Hospital.Commands.LoginWindow
         public LogoutCommand() : base(UIMessages.LogoutCommandMessages.Introdcue) { }
 
         /// <summary>
-        /// Executes the logout command. Sets the user status to logged out and triggers the back command.
+        /// Executes the logout command. Sets the user status to logged out.
         /// </summary>
         public override void Execute()
         {
             Program.IsLoggedIn = false;
-            BackCommand.Instance.Execute();
+            NavigationCommand.Instance.Execute();
         }
     }
 }

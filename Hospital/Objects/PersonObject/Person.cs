@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.PersonObject
 {
@@ -11,12 +11,17 @@ namespace Hospital.Objects.PersonObject
     /// Represents a base entity for all person types in the hospital system.
     /// implements the <see cref="IHasIntroduceString"/> interface.
     /// </summary>
-    internal abstract class Person : IHasIntroduceString
+    public abstract class Person : IHasIntroduceString
     {
+        /// <summary>
+        /// Gets or sets the unique identifier for the person.
+        /// </summary>
+        public virtual int Id { get; protected set; }
+
         /// <summary>
         /// Gets or sets a string to represent the introduction of the person.
         /// </summary>
-        public string IntroduceString { get; set; }
+        public virtual string IntroduceString { get; set; }
 
         /// <summary>
         /// Represents the maximum age a person can have.
@@ -28,7 +33,7 @@ namespace Hospital.Objects.PersonObject
         /// <summary>
         /// Gets or sets the name of the person. Throws an exception if the value is null or empty.
         /// </summary>
-        public string Name
+        public virtual string Name
         {
             get => _name;
             set
@@ -44,9 +49,9 @@ namespace Hospital.Objects.PersonObject
         private string _surname;
 
         /// <summary>
-        /// Gets or sets the surname of the person. Throws an exception if the value is null or empty.
+        /// Gets or sets the surname of a person. Throws an exception if the value is null or empty.
         /// </summary>
-        public string Surname
+        public virtual string Surname
         {
             get => _surname;
             set
@@ -64,7 +69,7 @@ namespace Hospital.Objects.PersonObject
         /// <summary>
         /// Gets or sets the gender of the person. Throws an exception if the gender is not defined in the Gender enumeration.
         /// </summary>
-        public Gender Gender
+        public virtual Gender Gender
         {
             get => _gender;
             set
@@ -82,7 +87,7 @@ namespace Hospital.Objects.PersonObject
         /// <summary>
         /// Gets or sets the birthday of the person. Throws an exception if the date is in the future or exceeds the maximum age.
         /// </summary>
-        public DateTime Birthday
+        public virtual DateTime Birthday
         {
             get => _birthday;
             set
@@ -100,12 +105,17 @@ namespace Hospital.Objects.PersonObject
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Person"/> class.
+        /// Constructor needed for NHibernate.
         /// </summary>
-        /// <param name="name">The name of the person.</param>
-        /// <param name="surname">The surname of the person.</param>
+        protected Person() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Person"/> class with specified properties.
+        /// </summary>
+        /// <param name="name">The first name of the person.</param>
+        /// <param name="surname">The last name of the person.</param>
         /// <param name="gender">The gender of the person.</param>
-        /// <param name="birthday">The birth date of the person.</param>
+        /// <param name="birthday">The date of birth of the person.</param>
         public Person(string name, string surname, Gender gender, DateTime birthday)
         {
             Name = name;

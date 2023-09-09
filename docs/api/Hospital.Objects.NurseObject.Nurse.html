@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Objects_NurseObject_Nurse" data-uid="Hospital.Objects.NurseObject.Nurse" class="text-break">
     Class Nurse
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -87,12 +87,12 @@
   <dl><dt>Assembly</dt><dd>Hospital.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a nurse working in the hospital. Inherits from the <a class="xref" href="Hospital.Objects.PersonObject.Person.html">Person</a> class and implements the <a class="xref" href="Hospital.Objects.IEmployee.html">IEmployee</a> interface.</p>
+  <div class="markdown summary"><p>Represents a nurse working in the hospital. Inherits from the <a class="xref" href="Hospital.Objects.PersonObject.Person.html">Person</a> class and implements the <a class="xref" href="Hospital.Objects.Employee.IEmployee.html">IEmployee</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal class Nurse : Person, IHasIntroduceString, IEmployee</code></pre>
+    <pre><code class="lang-csharp hljs">public class Nurse : Person, IHasIntroduceString, IEmployee</code></pre>
   </div>
 
 
@@ -111,7 +111,7 @@
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="Hospital.Objects.IHasIntroduceString.html">IHasIntroduceString</a></div>
-      <div><a class="xref" href="Hospital.Objects.IEmployee.html">IEmployee</a></div>
+      <div><a class="xref" href="Hospital.Objects.Employee.IEmployee.html">IEmployee</a></div>
     </dd>
   </dl>
 
@@ -119,6 +119,9 @@
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_Id">Person.Id</a>
+    </div>
     <div>
       <a class="xref" href="Hospital.Objects.PersonObject.Person.html#Hospital_Objects_PersonObject_Person_IntroduceString">Person.IntroduceString</a>
     </div>
@@ -183,9 +186,36 @@
 
   <a id="Hospital_Objects_NurseObject_Nurse__ctor_" data-uid="Hospital.Objects.NurseObject.Nurse.#ctor*"></a>
 
-  <h3 id="Hospital_Objects_NurseObject_Nurse__ctor_System_String_System_String_Hospital_Objects_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_" data-uid="Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)">
+  <h3 id="Hospital_Objects_NurseObject_Nurse__ctor" data-uid="Hospital.Objects.NurseObject.Nurse.#ctor">
+  Nurse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructor needed for NHibernate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Nurse()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Hospital_Objects_NurseObject_Nurse__ctor_" data-uid="Hospital.Objects.NurseObject.Nurse.#ctor*"></a>
+
+  <h3 id="Hospital_Objects_NurseObject_Nurse__ctor_System_String_System_String_Hospital_Objects_PersonObject_Gender_System_DateTime_Hospital_Objects_WardObject_Ward_" data-uid="Hospital.Objects.NurseObject.Nurse.#ctor(System.String,System.String,Hospital.Objects.PersonObject.Gender,System.DateTime,Hospital.Objects.WardObject.Ward)">
   Nurse(string, string, Gender, DateTime, Ward)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Objects.NurseObject.Nurse.html">Nurse</a> class with the specified details.</p>
@@ -204,7 +234,7 @@
     <dt><code>surname</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The surname of the nurse.</p>
 </dd>
-    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.Gender.html">Gender</a></dt>
+    <dt><code>gender</code> <a class="xref" href="Hospital.Objects.PersonObject.Gender.html">Gender</a></dt>
     <dd><p>The gender of the nurse.</p>
 </dd>
     <dt><code>birthday</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
@@ -234,7 +264,7 @@
 
   <h3 id="Hospital_Objects_NurseObject_Nurse_AssignedWard" data-uid="Hospital.Objects.NurseObject.Nurse.AssignedWard">
   AssignedWard
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the ward assigned to the nurse.</p>
@@ -242,7 +272,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal Ward AssignedWard { get; private set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Ward AssignedWard { get; set; }</code></pre>
   </div>
 
 
@@ -266,7 +296,7 @@
 
   <h3 id="Hospital_Objects_NurseObject_Nurse_Position" data-uid="Hospital.Objects.NurseObject.Nurse.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the position of the nurse.</p>
@@ -274,7 +304,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Position { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Position { get; }</code></pre>
   </div>
 
 
@@ -302,7 +332,7 @@
 
   <h3 id="Hospital_Objects_NurseObject_Nurse_AssignToWard_Hospital_Objects_WardObject_Ward_" data-uid="Hospital.Objects.NurseObject.Nurse.AssignToWard(Hospital.Objects.WardObject.Ward)">
   AssignToWard(Ward)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Assigns the nurse to a new ward.</p>
@@ -310,7 +340,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AssignToWard(Ward newWard)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void AssignToWard(Ward newWard)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -341,7 +371,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Objects/NurseObject/Nurse.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
         

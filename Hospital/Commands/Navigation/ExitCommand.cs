@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManagePatients;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
-namespace Hospital.Commands
+namespace Hospital.Commands.Navigation
 {
     /// <summary>
     /// Represents the command to exit the application.

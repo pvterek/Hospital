@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Hospital.Commands.Navigation;
 using Hospital.Objects.PatientObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -30,7 +32,7 @@ namespace Hospital.Commands.ManagePatients
             Commands.Add(AdmitPatientCommand.Instance);
             Commands.Add(DisplayPatientsCommand.Instance);
             Commands.Add(ManagePatientCommand.Instance);
-            Commands.Add(BackCommand.Instance);
+            Commands.Add(NavigationCommand.Instance);
         }
 
         /// <summary>
@@ -38,8 +40,8 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
-            BackCommand.Queue(command);
+            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            NavigationCommand.Queue(command);
         }
     }
 }

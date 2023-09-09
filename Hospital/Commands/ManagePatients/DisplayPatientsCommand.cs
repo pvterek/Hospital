@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Commands.Navigation;
 using Hospital.Objects.PatientObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -33,14 +35,27 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            if (Storage.patients.Count == 0)
+            using var session = Program.sessionFactory.OpenSession();
+
+            try
             {
-                UserInterface.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
+                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
+
+                if (!patients.Any())
+                {
+                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
+                }
+                else
+                {
+                    ListMaker.DisplayList(patients);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ListMaker.DisplayList(Storage.patients);
+                UIHelper.HandleError(UIMessages.SignOutPatientMessages.ErrorSignOutPrompt, ex);
             }
+
+            NavigationCommand.Instance.Execute();
         }
     }
 }

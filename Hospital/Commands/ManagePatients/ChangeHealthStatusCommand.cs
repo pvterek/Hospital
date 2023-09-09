@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Commands.Navigation;
+using Hospital.Database;
 using Hospital.Objects.PatientObject;
-using Hospital.Utilities;
+using Hospital.Objects.WardObject;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
+using NHibernate;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -31,13 +36,47 @@ namespace Hospital.Commands.ManagePatients
 
         /// <summary>
         /// Executes the command to change the health status of a selected patient. 
-        /// It prompts the user to select a patient and then choose the health status from the provided options.
+        /// If there are no patients, displays a no patients prompt.
+        /// Otherwise, it prompts the user to select a patient and then choose the health status from the provided options.
         /// </summary>
         public override void Execute()
         {
-            UserInterface.ShowMessage(UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
-            Patient patient = (Patient)UserInterface.ShowInteractiveMenu(Storage.patients);
-            patient.HealthStatus = UserInterface.ShowInteractiveMenu();
+            using var session = Program.sessionFactory.OpenSession();
+
+            try
+            {
+                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
+
+                if (!patients.Any()) 
+                {
+                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
+                }
+                else
+                {
+                    UI.ShowMessage(UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
+
+                    ChangeHealthStatus(patients, session);
+                }
+            }
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt, ex);
+            }
+
+            NavigationCommand.Instance.Execute();
+        }
+
+        /// <summary>
+        /// Changes the health status of a patient selected from a list and updates it in the database.
+        /// </summary>
+        /// <param name="patients">The list of patients to choose from.</param>
+        /// <param name="session">The database session to use for the operation.</param>
+        private void ChangeHealthStatus(List<Patient> patients, ISession session)
+        {
+            Patient patient = UI.ShowInteractiveMenu(patients);
+            patient.HealthStatus = UI.ShowInteractiveMenu();
+
+            DatabaseOperations<Patient>.Update(patient, session);
         }
     }
 }

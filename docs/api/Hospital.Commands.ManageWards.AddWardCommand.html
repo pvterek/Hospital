@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Commands_ManageWards_AddWardCommand" data-uid="Hospital.Commands.ManageWards.AddWardCommand" class="text-break">
     Class AddWardCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -162,7 +162,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_AddWardCommand__ctor" data-uid="Hospital.Commands.ManageWards.AddWardCommand.#ctor">
   AddWardCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Commands.ManageWards.AddWardCommand.html">AddWardCommand</a> class with a specific introduction message.</p>
@@ -192,7 +192,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_AddWardCommand__instance" data-uid="Hospital.Commands.ManageWards.AddWardCommand._instance">
   _instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Holds a singleton instance of the <a class="xref" href="Hospital.Commands.ManageWards.AddWardCommand.html">AddWardCommand</a> class.</p>
@@ -228,7 +228,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManageWards_AddWardCommand_Instance" data-uid="Hospital.Commands.ManageWards.AddWardCommand.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the singleton instance of the <a class="xref" href="Hospital.Commands.ManageWards.AddWardCommand.html">AddWardCommand</a> class.</p>
@@ -260,14 +260,53 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </h2>
 
 
+  <a id="Hospital_Commands_ManageWards_AddWardCommand_AddWard_" data-uid="Hospital.Commands.ManageWards.AddWardCommand.AddWard*"></a>
+
+  <h3 id="Hospital_Commands_ManageWards_AddWardCommand_AddWard_NHibernate_ISession_" data-uid="Hospital.Commands.ManageWards.AddWardCommand.AddWard(NHibernate.ISession)">
+  AddWard(ISession)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a new ward to the database and returns the created ward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Ward AddWard(ISession session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>session</code> <span class="xref">ISession</span></dt>
+    <dd><p>The database session to use for the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Hospital.Objects.WardObject.Ward.html">Ward</a></dt>
+    <dd><p>The newly created ward.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Hospital_Commands_ManageWards_AddWardCommand_Execute_" data-uid="Hospital.Commands.ManageWards.AddWardCommand.Execute*"></a>
 
   <h3 id="Hospital_Commands_ManageWards_AddWardCommand_Execute" data-uid="Hospital.Commands.ManageWards.AddWardCommand.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Executes the procedure to add a new ward. The ward details are created using a factory method and then added to the storage.</p>
+  <div class="markdown level1 summary"><p>Executes the procedure to add a new ward. The ward details are created using a factory method and then added to the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -291,7 +330,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManageWards/AddWardCommand.cs/#L21" class="edit-link">Edit this page</a>
         </div>
 
         

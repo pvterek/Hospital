@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand" class="text-break">
     Class ChangeHealthStatusCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -162,7 +162,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand__ctor" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.#ctor">
   ChangeHealthStatusCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html">ChangeHealthStatusCommand</a> class with the specified introduction message.</p>
@@ -192,7 +192,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand__instance" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand._instance">
   _instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Holds a singleton instance of the <a class="xref" href="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html">ChangeHealthStatusCommand</a> class.</p>
@@ -228,7 +228,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_Instance" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the singleton instance of the <a class="xref" href="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.html">ChangeHealthStatusCommand</a> class.</p>
@@ -260,15 +260,52 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </h2>
 
 
+  <a id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_ChangeHealthStatus_" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus*"></a>
+
+  <h3 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_ChangeHealthStatus_System_Collections_Generic_List_Hospital_Objects_PatientObject_Patient__NHibernate_ISession_" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.ChangeHealthStatus(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},NHibernate.ISession)">
+  ChangeHealthStatus(List&lt;Patient&gt;, ISession)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Changes the health status of a patient selected from a list and updates it in the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void ChangeHealthStatus(List&lt;Patient&gt; patients, ISession session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>patients</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Hospital.Objects.PatientObject.Patient.html">Patient</a>&gt;</dt>
+    <dd><p>The list of patients to choose from.</p>
+</dd>
+    <dt><code>session</code> <span class="xref">ISession</span></dt>
+    <dd><p>The database session to use for the operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_Execute_" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.Execute*"></a>
 
   <h3 id="Hospital_Commands_ManagePatients_ChangeHealthStatusCommand_Execute" data-uid="Hospital.Commands.ManagePatients.ChangeHealthStatusCommand.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes the command to change the health status of a selected patient.
-It prompts the user to select a patient and then choose the health status from the provided options.</p>
+If there are no patients, displays a no patients prompt.
+Otherwise, it prompts the user to select a patient and then choose the health status from the provided options.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -292,7 +329,7 @@ It prompts the user to select a patient and then choose the health status from t
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/ChangeHealthStatusCommand.cs/#L20" class="edit-link">Edit this page</a>
         </div>
 
         

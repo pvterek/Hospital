@@ -4,34 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Objects.PatientObject;
+using Hospital.Database;
+using NHibernate;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.WardObject
 {
     /// <summary>
-    /// Provides utility methods to manage the capacity of a ward, specifically in relation to patient numbers.
+    /// Provides utility method to manage the capacity of a ward, specifically in relation to patient numbers.
     /// </summary>
     internal class ManageCapacity
     {
         /// <summary>
-        /// Adds a patient to the specified ward and updates the patient count for the ward.
+        /// Updates the capacity and introduce string of a hospital ward in the database.
         /// </summary>
-        /// <param name="ward">The ward to which the patient is being added.</param>
-        /// <param name="patient">The patient being added to the ward.</param>
-        public static void AddPatientsNumber(Ward ward, Patient patient)
+        /// <param name="ward">The ward to update.</param>
+        /// <param name="session">The database session to use for the operation.</param>
+        public static void UpdateWardCapacity(Ward ward, ISession session)
         {
-            patient.AssignedWard.Patients.Add(patient);
-            ward.PatientsNumber++;
-        }
-
-        /// <summary>
-        /// Removes a patient from the specified ward and updates the patient count for the ward.
-        /// </summary>
-        /// <param name="ward">The ward from which the patient is being removed.</param>
-        /// <param name="patient">The patient being removed from the ward.</param>
-        public static void RemovePatientsNumber(Ward ward, Patient patient)
-        {
-            patient.AssignedWard.Patients.Remove(patient);
-            ward.PatientsNumber--;
+            ward.IntroduceString = string.Format(UIMessages.WardObjectMessages.Introduce, ward.Name, ward.PatientsNumber, ward.Capacity);
+            DatabaseOperations<Ward>.Update(ward, session);
         }
     }
 }

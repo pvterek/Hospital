@@ -4,7 +4,9 @@ using Hospital.Commands.LoginWindow;
 using Hospital.Commands.ManagePatients;
 using Hospital.Commands.ManageStaff;
 using Hospital.Commands.ManageWards;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands
 {
@@ -41,8 +43,8 @@ namespace Hospital.Commands
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UserInterface.ShowInteractiveMenu(Commands);
-            BackCommand.Queue(command);
+            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            NavigationCommand.Queue(command);
         }
     }
 }

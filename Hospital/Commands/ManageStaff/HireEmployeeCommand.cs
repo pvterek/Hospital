@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentNHibernate.Data;
 using Hospital.Commands.ManagePatients;
-using Hospital.Objects;
+using Hospital.Commands.Navigation;
 using Hospital.Objects.DoctorObject;
+using Hospital.Objects.Employee;
 using Hospital.Objects.NurseObject;
-using Hospital.Utilities;
+using Hospital.Objects.PersonObject;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManageStaff
 {
@@ -34,19 +38,40 @@ namespace Hospital.Commands.ManageStaff
 
         /// <summary>
         /// Executes the procedure to hire an employee. The type of employee is selected by the user, 
-        /// and then an employee of that type is created and added to the storage.
+        /// and then an employee of that type is created and added to the database.
         /// </summary>
         public override void Execute()
         {
-            string employeeType = UserInterface.ShowInteractiveMenu(Storage.employeeFactories.Keys.ToList());
+            using var session = Program.sessionFactory.OpenSession();
 
-            if (Storage.employeeFactories.TryGetValue(employeeType, out var factory))
+            string employeeType = UI.ShowInteractiveMenu(Specializations.employeeFactories.Keys.ToList());
+            
+            try
             {
-                var employee = factory.CreateEmployee();
-                Storage.employees.Add((IHasIntroduceString)employee);
+                if (Specializations.employeeFactories.TryGetValue(employeeType, out var factory))
+                {
+                    Person? employee = (Person)factory.CreateEmployee();
 
-                UserInterface.ShowMessage(string.Format(UIMessages.HireEmployeeMessages.HiredSuccessPrompt, employeeType));
+                    if (employee == null)
+                    {
+                        return;
+                    }
+
+                    EmployeeDatabaseOperations.AddEmployee(employee, session);
+
+                    UI.ShowMessage(string.Format(UIMessages.HireEmployeeMessages.SuccessHireEmployeePrompt, employee.Name, employee.Surname));
+                }
+                else
+                {
+                    UI.ShowMessage(UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt);
+                }
             }
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.HireEmployeeMessages.ErrorHireEmployeePrompt, ex);
+            }
+
+            NavigationCommand.Instance.Execute();
         }
     }
 }

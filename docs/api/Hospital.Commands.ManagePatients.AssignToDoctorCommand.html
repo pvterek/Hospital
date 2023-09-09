@@ -79,7 +79,7 @@
 
   <h1 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand" class="text-break">
     Class AssignToDoctorCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -162,7 +162,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand__ctor" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.#ctor">
   AssignToDoctorCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Hospital.Commands.ManagePatients.AssignToDoctorCommand.html">AssignToDoctorCommand</a> class with the specified introduction message.</p>
@@ -192,7 +192,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand__instance" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand._instance">
   _instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Holds a singleton instance of the <a class="xref" href="Hospital.Commands.ManagePatients.AssignToDoctorCommand.html">AssignToDoctorCommand</a> class.</p>
@@ -228,7 +228,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 
   <h3 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand_Instance" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the singleton instance of the <a class="xref" href="Hospital.Commands.ManagePatients.AssignToDoctorCommand.html">AssignToDoctorCommand</a> class.</p>
@@ -260,11 +260,50 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </h2>
 
 
+  <a id="Hospital_Commands_ManagePatients_AssignToDoctorCommand_AssignToDoctor_" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor*"></a>
+
+  <h3 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand_AssignToDoctor_System_Collections_Generic_List_Hospital_Objects_PatientObject_Patient__System_Collections_Generic_List_Hospital_Objects_DoctorObject_Doctor__NHibernate_ISession_" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.AssignToDoctor(System.Collections.Generic.List{Hospital.Objects.PatientObject.Patient},System.Collections.Generic.List{Hospital.Objects.DoctorObject.Doctor},NHibernate.ISession)">
+  AssignToDoctor(List&lt;Patient&gt;, List&lt;Doctor&gt;, ISession)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Assigns a patient to a selected doctor from a list and updates the patient's information in the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void AssignToDoctor(List&lt;Patient&gt; patients, List&lt;Doctor&gt; doctors, ISession session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>patients</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Hospital.Objects.PatientObject.Patient.html">Patient</a>&gt;</dt>
+    <dd><p>The list of patients to choose from.</p>
+</dd>
+    <dt><code>doctors</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Hospital.Objects.DoctorObject.Doctor.html">Doctor</a>&gt;</dt>
+    <dd><p>The list of doctors to choose from for assignment.</p>
+</dd>
+    <dt><code>session</code> <span class="xref">ISession</span></dt>
+    <dd><p>The database session to use for the operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Hospital_Commands_ManagePatients_AssignToDoctorCommand_Execute_" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.Execute*"></a>
 
   <h3 id="Hospital_Commands_ManagePatients_AssignToDoctorCommand_Execute" data-uid="Hospital.Commands.ManagePatients.AssignToDoctorCommand.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes the command to assign a patient to a doctor. It prompts the user to select a patient and then a doctor from the provided lists.</p>
@@ -291,7 +330,7 @@ Inheriting from the <a class="xref" href="Hospital.Commands.CompositeCommand.htm
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/pvterek/Hospital/blob/master/Hospital/Commands/ManagePatients/AssignToDoctorCommand.cs/#L21" class="edit-link">Edit this page</a>
         </div>
 
         

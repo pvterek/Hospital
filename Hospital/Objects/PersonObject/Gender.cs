@@ -1,9 +1,9 @@
-﻿namespace Hospital.Objects
+﻿namespace Hospital.Objects.PersonObject
 {
     /// <summary>
     /// Specifies the gender of an individual.
     /// </summary>
-    enum Gender : byte
+    public enum Gender : byte
     {
         /// <summary>
         /// Represents the male gender.

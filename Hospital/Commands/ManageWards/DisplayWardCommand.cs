@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Commands.ManageStaff;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Objects;
+using Hospital.Objects.WardObject;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Commands.ManageWards
 {
@@ -30,11 +34,42 @@ namespace Hospital.Commands.ManageWards
         private DisplayWardCommand() : base(UIMessages.DisplayWardMessages.Introduce) { }
 
         /// <summary>
-        /// Executes the command to display the list of wards stored in the system.
+        /// Executes the command to display the list of wards stored in the database.
         /// </summary>
         public override void Execute()
         {
-            ListMaker.DisplayList(Storage.wards);
+            using var session = Program.sessionFactory.OpenSession();
+
+            try
+            {
+                List<Ward> wards = WardDatabaseOperations.GetAllWards(session);
+            
+                if (!wards.Any())
+                {
+                    UI.ShowMessage(UIMessages.DisplayWardMessages.NoWardPrompt);
+                }
+                else
+                {
+                    DisplayWard(wards);
+                }
+            }
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.DisplayWardMessages.ErrorDisplayWardPrompt, ex);
+            }
+
+            NavigationCommand.Instance.Execute();
+        }
+
+        /// <summary>
+        /// Displays a list of wards with their introduction messages.
+        /// </summary>
+        /// <param name="wards">The list of wards to display.</param>
+        private void DisplayWard(List<Ward> wards) 
+        {
+            var introduceMessages = wards.Select(ward => ward.IntroduceString).ToList();
+
+            ListMaker.DisplayList(introduceMessages);
         }
     }
 }

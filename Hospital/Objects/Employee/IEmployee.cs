@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Objects
+namespace Hospital.Objects.Employee
 {
     /// <summary>
     /// Defines a contract for employee objects in the hospital.
     /// </summary>
-    internal interface IEmployee
+    public interface IEmployee
     {
         /// <summary>
         /// Gets the position of the employee.
         /// </summary>
-        string Position { get; }
+        static string Position { get; }
     }
 }

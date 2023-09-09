@@ -1,6 +1,9 @@
 ﻿using Hospital.Commands;
 using Hospital.Commands.LoginWindow;
-using Hospital.Utilities;
+using Hospital.Commands.Navigation;
+using Hospital.Database;
+using Hospital.Utilities.UI;
+using NHibernate;
 using System;
 
 namespace Hospital
@@ -16,10 +19,13 @@ namespace Hospital
         public static Stack<CompositeCommand> commandHistory = new();
 
         /// <summary>
+        /// The NHibernate session factory used for database operations.
+        /// </summary>
+        public static readonly ISessionFactory sessionFactory = CreateSession.CreateSessionFactory();
+        /// <summary>
         /// Value indicating whether the user is currently logged in.
         /// </summary>
         public static bool IsLoggedIn = false;
-
 
         /// <summary>
         /// The main entry point for the Hospital application. Executes the main command manager and handles any exceptions that might occur.
@@ -29,7 +35,7 @@ namespace Hospital
             MainWindowCommand commandManager = MainWindowCommand.Instance;
             LoginWindowCommand loginWindowCommand = LoginWindowCommand.Instance;
 
-            BackCommand.Queue(loginWindowCommand);
+            NavigationCommand.Queue(loginWindowCommand);
 
             while (true)
             {
@@ -41,13 +47,13 @@ namespace Hospital
                     }
                     else
                     {
-                        BackCommand.Queue(commandManager);
+                        NavigationCommand.Queue(commandManager);
                         commandManager.Execute();
                     }
                 }
                 catch (Exception ex)
                 {
-                    UserInterface.ShowMessage(ex.ToString());
+                    UI.ShowMessage(ex.ToString());
                 }
             }
         }

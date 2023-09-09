@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.Database;
+using Hospital.Objects.PersonObject;
 using Hospital.Objects.UserObject;
 using Hospital.Objects.WardObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI;
+using Hospital.Utilities.UI.UserInterface;
+using NHibernate;
 
-namespace Hospital.Objects.PersonObject
+namespace Hospital.Objects
 {
     /// <summary>
-    /// Provides factory methods to aid in the creation of person objects within the hospital system.
+    /// Provides factory methods to aid in the creation of objects within the hospital system.
     /// </summary>
-    internal class PersonFactory
+    internal class FactoryMethods
     {
         /// <summary>
         /// Asks the user for input based on a provided message and validates it.
@@ -23,14 +27,17 @@ namespace Hospital.Objects.PersonObject
         internal static string AskForValue(string message, string errorMessage)
         {
             string value;
+
             do
             {
+                Console.Clear();
+
                 Console.Write(message);
                 value = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    Console.WriteLine(errorMessage);
+                    UI.ShowMessage(errorMessage);
                 }
             }
             while (string.IsNullOrWhiteSpace(value));
@@ -46,7 +53,10 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.ProvideGenderPrompt);
+
                 string input = Console.ReadLine();
 
                 if (Enum.TryParse(typeof(Gender), input, out object genderObj))
@@ -58,7 +68,7 @@ namespace Hospital.Objects.PersonObject
                     }
                 }
 
-                Console.WriteLine(UIMessages.FactoryMessages.InvalidGenderPrompt);
+                UI.ShowMessage(UIMessages.FactoryMessages.InvalidGenderPrompt);
             }
         }
 
@@ -70,16 +80,19 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.ProvideBirthdayPrompt);
+
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime birthday))
                 {
                     if (!(birthday <= DateTime.Today))
                     {
-                        Console.WriteLine(UIMessages.FactoryMessages.InvalidBirthdayPrompt);
+                        UI.ShowMessage(UIMessages.FactoryMessages.InvalidBirthdayPrompt);
                     }
                     else if (birthday < DateTime.Now.AddYears(-Person.MAX_AGE))
                     {
-                        Console.WriteLine(UIMessages.FactoryMessages.InvalidDatePrompt);
+                        UI.ShowMessage(UIMessages.FactoryMessages.InvalidDatePrompt);
                     }
                     else
                     {
@@ -88,7 +101,7 @@ namespace Hospital.Objects.PersonObject
                 }
                 else
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.InvalidDateFormatPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.InvalidDateFormatPrompt);
                 }
             }
         }
@@ -96,26 +109,50 @@ namespace Hospital.Objects.PersonObject
         /// <summary>
         /// Assigns a person to a ward based on availability.
         /// </summary>
+        /// <param name="session">The database session to use for the operation.</param>
         /// <returns>Returns a valid ward assignment.</returns>
-        protected static Ward AssignToWard()
+        protected static Ward? AssignToWard(ISession session)
         {
-            Ward assignedWard = (Ward)UserInterface.ShowInteractiveMenu(Storage.wards);
-        
-            if (assignedWard.Patients.Count >= assignedWard.Capacity)
+            try
             {
-                throw new Exception(UIMessages.FactoryMessages.FullWardPrompt);
+                Ward assignedWard = UI.ShowInteractiveMenu(DatabaseOperations<Ward>.GetAll(session).ToList());
+
+                if (assignedWard.AssignedPatients.Count < assignedWard.Capacity)
+                {
+                    return assignedWard;
+                }
+
+                UI.ShowMessage(UIMessages.FactoryMessages.FullWardPrompt);
+
+                return null;
             }
-        
-            return assignedWard;
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.FactoryMessages.GetWardsErrorPrompt, ex);
+
+                return null;
+            }
         }
 
         /// <summary>
         /// Asks the user for ward assignment input.
         /// </summary>
+        /// <param name="session">The database session to use for the operation.</param>
         /// <returns>Returns a valid ward assignment from the user.</returns>
-        protected static Ward AskForAssignedWard()
+        protected static Ward? AskForAssignedWard(ISession session)
         {
-            return (Ward)UserInterface.ShowInteractiveMenu(Storage.wards);
+            try
+            {
+                Ward assignedWard = UI.ShowInteractiveMenu(DatabaseOperations<Ward>.GetAll(session).ToList());
+
+                return assignedWard;
+            }
+            catch (Exception ex)
+            {
+                UIHelper.HandleError(UIMessages.FactoryMessages.GetWardsErrorPrompt, ex);
+
+                return null;
+            }
         }
 
         /// <summary>
@@ -126,7 +163,10 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.ProvidePeselPrompt);
+
                 string input = Console.ReadLine();
 
                 if (!string.IsNullOrWhiteSpace(input) && input.Length == 11 && input.All(char.IsDigit))
@@ -134,7 +174,7 @@ namespace Hospital.Objects.PersonObject
                     return input;
                 }
 
-                Console.WriteLine(UIMessages.FactoryMessages.InvalidPeselPrompt);
+                UI.ShowMessage(UIMessages.FactoryMessages.InvalidPeselPrompt);
             }
         }
 
@@ -146,7 +186,10 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.ProvideCapacityPrompt);
+
                 string input = Console.ReadLine();
 
                 if (int.TryParse(input, out int parsedInt))
@@ -157,12 +200,12 @@ namespace Hospital.Objects.PersonObject
                     }
                     else
                     {
-                        Console.WriteLine(UIMessages.FactoryMessages.NegativeValuePrompt);
+                        UI.ShowMessage(UIMessages.FactoryMessages.NegativeValuePrompt);
                     }
                 }
                 else
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.NotValidNumberPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.NotValidNumberPrompt);
                 }
             }
         }
@@ -173,18 +216,23 @@ namespace Hospital.Objects.PersonObject
         /// <returns>A unique and non-empty user login.</returns>
         internal static string AskForLogin()
         {
+            using var session = Program.sessionFactory.OpenSession();
+
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.EnterLoginPrompt);
+
                 string input = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.EmptyLoginPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.EmptyLoginPrompt);
                 }
-                else if (Storage.users.Any(u => u.Login == input))
+                else if (DatabaseOperations<User>.GetAll(session).Any(u => u.Login == input))
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.TakenLoginPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.TakenLoginPrompt);
                 }
                 else
                 {
@@ -201,16 +249,19 @@ namespace Hospital.Objects.PersonObject
         {
             while (true)
             {
+                Console.Clear();
+
                 Console.Write(UIMessages.FactoryMessages.EnterPasswordPrompt);
+
                 string input = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.EmptyPasswordPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.EmptyPasswordPrompt);
                 }
                 else if (input.Length < 9)
                 {
-                    Console.WriteLine(UIMessages.FactoryMessages.TooShortPasswordPrompt);
+                    UI.ShowMessage(UIMessages.FactoryMessages.TooShortPasswordPrompt);
                 }
                 else
                 {

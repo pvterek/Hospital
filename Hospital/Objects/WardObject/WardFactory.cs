@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hospital.Objects.PersonObject;
-using Hospital.Utilities;
+using Hospital.Utilities.UI.UserInterface;
 
 namespace Hospital.Objects.WardObject
 {
@@ -19,8 +19,8 @@ namespace Hospital.Objects.WardObject
         /// <returns>A new <see cref="Ward"/> object.</returns>
         public static Ward CreateWard()
         {
-            string name = PersonFactory.AskForValue(UIMessages.WardObjectMessages.ProvideNamePrompt, UIMessages.WardObjectMessages.EmptyNamePrompt);
-            int capability = PersonFactory.AskForCapacity();
+            string name = FactoryMethods.AskForValue(UIMessages.WardObjectMessages.ProvideNamePrompt, UIMessages.WardObjectMessages.EmptyNamePrompt);
+            int capability = FactoryMethods.AskForCapacity();
 
             return new Ward(name, capability);
         }

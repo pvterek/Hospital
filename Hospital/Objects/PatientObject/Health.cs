@@ -1,9 +1,9 @@
-﻿namespace Hospital.Objects
+﻿namespace Hospital.Objects.PatientObject
 {
     /// <summary>
     /// Specifies the health status of a patient.
     /// </summary>
-    enum Health : byte
+    public enum Health : byte
     {
         /// <summary>
         /// Represents a very poor health condition.
