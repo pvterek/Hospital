@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.LoginWindow;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.Navigation
 {
@@ -27,15 +22,15 @@ namespace Hospital.Commands.Navigation
         /// <summary>
         /// Initializes a new instance of the <see cref="NavigationCommand"/> class with the specified introduction message.
         /// </summary>
-        private NavigationCommand() : base(UIMessages.BackCommandMessages.Introduce) { }
+        private NavigationCommand() : base(UiMessages.BackCommandMessages.Introduce) { }
 
         /// <summary>
         /// Executes the "Back" command, which navigates back to the previous command in the application's command history.
         /// </summary>
         public override void Execute()
         {
-            Program.commandHistory.Pop();
-            Program.commandHistory.Peek().Execute();
+            CommandStack.CommandHistory.Pop();
+            CommandStack.CommandHistory.Peek().Execute();
         }
 
         /// <summary>
@@ -46,7 +41,7 @@ namespace Hospital.Commands.Navigation
         {
             if (command != Instance && command != LogoutCommand.Instance)
             {
-                Program.commandHistory.Push(command);
+                CommandStack.CommandHistory.Push(command);
             }
 
             command.Execute();

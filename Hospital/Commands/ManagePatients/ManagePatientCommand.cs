@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.Navigation;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -28,7 +22,7 @@ namespace Hospital.Commands.ManagePatients
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagePatientCommand"/> class, providing options to manage patients.
         /// </summary>
-        private ManagePatientCommand() : base(UIMessages.ManagePatientMessages.Introduce, new List<CompositeCommand>())
+        private ManagePatientCommand() : base(UiMessages.ManagePatientMessages.Introduce, new List<CompositeCommand>())
         {
             Commands.Add(AssignToDoctorCommand.Instance);
             Commands.Add(ChangeHealthStatusCommand.Instance);
@@ -41,7 +35,7 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            var command = Ui.ShowInteractiveMenu(Commands);
             NavigationCommand.Queue(command);
         }
     }

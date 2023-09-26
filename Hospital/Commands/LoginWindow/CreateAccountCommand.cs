@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Database;
-using Hospital.Objects.UserObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Database;
+using Hospital.PeopleCategories.UserClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
 
 namespace Hospital.Commands.LoginWindow
@@ -25,30 +19,30 @@ namespace Hospital.Commands.LoginWindow
         /// <summary>
         /// Gets the singleton instance of the <see cref="CreateAccountCommand"/> class.
         /// </summary>
-        internal static CreateAccountCommand Instance => _instance ??= new CreateAccountCommand(UIMessages.CreateAccountCommandMessages.Introduce);
+        internal static CreateAccountCommand Instance => _instance ??= new CreateAccountCommand(UiMessages.CreateAccountCommandMessages.Introduce);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAccountCommand"/> class, with a specified introduction message.
         /// </summary>
         /// <param name="introduceString">The introduction message for the account creation process.</param>
-        public CreateAccountCommand(string introduceString) : base(introduceString) { }
+        private CreateAccountCommand(string introduceString) : base(introduceString) { }
 
         /// <summary>
         /// Executes the account creation process, prompting the user for details and adding the newly created user to database.
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
             try
             {
-                User user = CreateAccount(session);
+                var user = CreateAccount(session);
             
-                UI.ShowMessage(string.Format(UIMessages.CreateAccountCommandMessages.CreatedAccountPrompt, user.Login));
+                Ui.ShowMessage(string.Format(UiMessages.CreateAccountCommandMessages.CreatedAccountPrompt, user.Login));
             }
             catch (Exception ex)
             {
-                UIHelper.HandleError(UIMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt, ex);
+                UiHelper.HandleError(UiMessages.CreateAccountCommandMessages.ErrorCreateAccountPrompt, ex);
             }
         }
 
@@ -59,7 +53,7 @@ namespace Hospital.Commands.LoginWindow
         /// <returns>The newly created user account.</returns>
         private User CreateAccount(ISession session)
         {
-            User user = UserFactory.CreateUser();
+            var user = UserFactory.CreateUser();
             DatabaseOperations<User>.Add(user, session);
 
             return user;

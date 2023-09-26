@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.Navigation;
 using Hospital.Database;
-using Hospital.Objects.PatientObject;
-using Hospital.Objects.WardObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+using Hospital.PeopleCategories.PatientClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
 
 namespace Hospital.Commands.ManagePatients
@@ -32,7 +25,7 @@ namespace Hospital.Commands.ManagePatients
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeHealthStatusCommand"/> class with the specified introduction message.
         /// </summary>
-        private ChangeHealthStatusCommand() : base(UIMessages.ChangeHealthStatusMessages.Introduce) { }
+        private ChangeHealthStatusCommand() : base(UiMessages.ChangeHealthStatusMessages.Introduce) { }
 
         /// <summary>
         /// Executes the command to change the health status of a selected patient. 
@@ -41,41 +34,33 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
+            var patients = (List<Patient>)DatabaseOperations<Patient>.GetAll(session);
+            if (!patients.Any()) 
             {
-                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
-
-                if (!patients.Any()) 
-                {
-                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
-                }
-                else
-                {
-                    UI.ShowMessage(UIMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
-
-                    ChangeHealthStatus(patients, session);
-                }
+                Ui.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
             }
-            catch (Exception ex)
+            else
             {
-                UIHelper.HandleError(UIMessages.ChangeHealthStatusMessages.ErrorChangeHealthStatusPrompt, ex);
+                var patient = UiHelper.SelectObject(patients, UiMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
+                ChangeHealthStatus(patient, session);
+
+                Ui.ShowMessage(string.Format(UiMessages.ChangeHealthStatusMessages.OperationSuccessPrompt,
+                    patient.Name, patient.Surname));
             }
 
             NavigationCommand.Instance.Execute();
         }
 
         /// <summary>
-        /// Changes the health status of a patient selected from a list and updates it in the database.
+        /// Changes the health status of the provided patient and updates it in the database.
         /// </summary>
-        /// <param name="patients">The list of patients to choose from.</param>
-        /// <param name="session">The database session to use for the operation.</param>
-        private void ChangeHealthStatus(List<Patient> patients, ISession session)
+        /// <param name="patient">The patient whose health status needs to be changed.</param>
+        /// <param name="session">The database session to use for updating the patient's health status.</param>
+        private void ChangeHealthStatus(Patient patient, ISession session)
         {
-            Patient patient = UI.ShowInteractiveMenu(patients);
-            patient.HealthStatus = UI.ShowInteractiveMenu();
-
+            patient.HealthStatus = Ui.ShowInteractiveMenu();
             DatabaseOperations<Patient>.Update(patient, session);
         }
     }

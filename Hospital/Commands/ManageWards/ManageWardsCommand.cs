@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.ManagePatients;
-using Hospital.Commands.Navigation;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
-using Microsoft.VisualBasic.FileIO;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.ManageWards
 {
@@ -30,7 +22,7 @@ namespace Hospital.Commands.ManageWards
         /// <summary>
         /// Initializes a new instance of the <see cref="ManageWardsCommand"/> class with a specific introduction message and a list of sub-commands.
         /// </summary>
-        private ManageWardsCommand() : base(UIMessages.ManageWardsMessages.Introduce, new List<CompositeCommand>())
+        private ManageWardsCommand() : base(UiMessages.ManageWardsMessages.Introduce, new List<CompositeCommand>())
         {
             Commands.Add(AddWardCommand.Instance);
             Commands.Add(DeleteWardCommand.Instance);
@@ -43,7 +35,7 @@ namespace Hospital.Commands.ManageWards
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            var command = Ui.ShowInteractiveMenu(Commands);
             NavigationCommand.Queue(command);
         }
     }

@@ -1,28 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using FluentNHibernate;
 using NHibernate.Dialect;
 using NHibernate.Driver;
 using NHibernate;
-using FluentNHibernate.Automapping;
-using NHibernate.Tool.hbm2ddl;
 
 namespace Hospital.Database
 {
     /// <summary>
     /// Utility class for creating a session factory for NHibernate.
     /// </summary>
-    internal class CreateSession
+    internal static class CreateSession
     {
         /// <summary>
         /// Creates and configures an NHibernate session factory.
         /// </summary>
         /// <returns>An NHibernate session factory.</returns>
-        internal static ISessionFactory CreateSessionFactory()
+        private static ISessionFactory CreateSessionFactory()
         {
             var configuration = new NHibernate.Cfg.Configuration();
 
@@ -30,7 +23,7 @@ namespace Hospital.Database
 
             configuration.DataBaseIntegration(x =>
             {
-                x.ConnectionString = $"Data Source={DirectoryExist.directoryPath}\\HospitalDB.db;Version=3;";
+                x.ConnectionString = $"Data Source={DirectoryExist.DirectoryPath}\\HospitalDB.db;Version=3;";
                 x.Driver<SQLite20Driver>();
                 x.Dialect<SQLiteDialect>();
             });
@@ -42,5 +35,10 @@ namespace Hospital.Database
 
             return configuration.BuildSessionFactory();
         }
+        
+        /// <summary>
+        /// The NHibernate session factory used for database operations.
+        /// </summary>
+        public static readonly ISessionFactory SessionFactory = CreateSessionFactory();
     }
 }

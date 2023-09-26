@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Objects;
+﻿using System.Text;
+using Hospital.PeopleCategories;
 
-namespace Hospital.Utilities.UI
+namespace Hospital.Utilities.UserInterface
 {
     /// <summary>
     /// Provides functionalities related to displaying lists of entities that implement the <see cref="IHasIntroduceString"/> interface.
     /// </summary>
-    internal class ListMaker
+    internal static class ListMaker
     {
         /// <summary>
         /// Displays a list of entities, presenting their 'IntroduceString' properties.
@@ -20,12 +16,12 @@ namespace Hospital.Utilities.UI
         {
             StringBuilder introduceStrings = new();
 
-            foreach (IHasIntroduceString obj in objects.Cast<IHasIntroduceString>())
+            foreach (var obj in objects.Cast<IHasIntroduceString>())
             {
                 introduceStrings.AppendLine(obj.IntroduceString);
             }
 
-            UI.ShowMessage(introduceStrings.ToString());
+            Ui.ShowMessage(introduceStrings.ToString());
         }
     }
 }

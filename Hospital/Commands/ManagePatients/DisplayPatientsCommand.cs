@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.Navigation;
-using Hospital.Objects.PatientObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Database;
+using Hospital.PeopleCategories.PatientClass;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -26,7 +21,7 @@ namespace Hospital.Commands.ManagePatients
         /// <summary>
         /// Initializes a new instance of the <see cref="DisplayPatientsCommand"/> class.
         /// </summary>
-        private DisplayPatientsCommand() : base(UIMessages.DisplayPatientsMessages.Introduce) { }
+        private DisplayPatientsCommand() : base(UiMessages.DisplayPatientsMessages.Introduce) { }
 
         /// <summary>
         /// Executes the display patients command.
@@ -35,24 +30,16 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
+            var patients = (List<Patient>)DatabaseOperations<Patient>.GetAll(session);
+            if (!patients.Any())
             {
-                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
-
-                if (!patients.Any())
-                {
-                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
-                }
-                else
-                {
-                    ListMaker.DisplayList(patients);
-                }
+                Ui.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
             }
-            catch (Exception ex)
+            else
             {
-                UIHelper.HandleError(UIMessages.SignOutPatientMessages.ErrorSignOutPrompt, ex);
+                ListMaker.DisplayList(patients);
             }
 
             NavigationCommand.Instance.Execute();

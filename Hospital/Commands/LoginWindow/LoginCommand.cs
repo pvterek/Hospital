@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Objects;
-using Hospital.Objects.UserObject;
+﻿using Hospital.PeopleCategories;
+using Hospital.PeopleCategories.UserClass;
 using Hospital.Utilities;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
-using NHibernate.Mapping;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -18,6 +11,11 @@ namespace Hospital.Commands.LoginWindow
     /// </summary>
     internal class LoginCommand : CompositeCommand
     {
+        /// <summary>
+        /// Value indicating whether the user is currently logged in.
+        /// </summary>
+        public static bool IsLoggedIn;
+        
         /// <summary>
         /// Holds a singleton instance of the <see cref="LoginCommand"/> class.
         /// </summary>
@@ -31,17 +29,22 @@ namespace Hospital.Commands.LoginWindow
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginCommand"/> class with the specified introduction message.
         /// </summary>
-        public LoginCommand() : base(UIMessages.LoginCommandMessages.Introduce) { }
+        private LoginCommand() : base(UiMessages.LoginCommandMessages.Introduce) { }
 
         /// <summary>
         /// Executes the login process, prompting the user for login credentials and authenticating against the available users.
         /// </summary>
         public override void Execute()
         {
-            string login = FactoryMethods.AskForValue(UIMessages.FactoryMessages.EnterLoginPrompt, UIMessages.FactoryMessages.EmptyFieldPrompt);
-            CheckIfUserExist(AuthenticationService.GetUserByLogin(login));
+            string login;
+            
+            do
+            {
+                login = FactoryMethods.AskForValue(UiMessages.FactoryMessages.EnterLoginPrompt, UiMessages.FactoryMessages.EmptyFieldPrompt);
+            }
+            while (!CheckIfUserExist(AuthenticationService.GetUserByLogin(login)));
 
-            string password = FactoryMethods.AskForPassword();
+            var password = FactoryMethods.AskForPassword();
 
             AuthenticateUser(login, password);
         }
@@ -50,13 +53,12 @@ namespace Hospital.Commands.LoginWindow
         /// Checks if the user exists based on the provided user object.
         /// </summary>
         /// <param name="user">The user object to check.</param>
-        private void CheckIfUserExist(User? user)
+        private bool CheckIfUserExist(User? user)
         {
-            if (user == null)
-            {
-                UI.ShowMessage(UIMessages.LoginCommandMessages.CantFindLoginPrompt);
-                return;
-            }
+            if (user != null) return true;
+            
+            Ui.ShowMessage(UiMessages.LoginCommandMessages.CantFindLoginPrompt);
+            return false;
         }
 
         /// <summary>
@@ -68,11 +70,11 @@ namespace Hospital.Commands.LoginWindow
         {
             if (AuthenticationService.Authenticate(login, password))
             {
-                Program.IsLoggedIn = true;
+                IsLoggedIn = true;
             }
             else
             {
-                UI.ShowMessage(UIMessages.LoginCommandMessages.WrongPasswordPrompt);
+                Ui.ShowMessage(UiMessages.LoginCommandMessages.WrongPasswordPrompt);
             }
         }
     }

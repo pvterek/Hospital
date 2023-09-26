@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Hospital.Commands.LoginWindow;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.Commands.ManageEmployees;
 using Hospital.Commands.ManagePatients;
-using Hospital.Commands.ManageStaff;
 using Hospital.Commands.ManageWards;
 using Hospital.Commands.Navigation;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands
 {
@@ -30,10 +27,10 @@ namespace Hospital.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowCommand"/> class.
         /// </summary>
-        private MainWindowCommand() : base(UIMessages.MainWindowMessages.Introduce, new List<CompositeCommand>())
+        private MainWindowCommand() : base(UiMessages.MainWindowMessages.Introduce, new List<CompositeCommand>())
         {
             Commands.Add(ManagePatientsCommand.Instance);
-            Commands.Add(ManageStaffCommand.Instance);
+            Commands.Add(ManageEmployeesCommand.Instance);
             Commands.Add(ManageWardsCommand.Instance);
             Commands.Add(LogoutCommand.Instance);
         }
@@ -43,7 +40,7 @@ namespace Hospital.Commands
         /// </summary>
         public override void Execute()
         {
-            CompositeCommand command = UI.ShowInteractiveMenu(Commands);
+            var command = Ui.ShowInteractiveMenu(Commands);
             NavigationCommand.Queue(command);
         }
     }

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.ManageStaff;
-using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.Navigation;
 using Hospital.Database;
-using Hospital.Objects.WardObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
 
 namespace Hospital.Commands.ManageWards
@@ -32,49 +25,55 @@ namespace Hospital.Commands.ManageWards
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteWardCommand"/> class with a specific introduction message.
         /// </summary>
-        private DeleteWardCommand() : base(UIMessages.DeleteWardMessages.Introduce) { }
+        private DeleteWardCommand() : base(UiMessages.DeleteWardMessages.Introduce) { }
 
         /// <summary>
         /// Executes the procedure to delete a ward. After selecting a ward, it's removed from the database.
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
+            var wards = (List<Ward>)DatabaseOperations<Ward>.GetAll(session);
+            if (!wards.Any())
             {
-                List<Ward> wards = WardDatabaseOperations.GetAllWards(session);
-
-                if (!wards.Any())
-                {
-                    UI.ShowMessage(UIMessages.DeleteWardMessages.NoWardPrompt);
-                }
-                else
-                {
-                    Ward ward = DeleteWard(session);
-
-                    UI.ShowMessage(string.Format(UIMessages.DeleteWardMessages.WardRemovedPrompt, ward.Name));
-                }
+                Ui.ShowMessage(UiMessages.DeleteWardMessages.NoWardPrompt);
             }
-            catch (Exception ex)
+            else
             {
-                UIHelper.HandleError(UIMessages.DeleteWardMessages.ErrorWhileRemovingPrompt, ex);
+                var ward = UiHelper.SelectObject(wards, UiMessages.DeleteWardMessages.SelectWardPrompt);
+
+                if (IsEmpty(ward))
+                {
+                    DeleteWard(ward, session);
+                    
+                    Ui.ShowMessage(string.Format(UiMessages.DeleteWardMessages.WardRemovedPrompt, ward.Name));   
+                }
+                
+                Ui.ShowMessage(UiMessages.DeleteWardMessages.WardNonEmptyPrompt);
             }
 
             NavigationCommand.Instance.Execute();
         }
 
         /// <summary>
-        /// Deletes a ward, selected from the list of available wards in the database.
+        /// Deletes the provided ward from the database.
         /// </summary>
+        /// <param name="ward">The ward to be deleted.</param>
         /// <param name="session">The database session to use for the operation.</param>
-        /// <returns>The deleted ward.</returns>
-        private Ward DeleteWard(ISession session) 
+        private void DeleteWard(Ward ward, ISession session)
         {
-            Ward ward = UI.ShowInteractiveMenu(DatabaseOperations<Ward>.GetAll(session).ToList());
-            WardDatabaseOperations.DeleteWard(ward, session);
+            DatabaseOperations<Ward>.Delete(ward, session);
+        }
 
-            return ward;
+        /// <summary>
+        /// Checks if the provided ward is empty, i.e., it has no assigned patients and no assigned employees.
+        /// </summary>
+        /// <param name="ward">The ward to be checked.</param>
+        /// <returns>True if the ward is empty, otherwise false.</returns>
+        private bool IsEmpty(Ward ward)
+        {
+            return !ward.AssignedPatients.Any() || !ward.AssignedEmployees.Any();
         }
     }
 }

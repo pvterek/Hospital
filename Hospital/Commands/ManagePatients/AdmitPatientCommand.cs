@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using Antlr.Runtime.Tree;
-using Hospital.Commands.Navigation;
-using Hospital.Objects.PatientObject;
-using Hospital.Objects.WardObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Database;
+using Hospital.PeopleCategories.PatientClass;
+using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
-using NHibernate.Id.Insert;
 
 namespace Hospital.Commands.ManagePatients
 {
@@ -29,7 +26,7 @@ namespace Hospital.Commands.ManagePatients
         /// <summary>
         /// Initializes a new instance of the <see cref="AdmitPatientCommand"/> class with the specified introduction message.
         /// </summary>
-        public AdmitPatientCommand() : base(UIMessages.AdmitPatientMessages.Introduce) { }
+        public AdmitPatientCommand() : base(UiMessages.AdmitPatientMessages.Introduce) { }
 
         /// <summary>
         /// Executes the admit patient command. If there are no wards available, a message is displayed. 
@@ -37,46 +34,42 @@ namespace Hospital.Commands.ManagePatients
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
+            var wards = (List<Ward>)DatabaseOperations<Ward>.GetAll(session);   
+            if (!wards.Any())
             {
-                List<Ward> wards = WardDatabaseOperations.GetAllWards(session);    
-
-                if (!wards.Any())
-                {
-                    UI.ShowMessage(UIMessages.AdmitPatientMessages.NoWardErrorPrompt);
-                }
-                else
-                {
-                    AdmitPatient(session);
-                }
+                Ui.ShowMessage(UiMessages.AdmitPatientMessages.NoWardErrorPrompt);
             }
-            catch (Exception ex) 
+            else
             {
-                UIHelper.HandleError(UIMessages.AdmitPatientMessages.ErrorAdmitPatientPropmt, ex);
+                var patient = AdmitPatient(session, wards);
+
+                Ui.ShowMessage(string.Format(UiMessages.AdmitPatientMessages.PatientCreatedPrompt, patient.Name, patient.Surname));
             }
 
             NavigationCommand.Instance.Execute();
         }
 
         /// <summary>
-        /// Admits a new patient, creates their record in the database, and updates ward capacity.
+        /// Admits a new patient, creates their record in the database, and updates the capacity of the assigned ward.
         /// </summary>
         /// <param name="session">The database session to use for the operation.</param>
-        private void AdmitPatient(ISession session)
+        /// <param name="wards">The list of available wards for the patient assignment.</param>
+        /// <returns>Returns the newly admitted patient.</returns>
+        /// <remarks>
+        /// The method uses the PatientFactory to create a new patient based on the available wards and the session provided.
+        /// After creating the patient, their record is added to the database.
+        /// The capacity of the ward assigned to the new patient is then updated accordingly.
+        /// </remarks>
+        private Patient AdmitPatient(ISession session, List<Ward> wards)
         {
-            Patient patient = PatientFactory.CreatePatient(session);
+            var patient = PatientFactory.CreatePatient(wards, session);
+            DatabaseOperations<Patient>.Add(patient, session);
 
-            if (patient == null)
-            {
-                return;
-            }
+            ManageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient, session);
 
-            PatientDatabaseOperations.AddPatient(patient, session);
-            ManageCapacity.UpdateWardCapacity(patient.AssignedWard, session);
-
-            UI.ShowMessage(string.Format(UIMessages.AdmitPatientMessages.PatientCreatedPrompt, patient.Name, patient.Surname));
+            return patient;
         }
     }
 }

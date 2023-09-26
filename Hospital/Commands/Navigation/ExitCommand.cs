@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.ManagePatients;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.Navigation
 {
@@ -22,7 +16,7 @@ namespace Hospital.Commands.Navigation
         /// <summary>
         /// Gets the singleton instance of the <see cref="ExitCommand"/> class.
         /// </summary>
-        internal static ExitCommand Instance => _instance ??= new ExitCommand(UIMessages.ExitCommandMessages.Introduce);
+        internal static ExitCommand Instance => _instance ??= new ExitCommand(UiMessages.ExitCommandMessages.Introduce);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExitCommand"/> class with a specified introduce string.

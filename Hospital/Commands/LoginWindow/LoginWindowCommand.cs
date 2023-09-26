@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.Navigation;
-using Hospital.Objects.UserObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -29,7 +22,7 @@ namespace Hospital.Commands.LoginWindow
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginWindowCommand"/> class.
         /// </summary>
-        public LoginWindowCommand() : base(UIMessages.LoginWindowCommandMessages.Introduce, new List<CompositeCommand>())
+        private LoginWindowCommand() : base(UiMessages.LoginWindowCommandMessages.Introduce, new List<CompositeCommand>())
         {
             Commands.Add(LoginCommand.Instance);
             Commands.Add(CreateAccountCommand.Instance);
@@ -41,7 +34,7 @@ namespace Hospital.Commands.LoginWindow
         /// </summary>
         public override void Execute()
         {
-            UI.ShowInteractiveMenu(Commands).Execute();
+            Ui.ShowInteractiveMenu(Commands).Execute();
         }
     }
 }

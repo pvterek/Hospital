@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Database;
-using Hospital.Objects.UserObject;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Database;
+using Hospital.PeopleCategories.UserClass;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Utilities
 {
     /// <summary>
     /// Provides an methods for authentication-related operations in the Hospital application.
     /// </summary>
-    internal class AuthenticationService
+    internal static class AuthenticationService
     {
         /// <summary>
         /// Authenticates a user based on the provided login and password.
@@ -33,7 +28,7 @@ namespace Hospital.Utilities
         /// <returns>An object of <see cref="User"/> if found.</returns>
         public static User? GetUserByLogin(string login)
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
             try
             {
@@ -43,7 +38,7 @@ namespace Hospital.Utilities
             }
             catch
             {
-                UI.UI.ShowMessage(UIMessages.AuthenitactionServiceMessages.ErrorGetUserByLoginPrompt);
+                Ui.ShowMessage(UiMessages.AuthenticationServiceMessages.ErrorGetUserByLoginPrompt);
 
                 return null;
             }

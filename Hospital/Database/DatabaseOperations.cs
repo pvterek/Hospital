@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Data;
-using Hospital.Objects.PatientObject;
+﻿using Hospital.Utilities.UserInterface;
 using NHibernate;
 
 namespace Hospital.Database
@@ -15,6 +9,24 @@ namespace Hospital.Database
     /// <typeparam name="TEntity">The type of entity to operate on.</typeparam>
     internal static class DatabaseOperations<TEntity> where TEntity : class
     {
+        private delegate void DatabaseOperation(TEntity entity, ISession session);
+        
+        private static void ExecuteInTransaction(TEntity entity, ISession session, DatabaseOperation operation)
+        {
+            using var transaction = session.BeginTransaction();
+
+            try
+            {
+                operation(entity, session);
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                UiHelper.HandleError(ex);
+            }
+        }
+        
         /// <summary>
         /// Adds an entity to the database.
         /// </summary>
@@ -22,18 +34,7 @@ namespace Hospital.Database
         /// <param name="session">The database session to use for the operation.</param>
         internal static void Add(TEntity entity, ISession session)
         {
-            using var transaction = session.BeginTransaction();
-
-            try
-            {
-                session.Save(entity);
-
-                transaction.Commit();
-            }
-            catch
-            {
-                transaction.Rollback();
-            } 
+            ExecuteInTransaction(entity, session, (e, s) => s.Save(e));
         }
 
         /// <summary>
@@ -43,13 +44,9 @@ namespace Hospital.Database
         /// <param name="session">The database session to use for the operation.</param>
         internal static void Delete(TEntity entity, ISession session)
         {
-            using var transaction = session.BeginTransaction();
-
-            session.Delete(entity);
-
-            transaction.Commit();
+            ExecuteInTransaction(entity, session, (e, s) => s.Delete(e));
         }
-
+        
         /// <summary>
         /// Updates an entity in the database.
         /// </summary>
@@ -57,19 +54,9 @@ namespace Hospital.Database
         /// <param name="session">The database session to use for the operation.</param>
         internal static void Update(TEntity entity, ISession session)
         {
-            using var transaction = session.BeginTransaction();
-
-            try
-            {
-                session.Update(entity);
-
-                transaction.Commit();
-            }
-            catch
-            {
-                transaction.Rollback();
-            }
+            ExecuteInTransaction(entity, session, (e, s) => s.Update(e));
         }
+        
 
         /// <summary>
         /// Retrieves all entities of the specified type from the database.

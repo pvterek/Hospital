@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.Navigation;
 using Hospital.Database;
-using Hospital.Objects.DoctorObject;
-using Hospital.Objects.Employee;
-using Hospital.Objects.PatientObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+using Hospital.PeopleCategories.DoctorClass;
+using Hospital.PeopleCategories.PatientClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
 
 namespace Hospital.Commands.ManagePatients
@@ -33,53 +26,49 @@ namespace Hospital.Commands.ManagePatients
         /// <summary>
         /// Initializes a new instance of the <see cref="AssignToDoctorCommand"/> class with the specified introduction message.
         /// </summary>
-        private AssignToDoctorCommand() : base(UIMessages.AssignToDoctorMessages.Introduce) { }
+        private AssignToDoctorCommand() : base(UiMessages.AssignToDoctorMessages.Introduce) { }
 
         /// <summary>
         /// Executes the command to assign a patient to a doctor. It prompts the user to select a patient and then a doctor from the provided lists.
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
+            var patients = (List<Patient>)DatabaseOperations<Patient>.GetAll(session);
+            var doctors = (List<Doctor>)DatabaseOperations<Doctor>.GetAll(session);
+
+            if (!patients.Any())
             {
-                List<Patient> patients = PatientDatabaseOperations.GetAllPatients(session);
-                List<Doctor> doctors = EmployeeDatabaseOperations.GetAllDoctors(session);
-
-                if (!patients.Any())
-                {
-                    UI.ShowMessage(UIMessages.DisplayPatientsMessages.NoPatientsPrompt);
-                }
-                else if (!doctors.Any())
-                {
-                    UI.ShowMessage(UIMessages.AssignToDoctorMessages.NoDoctorsPrompt);
-                }
-                else
-                {
-                    AssignToDoctor(patients, doctors, session);
-                }
+                Ui.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
             }
-            catch (Exception ex) 
+            else if (!doctors.Any())
             {
-                UIHelper.HandleError(UIMessages.AssignToDoctorMessages.ErrorAssignToDoctorPrompt, ex);
+                Ui.ShowMessage(UiMessages.AssignToDoctorMessages.NoDoctorsPrompt);
+            }
+            else
+            {
+                var patient = UiHelper.SelectObject(patients, UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
+                var doctor = UiHelper.SelectObject(doctors, UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
+
+                AssignToDoctor(patient, doctor, session);
+
+                Ui.ShowMessage(string.Format(UiMessages.AssignToDoctorMessages.OperationSuccessPrompt, 
+                    UiMessages.DoctorObjectMessages.Position, doctor.Surname, patient.Name, patient.Surname));
             }
 
             NavigationCommand.Instance.Execute();
         }
 
         /// <summary>
-        /// Assigns a patient to a selected doctor from a list and updates the patient's information in the database.
+        /// Assigns the provided patient to the specified doctor and updates the patient's information in the database.
         /// </summary>
-        /// <param name="patients">The list of patients to choose from.</param>
-        /// <param name="doctors">The list of doctors to choose from for assignment.</param>
+        /// <param name="patient">The patient to be assigned to a doctor.</param>
+        /// <param name="doctor">The doctor to whom the patient will be assigned.</param>
         /// <param name="session">The database session to use for the operation.</param>
-        private void AssignToDoctor(List<Patient> patients, List<Doctor> doctors, ISession session)
+        private void AssignToDoctor(Patient patient, Doctor doctor, ISession session)
         {
-            Patient patient = UI.ShowInteractiveMenu(patients);
-
-            UI.ShowMessage(UIMessages.AssignToDoctorMessages.SelectDoctorPrompt);
-            patient.AssignedDoctor = UI.ShowInteractiveMenu(doctors);
+            patient.AssignedDoctor = doctor;
 
             DatabaseOperations<Patient>.Update(patient, session);
         }

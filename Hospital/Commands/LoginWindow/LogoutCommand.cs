@@ -1,5 +1,5 @@
 ﻿using Hospital.Commands.Navigation;
-using Hospital.Utilities.UI.UserInterface;
+using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
@@ -22,15 +22,15 @@ namespace Hospital.Commands.LoginWindow
         /// <summary>
         /// Initializes a new instance of the <see cref="LogoutCommand"/> class with the specified introduction message.
         /// </summary>
-        public LogoutCommand() : base(UIMessages.LogoutCommandMessages.Introdcue) { }
+        private LogoutCommand() : base(UiMessages.LogoutCommandMessages.Introduce) { }
 
         /// <summary>
         /// Executes the logout command. Sets the user status to logged out.
         /// </summary>
         public override void Execute()
         {
-            Program.IsLoggedIn = false;
-            NavigationCommand.Instance.Execute();
+            LoginCommand.IsLoggedIn = false;
+            LoginWindowCommand.Instance.Execute();
         }
     }
 }

@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.Commands.ManagePatients;
-using Hospital.Commands.ManageStaff;
-using Hospital.Commands.Navigation;
-using Hospital.Objects.WardObject;
-using Hospital.Utilities.UI;
-using Hospital.Utilities.UI.UserInterface;
+﻿using Hospital.Commands.Navigation;
+using Hospital.Database;
+using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.UserInterface;
 using NHibernate;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Hospital.Commands.ManageWards
 {
@@ -33,25 +25,18 @@ namespace Hospital.Commands.ManageWards
         /// <summary>
         /// Initializes a new instance of the <see cref="AddWardCommand"/> class with a specific introduction message.
         /// </summary>
-        private AddWardCommand() : base(UIMessages.AddWardMessages.Introduce) { }
+        private AddWardCommand() : base(UiMessages.AddWardMessages.Introduce) { }
 
         /// <summary>
         /// Executes the procedure to add a new ward. The ward details are created using a factory method and then added to the database.
         /// </summary>
         public override void Execute()
         {
-            using var session = Program.sessionFactory.OpenSession();
+            using var session = CreateSession.SessionFactory.OpenSession();
 
-            try
-            {
-                Ward ward = AddWard(session);
+            var ward = AddWard(session);
             
-                UI.ShowMessage(string.Format(UIMessages.AddWardMessages.WardCreatedPrompt, ward.Name));
-            }
-            catch (Exception ex) 
-            {
-                UIHelper.HandleError(UIMessages.AddWardMessages.ErrorWhileCreatingPrompt, ex);
-            }
+            Ui.ShowMessage(string.Format(UiMessages.AddWardMessages.WardCreatedPrompt, ward.Name));
 
             NavigationCommand.Instance.Execute();
         }
@@ -63,8 +48,8 @@ namespace Hospital.Commands.ManageWards
         /// <returns>The newly created ward.</returns>
         private Ward AddWard(ISession session)
         {
-            Ward ward = WardFactory.CreateWard();
-            WardDatabaseOperations.AddWard(ward, session);
+            var ward = WardFactory.CreateWard(session);
+            DatabaseOperations<Ward>.Add(ward, session);
 
             return ward;
         }
