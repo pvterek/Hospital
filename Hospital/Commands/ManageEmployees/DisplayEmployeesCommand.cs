@@ -1,49 +1,33 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Database;
-using Hospital.PeopleCategories.Employee;
+﻿using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    /// <summary>
-    /// Represents a command to display the list of employees.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class DisplayEmployeesCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="DisplayEmployeesCommand"/> class.
-        /// </summary>
-        private static DisplayEmployeesCommand? _instance;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IListsStorage _listsStorage;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="DisplayEmployeesCommand"/> class.
-        /// </summary>
-        internal static DisplayEmployeesCommand Instance => _instance ??= new DisplayEmployeesCommand();
+        public DisplayEmployeesCommand(
+            IMenuHandler menuHandler,
+            IListsStorage listsStorage)
+            : base(UiMessages.DisplayEmployeesMessages.Introduce)
+        {
+            _menuHandler = menuHandler;
+            _listsStorage = listsStorage;
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayEmployeesCommand"/> class with a specific introduction message.
-        /// </summary>
-        private DisplayEmployeesCommand() : base(UiMessages.DisplayEmployeesMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the display procedure for the list of employees. If there are no employees, a prompt will notify the user.
-        /// </summary>
         public override void Execute()
         {
-            using var session = CreateSession.SessionFactory.OpenSession();
-
-            var employees = (List<IEmployee>)DatabaseOperations<IEmployee>.GetAll(session);
-            if (!employees.Any())
+            if (!_listsStorage.Employees.Any())
             {
-                Ui.ShowMessage(UiMessages.DisplayEmployeesMessages.NoEmployeesPrompt);
+                _menuHandler.ShowMessage(UiMessages.DisplayEmployeesMessages.NoEmployeesPrompt);
             }
             else
             {
-                ListMaker.DisplayList(employees.ToList());
+                _menuHandler.DisplayList(_listsStorage.Employees);
             }
-
-            NavigationCommand.Instance.Execute();
         }
     }
 }

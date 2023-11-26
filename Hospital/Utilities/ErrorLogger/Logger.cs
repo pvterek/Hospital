@@ -1,45 +1,43 @@
 ﻿using Hospital.Database;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Utilities.ErrorLogger
 {
-    /// <summary>
-    /// Provides functionality to log error messages to a designated file.
-    /// </summary>
-    /// <remarks>
-    /// This logger writes logs to a file named 'log.txt' within a specified directory.
-    /// It ensures that the file exists before writing and uses a StreamWriter to append messages to the file.
-    /// </remarks>
-    internal class Logger
+    internal class Logger : ILogger
     {
-        /// <summary>
-        /// The complete path to the log file.
-        /// </summary>
-        private static readonly string FilePath = DirectoryExist.DirectoryPath + "\\log.txt";
+        public const string fileName = "log.txt";
+        public static readonly string filePath = DirectoryExist.DirectoryPath + $"\\{fileName}";
+        private readonly IMenuHandler _menuHandler;
+        private readonly StreamWriter _streamWriter;
 
-        /// <summary>
-        /// StreamWriter instance to facilitate writing to the log file.
-        /// </summary>
-        private static readonly StreamWriter _sw = new(FilePath, true);
-
-        /// <summary>
-        /// Checks if the log file exists. If it doesn't, the method creates one.
-        /// </summary>
-        public static void CheckIfExist()
+        public Logger(
+            IMenuHandler menuHandler,
+            StreamWriter streamWriter) 
         {
-            if (!File.Exists(FilePath))
+            _menuHandler = menuHandler;
+            _streamWriter = streamWriter;
+
+            if (!File.Exists(filePath))
             {
-                File.Create(FilePath).Close();
+                File.Create(filePath).Close();
             }
         }
 
-        /// <summary>
-        /// Writes a provided error message to the log file with a timestamp.
-        /// </summary>
-        /// <param name="ex">The error message to be logged.</param>
-        public static void WriteLog(string ex)
+        public void WriteLog(string ex)
         {
-            _sw.WriteLine(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | " + ex);
-            _sw.Flush();
+            _streamWriter.WriteLine(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | " + ex);
+            _streamWriter.Flush();
+        }
+
+        public void HandleError(string message, Exception ex)
+        {
+            _menuHandler.ShowMessage(message);
+            WriteLog(ex.ToString());
+        }
+
+        public void HandleError(Exception ex)
+        {
+            WriteLog(ex.ToString());
         }
     }
 }

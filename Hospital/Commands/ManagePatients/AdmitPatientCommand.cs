@@ -1,75 +1,59 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Database;
-using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.WardClass;
+﻿using Hospital.Commands.ManageWards;
+using Hospital.PeopleCategories.Factory.Interfaces;
+using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
-using NHibernate;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    /// <summary>
-    /// Represents a command to admit a patient to the hospital.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class AdmitPatientCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="AdmitPatientCommand"/> class.
-        /// </summary>
-        private static AdmitPatientCommand? _instance;
+        private readonly IObjectsFactory _objectsFactory;
+        private readonly IValidateObjects _hospitalService;
+        private readonly IDTOFactory _dtoFactory;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IListManage _listManage;
+        private readonly IListsStorage _listsStorage;
+        private readonly IManageCapacity _manageCapacity;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="AdmitPatientCommand"/> class.
-        /// </summary>
-        internal static AdmitPatientCommand Instance => _instance ??= new AdmitPatientCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AdmitPatientCommand"/> class with the specified introduction message.
-        /// </summary>
-        public AdmitPatientCommand() : base(UiMessages.AdmitPatientMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the admit patient command. If there are no wards available, a message is displayed. 
-        /// Otherwise, a patient is created and added to the list of patients.
-        /// </summary>
-        public override void Execute()
+        public AdmitPatientCommand(
+            IObjectsFactory factory,
+            IValidateObjects hospitalService,
+            IDTOFactory dtoFactory,
+            IMenuHandler menuHandler,
+            IListManage listManage,
+            IListsStorage listsStorage,
+            IManageCapacity manageCapacity)
+            : base(UiMessages.AdmitPatientMessages.Introduce)
         {
-            using var session = CreateSession.SessionFactory.OpenSession();
-
-            var wards = (List<Ward>)DatabaseOperations<Ward>.GetAll(session);   
-            if (!wards.Any())
-            {
-                Ui.ShowMessage(UiMessages.AdmitPatientMessages.NoWardErrorPrompt);
-            }
-            else
-            {
-                var patient = AdmitPatient(session, wards);
-
-                Ui.ShowMessage(string.Format(UiMessages.AdmitPatientMessages.PatientCreatedPrompt, patient.Name, patient.Surname));
-            }
-
-            NavigationCommand.Instance.Execute();
+            _objectsFactory = factory;
+            _hospitalService = hospitalService;
+            _dtoFactory = dtoFactory;
+            _menuHandler = menuHandler;
+            _listManage = listManage;
+            _listsStorage = listsStorage;
+            _manageCapacity = manageCapacity;
         }
 
-        /// <summary>
-        /// Admits a new patient, creates their record in the database, and updates the capacity of the assigned ward.
-        /// </summary>
-        /// <param name="session">The database session to use for the operation.</param>
-        /// <param name="wards">The list of available wards for the patient assignment.</param>
-        /// <returns>Returns the newly admitted patient.</returns>
-        /// <remarks>
-        /// The method uses the PatientFactory to create a new patient based on the available wards and the session provided.
-        /// After creating the patient, their record is added to the database.
-        /// The capacity of the ward assigned to the new patient is then updated accordingly.
-        /// </remarks>
-        private Patient AdmitPatient(ISession session, List<Ward> wards)
+        public override void Execute()
         {
-            var patient = PatientFactory.CreatePatient(wards, session);
-            DatabaseOperations<Patient>.Add(patient, session);
+            if (!_listsStorage.Wards.Any())
+            {
+                _menuHandler.ShowMessage(UiMessages.AdmitPatientMessages.NoWardErrorPrompt);
+                return;
+            }
 
-            ManageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient, session);
+            var patientDTO = _dtoFactory.GatherPatientData(_listsStorage.Wards);
+            if (!_hospitalService.ValidatePatientObject(patientDTO))
+            {
+                return;
+            }
 
-            return patient;
+            var patient = _objectsFactory.CreatePatient(patientDTO);
+            _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient);
+            _listManage.Add(patient, _listsStorage.Patients);
+
+            _menuHandler.ShowMessage(string.Format(UiMessages.AdmitPatientMessages.PatientCreatedPrompt, patient.Name, patient.Surname));
         }
     }
 }

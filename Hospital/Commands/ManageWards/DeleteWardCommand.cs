@@ -1,79 +1,43 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Database;
-using Hospital.PeopleCategories.WardClass;
+﻿using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
-using NHibernate;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    /// <summary>
-    /// Represents a command to delete an existing ward.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class DeleteWardCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="DeleteWardCommand"/> class.
-        /// </summary>
-        private static DeleteWardCommand? _instance;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IListManage _listManage;
+        private readonly IListsStorage _listsStorage;
+        public DeleteWardCommand(
+            IMenuHandler menuHandler,
+            IListManage listManage,
+            IListsStorage listsStorage) 
+            : base(UiMessages.DeleteWardMessages.Introduce)
+        {
+            _menuHandler = menuHandler;
+            _listManage = listManage;
+            _listsStorage = listsStorage;
+        }
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="DeleteWardCommand"/> class.
-        /// </summary>
-        internal static DeleteWardCommand Instance => _instance ??= new DeleteWardCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteWardCommand"/> class with a specific introduction message.
-        /// </summary>
-        private DeleteWardCommand() : base(UiMessages.DeleteWardMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the procedure to delete a ward. After selecting a ward, it's removed from the database.
-        /// </summary>
         public override void Execute()
         {
-            using var session = CreateSession.SessionFactory.OpenSession();
-
-            var wards = (List<Ward>)DatabaseOperations<Ward>.GetAll(session);
-            if (!wards.Any())
+            if (!_listsStorage.Wards.Any())
             {
-                Ui.ShowMessage(UiMessages.DeleteWardMessages.NoWardPrompt);
-            }
-            else
-            {
-                var ward = UiHelper.SelectObject(wards, UiMessages.DeleteWardMessages.SelectWardPrompt);
-
-                if (IsEmpty(ward))
-                {
-                    DeleteWard(ward, session);
-                    
-                    Ui.ShowMessage(string.Format(UiMessages.DeleteWardMessages.WardRemovedPrompt, ward.Name));   
-                }
-                
-                Ui.ShowMessage(UiMessages.DeleteWardMessages.WardNonEmptyPrompt);
+                _menuHandler.ShowMessage(UiMessages.DeleteWardMessages.NoWardPrompt);
+                return;
             }
 
-            NavigationCommand.Instance.Execute();
-        }
+            var ward = _menuHandler.SelectObject(_listsStorage.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt);
 
-        /// <summary>
-        /// Deletes the provided ward from the database.
-        /// </summary>
-        /// <param name="ward">The ward to be deleted.</param>
-        /// <param name="session">The database session to use for the operation.</param>
-        private void DeleteWard(Ward ward, ISession session)
-        {
-            DatabaseOperations<Ward>.Delete(ward, session);
-        }
+            if (ward.AssignedPatients.Any() || ward.AssignedEmployees.Any())
+            {
+                _menuHandler.ShowMessage(UiMessages.DeleteWardMessages.WardNonEmptyPrompt);
+                return;
+            }
 
-        /// <summary>
-        /// Checks if the provided ward is empty, i.e., it has no assigned patients and no assigned employees.
-        /// </summary>
-        /// <param name="ward">The ward to be checked.</param>
-        /// <returns>True if the ward is empty, otherwise false.</returns>
-        private bool IsEmpty(Ward ward)
-        {
-            return !ward.AssignedPatients.Any() || !ward.AssignedEmployees.Any();
+            _listManage.Remove(ward, _listsStorage.Wards);
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteWardMessages.WardRemovedPrompt, ward.Name));
         }
     }
 }

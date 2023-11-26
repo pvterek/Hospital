@@ -1,43 +1,53 @@
-﻿using Hospital.Commands;
+﻿using Autofac;
+using Hospital.Commands;
 using Hospital.Commands.LoginWindow;
 using Hospital.Commands.Navigation;
 using Hospital.Utilities.ErrorLogger;
-using Hospital.Utilities.UserInterface;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Represents the main entry point of the Hospital application.
-    /// </summary>
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the Hospital application. Executes the main command manager and handles any exceptions that might occur.
-        /// </summary>
+        private static IContainer Container;
+
         private static void Main()
         {
-            Logger.CheckIfExist();
+            InitializeApplication();
+            ExecuteApplication();
+        }
 
-            try
+        private static void InitializeApplication()
+        {
+            AutofacConfig config = new();
+            Container = config.ConfigureContainer();
+        }
+
+        private static void ExecuteApplication()
+        {
+            var logger = Container.Resolve<ILogger>();
+            var mainWindow = Container.Resolve<MainWindowCommand>();
+            var loginWindow = Container.Resolve<LoginWindowCommand>();
+            var mainQueue = Container.Resolve<INavigationService>();
+            mainQueue.Queue(loginWindow);
+            mainQueue.Queue(mainWindow);
+
+            while (true)
             {
-                var commandManager = MainWindowCommand.Instance;
-                
-                while (true)
+                try
                 {
                     if (!LoginCommand.IsLoggedIn)
                     {
-                        LoginWindowCommand.Instance.Execute();
+                        loginWindow.Execute();
                     }
                     else
                     {
-                        NavigationCommand.Queue(commandManager);
-                        commandManager.Execute();
+                        mainQueue.GetCurrentCommand().Execute();
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                UiHelper.HandleError(ex.Message, ex);
+                catch (Exception ex)
+                {
+                    logger.HandleError(ex.Message, ex);
+                }
             }
         }
     }

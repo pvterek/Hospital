@@ -3,45 +3,69 @@ using Hospital.Commands.ManageEmployees;
 using Hospital.Commands.ManagePatients;
 using Hospital.Commands.ManageWards;
 using Hospital.Commands.Navigation;
+using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands
 {
-    /// <summary>
-    /// Represents the main window command in the application.
-    /// It aggregates a collection of key commands related to managing patients, staff, and wards.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class MainWindowCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="MainWindowCommand"/> class.
-        /// </summary>
-        private static MainWindowCommand? _instance;
+        private readonly Lazy<ManagePatientsCommand> _managePatientsCommand;
+        private readonly Lazy<ManageEmployeesCommand> _manageEmployeesCommand;
+        private readonly Lazy<ManageWardsCommand> _manageWardsCommand;
+        private readonly Lazy<LogoutCommand> _logoutCommand;
+        private readonly INavigationService _navigationService;
+        private readonly IMenuHandler _menuHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="MainWindowCommand"/> class.
-        /// </summary>
-        internal static MainWindowCommand Instance => _instance ??= new MainWindowCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindowCommand"/> class.
-        /// </summary>
-        private MainWindowCommand() : base(UiMessages.MainWindowMessages.Introduce, new List<CompositeCommand>())
+        public MainWindowCommand(
+            Lazy<ManagePatientsCommand> managePatientsCommand,
+            Lazy<ManageEmployeesCommand> manageEmployeesCommand,
+            Lazy<ManageWardsCommand> manageWardsCommand,
+            Lazy<LogoutCommand> logoutCommand,
+            INavigationService navigationService,
+            IMenuHandler menuHandler)
+            : base(UiMessages.MainWindowMessages.Introduce)
         {
-            Commands.Add(ManagePatientsCommand.Instance);
-            Commands.Add(ManageEmployeesCommand.Instance);
-            Commands.Add(ManageWardsCommand.Instance);
-            Commands.Add(LogoutCommand.Instance);
+            _managePatientsCommand = managePatientsCommand;
+            _manageEmployeesCommand = manageEmployeesCommand;
+            _manageWardsCommand = manageWardsCommand;
+            _logoutCommand = logoutCommand;
+            _navigationService = navigationService;
+            _menuHandler = menuHandler;
         }
 
-        /// <summary>
-        /// Executes the logic to display the main window menu.
-        /// </summary>
         public override void Execute()
         {
-            var command = Ui.ShowInteractiveMenu(Commands);
-            NavigationCommand.Queue(command);
+            var commands = new List<IHasIntroduceString>
+            {
+                _managePatientsCommand.Value,
+                _manageEmployeesCommand.Value,
+                _manageWardsCommand.Value,
+                _logoutCommand.Value
+            };
+
+            var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+            _navigationService.Queue((CompositeCommand)selectedCommand);
+
+            switch (selectedCommand.IntroduceString)
+            {
+                case UiMessages.ManagePatientsMessages.Introduce:
+                    _managePatientsCommand.Value.Execute();
+                    break;
+                case UiMessages.ManageEmployeesMessages.Introduce:
+                    _manageEmployeesCommand.Value.Execute();
+                    break;
+                case UiMessages.ManageWardsMessages.Introduce:
+                    _manageWardsCommand.Value.Execute();
+                    break;
+                case UiMessages.LogoutCommandMessages.Introduce:
+                    _logoutCommand.Value.Execute();
+                    break;
+                default:
+                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    break;
+            }
         }
     }
 }

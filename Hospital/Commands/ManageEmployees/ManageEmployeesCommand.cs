@@ -1,42 +1,67 @@
 ﻿using Hospital.Commands.Navigation;
+using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    /// <summary>
-    /// Represents a command to manage various operations related to staff members.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class ManageEmployeesCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="ManageEmployeesCommand"/> class.
-        /// </summary>
-        private static ManageEmployeesCommand? _instance;
+        private readonly Lazy<HireEmployeeCommand> _hireEmployeeCommand;
+        private readonly Lazy<DisplayEmployeesCommand> _displayEmployeesCommand;
+        private readonly Lazy<FireEmployeeCommand> _fireEmployeeCommand;
+        private readonly Lazy<BackCommand> _backCommand;
+        private readonly INavigationService _navigationService;
+        private readonly IMenuHandler _menuHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="ManageEmployeesCommand"/> class.
-        /// </summary>
-        internal static ManageEmployeesCommand Instance => _instance ??= new ManageEmployeesCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManageEmployeesCommand"/> class, providing options to manage staff.
-        /// </summary>
-        private ManageEmployeesCommand() : base(UiMessages.ManageEmployeesMessages.Introduce, new List<CompositeCommand>())
+        public ManageEmployeesCommand(
+            Lazy<HireEmployeeCommand> hireEmployeeCommand,
+            Lazy<DisplayEmployeesCommand> displayEmployeesCommand,
+            Lazy<FireEmployeeCommand> fireEmployeeCommand,
+            Lazy<BackCommand> backCommand,
+            INavigationService navigationService,
+            IMenuHandler menuHandler)
+            : base(UiMessages.ManageEmployeesMessages.Introduce)
         {
-            Commands.Add(HireEmployeeCommand.Instance);
-            Commands.Add(FireEmployeeCommand.Instance);
-            Commands.Add(DisplayEmployeesCommand.Instance);
-            Commands.Add(NavigationCommand.Instance);
+            _hireEmployeeCommand = hireEmployeeCommand;
+            _displayEmployeesCommand = displayEmployeesCommand;
+            _fireEmployeeCommand = fireEmployeeCommand;
+            _backCommand = backCommand;
+            _navigationService = navigationService;
+            _menuHandler = menuHandler;
         }
 
-        /// <summary>
-        /// Executes the main staff management menu, allowing the user to select from various management options.
-        /// </summary>
         public override void Execute()
         {
-            var command = Ui.ShowInteractiveMenu(Commands);
-            NavigationCommand.Queue(command);
+            var commands = new List<IHasIntroduceString>
+            {
+                _hireEmployeeCommand.Value,
+                _displayEmployeesCommand.Value,
+                _fireEmployeeCommand.Value,
+                _backCommand.Value
+            };
+
+            var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+            _navigationService.Queue((CompositeCommand)selectedCommand);
+
+            switch (selectedCommand.IntroduceString)
+            {
+                case UiMessages.HireEmployeeMessages.Introduce:
+                    _hireEmployeeCommand.Value.Execute();
+                    break;
+                case UiMessages.DisplayEmployeesMessages.Introduce:
+                    _displayEmployeesCommand.Value.Execute();
+                    break;
+                case UiMessages.FireEmployeeMessages.Introduce:
+                    _fireEmployeeCommand.Value.Execute();
+                    break;
+                case UiMessages.BackCommandMessages.Introduce:
+                    _backCommand.Value.Execute(); 
+                    break;
+                default:
+                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    break;
+            }
         }
     }
 }

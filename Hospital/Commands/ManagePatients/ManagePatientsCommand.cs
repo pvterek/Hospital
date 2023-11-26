@@ -1,42 +1,82 @@
-﻿using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.ManagePatients.ManagePatient;
+using Hospital.Commands.Navigation;
+using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    /// <summary>
-    /// Represents the main command to manage multiple patients, providing options like admitting a patient, displaying all patients, managing individual patients, and going back.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class ManagePatientsCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="ManagePatientsCommand"/> class.
-        /// </summary>
-        private static ManagePatientsCommand? _instance;
+        private readonly Lazy<AdmitPatientCommand> _admitPatientCommand;
+        private readonly Lazy<DisplayPatientsCommand> _displayPatientsCommand;
+        private readonly Lazy<AssignToDoctorCommand> _assignToDoctorCommand;
+        private readonly Lazy<ChangeHealthStatusCommand> _changeHealthStatusCommand;
+        private readonly Lazy<SignOutPatientCommand> _signOutPatientCommand;
+        private readonly Lazy<BackCommand> _backCommand;
+        private readonly INavigationService _navigationService;
+        private readonly IMenuHandler _menuHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="ManagePatientsCommand"/> class.
-        /// </summary>
-        internal static ManagePatientsCommand Instance => _instance ??= new ManagePatientsCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagePatientsCommand"/> class, providing a list of patient management options.
-        /// </summary>
-        private ManagePatientsCommand() : base(UiMessages.ManagePatientsMessages.Introduce, new List<CompositeCommand>())
+        public ManagePatientsCommand(
+            Lazy<AdmitPatientCommand> admitPatientCommand,
+            Lazy<DisplayPatientsCommand> displayPatientsCommand,
+            Lazy<AssignToDoctorCommand> assignToDoctorCommand,
+            Lazy<ChangeHealthStatusCommand> changeHealthStatusCommand,
+            Lazy<SignOutPatientCommand> signOutPatientCommand,
+            Lazy<BackCommand> backCommand,
+            INavigationService navigationService,
+            IMenuHandler menuHandler)
+            : base(UiMessages.ManagePatientsMessages.Introduce)
         {
-            Commands.Add(AdmitPatientCommand.Instance);
-            Commands.Add(DisplayPatientsCommand.Instance);
-            Commands.Add(ManagePatientCommand.Instance);
-            Commands.Add(NavigationCommand.Instance);
+            _admitPatientCommand = admitPatientCommand;
+            _displayPatientsCommand = displayPatientsCommand;
+            _assignToDoctorCommand = assignToDoctorCommand;
+            _changeHealthStatusCommand = changeHealthStatusCommand;
+            _signOutPatientCommand = signOutPatientCommand;
+            _backCommand = backCommand;
+            _navigationService = navigationService;
+            _menuHandler = menuHandler;
         }
 
-        /// <summary>
-        /// Executes the patient management menu, allowing the user to select from various options.
-        /// </summary>
         public override void Execute()
         {
-            var command = Ui.ShowInteractiveMenu(Commands);
-            NavigationCommand.Queue(command);
+            var commands = new List<IHasIntroduceString>
+            {
+                _admitPatientCommand.Value,
+                _displayPatientsCommand.Value,
+                _assignToDoctorCommand.Value,
+                _changeHealthStatusCommand.Value,
+                _signOutPatientCommand.Value,
+                _backCommand.Value
+            };
+
+            var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+            _navigationService.Queue((CompositeCommand)selectedCommand);
+
+            switch (selectedCommand.IntroduceString)
+            {
+                case UiMessages.AdmitPatientMessages.Introduce:
+                    _admitPatientCommand.Value.Execute();
+                    break;
+                case UiMessages.DisplayPatientsMessages.Introduce:
+                    _displayPatientsCommand.Value.Execute();
+                    break;
+                case UiMessages.AssignToDoctorMessages.Introduce:
+                    _assignToDoctorCommand.Value.Execute();
+                    break;
+                case UiMessages.ChangeHealthStatusMessages.Introduce:
+                    _changeHealthStatusCommand.Value.Execute();
+                    break;
+                case UiMessages.SignOutPatientMessages.Introduce:
+                    _signOutPatientCommand.Value.Execute();
+                    break;
+                case UiMessages.BackCommandMessages.Introduce:
+                    _backCommand.Value.Execute();
+                    break;
+                default:
+                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    break;
+            }
         }
     }
 }

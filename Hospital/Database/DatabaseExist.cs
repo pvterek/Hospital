@@ -3,24 +3,19 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace Hospital.Database
 {
-    /// <summary>
-    /// Utility class for checking and initializing the database schema.
-    /// </summary>
     internal static class DatabaseExist
     {
-        /// <summary>
-        /// Checks if the database file exists and creates or updates the schema accordingly.
-        /// </summary>
-        /// <param name="configuration">The NHibernate configuration.</param>
+        internal const string DatabaseName = "HospitalDB.db";
+        
         public static void Check(Configuration configuration)
         {
-            if (!File.Exists("mydatabase.db"))
+            if (!File.Exists($"{DirectoryExist.DirectoryPath}\\{DatabaseName}"))
             {
-                new SchemaExport(configuration).Create(true, true);
+                new SchemaExport(configuration).Create(false, true);
             }
             else
             {
-                new SchemaUpdate(configuration).Execute(true, true);
+                new SchemaUpdate(configuration).Execute(false, true);
             }
         }
     }

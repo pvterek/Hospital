@@ -1,81 +1,44 @@
-﻿using Hospital.PeopleCategories;
-using Hospital.PeopleCategories.UserClass;
-using Hospital.Utilities;
+﻿using Hospital.Utilities;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    /// <summary>
-    /// Represents the main command for the login process, handling user input for login credentials and authenticating the user.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class LoginCommand : CompositeCommand
     {
-        /// <summary>
-        /// Value indicating whether the user is currently logged in.
-        /// </summary>
         public static bool IsLoggedIn;
-        
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="LoginCommand"/> class.
-        /// </summary>
-        private static LoginCommand? _instance;
+        private readonly IAuthenticationService _authenticationService;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IInputHandler _inputHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="LoginCommand"/> class.
-        /// </summary>
-        internal static LoginCommand Instance => _instance ??= new LoginCommand();
+        public LoginCommand(
+            IAuthenticationService authenticationService,
+            IMenuHandler menuHandler,
+            IInputHandler inputHandler) 
+            : base(UiMessages.LoginCommandMessages.Introduce) 
+        {
+            _authenticationService = authenticationService;
+            _menuHandler = menuHandler;
+            _inputHandler = inputHandler;
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginCommand"/> class with the specified introduction message.
-        /// </summary>
-        private LoginCommand() : base(UiMessages.LoginCommandMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the login process, prompting the user for login credentials and authenticating against the available users.
-        /// </summary>
         public override void Execute()
         {
-            string login;
-            
-            do
+            var login = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt);
+            if(_authenticationService.GetUserByLogin(login) is null)
             {
-                login = FactoryMethods.AskForValue(UiMessages.FactoryMessages.EnterLoginPrompt, UiMessages.FactoryMessages.EmptyFieldPrompt);
+                _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.CantFindLoginPrompt);
+                return;
             }
-            while (!CheckIfUserExist(AuthenticationService.GetUserByLogin(login)));
 
-            var password = FactoryMethods.AskForPassword();
-
-            AuthenticateUser(login, password);
-        }
-
-        /// <summary>
-        /// Checks if the user exists based on the provided user object.
-        /// </summary>
-        /// <param name="user">The user object to check.</param>
-        private bool CheckIfUserExist(User? user)
-        {
-            if (user != null) return true;
-            
-            Ui.ShowMessage(UiMessages.LoginCommandMessages.CantFindLoginPrompt);
-            return false;
-        }
-
-        /// <summary>
-        /// Authenticates the user using the given login and password.
-        /// </summary>
-        /// <param name="login">The user's login for authentication.</param>
-        /// <param name="password">The user's password for authentication.</param>
-        private void AuthenticateUser(string login, string password)
-        {
-            if (AuthenticationService.Authenticate(login, password))
+            var password = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt);
+            if (!_authenticationService.Authenticate(login, password))
             {
-                IsLoggedIn = true;
+                _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.WrongPasswordPrompt);
+                return;
             }
-            else
-            {
-                Ui.ShowMessage(UiMessages.LoginCommandMessages.WrongPasswordPrompt);
-            }
+
+            IsLoggedIn = true;
         }
     }
 }

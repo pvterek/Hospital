@@ -1,40 +1,56 @@
 ﻿using Hospital.Commands.Navigation;
+using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    /// <summary>
-    /// Represents the main command for displaying the login window options, such as logging in and creating a new account.
-    /// Inherits from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class LoginWindowCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="LoginWindowCommand"/> class.
-        /// </summary>
-        private static LoginWindowCommand? _instance;
+        private readonly Lazy<LoginCommand> _loginCommand;
+        private readonly Lazy<CreateAccountCommand> _createAccountCommand;
+        private readonly Lazy<ExitCommand> _exitCommand;
+        private readonly IMenuHandler _menuHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="LoginWindowCommand"/> class.
-        /// </summary>
-        internal static LoginWindowCommand Instance => _instance ??= new LoginWindowCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginWindowCommand"/> class.
-        /// </summary>
-        private LoginWindowCommand() : base(UiMessages.LoginWindowCommandMessages.Introduce, new List<CompositeCommand>())
+        public LoginWindowCommand(
+            Lazy<LoginCommand> loginCommand,
+            Lazy<CreateAccountCommand> createAccountCommand,
+            Lazy<ExitCommand> exitCommand,
+            IMenuHandler menuHandler)
+            : base(UiMessages.LoginWindowCommandMessages.Introduce)
         {
-            Commands.Add(LoginCommand.Instance);
-            Commands.Add(CreateAccountCommand.Instance);
-            Commands.Add(ExitCommand.Instance);
+            _loginCommand = loginCommand;
+            _createAccountCommand = createAccountCommand;
+            _exitCommand = exitCommand;
+            _menuHandler = menuHandler;
         }
 
-        /// <summary>
-        /// Executes the login window process.
-        /// </summary>
         public override void Execute()
         {
-            Ui.ShowInteractiveMenu(Commands).Execute();
+            var commands = new List<IHasIntroduceString>
+            {
+                _loginCommand.Value,
+                _createAccountCommand.Value,
+                _exitCommand.Value
+            };
+
+            var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+
+            switch (selectedCommand.IntroduceString)
+            {
+                case UiMessages.LoginCommandMessages.Introduce:
+                    _loginCommand.Value.Execute();
+                    break;
+                case UiMessages.CreateAccountCommandMessages.Introduce:
+                    _createAccountCommand.Value.Execute();
+                    break;
+                case UiMessages.ExitCommandMessages.Introduce:
+                    _exitCommand.Value.Execute();
+                    break;
+                default:
+                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    break;
+            }
         }
     }
 }

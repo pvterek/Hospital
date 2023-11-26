@@ -2,211 +2,240 @@
 {
     internal static class UiMessages
     {
-        public static class AdmitPatientMessages
+        internal static class AdmitPatientMessages
         {
-            public const string Introduce = "Admit a patient.";
-            public const string NoWardErrorPrompt = "No wards created to assign patient! Please create one first.";
-            public const string PatientCreatedPrompt = "Patient {0} {1} admited sucesfully!";
+            internal const string Introduce = "Admit a patient.";
+            internal const string NoWardErrorPrompt = "No wards created to assign patient! Please create one first.";
+            internal const string PatientCreatedPrompt = "Patient {0} {1} admited sucesfully!";
         }
 
-        public static class AssignToDoctorMessages
+        internal static class AssignToDoctorMessages
         {
-            public const string Introduce = "Assign to doctor";
-            public const string SelectPatientPrompt = "Pick for which patient you want assing doctor";
-            public const string SelectDoctorPrompt = "Pick to which doctor you want to assing the patient";
-            public const string NoDoctorsPrompt = "There is no doctors in selected ward yet.";
-            public const string OperationSuccessPrompt = "{0} {1} has been assgined to the {2} {3}";
+            internal const string Introduce = "Assign to doctor";
+            internal const string SelectPatientPrompt = "Pick for which patient you want assing doctor";
+            internal const string SelectDoctorPrompt = "Pick to which doctor you want to assing the patient";
+            internal const string NoDoctorsPrompt = "There is no doctor to assigned! Please add one first.";
+            internal const string OperationSuccessPrompt = "{0} {1} has been assgined to the {2} {3}";
         }
 
-        public static class ChangeHealthStatusMessages
+        internal static class ChangeHealthStatusMessages
         {
-            public const string Introduce = "Change health status.";
-            public const string SelectPatientPrompt = "Pick for which patient you want change health status";
-            public const string OperationSuccessPrompt = "Health status of {0} {1} was changed successfully!";
+            internal const string Introduce = "Change health status.";
+            internal const string SelectPatientPrompt = "Pick for which patient you want change health status";
+            internal const string OperationSuccessPrompt = "Health status of {0} {1} was changed successfully!";
         }
 
-        public static class DisplayPatientsMessages
+        internal static class DisplayPatientsMessages
         {
-            public const string Introduce = "Display all patients.";
-            public const string NoPatientsPrompt = "There is no patients in selected ward yet.";
+            internal const string Introduce = "Display all patients.";
+            internal const string NoPatientsPrompt = "There is no patients in your hospital! Please add one first.";
         }
 
-        public static class ManagePatientMessages
+        internal static class ManagePatientMessages
         {
-            public const string Introduce = "Manage patient.";
+            internal const string Introduce = "Manage patient.";
         }
 
-        public static class ManagePatientsMessages
+        internal static class ManagePatientsMessages
         {
-            public const string Introduce = "Manage patients.";
+            internal const string Introduce = "Manage patients.";
         }
 
-        public static class SignOutPatientMessages
+        internal static class SignOutPatientMessages
         {
-            public const string Introduce = "Sign out patient";
-            public const string SignOutPrompt = "Pick which patient you want sign out.";
-            public const string SuccessSignOutPrompt = "Patient {0} {1} removed sucesfully!";
+            internal const string Introduce = "Sign out patient";
+            internal const string SignOutPrompt = "Pick which patient you want sign out.";
+            internal const string SuccessSignOutPrompt = "Patient {0} {1} removed sucesfully!";
         }
 
         //ManageStaff
-        public static class DisplayEmployeesMessages
+        internal static class DisplayEmployeesMessages
         {
-            public const string Introduce = "Display employees";
-            public const string NoEmployeesPrompt = "There is no employees in selected ward yet.";
+            internal const string Introduce = "Display employees";
+            internal const string NoEmployeesPrompt = "There is no employees in your hospital! Please add one first.";
         }
 
-        public static class FireEmployeeMessages
+        internal static class FireEmployeeMessages
         {
-            public const string Introduce = "Fire employee";
-            public const string SelectEmployeePrompt = "Pick which employee you want to fire.";
-            public const string EmployeeFiredSuccessPrompt = "{0} {1} was fired successfully!";
-            public const string NoEmployeesPrompt = "There is no employees to fire.";
+            internal const string Introduce = "Fire employee";
+            internal const string SelectEmployeePrompt = "Pick which employee you want to fire.";
+            internal const string EmployeeFiredSuccessPrompt = "{0} {1} was fired successfully!";
+            internal const string NoEmployeesPrompt = "There is no employees to fire.";
         }
 
-        public static class HireEmployeeMessages
+        internal static class HireEmployeeMessages
         {
-            public const string Introduce = "Hire employee";
-            public const string SuccessHireEmployeePrompt = "{0} {1} hired!";
-            public const string ErrorHireEmployeePrompt = "Error occured while trying to hire employee!";
+            internal const string Introduce = "Hire employee";
+            internal const string SuccessHireEmployeePrompt = "{0} {1} hired!";
+            internal const string ErrorHireEmployeePrompt = "Error occured while trying to hire employee!";
+            internal const string UnsupportedEntityPrompt = "Unsupported entity type {0}.";
         }
 
-        public static class ManageEmployeesMessages
+        internal static class ManageEmployeesMessages
         {
-            public const string Introduce = "Manage employees";
+            internal const string Introduce = "Manage employees";
         }
 
         //ManageWards
-        public static class AddWardMessages
+        internal static class AddWardMessages
         {
-            public const string Introduce = "Add ward";
-            public const string WardCreatedPrompt = "Ward {0} created!";
+            internal const string Introduce = "Add ward";
+            internal const string WardCreatedPrompt = "Ward {0} created!";
         }
 
-        public static class DeleteWardMessages
+        internal static class DeleteWardMessages
         {
-            public const string Introduce = "Delete ward";
-            public const string WardRemovedPrompt = "Ward removed: {0}!";
-            public const string WardNonEmptyPrompt = "Connot delete a ward to which patients or employees are assigned";
-            public const string SelectWardPrompt = "Select ward which you want to delete.";
-            public const string NoWardPrompt = "There are no ward that can be deleted! Please create one first.";
+            internal const string Introduce = "Delete ward";
+            internal const string WardRemovedPrompt = "Ward removed: {0}!";
+            internal const string WardNonEmptyPrompt = "Connot delete a ward to which patients or employees are assigned";
+            internal const string SelectWardPrompt = "Select ward which you want to delete.";
+            internal const string NoWardPrompt = "There are no ward that can be deleted! Please create one first.";
         }
 
-        public static class DisplayWardMessages
+        internal static class DisplayWardMessages
         {
-            public const string Introduce = "Display wards";
-            public const string NoWardPrompt = "There are no ward that can be displayed!";
+            internal const string Introduce = "Display wards";
+            internal const string NoWardPrompt = "There are no ward that can be displayed!";
         }
 
-        public static class ManageWardsMessages
+        internal static class ManageWardsMessages
         {
-            public const string Introduce = "Manage wards";
+            internal const string Introduce = "Manage wards";
         }
 
         //Factory
-        public static class FactoryMessages
+        internal static class FactoryMessages
         {
-            public const string ProvideNamePrompt = "Enter a name: ";
-            public const string ProvideSurnamePrompt = "Enter a surname: ";
-            public const string EmptyFieldPrompt = "Field can't be empty!";
-            public const string ProvideGenderPrompt = "Enter a gender (Male, Female): ";
-            public const string InvalidGenderPrompt = "Invalid input. Please choose 'Male' or 'Female'.";
-            public const string ProvidePeselPrompt = "Enter a PESEL: ";
-            public const string InvalidPeselPrompt = "Invalid PESEL. It should be an 11-digit number. Please try again.";
-            public const string ProvideBirthdayPrompt = "Enter a birthday (e.g., DD-MM-YYYY):";
-            public const string InvalidBirthdayPrompt = "Birthday cannot be a future date. Please try again.";
-            public const string InvalidDateFormatPrompt = "Invalid date format. Please try again.";
-            public const string InvalidDatePrompt = "Invalid date. Please try again.";
-            public const string ProvideCapacityPrompt = "Please enter a positive capacity value:";
-            public const string NotValidNumberPrompt = "Please enter a valid number.";
-            public const string FullWardPrompt = "This ward is full. Create a new one!";
-            public const string EnterLoginPrompt = "Enter login: ";
-            public const string EmptyLoginPrompt = "Login can't be empty!";
-            public const string TakenLoginPrompt = "This login already exists! Try a different one";
-            public const string EnterPasswordPrompt = "Enter password: ";
-            public const string EmptyPasswordPrompt = "Login can't be empty!";
-            public const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
-            public const string NoWardErrorPrompt = "No wards created to assign employee! Please create one first.";
+            internal const string ProvideNamePrompt = "Enter a name: ";
+            internal const string ProvideSurnamePrompt = "Enter a surname: ";
+            internal const string EmptyFieldPrompt = "Field can't be empty!";
+            internal const string ProvideGenderPrompt = "Enter a gender (Male, Female): ";
+            internal const string InvalidGenderPrompt = "Invalid input. Please choose 'Male' or 'Female'.";
+            internal const string ProvidePeselPrompt = "Enter a PESEL: ";
+            internal const string InvalidPeselPrompt = "Invalid PESEL. It should be an 11-digit number. Please try again.";
+            internal const string ProvideBirthdayPrompt = "Enter a birthday (e.g., DD-MM-YYYY):";
+            internal const string InvalidBirthdayPrompt = "Birthday cannot be a future date. Please try again.";
+            internal const string InvalidDateFormatPrompt = "Invalid date format. Please try again.";
+            internal const string InvalidDatePrompt = "Invalid date. Please try again.";
+            internal const string ProvideCapacityPrompt = "Please enter a positive capacity value:";
+            internal const string NotValidNumberPrompt = "Please enter a valid number.";
+            internal const string FullWardPrompt = "This ward is full. Create a new one!";
+            internal const string ProvideLoginPrompt = "Enter login: ";
+            internal const string EmptyLoginPrompt = "Login can't be empty!";
+            internal const string TakenLoginPrompt = "This login already exists! Try a different one";
+            internal const string ProvidePasswordPrompt = "Enter password: ";
+            internal const string EmptyPasswordPrompt = "Login can't be empty!";
+            internal const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
+            internal const string NoWardErrorPrompt = "No wards created to assign employee! Please create one first.";
+            internal const string AbortedOperationPrompt = "User aborted the operation.";
+            internal const string StopMessage = "stop";
         }
 
         //WardObject
-        public static class WardObjectMessages
+        internal static class WardObjectMessages
         {
-            public const string Introduce = "Ward: {0} [{1}/{2}]";
-            public const string ProvideNamePrompt = "Provide ward name: ";
-            public const string EmptyNamePrompt = "Name can't be empty.";
+            internal const string Introduce = "Ward: {0} [{1}/{2}]";
+            internal const string ProvideNamePrompt = "Provide ward name: ";
+            internal const string EmptyNamePrompt = "Name can't be empty.";
         }
 
         //ExitCommand
-        public static class ExitCommandMessages
+        internal static class ExitCommandMessages
         {
-            public const string Introduce = "Exit";
+            internal const string Introduce = "Exit";
         }
 
         //MainWindow
-        public static class MainWindowMessages
+        internal static class MainWindowMessages
         {
-            public const string Introduce = "Main window";
+            internal const string Introduce = "Main window";
         }
 
         //BackCommand
-        public static class BackCommandMessages
+        internal static class BackCommandMessages
         {
-            public const string Introduce = "Go back";
+            internal const string Introduce = "Go back";
         }
 
         //LoginWindow
-        public static class LoginWindowCommandMessages
+        internal static class LoginWindowCommandMessages
         {
-            public const string Introduce = "Login window";
+            internal const string Introduce = "Login window";
         }
 
-        public static class CreateAccountCommandMessages
+        internal static class CreateAccountCommandMessages
         {
-            public const string Introduce = "Create account";
-            public const string CreatedAccountPrompt = "User {0} created successfully!";
-            public const string ErrorCreateAccountPrompt = "Error occured while trying to create an account!";
+            internal const string Introduce = "Create account";
+            internal const string CreatedAccountPrompt = "User {0} created successfully!";
         }
 
-        public static class LoginCommandMessages
+        internal static class LoginCommandMessages
         {
-            public const string Introduce = "Login";
-            public const string WrongPasswordPrompt = "Wrong password!";
-            public const string CantFindLoginPrompt = "No user with this login found!";
+            internal const string Introduce = "Login";
+            internal const string WrongPasswordPrompt = "Wrong password!";
+            internal const string CantFindLoginPrompt = "No user with this login found!";
         }
 
-        public static class AuthenticationServiceMessages
+        internal static class AuthenticationServiceMessages
         {
-            public const string ErrorGetUserByLoginPrompt = "Error occured while trying to get user login";
+            internal const string ErrorGetUserByLoginPrompt = "Error occured while trying to get user login";
         }
 
-        public static class LogoutCommandMessages
+        internal static class LogoutCommandMessages
         {
-            public const string Introduce = "Logout";
+            internal const string Introduce = "Logout";
         }
 
         //UserObject
-        public static class UserObjectMessages
+        internal static class UserObjectMessages
         {
-            public const string Introduce = "Welcome {0} {1}!";
+            internal const string Introduce = "Welcome {0} {1}!";
         }
 
         //PatientObject
-        public static class PatientObjectMessages
+        internal static class PatientObjectMessages
         {
-            public const string Introduce = "{0} {1} [{2}] - patient at {3}.";
+            internal const string Introduce = "{0} {1} [{2}] - patient at {3}.";
         }
 
         //NurseObject
-        public static class NurseObjectMessages
+        internal static class NurseObjectMessages
         {
-            public const string Introduce = "{0} {1} - {2} at {3} Ward.";
-            public const string Position = "Nurse";
+            internal const string Introduce = "{0} {1} - {2} at {3} Ward.";
+            internal const string Position = "Nurse";
         }
 
-        public static class DoctorObjectMessages
+        internal static class DoctorObjectMessages
         {
-            public const string Introduce = "{0} {1} - {2} at {3} Ward.";
-            public const string Position = "Doctor";
+            internal const string Introduce = "{0} {1} - {2} at {3} Ward.";
+            internal const string Position = "Doctor";
+        }
+
+        internal static class DatabaseExceptions
+        {
+            internal const string QueryException = "Exception occured while trying to gather data from database!";
+            internal const string ItemNull = "The provided item is null.";
+            internal const string AddException = "Exception occurred while adding: {0}";
+            internal const string RemoveException = "Exception occurred while removing: {0}";
+            internal const string ItemNotFound = "Item of type {0} with ID {1} not found in the list.";
+            internal const string UpdateException = "Exception occurred while updating: {0}";
+        }
+
+        //Exceptions
+        internal static class ExceptionMessages
+        {
+            internal const string String = "Invalid or empty value provided!";
+            internal const string Gender = "Invalid gender provided!";
+            internal const string Date = "Invalid date provided!";
+            internal const string Login = "Login is already taken!";
+            internal const string Password = "Password don't meet requirements!";
+            internal const string Pesel = "Provided pesel already taken or don't meet requirements!";
+            internal const string WardName = "Provided invalid or already taken ward name!";
+            internal const string Capacity = "Provided invalid capacity!";
+            internal const string Command = "Invalid command selected!";
+            internal const string EntityType = "Unsupported entity type {0}.";
+            internal const string DTOValidation = "DTO validation failed.";
+            internal const string WardFull = "Ward you want to assign patient is already full!";
         }
     }
 }

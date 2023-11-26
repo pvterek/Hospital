@@ -1,48 +1,32 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Database;
-using Hospital.PeopleCategories.PatientClass;
+﻿using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    /// <summary>
-    /// Represents a command to display patients.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class DisplayPatientsCommand : CompositeCommand
     {
-        private static DisplayPatientsCommand? _instance;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IListsStorage _listsStorage;
 
-        /// <summary>
-        /// Singleton instance of the <see cref="DisplayPatientsCommand"/> class.
-        /// </summary>
-        internal static DisplayPatientsCommand Instance => _instance ??= new DisplayPatientsCommand();
+        public DisplayPatientsCommand(
+            IMenuHandler menuHandler,
+            IListsStorage listsStorage)
+            : base(UiMessages.DisplayPatientsMessages.Introduce)
+        {
+            _menuHandler = menuHandler;
+            _listsStorage = listsStorage;
+        }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayPatientsCommand"/> class.
-        /// </summary>
-        private DisplayPatientsCommand() : base(UiMessages.DisplayPatientsMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the display patients command.
-        /// If there are no patients, displays a no patients prompt.
-        /// Otherwise, it will display the list of patients.
-        /// </summary>
         public override void Execute()
         {
-            using var session = CreateSession.SessionFactory.OpenSession();
-
-            var patients = (List<Patient>)DatabaseOperations<Patient>.GetAll(session);
-            if (!patients.Any())
+            if (!_listsStorage.Patients.Any())
             {
-                Ui.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
-            }
-            else
-            {
-                ListMaker.DisplayList(patients);
+                _menuHandler.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
+                return;
             }
 
-            NavigationCommand.Instance.Execute();
+            _menuHandler.DisplayList(_listsStorage.Patients);
         }
     }
 }

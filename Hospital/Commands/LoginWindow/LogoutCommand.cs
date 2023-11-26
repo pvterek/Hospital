@@ -1,36 +1,16 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Utilities.UserInterface;
+﻿using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.LoginWindow
 {
-    /// <summary>
-    /// Represents the command that handles the logout action in the login window.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class LogoutCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds the single instance of the <see cref="LogoutCommand"/> class.
-        /// </summary>
-        private static LogoutCommand? _instance;
+        public LogoutCommand()
+            : base(UiMessages.LogoutCommandMessages.Introduce) { }
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="LogoutCommand"/> class.
-        /// </summary>
-        internal static LogoutCommand Instance => _instance ??= new LogoutCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogoutCommand"/> class with the specified introduction message.
-        /// </summary>
-        private LogoutCommand() : base(UiMessages.LogoutCommandMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the logout command. Sets the user status to logged out.
-        /// </summary>
         public override void Execute()
         {
             LoginCommand.IsLoggedIn = false;
-            LoginWindowCommand.Instance.Execute();
+            return;
         }
     }
 }

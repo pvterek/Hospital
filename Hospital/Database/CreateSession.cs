@@ -6,15 +6,8 @@ using NHibernate;
 
 namespace Hospital.Database
 {
-    /// <summary>
-    /// Utility class for creating a session factory for NHibernate.
-    /// </summary>
     internal static class CreateSession
     {
-        /// <summary>
-        /// Creates and configures an NHibernate session factory.
-        /// </summary>
-        /// <returns>An NHibernate session factory.</returns>
         private static ISessionFactory CreateSessionFactory()
         {
             var configuration = new NHibernate.Cfg.Configuration();
@@ -23,7 +16,7 @@ namespace Hospital.Database
 
             configuration.DataBaseIntegration(x =>
             {
-                x.ConnectionString = $"Data Source={DirectoryExist.DirectoryPath}\\HospitalDB.db;Version=3;";
+                x.ConnectionString = $"Data Source={DirectoryExist.DirectoryPath}\\{DatabaseExist.DatabaseName};Version=3;";
                 x.Driver<SQLite20Driver>();
                 x.Dialect<SQLiteDialect>();
             });
@@ -36,9 +29,11 @@ namespace Hospital.Database
             return configuration.BuildSessionFactory();
         }
         
-        /// <summary>
-        /// The NHibernate session factory used for database operations.
-        /// </summary>
-        public static readonly ISessionFactory SessionFactory = CreateSessionFactory();
+        private static ISessionFactory? _sessionFactory;
+
+        internal static ISessionFactory SessionFactory
+        {
+            get { return _sessionFactory ??= CreateSessionFactory(); }
+        }
     }
 }

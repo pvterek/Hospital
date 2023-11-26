@@ -1,42 +1,67 @@
 ﻿using Hospital.Commands.Navigation;
+using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    /// <summary>
-    /// Represents a command to manage wards.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class ManageWardsCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="ManageWardsCommand"/> class.
-        /// </summary>
-        private static ManageWardsCommand? _instance;
+        private readonly Lazy<AddWardCommand> _addWardCommand;
+        private readonly Lazy<DisplayWardCommand> _displayWardCommand;
+        private readonly Lazy<DeleteWardCommand> _deleteWardCommand;
+        private readonly Lazy<BackCommand> _backCommand;
+        private readonly INavigationService _navigationService;
+        private readonly IMenuHandler _menuHandler;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="ManageWardsCommand"/> class.
-        /// </summary>
-        internal static ManageWardsCommand Instance => _instance ??= new ManageWardsCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManageWardsCommand"/> class with a specific introduction message and a list of sub-commands.
-        /// </summary>
-        private ManageWardsCommand() : base(UiMessages.ManageWardsMessages.Introduce, new List<CompositeCommand>())
+        public ManageWardsCommand(
+            Lazy<AddWardCommand> addWardCommand,
+            Lazy<DisplayWardCommand> displayWardCommand,
+            Lazy<DeleteWardCommand> deleteWardCommand,
+            Lazy<BackCommand> backCommand,
+            INavigationService navigationService,
+            IMenuHandler menuHandler)
+            : base(UiMessages.ManageWardsMessages.Introduce)
         {
-            Commands.Add(AddWardCommand.Instance);
-            Commands.Add(DeleteWardCommand.Instance);
-            Commands.Add(DisplayWardCommand.Instance);
-            Commands.Add(NavigationCommand.Instance);
+            _addWardCommand = addWardCommand;
+            _displayWardCommand = displayWardCommand;
+            _deleteWardCommand = deleteWardCommand;
+            _backCommand = backCommand;
+            _navigationService = navigationService;
+            _menuHandler = menuHandler;
         }
 
-        /// <summary>
-        /// Executes the command to manage wards, allowing the user to select from various management options.
-        /// </summary>
         public override void Execute()
         {
-            var command = Ui.ShowInteractiveMenu(Commands);
-            NavigationCommand.Queue(command);
+            var commands = new List<IHasIntroduceString>
+            {
+                _addWardCommand.Value,
+                _displayWardCommand.Value,
+                _deleteWardCommand.Value,
+                _backCommand.Value
+            };
+
+            var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+            _navigationService.Queue((CompositeCommand)selectedCommand);
+
+            switch (selectedCommand.IntroduceString)
+            {
+                case UiMessages.AddWardMessages.Introduce:
+                    _addWardCommand.Value.Execute();
+                    break;
+                case UiMessages.DisplayWardMessages.Introduce:
+                    _displayWardCommand.Value.Execute();
+                    break;
+                case UiMessages.DeleteWardMessages.Introduce:
+                    _deleteWardCommand.Value.Execute();
+                    break;
+                case UiMessages.BackCommandMessages.Introduce:
+                    _backCommand.Value.Execute();
+                    break;
+                default:
+                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    break;
+            }
         }
     }
 }

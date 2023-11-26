@@ -1,57 +1,48 @@
-﻿using Hospital.Commands.Navigation;
-using Hospital.Database;
-using Hospital.PeopleCategories.WardClass;
-using Hospital.Utilities.UserInterface;
-using NHibernate;
+﻿using Hospital.Utilities.UserInterface;
+using Hospital.Utilities.ListManagment;
+using Hospital.PeopleCategories.Factory.Interfaces;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    /// <summary>
-    /// Represents a command to add a new ward.
-    /// Inheriting from the <see cref="CompositeCommand"/> class.
-    /// </summary>
     internal class AddWardCommand : CompositeCommand
     {
-        /// <summary>
-        /// Holds a singleton instance of the <see cref="AddWardCommand"/> class.
-        /// </summary>
-        private static AddWardCommand? _instance;
+        private readonly IObjectsFactory _objectsFactory;
+        private readonly IValidateObjects _validateObjects;
+        private readonly IDTOFactory _dtoFactory;
+        private readonly IMenuHandler _menuHandler;
+        private readonly IListManage _listManage;
+        private readonly IListsStorage _listsStorage;
 
-        /// <summary>
-        /// Gets the singleton instance of the <see cref="AddWardCommand"/> class.
-        /// </summary>
-        internal static AddWardCommand Instance => _instance ??= new AddWardCommand();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddWardCommand"/> class with a specific introduction message.
-        /// </summary>
-        private AddWardCommand() : base(UiMessages.AddWardMessages.Introduce) { }
-
-        /// <summary>
-        /// Executes the procedure to add a new ward. The ward details are created using a factory method and then added to the database.
-        /// </summary>
-        public override void Execute()
+        public AddWardCommand(
+            IObjectsFactory objectsFactory,
+            IValidateObjects validateObjects,
+            IDTOFactory dtoFactory,
+            IMenuHandler menuHandler,
+            IListManage listManage,
+            IListsStorage listsStorage) 
+            : base(UiMessages.AddWardMessages.Introduce)
         {
-            using var session = CreateSession.SessionFactory.OpenSession();
-
-            var ward = AddWard(session);
-            
-            Ui.ShowMessage(string.Format(UiMessages.AddWardMessages.WardCreatedPrompt, ward.Name));
-
-            NavigationCommand.Instance.Execute();
+            _objectsFactory = objectsFactory;
+            _validateObjects = validateObjects;
+            _dtoFactory = dtoFactory;
+            _menuHandler = menuHandler;
+            _listManage = listManage;
+            _listsStorage = listsStorage;
         }
 
-        /// <summary>
-        /// Adds a new ward to the database and returns the created ward.
-        /// </summary>
-        /// <param name="session">The database session to use for the operation.</param>
-        /// <returns>The newly created ward.</returns>
-        private Ward AddWard(ISession session)
+        public override void Execute()
         {
-            var ward = WardFactory.CreateWard(session);
-            DatabaseOperations<Ward>.Add(ward, session);
+            var wardDTO = _dtoFactory.GatherWardData();
+            if (!_validateObjects.ValidateWardObject(wardDTO))
+            {
+                return;
+            }
 
-            return ward;
+            var ward = _objectsFactory.CreateWard(wardDTO);
+            _listManage.Add(ward, _listsStorage.Wards);
+
+            _menuHandler.ShowMessage(string.Format(UiMessages.AddWardMessages.WardCreatedPrompt, ward.Name));
         }
     }
 }
