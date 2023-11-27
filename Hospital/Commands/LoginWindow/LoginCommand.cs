@@ -1,4 +1,5 @@
-﻿using Hospital.Utilities;
+﻿using Hospital.PeopleCategories.UserClass;
+using Hospital.Utilities;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -25,14 +26,15 @@ namespace Hospital.Commands.LoginWindow
         public override void Execute()
         {
             var login = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt);
-            if(_authenticationService.GetUserByLogin(login) is null)
+            User? user = _authenticationService.GetUserByLogin(login);
+            if (user is null)
             {
                 _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.CantFindLoginPrompt);
                 return;
             }
 
-            var password = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt);
-            if (!_authenticationService.Authenticate(login, password))
+            var inputPassword = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt);
+            if (!_authenticationService.Authenticate(user.Password, inputPassword))
             {
                 _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.WrongPasswordPrompt);
                 return;

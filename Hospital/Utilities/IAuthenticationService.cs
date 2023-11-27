@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hospital.PeopleCategories.UserClass;
+﻿using Hospital.PeopleCategories.UserClass;
 
 namespace Hospital.Utilities
 {
-    internal interface IAuthenticationService
+    public interface IAuthenticationService
     {
-        public bool Authenticate(string login, string password);
-        public User? GetUserByLogin(string login);
+        bool Authenticate(string userPassword, string inputPassword);
+        User? GetUserByLogin(string login);
     }
 }

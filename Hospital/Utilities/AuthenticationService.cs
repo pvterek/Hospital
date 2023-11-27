@@ -3,7 +3,7 @@ using Hospital.Utilities.ListManagment;
 
 namespace Hospital.Utilities
 {
-    internal class AuthenticationService : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IListsStorage _listsStorage;
 
@@ -12,10 +12,9 @@ namespace Hospital.Utilities
             _listsStorage = listsStorage;
         }
         
-        public bool Authenticate(string login, string password)
+        public bool Authenticate(string userPassword, string inputPassword)
         {
-            var user = GetUserByLogin(login);
-            return user != null && user.Password == password;
+            return userPassword == inputPassword;
         }
 
         public User? GetUserByLogin(string login)
