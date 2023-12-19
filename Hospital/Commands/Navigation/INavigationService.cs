@@ -1,6 +1,6 @@
 ﻿namespace Hospital.Commands.Navigation
 {
-    internal interface INavigationService
+    public interface INavigationService
     {
         CompositeCommand GetPreviousCommand();
         CompositeCommand GetCurrentCommand();

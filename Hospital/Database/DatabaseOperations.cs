@@ -6,17 +6,17 @@ using NHibernate;
 
 namespace Hospital.Database
 {
-    internal class DatabaseOperations : IDatabaseOperations
+    public class DatabaseOperations : IDatabaseOperations
     {
         private readonly ILogger _logger;
         private delegate void DatabaseOperation<T>(T entity, ISession session);
 
         public DatabaseOperations(
-            ILogger logger) 
+            ILogger logger)
         {
             _logger = logger;
         }
-        
+
         private bool ExecuteInTransaction<T>(T entity, ISession session, DatabaseOperation<T> operation)
         {
             using var transaction = session.BeginTransaction();
@@ -31,7 +31,7 @@ namespace Hospital.Database
             catch (Exception ex)
             {
                 transaction.Rollback();
-                _logger.HandleError(ex);
+                _logger.WriteLog(ex);
 
                 return false;
             }
@@ -39,7 +39,7 @@ namespace Hospital.Database
 
         public bool Add<T>(T entity, ISession session) where T : IHasIntroduceString
         {
-            if(ExecuteInTransaction(entity, session, (e, s) => s.Save(e)))
+            if (ExecuteInTransaction(entity, session, (e, s) => s.Save(e)))
                 return true;
             return false;
         }
@@ -53,7 +53,7 @@ namespace Hospital.Database
 
         public bool Update<T>(T entity, ISession session) where T : IHasIntroduceString
         {
-            if(ExecuteInTransaction(entity, session, (e, s) => s.Update(e)))
+            if (ExecuteInTransaction(entity, session, (e, s) => s.Update(e)))
                 return true;
             return false;
         }
@@ -66,7 +66,7 @@ namespace Hospital.Database
             }
             catch (Exception ex)
             {
-                _logger.HandleError(ex);
+                _logger.WriteLog(ex);
                 throw new(UiMessages.DatabaseExceptions.QueryException);
             }
         }

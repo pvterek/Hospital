@@ -15,7 +15,7 @@ namespace Hospital.PeopleCategories.NurseClass
 
         protected Nurse() { }
 
-        public Nurse(string name, string surname, Gender gender, DateTime birthday, Ward ward) 
+        public Nurse(string name, string surname, Gender gender, DateTime birthday, Ward ward)
             : base(name, surname, gender, birthday)
         {
             AssignedWard = ward;

@@ -1,7 +1,7 @@
 ﻿using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 
-namespace Hospital.Utilities
+namespace Hospital.Utilities.Interfaces
 {
     public interface IValidators
     {

@@ -2,13 +2,15 @@
 using Hospital.Commands;
 using Hospital.Commands.LoginWindow;
 using Hospital.Commands.Navigation;
+using Hospital.Utilities;
 using Hospital.Utilities.ErrorLogger;
+using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital
 {
     internal static class Program
     {
-        private static IContainer Container;
+        public static IContainer Container;
 
         private static void Main()
         {
@@ -18,6 +20,10 @@ namespace Hospital
 
         private static void InitializeApplication()
         {
+            FileService fileService = new();
+            fileService.CreateDirectory();
+            fileService.CreateLogFile();
+
             AutofacConfig config = new();
             Container = config.ConfigureContainer();
         }
@@ -27,7 +33,9 @@ namespace Hospital
             var logger = Container.Resolve<ILogger>();
             var mainWindow = Container.Resolve<MainWindowCommand>();
             var loginWindow = Container.Resolve<LoginWindowCommand>();
+            var loginCommand = Container.Resolve<LoginCommand>();
             var mainQueue = Container.Resolve<INavigationService>();
+            var menuHandler = Container.Resolve<IMenuHandler>();
             mainQueue.Queue(loginWindow);
             mainQueue.Queue(mainWindow);
 
@@ -35,7 +43,7 @@ namespace Hospital
             {
                 try
                 {
-                    if (!LoginCommand.IsLoggedIn)
+                    if (!loginCommand.IsLoggedIn)
                     {
                         loginWindow.Execute();
                     }
@@ -46,7 +54,8 @@ namespace Hospital
                 }
                 catch (Exception ex)
                 {
-                    logger.HandleError(ex.Message, ex);
+                    menuHandler.ShowMessage(ex.Message);
+                    logger.WriteLog(ex);
                 }
             }
         }

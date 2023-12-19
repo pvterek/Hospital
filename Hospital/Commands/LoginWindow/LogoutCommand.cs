@@ -2,14 +2,20 @@
 
 namespace Hospital.Commands.LoginWindow
 {
-    internal class LogoutCommand : CompositeCommand
+    public class LogoutCommand : CompositeCommand
     {
-        public LogoutCommand()
-            : base(UiMessages.LogoutCommandMessages.Introduce) { }
+        private readonly LoginCommand _loginCommand;
+
+        public LogoutCommand(
+            LoginCommand loginCommand)
+            : base(UiMessages.LogoutCommandMessages.Introduce)
+        {
+            _loginCommand = loginCommand;
+        }
 
         public override void Execute()
         {
-            LoginCommand.IsLoggedIn = false;
+            _loginCommand.IsLoggedIn = false;
             return;
         }
     }

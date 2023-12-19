@@ -1,14 +1,14 @@
-﻿using Hospital.Database.Interfaces;
-using Hospital.PeopleCategories.WardClass;
+﻿using Hospital.Database;
+using Hospital.Database.Interfaces;
+using Hospital.Entities.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.UserClass;
-using Hospital.Database;
+using Hospital.PeopleCategories.WardClass;
 using NHibernate;
-using Hospital.Entities.Interfaces;
 
 namespace Hospital.Utilities.ListManagment
 {
-    internal class ListsStorage : IListsStorage
+    public class ListsStorage : IListsStorage
     {
         public List<IEmployee> Employees { get; private set; }
         public List<Ward> Wards { get; private set; }
@@ -18,19 +18,32 @@ namespace Hospital.Utilities.ListManagment
         public HashSet<string> Logins { get; private set; }
         public HashSet<string> WardsNames { get; private set; }
 
-        public ListsStorage(IDatabaseOperations databaseOperations)
-        {
-            using var session = CreateSession.SessionFactory.OpenSession();
+        private readonly IDatabaseOperations _databaseOperations;
+        private readonly CreateSession _createSession;
 
-            Employees = databaseOperations.GetAll<IEmployee>(session);
-            Wards = databaseOperations.GetAll<Ward>(session);
+        public ListsStorage(
+            IDatabaseOperations databaseOperations,
+            CreateSession createSession)
+        {
+            _databaseOperations = databaseOperations;
+            _createSession = createSession;
+
+            PopulateLists();
+        }
+
+        private void PopulateLists()
+        {
+            using var session = _createSession.SessionFactory.OpenSession();
+
+            Employees = _databaseOperations.GetAll<IEmployee>(session);
+            Wards = _databaseOperations.GetAll<Ward>(session);
             foreach (var ward in Wards)
             {
                 NHibernateUtil.Initialize(ward.AssignedPatients);
                 NHibernateUtil.Initialize(ward.AssignedEmployees);
             }
-            Patients = databaseOperations.GetAll<Patient>(session);
-            Users = databaseOperations.GetAll<User>(session);
+            Patients = _databaseOperations.GetAll<Patient>(session);
+            Users = _databaseOperations.GetAll<User>(session);
             Pesels = Patients.Select(patient => patient.Pesel).ToHashSet();
             Logins = Users.Select(user => user.Login).ToHashSet();
             WardsNames = Wards.Select(ward => ward.Name).ToHashSet();

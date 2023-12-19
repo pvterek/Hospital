@@ -1,11 +1,11 @@
-﻿using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.ListManagment;
 
 namespace Hospital.Utilities
 {
-    internal class Validators : IValidators
+    public class Validators : IValidators
     {
         private readonly IListsStorage _listsStorage;
         private readonly int MaxAge = 150;

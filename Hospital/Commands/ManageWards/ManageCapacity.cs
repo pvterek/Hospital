@@ -6,7 +6,7 @@ using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Commands.ManageWards
 {
-    internal class ManageCapacity : IManageCapacity
+    public class ManageCapacity : IManageCapacity
     {
         private readonly IListManage _listManage;
         private readonly IListsStorage _listsStorage;
@@ -23,9 +23,11 @@ namespace Hospital.Commands.ManageWards
             {
                 case OperationType.Operation.AddPatient:
                     ward.AssignedPatients.Add(patient);
+                    ward.PatientsNumber++;
                     break;
                 case OperationType.Operation.RemovePatient:
                     ward.AssignedPatients.Remove(patient);
+                    ward.PatientsNumber--;
                     break;
             }
 

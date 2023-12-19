@@ -4,7 +4,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    internal class DisplayEmployeesCommand : CompositeCommand
+    public class DisplayEmployeesCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListsStorage _listsStorage;
@@ -23,11 +23,10 @@ namespace Hospital.Commands.ManageEmployees
             if (!_listsStorage.Employees.Any())
             {
                 _menuHandler.ShowMessage(UiMessages.DisplayEmployeesMessages.NoEmployeesPrompt);
+                return;
             }
-            else
-            {
-                _menuHandler.DisplayList(_listsStorage.Employees);
-            }
+
+            _menuHandler.DisplayList(_listsStorage.Employees);
         }
     }
 }

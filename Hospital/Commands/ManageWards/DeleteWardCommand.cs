@@ -4,15 +4,16 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    internal class DeleteWardCommand : CompositeCommand
+    public class DeleteWardCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
         private readonly IListsStorage _listsStorage;
+
         public DeleteWardCommand(
             IMenuHandler menuHandler,
             IListManage listManage,
-            IListsStorage listsStorage) 
+            IListsStorage listsStorage)
             : base(UiMessages.DeleteWardMessages.Introduce)
         {
             _menuHandler = menuHandler;
@@ -37,7 +38,7 @@ namespace Hospital.Commands.ManageWards
             }
 
             _listManage.Remove(ward, _listsStorage.Wards);
-            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteWardMessages.WardRemovedPrompt, ward.Name));
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteWardMessages.OperationSuccessPrompt, ward.Name));
         }
     }
 }

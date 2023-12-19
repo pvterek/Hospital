@@ -2,7 +2,7 @@
 
 namespace Hospital.Commands
 {
-    internal abstract class CompositeCommand : IHasIntroduceString
+    public abstract class CompositeCommand : IHasIntroduceString
     {
         public string IntroduceString { get; }
 

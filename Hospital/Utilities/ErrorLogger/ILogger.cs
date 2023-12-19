@@ -1,9 +1,7 @@
 ﻿namespace Hospital.Utilities.ErrorLogger
 {
-    internal interface ILogger
+    public interface ILogger
     {
-        void WriteLog(string ex);
-        void HandleError(string message, Exception ex);
-        void HandleError(Exception ex);
+        void WriteLog(Exception ex);
     }
 }

@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients.ManagePatient
 {
-    internal class AssignToDoctorCommand : CompositeCommand
+    public class AssignToDoctorCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
@@ -36,8 +36,10 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 return;
             }
 
-            var patient = _menuHandler.SelectObject(_listsStorage.Patients, UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
-            var doctor = _menuHandler.SelectObject(_listsStorage.Employees.OfType<Doctor>().ToList(), UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
+            var patient = _menuHandler.SelectObject(_listsStorage.Patients,
+                UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
+            var doctor = _menuHandler.SelectObject(_listsStorage.Employees.OfType<Doctor>().ToList(),
+                UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
 
             patient.AssignedDoctor = doctor;
             _listManage.Update(patient, _listsStorage.Patients);

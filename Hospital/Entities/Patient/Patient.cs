@@ -17,7 +17,7 @@ namespace Hospital.PeopleCategories.PatientClass
 
         public virtual Doctor? AssignedDoctor { get; set; }
 
-        public Patient() { }
+        protected Patient() { }
 
         public Patient(string name, string surname, Gender gender, DateTime birthday, string pesel, Ward assignedWard)
             : base(name, surname, gender, birthday)

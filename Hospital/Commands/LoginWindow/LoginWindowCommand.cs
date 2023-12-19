@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    internal class LoginWindowCommand : CompositeCommand
+    public class LoginWindowCommand : CompositeCommand
     {
         private readonly Lazy<LoginCommand> _loginCommand;
         private readonly Lazy<CreateAccountCommand> _createAccountCommand;

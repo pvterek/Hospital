@@ -5,9 +5,10 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    internal class LoginCommand : CompositeCommand
+    public class LoginCommand : CompositeCommand
     {
-        public static bool IsLoggedIn;
+        public bool IsLoggedIn;
+
         private readonly IAuthenticationService _authenticationService;
         private readonly IMenuHandler _menuHandler;
         private readonly IInputHandler _inputHandler;
@@ -15,8 +16,8 @@ namespace Hospital.Commands.LoginWindow
         public LoginCommand(
             IAuthenticationService authenticationService,
             IMenuHandler menuHandler,
-            IInputHandler inputHandler) 
-            : base(UiMessages.LoginCommandMessages.Introduce) 
+            IInputHandler inputHandler)
+            : base(UiMessages.LoginCommandMessages.Introduce)
         {
             _authenticationService = authenticationService;
             _menuHandler = menuHandler;

@@ -1,22 +1,34 @@
-﻿using System.Reflection;
-using FluentNHibernate;
+﻿using FluentNHibernate;
+using Hospital.Database.Interfaces;
+using NHibernate;
 using NHibernate.Dialect;
 using NHibernate.Driver;
-using NHibernate;
+using System.Reflection;
 
 namespace Hospital.Database
 {
-    internal static class CreateSession
+    public class CreateSession
     {
-        private static ISessionFactory CreateSessionFactory()
+        private readonly IDatabaseService _databaseService;
+
+        public CreateSession(
+            IDatabaseService databaseService)
+        {
+            _databaseService = databaseService;
+        }
+
+        public ISessionFactory SessionFactory
+        {
+            get { return _sessionFactory ??= CreateSessionFactory(); }
+        }
+
+        private ISessionFactory CreateSessionFactory()
         {
             var configuration = new NHibernate.Cfg.Configuration();
 
-            DirectoryExist.Create();
-
             configuration.DataBaseIntegration(x =>
             {
-                x.ConnectionString = $"Data Source={DirectoryExist.DirectoryPath}\\{DatabaseExist.DatabaseName};Version=3;";
+                x.ConnectionString = $"Data Source={DatabaseService.DatabasePath};Version=3;";
                 x.Driver<SQLite20Driver>();
                 x.Dialect<SQLiteDialect>();
             });
@@ -24,16 +36,11 @@ namespace Hospital.Database
             configuration.AddMappingsFromAssembly(Assembly.GetExecutingAssembly());
             configuration.AddAssembly(Assembly.GetExecutingAssembly());
 
-            DatabaseExist.Check(configuration);
+            _databaseService.EnsureDatabaseExists(configuration);
 
             return configuration.BuildSessionFactory();
         }
-        
-        private static ISessionFactory? _sessionFactory;
 
-        internal static ISessionFactory SessionFactory
-        {
-            get { return _sessionFactory ??= CreateSessionFactory(); }
-        }
+        private ISessionFactory? _sessionFactory;
     }
 }

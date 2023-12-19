@@ -2,15 +2,20 @@
 
 namespace Hospital.Utilities.UserInterface
 {
-    internal class InputHandler : IInputHandler
+    public class InputHandler : IInputHandler
     {
-        public InputHandler() { }
+        private readonly IConsoleService _consoleService;
+
+        public InputHandler(IConsoleService consoleService)
+        {
+            _consoleService = consoleService;
+        }
 
         public string GetInput(string prompt)
         {
-            Console.Clear();
-            Console.WriteLine(prompt);
-            return Console.ReadLine().ToString();
+            _consoleService.Clear();
+            _consoleService.WriteLine(prompt);
+            return _consoleService.ReadLine().ToString();
         }
 
         public int GetIntInput(string prompt)
@@ -20,25 +25,25 @@ namespace Hospital.Utilities.UserInterface
 
             do
             {
-                Console.Clear();
-                Console.WriteLine(prompt);
-                input = Console.ReadLine();
+                _consoleService.Clear();
+                _consoleService.WriteLine(prompt);
+                input = _consoleService.ReadLine();
             }
             while (!int.TryParse(input, out result));
 
             return result;
         }
 
-        public DateTime GetDateTimeInput(string prompt) 
+        public DateTime GetDateTimeInput(string prompt)
         {
             string? input;
             DateTime result;
 
             do
             {
-                Console.Clear();
-                Console.WriteLine(prompt);
-                input = Console.ReadLine();
+                _consoleService.Clear();
+                _consoleService.WriteLine(prompt);
+                input = _consoleService.ReadLine();
             }
             while (!DateTime.TryParse(input, out result));
 

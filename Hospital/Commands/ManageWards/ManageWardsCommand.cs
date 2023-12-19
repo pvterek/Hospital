@@ -5,9 +5,9 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    internal class ManageWardsCommand : CompositeCommand
+    public class ManageWardsCommand : CompositeCommand
     {
-        private readonly Lazy<AddWardCommand> _addWardCommand;
+        private readonly Lazy<CreateWardCommand> _createWardCommand;
         private readonly Lazy<DisplayWardCommand> _displayWardCommand;
         private readonly Lazy<DeleteWardCommand> _deleteWardCommand;
         private readonly Lazy<BackCommand> _backCommand;
@@ -15,7 +15,7 @@ namespace Hospital.Commands.ManageWards
         private readonly IMenuHandler _menuHandler;
 
         public ManageWardsCommand(
-            Lazy<AddWardCommand> addWardCommand,
+            Lazy<CreateWardCommand> createWardCommand,
             Lazy<DisplayWardCommand> displayWardCommand,
             Lazy<DeleteWardCommand> deleteWardCommand,
             Lazy<BackCommand> backCommand,
@@ -23,7 +23,7 @@ namespace Hospital.Commands.ManageWards
             IMenuHandler menuHandler)
             : base(UiMessages.ManageWardsMessages.Introduce)
         {
-            _addWardCommand = addWardCommand;
+            _createWardCommand = createWardCommand;
             _displayWardCommand = displayWardCommand;
             _deleteWardCommand = deleteWardCommand;
             _backCommand = backCommand;
@@ -35,7 +35,7 @@ namespace Hospital.Commands.ManageWards
         {
             var commands = new List<IHasIntroduceString>
             {
-                _addWardCommand.Value,
+                _createWardCommand.Value,
                 _displayWardCommand.Value,
                 _deleteWardCommand.Value,
                 _backCommand.Value
@@ -46,8 +46,8 @@ namespace Hospital.Commands.ManageWards
 
             switch (selectedCommand.IntroduceString)
             {
-                case UiMessages.AddWardMessages.Introduce:
-                    _addWardCommand.Value.Execute();
+                case UiMessages.CreateWardMessages.Introduce:
+                    _createWardCommand.Value.Execute();
                     break;
                 case UiMessages.DisplayWardMessages.Introduce:
                     _displayWardCommand.Value.Execute();

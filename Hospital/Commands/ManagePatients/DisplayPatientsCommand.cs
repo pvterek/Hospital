@@ -4,7 +4,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    internal class DisplayPatientsCommand : CompositeCommand
+    public class DisplayPatientsCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListsStorage _listsStorage;

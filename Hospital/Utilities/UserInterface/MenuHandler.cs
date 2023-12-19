@@ -4,8 +4,15 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Utilities.UserInterface
 {
-    internal class MenuHandler : IMenuHandler
+    public class MenuHandler : IMenuHandler
     {
+        private readonly IConsoleService _consoleService;
+
+        public MenuHandler(IConsoleService consoleService)
+        {
+            _consoleService = consoleService;
+        }
+
         public T ShowInteractiveMenu<T>(List<T> items) where T : IHasIntroduceString
         {
             var selectedLineIndex = 0;
@@ -71,7 +78,7 @@ namespace Hospital.Utilities.UserInterface
 
         private void UpdateInteractiveMenu<T>(List<T> items, int selectedIndex) where T : IHasIntroduceString
         {
-            Console.Clear();
+            _consoleService.Clear();
             for (int i = 0; i < items.Count; i++)
             {
                 bool isSelected = i == selectedIndex;
@@ -84,14 +91,14 @@ namespace Hospital.Utilities.UserInterface
 
         private void UpdateInteractiveMenu(List<string> options, int selectedIndex)
         {
-            Console.Clear();
+            _consoleService.Clear();
             for (int i = 0; i < options.Count; i++)
             {
                 bool isSelected = i == selectedIndex;
                 if (isSelected)
                     DrawSelectedMenu(options[i]);
                 else
-                    Console.WriteLine($"  {options[i]}");
+                    _consoleService.WriteLine($"  {options[i]}");
             }
         }
 
@@ -99,9 +106,9 @@ namespace Hospital.Utilities.UserInterface
         {
             ConsoleKey pressedKey;
 
-            Console.Clear();
-            Console.WriteLine(message);
-            DrawSelectedMenu("ok!");
+            _consoleService.Clear();
+            _consoleService.WriteLine(message);
+            DrawSelectedMenu("Ok!");
             do
             {
                 pressedKey = Console.ReadKey().Key;

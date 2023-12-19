@@ -1,19 +1,18 @@
-﻿using Hospital.Commands.LoginWindow;
-using Hospital.Commands.ManageEmployees;
+﻿using Hospital.Commands.ManageEmployees;
 using Hospital.Commands.ManagePatients;
 using Hospital.Commands.ManageWards;
 
 namespace Hospital.Commands.Navigation
 {
-    internal class NavigationService : INavigationService
+    public class NavigationService : INavigationService
     {
         private readonly Stack<CompositeCommand> CommandStack = new();
-        private readonly List<Type> NavigationCommands = new() 
-        { 
-            typeof(MainWindowCommand), 
-            typeof(ManageEmployeesCommand), 
-            typeof(ManagePatientsCommand), 
-            typeof(ManageWardsCommand) 
+        private readonly List<Type> NavigationCommands = new()
+        {
+            typeof(MainWindowCommand),
+            typeof(ManageEmployeesCommand),
+            typeof(ManagePatientsCommand),
+            typeof(ManageWardsCommand)
         };
 
         public CompositeCommand GetPreviousCommand()

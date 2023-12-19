@@ -6,28 +6,28 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    internal class AdmitPatientCommand : CompositeCommand
+    public class CreatePatientCommand : CompositeCommand
     {
         private readonly IObjectsFactory _objectsFactory;
-        private readonly IValidateObjects _hospitalService;
+        private readonly IValidateObjects _validateObjects;
         private readonly IDTOFactory _dtoFactory;
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
         private readonly IListsStorage _listsStorage;
         private readonly IManageCapacity _manageCapacity;
 
-        public AdmitPatientCommand(
-            IObjectsFactory factory,
-            IValidateObjects hospitalService,
+        public CreatePatientCommand(
+            IObjectsFactory objectsFactory,
+            IValidateObjects validateObjects,
             IDTOFactory dtoFactory,
             IMenuHandler menuHandler,
             IListManage listManage,
             IListsStorage listsStorage,
             IManageCapacity manageCapacity)
-            : base(UiMessages.AdmitPatientMessages.Introduce)
+            : base(UiMessages.CreatePatientMessages.Introduce)
         {
-            _objectsFactory = factory;
-            _hospitalService = hospitalService;
+            _objectsFactory = objectsFactory;
+            _validateObjects = validateObjects;
             _dtoFactory = dtoFactory;
             _menuHandler = menuHandler;
             _listManage = listManage;
@@ -39,12 +39,12 @@ namespace Hospital.Commands.ManagePatients
         {
             if (!_listsStorage.Wards.Any())
             {
-                _menuHandler.ShowMessage(UiMessages.AdmitPatientMessages.NoWardErrorPrompt);
+                _menuHandler.ShowMessage(UiMessages.CreatePatientMessages.NoWardErrorPrompt);
                 return;
             }
 
             var patientDTO = _dtoFactory.GatherPatientData(_listsStorage.Wards);
-            if (!_hospitalService.ValidatePatientObject(patientDTO))
+            if (!_validateObjects.ValidatePatientObject(patientDTO))
             {
                 return;
             }
@@ -53,7 +53,7 @@ namespace Hospital.Commands.ManagePatients
             _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient);
             _listManage.Add(patient, _listsStorage.Patients);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.AdmitPatientMessages.PatientCreatedPrompt, patient.Name, patient.Surname));
+            _menuHandler.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
         }
     }
 }

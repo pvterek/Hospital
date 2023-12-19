@@ -4,7 +4,7 @@ using Hospital.PeopleCategories.WardClass;
 
 namespace Hospital.Commands.ManageWards
 {
-    internal interface IManageCapacity
+    public interface IManageCapacity
     {
         void UpdateWardCapacity(Ward ward, Patient patient, OperationType.Operation operation);
     }

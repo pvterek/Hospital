@@ -1,23 +1,23 @@
-﻿using Hospital.Utilities.UserInterface;
+﻿using Hospital.Commands.ManageWards;
 using Hospital.Utilities.ListManagment;
-using Hospital.Commands.ManageWards;
+using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients.ManagePatient
 {
-    internal class SignOutPatientCommand : CompositeCommand
+    public class DeletePatientCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
         private readonly IListsStorage _listsStorage;
         private readonly IManageCapacity _manageCapacity;
 
-        public SignOutPatientCommand(
+        public DeletePatientCommand(
             IMenuHandler menuHandler,
             IListManage listManage,
             IListsStorage listsStorage,
             IManageCapacity manageCapacity)
-            : base(UiMessages.SignOutPatientMessages.Introduce)
+            : base(UiMessages.DeletePatientMessages.Introduce)
         {
             _menuHandler = menuHandler;
             _listManage = listManage;
@@ -33,11 +33,11 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 return;
             }
 
-            var patient = _menuHandler.SelectObject(_listsStorage.Patients, UiMessages.SignOutPatientMessages.SignOutPrompt);
+            var patient = _menuHandler.SelectObject(_listsStorage.Patients, UiMessages.DeletePatientMessages.DeletePrompt);
             _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.RemovePatient);
             _listManage.Remove(patient, _listsStorage.Patients);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.SignOutPatientMessages.SuccessSignOutPrompt, patient.Name, patient.Surname));
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeletePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
         }
     }
 }

@@ -4,15 +4,15 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    internal class DisplayWardCommand : CompositeCommand
+    public class DisplayWardCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListsStorage _listsStorage;
 
         public DisplayWardCommand(
             IMenuHandler menuHandler,
-            IListsStorage listsStorage) 
-            : base(UiMessages.DisplayWardMessages.Introduce) 
+            IListsStorage listsStorage)
+            : base(UiMessages.DisplayWardMessages.Introduce)
         {
             _menuHandler = menuHandler;
             _listsStorage = listsStorage;

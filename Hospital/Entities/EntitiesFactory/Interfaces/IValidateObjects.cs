@@ -6,13 +6,13 @@ using Hospital.PeopleCategories.WardClass;
 
 namespace Hospital.PeopleCategories.Factory.Interfaces
 {
-    internal interface IValidateObjects
+    public interface IValidateObjects
     {
-        public bool ValidateDoctorObject(DoctorDTO dto);
-        public bool ValidatePatientObject(PatientDTO dto);
-        public bool ValidateNurseObject(NurseDTO dto);
-        public bool ValidateUserObject(UserDTO dto);
-        public bool ValidateWardObject(WardDTO dto);
+        bool ValidateDoctorObject(DoctorDTO dto);
+        bool ValidatePatientObject(PatientDTO dto);
+        bool ValidateNurseObject(NurseDTO dto);
+        bool ValidateUserObject(UserDTO dto);
+        bool ValidateWardObject(WardDTO dto);
 
     }
 }

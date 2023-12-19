@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients.ManagePatient
 {
-    internal class ChangeHealthStatusCommand : CompositeCommand
+    public class ChangeHealthStatusCommand : CompositeCommand
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
@@ -30,7 +30,8 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 return;
             }
 
-            var patient = _menuHandler.SelectObject(_listsStorage.Patients, UiMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
+            var patient = _menuHandler.SelectObject(_listsStorage.Patients,
+                UiMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
             patient.HealthStatus = _menuHandler.ShowInteractiveMenu<Health>();
             _listManage.Update(patient, _listsStorage.Patients);
 

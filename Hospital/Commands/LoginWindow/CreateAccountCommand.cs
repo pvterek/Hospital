@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    internal class CreateAccountCommand : CompositeCommand
+    public class CreateAccountCommand : CompositeCommand
     {
         private readonly IObjectsFactory _objectsFactory;
         private readonly IValidateObjects _validateObjects;
@@ -16,11 +16,11 @@ namespace Hospital.Commands.LoginWindow
 
         public CreateAccountCommand(
             IObjectsFactory objectsFactory,
-            IValidateObjects validateObjects, 
+            IValidateObjects validateObjects,
             IDTOFactory dtoFactory,
             IMenuHandler menuHandler,
             IListManage listManage,
-            IListsStorage listsStorage) 
+            IListsStorage listsStorage)
             : base(UiMessages.CreateAccountCommandMessages.Introduce)
         {
             _objectsFactory = objectsFactory;

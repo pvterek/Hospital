@@ -2,13 +2,13 @@
 
 namespace Hospital.Commands.Navigation
 {
-    internal class BackCommand : CompositeCommand
+    public class BackCommand : CompositeCommand
     {
         private readonly INavigationService _navigationService;
 
         public BackCommand(
             INavigationService navigationService)
-            : base(UiMessages.BackCommandMessages.Introduce) 
+            : base(UiMessages.BackCommandMessages.Introduce)
         {
             _navigationService = navigationService;
         }

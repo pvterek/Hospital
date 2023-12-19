@@ -6,33 +6,33 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    internal class ManagePatientsCommand : CompositeCommand
+    public class ManagePatientsCommand : CompositeCommand
     {
-        private readonly Lazy<AdmitPatientCommand> _admitPatientCommand;
+        private readonly Lazy<CreatePatientCommand> _createPatientCommand;
         private readonly Lazy<DisplayPatientsCommand> _displayPatientsCommand;
         private readonly Lazy<AssignToDoctorCommand> _assignToDoctorCommand;
         private readonly Lazy<ChangeHealthStatusCommand> _changeHealthStatusCommand;
-        private readonly Lazy<SignOutPatientCommand> _signOutPatientCommand;
+        private readonly Lazy<DeletePatientCommand> _deletePatientCommand;
         private readonly Lazy<BackCommand> _backCommand;
         private readonly INavigationService _navigationService;
         private readonly IMenuHandler _menuHandler;
 
         public ManagePatientsCommand(
-            Lazy<AdmitPatientCommand> admitPatientCommand,
+            Lazy<CreatePatientCommand> createPatientCommand,
             Lazy<DisplayPatientsCommand> displayPatientsCommand,
             Lazy<AssignToDoctorCommand> assignToDoctorCommand,
             Lazy<ChangeHealthStatusCommand> changeHealthStatusCommand,
-            Lazy<SignOutPatientCommand> signOutPatientCommand,
+            Lazy<DeletePatientCommand> deletePatientCommand,
             Lazy<BackCommand> backCommand,
             INavigationService navigationService,
             IMenuHandler menuHandler)
             : base(UiMessages.ManagePatientsMessages.Introduce)
         {
-            _admitPatientCommand = admitPatientCommand;
+            _createPatientCommand = createPatientCommand;
             _displayPatientsCommand = displayPatientsCommand;
             _assignToDoctorCommand = assignToDoctorCommand;
             _changeHealthStatusCommand = changeHealthStatusCommand;
-            _signOutPatientCommand = signOutPatientCommand;
+            _deletePatientCommand = deletePatientCommand;
             _backCommand = backCommand;
             _navigationService = navigationService;
             _menuHandler = menuHandler;
@@ -42,11 +42,11 @@ namespace Hospital.Commands.ManagePatients
         {
             var commands = new List<IHasIntroduceString>
             {
-                _admitPatientCommand.Value,
+                _createPatientCommand.Value,
                 _displayPatientsCommand.Value,
                 _assignToDoctorCommand.Value,
                 _changeHealthStatusCommand.Value,
-                _signOutPatientCommand.Value,
+                _deletePatientCommand.Value,
                 _backCommand.Value
             };
 
@@ -55,8 +55,8 @@ namespace Hospital.Commands.ManagePatients
 
             switch (selectedCommand.IntroduceString)
             {
-                case UiMessages.AdmitPatientMessages.Introduce:
-                    _admitPatientCommand.Value.Execute();
+                case UiMessages.CreatePatientMessages.Introduce:
+                    _createPatientCommand.Value.Execute();
                     break;
                 case UiMessages.DisplayPatientsMessages.Introduce:
                     _displayPatientsCommand.Value.Execute();
@@ -67,8 +67,8 @@ namespace Hospital.Commands.ManagePatients
                 case UiMessages.ChangeHealthStatusMessages.Introduce:
                     _changeHealthStatusCommand.Value.Execute();
                     break;
-                case UiMessages.SignOutPatientMessages.Introduce:
-                    _signOutPatientCommand.Value.Execute();
+                case UiMessages.DeletePatientMessages.Introduce:
+                    _deletePatientCommand.Value.Execute();
                     break;
                 case UiMessages.BackCommandMessages.Introduce:
                     _backCommand.Value.Execute();

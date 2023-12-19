@@ -7,11 +7,15 @@ namespace Hospital.Utilities.ListManagment
 {
     public class ListManage : IListManage
     {
-        private readonly IDatabaseOperations _dbOperations;
+        private readonly IDatabaseOperations _databaseOperations;
+        private readonly CreateSession _createSession;
 
-        public ListManage(IDatabaseOperations dbOperations)
+        public ListManage(
+            IDatabaseOperations databaseOperations,
+            CreateSession createSession)
         {
-            _dbOperations = dbOperations;
+            _databaseOperations = databaseOperations;
+            _createSession = createSession;
         }
 
         public void Add<T>(T item, List<T> list) where T : IHasIntroduceString
@@ -19,8 +23,8 @@ namespace Hospital.Utilities.ListManagment
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
 
-            using var session = CreateSession.SessionFactory.OpenSession();
-            if (!_dbOperations.Add(item, session))
+            using var session = _createSession.SessionFactory.OpenSession();
+            if (!_databaseOperations.Add(item, session))
             {
                 throw new Exception(string.Format(UiMessages.DatabaseExceptions.AddException, typeof(T)));
             }
@@ -33,8 +37,8 @@ namespace Hospital.Utilities.ListManagment
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
 
-            using var session = CreateSession.SessionFactory.OpenSession();
-            if (!_dbOperations.Delete(item, session))
+            using var session = _createSession.SessionFactory.OpenSession();
+            if (!_databaseOperations.Delete(item, session))
             {
                 throw new Exception(string.Format(UiMessages.DatabaseExceptions.RemoveException, typeof(T)));
             }
@@ -47,7 +51,7 @@ namespace Hospital.Utilities.ListManagment
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
 
-            using var session = CreateSession.SessionFactory.OpenSession();
+            using var session = _createSession.SessionFactory.OpenSession();
             var index = list.FindIndex(existingItem => existingItem.Id == item.Id);
 
             if (index == -1)
@@ -55,7 +59,7 @@ namespace Hospital.Utilities.ListManagment
                 throw new Exception(string.Format(UiMessages.DatabaseExceptions.ItemNull, typeof(T), item.Id));
             }
 
-            if (!_dbOperations.Update(item, session))
+            if (!_databaseOperations.Update(item, session))
             {
                 throw new Exception(string.Format(UiMessages.DatabaseExceptions.UpdateException, typeof(T)));
             }

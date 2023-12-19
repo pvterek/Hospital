@@ -2,9 +2,9 @@
 
 namespace Hospital.PeopleCategories.Factory.Interfaces
 {
-    internal interface IEmployeeFactory
+    public interface IEmployeeFactory
     {
         Person CreateEmployee(string employeeType, PersonDTO dto);
-        public IEnumerable<string> GetEmployeeTypes();
+        IEnumerable<string> GetEmployeeTypes();
     }
 }

@@ -15,7 +15,13 @@ namespace Hospital.PeopleCategories.WardClass
 
         public virtual IList<Patient> AssignedPatients { get; set; }
 
-        public virtual int PatientsNumber => AssignedPatients?.Count ?? 0;
+        private int? _patientsNumber;
+
+        public virtual int PatientsNumber
+        {
+            get => _patientsNumber ?? AssignedPatients?.Count ?? 0;
+            set => _patientsNumber = value;
+        }
 
         public virtual IList<Person> AssignedEmployees { get; set; }
 
