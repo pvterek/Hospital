@@ -1,6 +1,4 @@
-﻿using Hospital.Entities.Interfaces;
-using Hospital.PeopleCategories.Factory.Interfaces;
-using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -9,24 +7,27 @@ namespace Hospital.Commands.ManageEmployees
 {
     public class CreateEmployeeCommand : Command
     {
+        private readonly IObjectsFactory _objectsFactory;
         private readonly IDTOFactory _dtoFactory;
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;
-        private readonly IEmployeeFactory _employeeFactory;
+        private readonly IValidateObjects _validateObjects;
         private readonly IListsStorage _listsStorage;
 
         public CreateEmployeeCommand(
+            IObjectsFactory objectsFactory,
             IDTOFactory dtoFactory,
             IMenuHandler menuHandler,
             IListManage listManage,
-            IEmployeeFactory employeeFactory,
+            IValidateObjects validateObjects,
             IListsStorage listsStorage)
             : base(UiMessages.CreateEmployeeMessages.Introduce)
         {
+            _objectsFactory = objectsFactory;
             _dtoFactory = dtoFactory;
             _menuHandler = menuHandler;
             _listManage = listManage;
-            _employeeFactory = employeeFactory;
+            _validateObjects = validateObjects;
             _listsStorage = listsStorage;
         }
 
@@ -38,21 +39,16 @@ namespace Hospital.Commands.ManageEmployees
                 return;
             }
 
-            var employeeTypes = _employeeFactory.GetEmployeeTypes().ToList();
-            var employeeType = _menuHandler.ShowInteractiveMenu(employeeTypes);
-
-            PersonDTO dto = employeeType switch
+            var employeeDTO = _dtoFactory.GatherEmployeeData(_listsStorage.Wards);
+            if (!_validateObjects.ValidateEmployeeObject(employeeDTO))
             {
-                UiMessages.DoctorObjectMessages.Position => _dtoFactory.GatherDoctorData(_listsStorage.Wards),
-                UiMessages.NurseObjectMessages.Position => _dtoFactory.GatherNurseData(_listsStorage.Wards),
-                _ => throw new ArgumentException(
-                    string.Format(UiMessages.CreateEmployeeMessages.UnsupportedEntityPrompt, employeeType))
-            };
+                return;
+            }
 
-            var employee = _employeeFactory.CreateEmployee(employeeType, dto);
-            _listManage.Add((IEmployee)employee, _listsStorage.Employees);
-            _menuHandler.ShowMessage(string.Format(
-                UiMessages.CreateEmployeeMessages.OperationSuccessPrompt, employee.Name, employee.Surname));
+            var employee = _objectsFactory.CreateEmployee(employeeDTO);
+            _listManage.Add(employee, _listsStorage.Employees);
+            _menuHandler.ShowMessage(string.Format(UiMessages.CreateEmployeeMessages.OperationSuccessPrompt,
+                employee.Position, employee.Name, employee.Surname));
         }
     }
 }

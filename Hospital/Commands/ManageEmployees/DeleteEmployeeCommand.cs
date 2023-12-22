@@ -1,5 +1,4 @@
-﻿using Hospital.PeopleCategories.PersonClass;
-using Hospital.Utilities.ListManagment;
+﻿using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -32,11 +31,11 @@ namespace Hospital.Commands.ManageEmployees
 
             _menuHandler.ShowMessage(UiMessages.DeleteEmployeeMessages.SelectPrompt);
 
-            var employee = _menuHandler.ShowInteractiveMenu(_listsStorage.Employees.ToList());
+            var employee = _menuHandler.ShowInteractiveMenu(_listsStorage.Employees);
             _listManage.Remove(employee, _listsStorage.Employees);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt,
-                ((Person)employee).Name, ((Person)employee).Surname));
+                employee.Position, employee.Name, employee.Surname));
         }
     }
 }

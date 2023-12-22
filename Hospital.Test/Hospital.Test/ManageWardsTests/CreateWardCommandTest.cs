@@ -55,7 +55,7 @@ namespace Hospital.Test.ManageWardsTests
         }
 
         [Fact]
-        public void Execute_WhenWardDataPassValidation_ShouldCreateWard()
+        public void Execute_WhenValidationPassed_ShouldCreateWard()
         {
             SetUpMocks();
 

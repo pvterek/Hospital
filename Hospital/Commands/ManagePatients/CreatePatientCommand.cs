@@ -53,7 +53,8 @@ namespace Hospital.Commands.ManagePatients
             _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient);
             _listManage.Add(patient, _listsStorage.Patients);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
+            _menuHandler.ShowMessage(string.Format(
+                UiMessages.CreatePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
         }
     }
 }

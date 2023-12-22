@@ -55,7 +55,7 @@ namespace Hospital.Test.ManageUsers
         }
 
         [Fact]
-        public void Execute_WhenAccountDataPassValidation_ShouldCreatesAccount()
+        public void Execute_WhenValidationPassed_ShouldCreatesAccount()
         {
             SetUpMocks();
 

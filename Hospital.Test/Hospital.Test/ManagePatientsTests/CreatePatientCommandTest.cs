@@ -81,7 +81,7 @@ namespace Hospital.Test.ManagePatientsTests
         }
 
         [Fact]
-        public void Execute_WhenEverythingFine_ShouldCreatePatient()
+        public void Execute_WhenWardsListIsNotNullAndValidationPassed_ShouldCreatePatient()
         {
             SetUpMocks();
 
@@ -103,7 +103,7 @@ namespace Hospital.Test.ManagePatientsTests
 
             mockDatabaseOperations.Setup(x => x.Add(It.IsAny<Patient>(), It.IsAny<ISession>()))
                 .Returns(true);
-            mockListManage.Setup(x => x.Add(It.IsAny<Patient>(), patientsList))
+            mockListManage.Setup(x => x.Add(It.IsAny<Patient>(), It.IsAny<List<Patient>>()))
                 .Callback((Patient item, List<Patient> list) =>
                 {
                     if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
@@ -114,8 +114,7 @@ namespace Hospital.Test.ManagePatientsTests
 
             createPatientCommand.Execute();
 
-            mockListManage.Verify(x => x.Add(It.IsAny<Patient>(), It.IsAny<List<Patient>>()), Times.Once());
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt, mockPatient.Object.Name, mockPatient.Object.Surname)));
+            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt, mockPatient.Object.Name, mockPatient.Object.Surname)), Times.Once());
             Assert.Contains(mockPatient.Object, patientsList);
         }
     }

@@ -1,11 +1,11 @@
 ﻿using FluentNHibernate.Mapping;
 using Hospital.PeopleCategories.PersonClass;
 
-namespace Hospital.PeopleCategories.NurseClass
+namespace Hospital.Entities.Employee
 {
-    internal class NurseMap : ClassMap<Nurse>
+    public class EmployeeMap : ClassMap<Employee>
     {
-        public NurseMap()
+        public EmployeeMap()
         {
             Id(x => x.Id).Not.Nullable();
             Map(x => x.Name).Not.Nullable();
@@ -13,10 +13,14 @@ namespace Hospital.PeopleCategories.NurseClass
             Map(x => x.Gender).CustomType<Gender>().Not.Nullable();
             Map(x => x.Birthday).CustomType<DateTime>().Not.Nullable();
             Map(x => x.IntroduceString).Not.Nullable();
+            Map(x => x.Position).CustomType<Position>().Not.Nullable();
 
             References(x => x.AssignedWard)
                 .Column("WardId")
                 .Not.Nullable();
+
+            HasMany(x => x.AssignedPatients)
+                .Inverse();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Entities.Employee;
+using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.ListManagment;
@@ -44,5 +45,8 @@ namespace Hospital.Utilities
 
         public bool ValidatePossibiltyAssignToWard(Ward ward)
             => ward.AssignedPatients.Count < ward.Capacity;
+
+        public bool ValidatePosition(Position position)
+            => Enum.IsDefined(typeof(Position), position);
     }
 }

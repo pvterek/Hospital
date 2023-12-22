@@ -1,6 +1,6 @@
-﻿using Hospital.Entities.Interfaces;
+﻿using Hospital.Entities.Employee;
+using Hospital.Entities.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.PersonClass;
 using Hospital.Utilities.UserInterface;
 
 namespace Hospital.PeopleCategories.WardClass
@@ -23,19 +23,24 @@ namespace Hospital.PeopleCategories.WardClass
             set => _patientsNumber = value;
         }
 
-        public virtual IList<Person> AssignedEmployees { get; set; }
+        public virtual IList<Employee> AssignedEmployees { get; set; }
 
         public virtual string IntroduceString { get; set; }
 
         protected Ward() { }
 
-        public Ward(string name, int capacity, IList<Patient> assignedPatients, IList<Person> assignedEmployees)
+        public Ward(
+            string name,
+            int capacity,
+            IList<Patient> assignedPatients,
+            IList<Employee> assignedEmployees)
         {
             Name = name;
             Capacity = capacity;
             AssignedPatients = assignedPatients;
             AssignedEmployees = assignedEmployees;
-            IntroduceString = string.Format(UiMessages.WardObjectMessages.Introduce, name, PatientsNumber, Capacity);
+            IntroduceString = string.Format(
+                UiMessages.WardObjectMessages.Introduce, name, PatientsNumber, Capacity);
         }
     }
 }

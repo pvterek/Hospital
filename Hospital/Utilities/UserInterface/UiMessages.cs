@@ -2,6 +2,7 @@
 {
     public static class UiMessages
     {
+        //ManagePatients
         public static class CreatePatientMessages
         {
             public const string Introduce = "Admit a patient.";
@@ -31,11 +32,6 @@
             public const string NoPatientsPrompt = "There is no patients in your hospital! Please add one first.";
         }
 
-        public static class ManagePatientMessages
-        {
-            public const string Introduce = "Manage patient.";
-        }
-
         public static class ManagePatientsMessages
         {
             public const string Introduce = "Manage patients.";
@@ -59,14 +55,14 @@
         {
             public const string Introduce = "Fire employee";
             public const string SelectPrompt = "Pick which employee you want to fire.";
-            public const string OperationSuccessPrompt = "{0} {1} was fired successfully!";
+            public const string OperationSuccessPrompt = "{0} {1} {2} was fired successfully!";
             public const string NoEmployeesPrompt = "There is no employees to fire.";
         }
 
         public static class CreateEmployeeMessages
         {
             public const string Introduce = "Hire employee";
-            public const string OperationSuccessPrompt = "{0} {1} hired!";
+            public const string OperationSuccessPrompt = "{0} {1} {2} hired!";
             public const string ErrorCreateEmployeePrompt = "Error occured while trying to hire employee!";
             public const string UnsupportedEntityPrompt = "Unsupported entity type {0}.";
         }
@@ -141,14 +137,6 @@
             public const string StopMessage = "stop";
         }
 
-        //WardObject
-        public static class WardObjectMessages
-        {
-            public const string Introduce = "Ward: {0} [{1}/{2}]";
-            public const string ProvideNamePrompt = "Provide ward name: ";
-            public const string EmptyNamePrompt = "Name can't be empty.";
-        }
-
         //ExitCommand
         public static class ExitCommandMessages
         {
@@ -186,33 +174,27 @@
             public const string CantFindLoginPrompt = "No user with this login found!";
         }
 
-        public static class AuthenticationServiceMessages
-        {
-            public const string ErrorGetUserByLoginPrompt = "Error occured while trying to get user login";
-        }
-
         public static class LogoutCommandMessages
         {
             public const string Introduce = "Logout";
         }
 
-        //UserObject
+        //Entities
+        public static class WardObjectMessages
+        {
+            public const string Introduce = "Ward: {0} [{1}/{2}]";
+            public const string ProvideNamePrompt = "Provide ward name: ";
+            public const string EmptyNamePrompt = "Name can't be empty.";
+        }
+
         public static class UserObjectMessages
         {
             public const string Introduce = "User: {0}";
         }
 
-        //PatientObject
         public static class PatientObjectMessages
         {
             public const string Introduce = "{0} {1} [{2}] - patient at {3}.";
-        }
-
-        //NurseObject
-        public static class NurseObjectMessages
-        {
-            public const string Introduce = "{0} {1} - {2} at {3} Ward.";
-            public const string Position = "Nurse";
         }
 
         public static class DoctorObjectMessages
@@ -221,6 +203,7 @@
             public const string Position = "Doctor";
         }
 
+        //Exceptions
         public static class DatabaseExceptions
         {
             public const string QueryException = "Exception occured while trying to gather data from database!";
@@ -231,7 +214,6 @@
             public const string UpdateException = "Exception occurred while updating: {0}";
         }
 
-        //Exceptions
         public static class ExceptionMessages
         {
             public const string String = "Invalid or empty value provided!";

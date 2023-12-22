@@ -16,12 +16,22 @@ namespace Hospital.PeopleCategories.UserClass
 
         protected User() { }
 
-        public User(string name, string surname, Gender gender, DateTime birthday, string login, string password)
-            : base(name, surname, gender, birthday)
+        public User(
+            string name,
+            string surname,
+            Gender gender,
+            DateTime birthday,
+            string login,
+            string password)
+            : base(name,
+                  surname,
+                  gender,
+                  birthday)
         {
             Login = login;
             Password = password;
-            IntroduceString = string.Format(UiMessages.UserObjectMessages.Introduce, login);
+            IntroduceString = string.Format(
+                UiMessages.UserObjectMessages.Introduce, login);
         }
     }
 }

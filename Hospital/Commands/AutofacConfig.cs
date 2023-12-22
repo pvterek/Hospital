@@ -41,7 +41,6 @@ namespace Hospital.Commands
             builder.RegisterType<ListManage>().As<IListManage>().SingleInstance();
             builder.RegisterType<ManageCapacity>().As<IManageCapacity>().SingleInstance();
             builder.RegisterType<Validators>().As<IValidators>().SingleInstance();
-            builder.RegisterType<EmployeeFactory>().As<IEmployeeFactory>().SingleInstance();
             builder.RegisterType<ValidateObjects>().As<IValidateObjects>().SingleInstance();
             builder.Register(c => new StreamWriter(FileService.LogFilePath, true)).As<StreamWriter>().SingleInstance();
 

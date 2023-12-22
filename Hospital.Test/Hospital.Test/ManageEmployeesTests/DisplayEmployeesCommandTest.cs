@@ -1,6 +1,5 @@
 ﻿using Hospital.Commands.ManageEmployees;
-using Hospital.Entities.Interfaces;
-using Hospital.PeopleCategories.DoctorClass;
+using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
@@ -45,12 +44,12 @@ namespace Hospital.Test.ManageEmployeesTests
         {
             SetUpMocks();
             mockListsStorage.Setup(x => x.Employees)
-                .Returns([It.IsAny<Doctor>()]);
+                .Returns([It.IsAny<Employee>()]);
 
             displayEmployeesCommand.Execute();
 
             mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DisplayEmployeesMessages.NoEmployeesPrompt), Times.Never());
-            mockMenuHandler.Verify(x => x.DisplayList(It.IsAny<List<IEmployee>>()), Times.Once());
+            mockMenuHandler.Verify(x => x.DisplayList(It.IsAny<List<Employee>>()), Times.Once());
         }
     }
 }

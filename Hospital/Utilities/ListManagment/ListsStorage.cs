@@ -1,6 +1,6 @@
 ﻿using Hospital.Database;
 using Hospital.Database.Interfaces;
-using Hospital.Entities.Interfaces;
+using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
@@ -10,7 +10,7 @@ namespace Hospital.Utilities.ListManagment
 {
     public class ListsStorage : IListsStorage
     {
-        public List<IEmployee> Employees { get; private set; }
+        public List<Employee> Employees { get; private set; }
         public List<Ward> Wards { get; private set; }
         public List<Patient> Patients { get; private set; }
         public List<User> Users { get; private set; }
@@ -35,7 +35,7 @@ namespace Hospital.Utilities.ListManagment
         {
             using var session = _createSession.SessionFactory.OpenSession();
 
-            Employees = _databaseOperations.GetAll<IEmployee>(session);
+            Employees = _databaseOperations.GetAll<Employee>(session);
             Wards = _databaseOperations.GetAll<Ward>(session);
             foreach (var ward in Wards)
             {

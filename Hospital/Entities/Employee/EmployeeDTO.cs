@@ -2,11 +2,11 @@
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 
-namespace Hospital.PeopleCategories.DoctorClass
+namespace Hospital.Entities.Employee
 {
-    public class DoctorDTO : PersonDTO
+    public class EmployeeDTO : PersonDTO
     {
-        public DoctorDTO(PersonDTO person)
+        public EmployeeDTO(PersonDTO person)
         {
             Name = person.Name;
             Surname = person.Surname;
@@ -15,6 +15,8 @@ namespace Hospital.PeopleCategories.DoctorClass
         }
 
         public Ward AssignedWard { get; set; }
+
+        public Position Position { get; set; }
 
         public IList<Patient> AssignedPatients { get; set; }
     }

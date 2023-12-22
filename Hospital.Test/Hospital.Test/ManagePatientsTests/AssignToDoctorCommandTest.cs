@@ -1,6 +1,5 @@
 ﻿using Hospital.Commands.ManagePatients.ManagePatient;
-using Hospital.Entities.Interfaces;
-using Hospital.PeopleCategories.DoctorClass;
+using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
@@ -66,8 +65,10 @@ namespace Hospital.Test.ManagePatientsTests
 
             var mockPatient = new Mock<Patient>().SetupAllProperties();
             var patientsList = new List<Patient>() { mockPatient.Object };
-            var mockDoctor = new Mock<Doctor>();
-            var employeesList = new List<IEmployee>() { mockDoctor.Object };
+            var mockDoctor = new Mock<Employee>();
+            mockDoctor.Setup(x => x.Position)
+                .Returns(Position.Doctor);
+            var employeesList = new List<Employee>() { mockDoctor.Object };
 
             mockListsStorage.Setup(x => x.Patients)
                 .Returns(patientsList);

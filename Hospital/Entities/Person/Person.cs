@@ -18,7 +18,11 @@ namespace Hospital.PeopleCategories.PersonClass
 
         protected Person() { }
 
-        protected Person(string name, string surname, Gender gender, DateTime birthday)
+        protected Person(
+            string name,
+            string surname,
+            Gender gender,
+            DateTime birthday)
         {
             Name = name;
             Surname = surname;

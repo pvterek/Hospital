@@ -1,4 +1,5 @@
-﻿using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Entities.Employee;
+using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -42,29 +43,33 @@ namespace Hospital.Test.UtilitiesTests
             mockInputHandler.Setup(x => x.GetDateTimeInput(It.IsAny<string>()))
                 .Returns(expectedBirthday);
 
-            var result = dtoFactory.GatherPersonData();
+            var personDTO = dtoFactory.GatherPersonData();
 
-            Assert.Equal(expectedName, result.Name);
-            Assert.Equal(expectedSurname, result.Surname);
-            Assert.Equal(expectedGender, result.Gender);
-            Assert.Equal(expectedBirthday, result.Birthday);
+            Assert.Equal(expectedName, personDTO.Name);
+            Assert.Equal(expectedSurname, personDTO.Surname);
+            Assert.Equal(expectedGender, personDTO.Gender);
+            Assert.Equal(expectedBirthday, personDTO.Birthday);
         }
 
         [Fact]
-        public void GatherDoctorData_WhenCorrectData_ShouldReturnDoctorDTO()
+        public void GatherEmployeeData_WhenCorrectData_ShouldReturnDoctorDTO()
         {
             SetUpMocks();
 
             var mockWard = new Mock<Ward>();
             var wardsList = new List<Ward>() { mockWard.Object };
+            var expectedPosition = Position.Doctor;
 
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu(wardsList))
                 .Returns(mockWard.Object);
+            mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Position>())
+                .Returns(expectedPosition);
 
-            var doctorDTO = dtoFactory.GatherDoctorData(wardsList);
+            var employeeDTO = dtoFactory.GatherEmployeeData(wardsList);
 
-            Assert.Equal(mockWard.Object, doctorDTO.AssignedWard);
-            Assert.NotNull(doctorDTO.AssignedPatients);
+            Assert.Equal(mockWard.Object, employeeDTO.AssignedWard);
+            Assert.Equal(expectedPosition, employeeDTO.Position);
+            Assert.NotNull(employeeDTO.AssignedPatients);
         }
 
         [Fact]
@@ -85,22 +90,6 @@ namespace Hospital.Test.UtilitiesTests
 
             Assert.Equal(expectedPesel, patientDTO.Pesel);
             Assert.Equal(mockWard.Object, patientDTO.AssignedWard);
-        }
-
-        [Fact]
-        public void GatherNurseData_WhenCorrectData_ShouldReturnNurseDTO()
-        {
-            SetUpMocks();
-
-            var mockWard = new Mock<Ward>();
-            var wardsList = new List<Ward>() { mockWard.Object };
-
-            mockMenuHandler.Setup(x => x.ShowInteractiveMenu(wardsList))
-                .Returns(mockWard.Object);
-
-            var nurseDTO = dtoFactory.GatherNurseData(wardsList);
-
-            Assert.Equal(mockWard.Object, nurseDTO.AssignedWard);
         }
 
         [Fact]

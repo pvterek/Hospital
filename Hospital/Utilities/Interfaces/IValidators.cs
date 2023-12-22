@@ -1,4 +1,5 @@
-﻿using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Entities.Employee;
+using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 
 namespace Hospital.Utilities.Interfaces
@@ -14,5 +15,6 @@ namespace Hospital.Utilities.Interfaces
         bool ValidatePassword(string input);
         bool ValidateWardName(string input);
         bool ValidatePossibiltyAssignToWard(Ward ward);
+        bool ValidatePosition(Position position);
     }
 }

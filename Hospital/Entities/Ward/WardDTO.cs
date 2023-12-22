@@ -1,5 +1,5 @@
-﻿using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Entities.Employee;
+using Hospital.PeopleCategories.PatientClass;
 
 namespace Hospital.PeopleCategories.WardClass
 {
@@ -8,6 +8,6 @@ namespace Hospital.PeopleCategories.WardClass
         public string Name { get; set; }
         public int Capacity { get; set; }
         public IList<Patient> AssignedPatients { get; set; }
-        public IList<Person> AssignedEmployees { get; set; }
+        public IList<Employee> AssignedEmployees { get; set; }
     }
 }

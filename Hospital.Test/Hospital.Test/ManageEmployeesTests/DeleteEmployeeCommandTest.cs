@@ -1,7 +1,6 @@
 ﻿using Hospital.Commands.ManageEmployees;
 using Hospital.Database.Interfaces;
-using Hospital.Entities.Interfaces;
-using Hospital.PeopleCategories.DoctorClass;
+using Hospital.Entities.Employee;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -51,18 +50,18 @@ namespace Hospital.Test.ManageEmployeesTests
         {
             SetUpMocks();
 
-            var mockDoctor = new Mock<Doctor>();
-            var employees = new List<IEmployee> { mockDoctor.Object };
+            var mockEmployee = new Mock<Employee>();
+            var employeesList = new List<Employee> { mockEmployee.Object };
 
             mockListsStorage.Setup(x => x.Employees)
-                .Returns(employees);
+                .Returns(employeesList);
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu(mockListsStorage.Object.Employees))
-                .Returns(mockDoctor.Object);
+                .Returns(mockEmployee.Object);
 
-            mockDatabaseOperations.Setup(x => x.Delete(It.IsAny<IEmployee>(), It.IsAny<ISession>()))
+            mockDatabaseOperations.Setup(x => x.Delete(It.IsAny<Employee>(), It.IsAny<ISession>()))
                 .Returns(true);
-            mockListManage.Setup(x => x.Remove(It.IsAny<IEmployee>(), It.IsAny<List<IEmployee>>()))
-                .Callback((IEmployee item, List<IEmployee> list) =>
+            mockListManage.Setup(x => x.Remove(It.IsAny<Employee>(), It.IsAny<List<Employee>>()))
+                .Callback((Employee item, List<Employee> list) =>
                 {
                     if (mockDatabaseOperations.Object.Delete(item, new Mock<ISession>().Object))
                     {
@@ -72,9 +71,8 @@ namespace Hospital.Test.ManageEmployeesTests
 
             deleteEmployeeCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DeleteEmployeeMessages.NoEmployeesPrompt), Times.Never());
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt, mockDoctor.Object.Name, mockDoctor.Object.Surname)), Times.Once());
-            Assert.DoesNotContain(mockDoctor.Object, employees);
+            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt, mockEmployee.Object.Position, mockEmployee.Object.Name, mockEmployee.Object.Surname)), Times.Once());
+            Assert.DoesNotContain(mockEmployee.Object, employeesList);
         }
     }
 }

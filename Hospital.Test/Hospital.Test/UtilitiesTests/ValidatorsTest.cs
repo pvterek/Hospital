@@ -1,4 +1,5 @@
-﻿using Hospital.PeopleCategories.PatientClass;
+﻿using Hospital.Entities.Employee;
+using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities;
@@ -277,6 +278,31 @@ namespace Hospital.Test.UtilitiesTests
                 .Returns([mockPatient.Object]);
 
             var result = validators.ValidatePossibiltyAssignToWard(mockWard.Object);
+
+            Assert.False(result);
+        }
+
+        [Theory]
+        [InlineData(Position.Cleaner)]
+        [InlineData(Position.Doctor)]
+        [InlineData(Position.Nurse)]
+        public void ValidatePosition_WhenValidInput_ShouldReturnTrue(Position position)
+        {
+            SetupMocks();
+
+            var result = validators.ValidatePosition(position);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void VValidatePosition_WhenInvalidInput_ShouldReturnFalse()
+        {
+            SetupMocks();
+
+            var invalidPosition = (Position)999;
+
+            var result = validators.ValidatePosition(invalidPosition);
 
             Assert.False(result);
         }

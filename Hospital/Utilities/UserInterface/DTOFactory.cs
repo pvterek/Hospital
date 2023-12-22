@@ -1,5 +1,4 @@
-﻿using Hospital.PeopleCategories.DoctorClass;
-using Hospital.PeopleCategories.NurseClass;
+﻿using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.UserClass;
@@ -35,15 +34,17 @@ namespace Hospital.Utilities.UserInterface
             };
         }
 
-        public DoctorDTO GatherDoctorData(List<Ward> wards)
+        public EmployeeDTO GatherEmployeeData(List<Ward> wards)
         {
             PersonDTO baseData = GatherPersonData();
             Ward ward = _menuHandler.ShowInteractiveMenu(wards);
+            Position position = _menuHandler.ShowInteractiveMenu<Position>();
             List<Patient> assignedPatients = new();
 
-            return new DoctorDTO(baseData)
+            return new EmployeeDTO(baseData)
             {
                 AssignedWard = ward,
+                Position = position,
                 AssignedPatients = assignedPatients
             };
         }
@@ -57,17 +58,6 @@ namespace Hospital.Utilities.UserInterface
             return new PatientDTO(baseData)
             {
                 Pesel = pesel,
-                AssignedWard = ward
-            };
-        }
-
-        public NurseDTO GatherNurseData(List<Ward> wards)
-        {
-            PersonDTO baseData = GatherPersonData();
-            Ward ward = _menuHandler.ShowInteractiveMenu(wards);
-
-            return new NurseDTO(baseData)
-            {
                 AssignedWard = ward
             };
         }
@@ -90,7 +80,7 @@ namespace Hospital.Utilities.UserInterface
             string name = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvideNamePrompt);
             int capacity = _inputHandler.GetIntInput(UiMessages.FactoryMessages.ProvideCapacityPrompt);
             List<Patient> assignedPatients = new();
-            List<Person> assignedEmployees = new();
+            List<Employee> assignedEmployees = new();
 
             return new WardDTO()
             {

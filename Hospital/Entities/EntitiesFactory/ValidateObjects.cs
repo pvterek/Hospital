@@ -1,6 +1,5 @@
-﻿using Hospital.PeopleCategories.DoctorClass;
+﻿using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.Factory.Interfaces;
-using Hospital.PeopleCategories.NurseClass;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.UserClass;
@@ -29,46 +28,43 @@ namespace Hospital.PeopleCategories.Factory
                 _menuHandler.ShowMessage(errorDescription);
                 return false;
             }
+
             return true;
         }
 
         private bool ValidatePerson(string name, string surname, Gender gender, DateTime birthday)
         {
             return ValidateField(name, _validate.ValidateString, UiMessages.ExceptionMessages.String)
-            && ValidateField(surname, _validate.ValidateString, UiMessages.ExceptionMessages.String)
-            && ValidateField(gender, _validate.ValidateGender, UiMessages.ExceptionMessages.Gender)
-            && ValidateField(birthday, _validate.ValidateBirthday, UiMessages.ExceptionMessages.Date);
+                && ValidateField(surname, _validate.ValidateString, UiMessages.ExceptionMessages.String)
+                && ValidateField(gender, _validate.ValidateGender, UiMessages.ExceptionMessages.Gender)
+                && ValidateField(birthday, _validate.ValidateBirthday, UiMessages.ExceptionMessages.Date);
         }
 
-        public bool ValidateDoctorObject(DoctorDTO dto)
+        public bool ValidateEmployeeObject(EmployeeDTO dto)
         {
-            return ValidatePerson(dto.Name, dto.Surname, dto.Gender, dto.Birthday);
+            return ValidatePerson(dto.Name, dto.Surname, dto.Gender, dto.Birthday)
+                && ValidateField(dto.Position, _validate.ValidatePosition, UiMessages.ExceptionMessages.String);
         }
 
         public bool ValidatePatientObject(PatientDTO dto)
         {
             return ValidatePerson(dto.Name, dto.Surname, dto.Gender, dto.Birthday)
-            && ValidateField(dto.Pesel, _validate.ValidatePesel, UiMessages.ExceptionMessages.Pesel)
-            && ValidateField(dto.AssignedWard, _validate.ValidatePossibiltyAssignToWard, UiMessages.ExceptionMessages.WardFull);
-        }
-
-        public bool ValidateNurseObject(NurseDTO dto)
-        {
-            return ValidatePerson(dto.Name, dto.Surname, dto.Gender, dto.Birthday);
+                && ValidateField(dto.Pesel, _validate.ValidatePesel, UiMessages.ExceptionMessages.Pesel)
+                && ValidateField(dto.AssignedWard, _validate.ValidatePossibiltyAssignToWard, UiMessages.ExceptionMessages.WardFull);
         }
 
         public bool ValidateUserObject(UserDTO dto)
         {
             return ValidateField(dto.Name, _validate.ValidateString, UiMessages.ExceptionMessages.String)
-            && ValidateField(dto.Surname, _validate.ValidateString, UiMessages.ExceptionMessages.String)
-            && ValidateField(dto.Login, _validate.ValidateLogin, UiMessages.ExceptionMessages.Login)
-            && ValidateField(dto.Password, _validate.ValidatePassword, UiMessages.ExceptionMessages.Password);
+                && ValidateField(dto.Surname, _validate.ValidateString, UiMessages.ExceptionMessages.String)
+                && ValidateField(dto.Login, _validate.ValidateLogin, UiMessages.ExceptionMessages.Login)
+                && ValidateField(dto.Password, _validate.ValidatePassword, UiMessages.ExceptionMessages.Password);
         }
 
         public bool ValidateWardObject(WardDTO dto)
         {
             return ValidateField(dto.Name, _validate.ValidateWardName, UiMessages.ExceptionMessages.WardName)
-            && ValidateField(dto.Capacity, _validate.ValidateCapacity, UiMessages.ExceptionMessages.Capacity);
+                && ValidateField(dto.Capacity, _validate.ValidateCapacity, UiMessages.ExceptionMessages.Capacity);
         }
     }
 }

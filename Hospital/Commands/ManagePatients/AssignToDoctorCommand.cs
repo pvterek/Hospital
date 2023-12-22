@@ -1,4 +1,4 @@
-﻿using Hospital.PeopleCategories.DoctorClass;
+﻿using Hospital.Entities.Employee;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -30,7 +30,8 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 return;
             }
 
-            if (!_listsStorage.Employees.OfType<Doctor>().Any())
+            var doctors = _listsStorage.Employees.Where(e => e.Position == Position.Doctor).ToList();
+            if (!doctors.Any())
             {
                 _menuHandler.ShowMessage(UiMessages.AssignToDoctorMessages.NoDoctorsPrompt);
                 return;
@@ -38,7 +39,7 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
 
             var patient = _menuHandler.SelectObject(_listsStorage.Patients,
                 UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
-            var doctor = _menuHandler.SelectObject(_listsStorage.Employees.OfType<Doctor>().ToList(),
+            var doctor = _menuHandler.SelectObject(doctors,
                 UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
 
             patient.AssignedDoctor = doctor;
