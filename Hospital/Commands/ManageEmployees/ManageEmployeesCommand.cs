@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    internal class ManageEmployeesCommand : CompositeCommand
+    internal class ManageEmployeesCommand : Command
     {
         private readonly Lazy<CreateEmployeeCommand> _createEmployeeCommand;
         private readonly Lazy<DisplayEmployeesCommand> _displayEmployeesCommand;
@@ -42,7 +42,7 @@ namespace Hospital.Commands.ManageEmployees
             };
 
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
-            _navigationService.Queue((CompositeCommand)selectedCommand);
+            _navigationService.Queue((Command)selectedCommand);
 
             switch (selectedCommand.IntroduceString)
             {

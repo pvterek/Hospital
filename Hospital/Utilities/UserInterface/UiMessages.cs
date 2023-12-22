@@ -48,7 +48,7 @@
             public const string OperationSuccessPrompt = "Patient {0} {1} removed sucesfully!";
         }
 
-        //ManageStaff
+        //ManageEmployees
         public static class DisplayEmployeesMessages
         {
             public const string Introduce = "Display employees";
@@ -101,6 +101,16 @@
         public static class ManageWardsMessages
         {
             public const string Introduce = "Manage wards";
+        }
+
+        //ManageUsers
+        public static class DeleteUserMessages
+        {
+            public const string Introduce = "Delete user";
+            public const string NoUserPrompt = "There are no users that can be deleted! Please create one first.";
+            public const string SelectUserPrompt = "Select user which you want to delete.";
+            public const string OperationSuccessPrompt = "User {0} removed sucesfully!";
+            public const string CurrentAccountErrorPrompt = "You cannot delete the account you are currently using!";
         }
 
         //Factory
@@ -189,7 +199,7 @@
         //UserObject
         public static class UserObjectMessages
         {
-            public const string Introduce = "Welcome {0} {1}!";
+            public const string Introduce = "User: {0}";
         }
 
         //PatientObject

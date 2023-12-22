@@ -3,9 +3,9 @@ using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
-namespace Hospital.Commands.LoginWindow
+namespace Hospital.Commands.ManageUsers
 {
-    public class CreateAccountCommand : CompositeCommand
+    public class CreateUserCommand : Command
     {
         private readonly IObjectsFactory _objectsFactory;
         private readonly IValidateObjects _validateObjects;
@@ -14,7 +14,7 @@ namespace Hospital.Commands.LoginWindow
         private readonly IListManage _listManage;
         private readonly IListsStorage _listsStorage;
 
-        public CreateAccountCommand(
+        public CreateUserCommand(
             IObjectsFactory objectsFactory,
             IValidateObjects validateObjects,
             IDTOFactory dtoFactory,

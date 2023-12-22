@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients.ManagePatient
 {
-    public class ChangeHealthStatusCommand : CompositeCommand
+    public class ChangeHealthStatusCommand : Command
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;

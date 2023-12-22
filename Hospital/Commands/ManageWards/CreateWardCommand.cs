@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    public class CreateWardCommand : CompositeCommand
+    public class CreateWardCommand : Command
     {
         private readonly IObjectsFactory _objectsFactory;
         private readonly IValidateObjects _validateObjects;

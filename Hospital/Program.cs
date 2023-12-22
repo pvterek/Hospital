@@ -30,14 +30,16 @@ namespace Hospital
 
         private static void ExecuteApplication()
         {
-            var logger = Container.Resolve<ILogger>();
-            var mainWindow = Container.Resolve<MainWindowCommand>();
-            var loginWindow = Container.Resolve<LoginWindowCommand>();
             var loginCommand = Container.Resolve<LoginCommand>();
+            var loginWindow = Container.Resolve<LoginWindowCommand>();
+            var mainWindow = Container.Resolve<MainWindowCommand>();
+
             var mainQueue = Container.Resolve<INavigationService>();
-            var menuHandler = Container.Resolve<IMenuHandler>();
             mainQueue.Queue(loginWindow);
             mainQueue.Queue(mainWindow);
+
+            var logger = Container.Resolve<ILogger>();
+            var menuHandler = Container.Resolve<IMenuHandler>();
 
             while (true)
             {

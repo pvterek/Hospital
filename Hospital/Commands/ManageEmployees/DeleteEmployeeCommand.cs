@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    public class DeleteEmployeeCommand : CompositeCommand
+    public class DeleteEmployeeCommand : Command
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;

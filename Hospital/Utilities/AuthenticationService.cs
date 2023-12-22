@@ -1,4 +1,5 @@
 ﻿using Hospital.PeopleCategories.UserClass;
+using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.ListManagment;
 
 namespace Hospital.Utilities

@@ -2,7 +2,7 @@
 
 namespace Hospital.Commands.Navigation
 {
-    public class BackCommand : CompositeCommand
+    public class BackCommand : Command
     {
         private readonly INavigationService _navigationService;
 

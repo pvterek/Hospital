@@ -110,7 +110,7 @@ namespace Hospital.Test.UtilitiesTests
         }
     }
 
-    public class TestCompositeCommand : CompositeCommand
+    public class TestCompositeCommand : Command
     {
         public TestCompositeCommand() : base("Test") { }
 

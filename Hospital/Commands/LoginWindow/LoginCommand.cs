@@ -1,13 +1,14 @@
 ﻿using Hospital.PeopleCategories.UserClass;
-using Hospital.Utilities;
+using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    public class LoginCommand : CompositeCommand
+    public class LoginCommand : Command
     {
         public bool IsLoggedIn;
+        public User CurrentlyLoggedIn;
 
         private readonly IAuthenticationService _authenticationService;
         private readonly IMenuHandler _menuHandler;
@@ -42,6 +43,7 @@ namespace Hospital.Commands.LoginWindow
             }
 
             IsLoggedIn = true;
+            CurrentlyLoggedIn = user;
         }
     }
 }

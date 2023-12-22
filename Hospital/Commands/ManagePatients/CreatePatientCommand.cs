@@ -6,7 +6,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManagePatients
 {
-    public class CreatePatientCommand : CompositeCommand
+    public class CreatePatientCommand : Command
     {
         private readonly IObjectsFactory _objectsFactory;
         private readonly IValidateObjects _validateObjects;

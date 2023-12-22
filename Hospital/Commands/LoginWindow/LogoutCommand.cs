@@ -2,7 +2,7 @@
 
 namespace Hospital.Commands.LoginWindow
 {
-    public class LogoutCommand : CompositeCommand
+    public class LogoutCommand : Command
     {
         private readonly LoginCommand _loginCommand;
 

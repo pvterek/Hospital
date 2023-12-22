@@ -6,7 +6,7 @@ namespace Hospital.Commands.Navigation
 {
     public class NavigationService : INavigationService
     {
-        private readonly Stack<CompositeCommand> CommandStack = new();
+        private readonly Stack<Command> CommandStack = new();
         private readonly List<Type> NavigationCommands = new()
         {
             typeof(MainWindowCommand),
@@ -15,18 +15,18 @@ namespace Hospital.Commands.Navigation
             typeof(ManageWardsCommand)
         };
 
-        public CompositeCommand GetPreviousCommand()
+        public Command GetPreviousCommand()
         {
             CommandStack.Pop();
             return CommandStack.Peek();
         }
 
-        public CompositeCommand GetCurrentCommand()
+        public Command GetCurrentCommand()
         {
             return CommandStack.Peek();
         }
 
-        public void Queue(CompositeCommand command)
+        public void Queue(Command command)
         {
             if (NavigationCommands.Contains(command.GetType()))
                 CommandStack.Push(command);

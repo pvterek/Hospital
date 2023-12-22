@@ -4,7 +4,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    public class DisplayWardCommand : CompositeCommand
+    public class DisplayWardCommand : Command
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListsStorage _listsStorage;

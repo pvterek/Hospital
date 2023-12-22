@@ -4,7 +4,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    public class DeleteWardCommand : CompositeCommand
+    public class DeleteWardCommand : Command
     {
         private readonly IMenuHandler _menuHandler;
         private readonly IListManage _listManage;

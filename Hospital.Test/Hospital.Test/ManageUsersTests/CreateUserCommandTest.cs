@@ -1,4 +1,4 @@
-﻿using Hospital.Commands.LoginWindow;
+﻿using Hospital.Commands.ManageUsers;
 using Hospital.Database.Interfaces;
 using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.UserClass;
@@ -8,9 +8,9 @@ using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;
 using NHibernate;
 
-namespace Hospital.Test.LoginWindowTest
+namespace Hospital.Test.ManageUsers
 {
-    public class CreateAccountCommandTest
+    public class CreateUserCommandTest
     {
         private Mock<IObjectsFactory> mockObjectsFactory;
         private Mock<IValidateObjects> mockValidateObjects;
@@ -20,7 +20,7 @@ namespace Hospital.Test.LoginWindowTest
         private Mock<IListManage> mockListManage;
         private Mock<IDatabaseOperations> mockDatabaseOperations;
 
-        private CreateAccountCommand createAccountCommand;
+        private CreateUserCommand createAccountCommand;
 
         private void SetUpMocks()
         {
@@ -32,7 +32,7 @@ namespace Hospital.Test.LoginWindowTest
             mockListManage = new Mock<IListManage>();
             mockDatabaseOperations = new Mock<IDatabaseOperations>();
 
-            createAccountCommand = new CreateAccountCommand(
+            createAccountCommand = new CreateUserCommand(
                 mockObjectsFactory.Object,
                 mockValidateObjects.Object,
                 mockDTOFactory.Object,

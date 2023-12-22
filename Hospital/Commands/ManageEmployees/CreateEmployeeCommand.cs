@@ -7,7 +7,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageEmployees
 {
-    public class CreateEmployeeCommand : CompositeCommand
+    public class CreateEmployeeCommand : Command
     {
         private readonly IDTOFactory _dtoFactory;
         private readonly IMenuHandler _menuHandler;

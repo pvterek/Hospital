@@ -21,7 +21,7 @@ namespace Hospital.PeopleCategories.UserClass
         {
             Login = login;
             Password = password;
-            IntroduceString = string.Format(UiMessages.UserObjectMessages.Introduce, name, surname);
+            IntroduceString = string.Format(UiMessages.UserObjectMessages.Introduce, login);
         }
     }
 }

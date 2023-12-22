@@ -2,7 +2,7 @@
 
 namespace Hospital.Commands.Navigation
 {
-    public class ExitCommand : CompositeCommand
+    public class ExitCommand : Command
     {
         public ExitCommand() : base(UiMessages.ExitCommandMessages.Introduce) { }
 

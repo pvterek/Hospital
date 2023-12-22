@@ -3,6 +3,7 @@ using Hospital.Commands.LoginWindow;
 using Hospital.Commands.ManageEmployees;
 using Hospital.Commands.ManagePatients;
 using Hospital.Commands.ManagePatients.ManagePatient;
+using Hospital.Commands.ManageUsers;
 using Hospital.Commands.ManageWards;
 using Hospital.Commands.Navigation;
 using Hospital.Database;
@@ -24,6 +25,7 @@ namespace Hospital.Commands
         {
             var builder = new ContainerBuilder();
 
+            //Utilities / Database
             builder.RegisterType<ConsoleService>().As<IConsoleService>().SingleInstance();
             builder.RegisterType<MenuHandler>().As<IMenuHandler>().SingleInstance();
             builder.RegisterType<DTOFactory>().As<IDTOFactory>().SingleInstance();
@@ -34,9 +36,6 @@ namespace Hospital.Commands
             builder.RegisterType<Logger>().As<ILogger>().SingleInstance();
             builder.RegisterType<DatabaseService>().As<IDatabaseService>().SingleInstance();
             builder.RegisterType<CreateSession>().AsSelf().SingleInstance();
-            builder.RegisterType<ExitCommand>().AsSelf().SingleInstance();
-            builder.RegisterType<BackCommand>().AsSelf().SingleInstance();
-            builder.RegisterType<LogoutCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DatabaseOperations>().As<IDatabaseOperations>().SingleInstance();
             builder.RegisterType<ListsStorage>().As<IListsStorage>().SingleInstance();
             builder.RegisterType<ListManage>().As<IListManage>().SingleInstance();
@@ -46,10 +45,13 @@ namespace Hospital.Commands
             builder.RegisterType<ValidateObjects>().As<IValidateObjects>().SingleInstance();
             builder.Register(c => new StreamWriter(FileService.LogFilePath, true)).As<StreamWriter>().SingleInstance();
 
+            //Commands
+            builder.RegisterType<ExitCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<BackCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<LogoutCommand>().AsSelf().SingleInstance();
 
             //LoginWindowCommand
             builder.RegisterType<LoginCommand>().AsSelf().SingleInstance();
-            builder.RegisterType<CreateAccountCommand>().AsSelf().SingleInstance();
             builder.RegisterType<LogoutCommand>().AsSelf().SingleInstance();
             builder.RegisterType<LoginWindowCommand>().AsSelf().SingleInstance();
 
@@ -66,6 +68,10 @@ namespace Hospital.Commands
             builder.RegisterType<ChangeHealthStatusCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DeletePatientCommand>().AsSelf().SingleInstance();
             builder.RegisterType<ManagePatientsCommand>().AsSelf().SingleInstance();
+
+            //ManageUsersCommand
+            builder.RegisterType<CreateUserCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<DeleteUserCommand>().AsSelf().SingleInstance();
 
             //ManageWardsCommand
             builder.RegisterType<CreateWardCommand>().AsSelf().SingleInstance();

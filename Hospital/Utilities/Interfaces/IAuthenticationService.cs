@@ -1,6 +1,6 @@
 ﻿using Hospital.PeopleCategories.UserClass;
 
-namespace Hospital.Utilities
+namespace Hospital.Utilities.Interfaces
 {
     public interface IAuthenticationService
     {

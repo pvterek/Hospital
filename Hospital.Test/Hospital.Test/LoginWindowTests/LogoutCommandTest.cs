@@ -1,5 +1,5 @@
 ﻿using Hospital.Commands.LoginWindow;
-using Hospital.Utilities;
+using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;
 

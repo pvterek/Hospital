@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.ManageWards
 {
-    public class ManageWardsCommand : CompositeCommand
+    public class ManageWardsCommand : Command
     {
         private readonly Lazy<CreateWardCommand> _createWardCommand;
         private readonly Lazy<DisplayWardCommand> _displayWardCommand;
@@ -42,7 +42,7 @@ namespace Hospital.Commands.ManageWards
             };
 
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
-            _navigationService.Queue((CompositeCommand)selectedCommand);
+            _navigationService.Queue((Command)selectedCommand);
 
             switch (selectedCommand.IntroduceString)
             {

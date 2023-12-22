@@ -26,7 +26,7 @@ namespace Hospital.Utilities
         }
 
         public bool ValidateBirthday(DateTime birthday)
-            => birthday <= DateTime.Today && birthday >= DateTime.Today.AddYears(-MaxAge);
+            => birthday < DateTime.Today && birthday > DateTime.Today.AddYears(-MaxAge);
 
         public bool ValidateGender(Gender gender)
             => Enum.IsDefined(typeof(Gender), gender);

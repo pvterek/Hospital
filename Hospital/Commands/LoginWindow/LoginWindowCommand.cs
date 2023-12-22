@@ -1,20 +1,21 @@
-﻿using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.ManageUsers;
+using Hospital.Commands.Navigation;
 using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital.Commands.LoginWindow
 {
-    public class LoginWindowCommand : CompositeCommand
+    public class LoginWindowCommand : Command
     {
         private readonly Lazy<LoginCommand> _loginCommand;
-        private readonly Lazy<CreateAccountCommand> _createAccountCommand;
+        private readonly Lazy<CreateUserCommand> _createAccountCommand;
         private readonly Lazy<ExitCommand> _exitCommand;
         private readonly IMenuHandler _menuHandler;
 
         public LoginWindowCommand(
             Lazy<LoginCommand> loginCommand,
-            Lazy<CreateAccountCommand> createAccountCommand,
+            Lazy<CreateUserCommand> createAccountCommand,
             Lazy<ExitCommand> exitCommand,
             IMenuHandler menuHandler)
             : base(UiMessages.LoginWindowCommandMessages.Introduce)

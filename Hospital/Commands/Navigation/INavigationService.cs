@@ -2,8 +2,8 @@
 {
     public interface INavigationService
     {
-        CompositeCommand GetPreviousCommand();
-        CompositeCommand GetCurrentCommand();
-        void Queue(CompositeCommand command);
+        Command GetPreviousCommand();
+        Command GetCurrentCommand();
+        void Queue(Command command);
     }
 }

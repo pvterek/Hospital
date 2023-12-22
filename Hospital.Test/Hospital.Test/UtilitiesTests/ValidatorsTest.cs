@@ -88,11 +88,23 @@ namespace Hospital.Test.UtilitiesTests
         }
 
         [Fact]
-        public void ValidateBirthday_WhenInvalidInput_ShouldReturnFalse()
+        public void ValidateBirthday_WhenTooOldDate_ShouldReturnFalse()
         {
             SetupMocks();
 
             var birthday = DateTime.Today.AddYears(-160);
+
+            var result = validators.ValidateBirthday(birthday);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void ValidateBirthday_WhenTooYoungDate_ShouldReturnFalse()
+        {
+            SetupMocks();
+
+            var birthday = DateTime.Today;
 
             var result = validators.ValidateBirthday(birthday);
 
@@ -152,25 +164,28 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var validLogin = "valid";
+            var login = "valid";
             mockListsStorage.Setup(x => x.Logins)
                 .Returns(["test"]);
 
-            var result = validators.ValidateLogin(validLogin);
+            var result = validators.ValidateLogin(login);
 
             Assert.True(result);
         }
 
-        [Fact]
-        public void ValidateLogin_WhenInvalidInput_ShouldReturnFalse()
+        [Theory]
+        [InlineData(null)]
+        [InlineData(" ")]
+        [InlineData("")]
+        [InlineData("test")]
+        public void ValidateLogin_WhenInvalidInput_ShouldReturnFalse(string input)
         {
             SetupMocks();
 
-            var validLogin = "test";
             mockListsStorage.Setup(x => x.Logins)
                 .Returns(["test"]);
 
-            var result = validators.ValidateLogin(validLogin);
+            var result = validators.ValidateLogin(input);
 
             Assert.False(result);
         }
@@ -190,6 +205,7 @@ namespace Hospital.Test.UtilitiesTests
         [Theory]
         [InlineData(null)]
         [InlineData(" ")]
+        [InlineData("")]
         [InlineData("test")]
         public void ValidatePassword_WhenInvalidInput_ShouldReturnFalse(string input)
         {
@@ -214,16 +230,19 @@ namespace Hospital.Test.UtilitiesTests
             Assert.True(result);
         }
 
-        [Fact]
-        public void ValidateWardName_WhenInvalidInput_ShouldReturnFalse()
+        [Theory]
+        [InlineData(null)]
+        [InlineData(" ")]
+        [InlineData("")]
+        [InlineData("test")]
+        public void ValidateWardName_WhenInvalidInput_ShouldReturnFalse(string input)
         {
             SetupMocks();
 
-            var validWardName = "test";
             mockListsStorage.Setup(x => x.WardsNames)
                 .Returns(["test"]);
 
-            var result = validators.ValidateWardName(validWardName);
+            var result = validators.ValidateWardName(input);
 
             Assert.False(result);
         }
