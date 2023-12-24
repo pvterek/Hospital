@@ -32,7 +32,7 @@ namespace Hospital.Utilities.ListManagment
             list.Add(item);
         }
 
-        public void Remove<T>(T item, List<T> list) where T : IHasIntroduceString
+        public void Delete<T>(T item, List<T> list) where T : IHasIntroduceString
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
@@ -65,6 +65,17 @@ namespace Hospital.Utilities.ListManagment
             }
 
             list[index] = item;
+        }
+
+        public void SoftDelete<T>(T item, List<T> list) where T : IIsDeleted, IIdentifier, IHasIntroduceString
+        {
+            if (item == null)
+                throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
+
+            item.IsDeleted = true;
+            Update(item, list);
+
+            list.Remove(item);
         }
     }
 }

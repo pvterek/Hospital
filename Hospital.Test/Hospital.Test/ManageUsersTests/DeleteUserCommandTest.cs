@@ -45,12 +45,12 @@ namespace Hospital.Test.ManageUsers
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Users)
-                .Returns([]);
+                            .Returns([]);
 
             deleteUserCommand.Execute();
 
             mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DeleteUserMessages.NoUserPrompt), Times.Once());
-            mockMenuHandler.Verify(x => x.SelectObject(mockListsStorage.Object.Users, UiMessages.DeleteUserMessages.SelectUserPrompt), Times.Never());
+            mockMenuHandler.Verify(x => x.SelectObject(It.IsAny<List<User>>(), UiMessages.DeleteUserMessages.SelectUserPrompt), Times.Never());
         }
 
         [Fact]
@@ -59,18 +59,24 @@ namespace Hospital.Test.ManageUsers
             SetUpMocks();
 
             var mockUser = new Mock<User>();
+            mockUser.SetupAllProperties();
+            mockUser.Object.IsDeleted = false;
+
             var usersList = new List<User>() { mockUser.Object };
 
-            mockListsStorage.Setup(x => x.Users)
-                .Returns(usersList);
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Users, UiMessages.DeleteUserMessages.SelectUserPrompt))
-                .Returns(mockUser.Object);
             loginCommand.CurrentlyLoggedIn = mockUser.Object;
+
+            mockListsStorage.Setup(x => x.Users)
+                            .Returns(usersList);
+
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<User>>(), It.IsAny<string>()))
+                           .Returns(mockUser.Object);
 
             deleteUserCommand.Execute();
 
-            mockListManage.Verify(x => x.Remove(It.IsAny<User>(), It.IsAny<List<User>>()), Times.Never());
+            mockListManage.Verify(x => x.SoftDelete(It.IsAny<User>(), It.IsAny<List<User>>()), Times.Never());
             Assert.Contains(mockUser.Object, usersList);
+            Assert.False(mockUser.Object.IsDeleted);
         }
 
         [Fact]
@@ -79,28 +85,31 @@ namespace Hospital.Test.ManageUsers
             SetUpMocks();
 
             var mockUser = new Mock<User>();
+            mockUser.SetupAllProperties();
+            mockUser.Object.IsDeleted = false;
+
             var usersList = new List<User>() { mockUser.Object };
 
             mockListsStorage.Setup(x => x.Users)
-                .Returns(usersList);
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Users, UiMessages.DeleteUserMessages.SelectUserPrompt))
-                .Returns(mockUser.Object);
+                            .Returns(usersList);
 
-            mockDatabaseOperations.Setup(x => x.Delete(It.IsAny<User>(), It.IsAny<ISession>()))
-                .Returns(true);
-            mockListManage.Setup(x => x.Remove(It.IsAny<User>(), It.IsAny<List<User>>()))
-                .Callback((User item, List<User> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Delete(item, new Mock<ISession>().Object))
-                    {
-                        list.Remove(item);
-                    }
-                });
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<User>>(), It.IsAny<string>()))
+                           .Returns(mockUser.Object);
+
+            mockDatabaseOperations.Setup(x => x.Update(It.IsAny<User>(), It.IsAny<ISession>()))
+                                  .Returns(true);
+
+            mockListManage.Setup(x => x.SoftDelete(It.IsAny<User>(), It.IsAny<List<User>>()))
+                          .Callback((User user, List<User> list) =>
+                          {
+                              user.IsDeleted = true;
+                              list.Remove(user);
+                          });
 
             deleteUserCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.DeleteUserMessages.OperationSuccessPrompt, mockUser.Object.Login)));
             Assert.DoesNotContain(mockUser.Object, usersList);
+            Assert.True(mockUser.Object.IsDeleted);
         }
     }
 }

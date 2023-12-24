@@ -5,7 +5,7 @@ using Hospital.Utilities.UserInterface;
 
 namespace Hospital.PeopleCategories.WardClass
 {
-    public class Ward : IHasIntroduceString, IIdentifier
+    public class Ward : IHasIntroduceString, IIdentifier, IIsDeleted
     {
         public virtual int Id { get; set; }
 
@@ -25,6 +25,8 @@ namespace Hospital.PeopleCategories.WardClass
 
         public virtual IList<Employee> AssignedEmployees { get; set; }
 
+        public virtual bool IsDeleted { get; set; }
+
         public virtual string IntroduceString { get; set; }
 
         protected Ward() { }
@@ -39,6 +41,7 @@ namespace Hospital.PeopleCategories.WardClass
             Capacity = capacity;
             AssignedPatients = assignedPatients;
             AssignedEmployees = assignedEmployees;
+            IsDeleted = false;
             IntroduceString = string.Format(
                 UiMessages.WardObjectMessages.Introduce, name, PatientsNumber, Capacity);
         }

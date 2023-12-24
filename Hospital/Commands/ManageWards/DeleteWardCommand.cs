@@ -29,16 +29,19 @@ namespace Hospital.Commands.ManageWards
                 return;
             }
 
-            var ward = _menuHandler.SelectObject(_listsStorage.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt);
+            var selectedWard = _menuHandler.SelectObject(
+                _listsStorage.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt);
 
-            if (ward.AssignedPatients.Any() || ward.AssignedEmployees.Any())
+            if (selectedWard.AssignedPatients.Any() || selectedWard.AssignedEmployees.Any())
             {
                 _menuHandler.ShowMessage(UiMessages.DeleteWardMessages.WardNonEmptyPrompt);
                 return;
             }
 
-            _listManage.Remove(ward, _listsStorage.Wards);
-            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteWardMessages.OperationSuccessPrompt, ward.Name));
+            _listManage.SoftDelete(selectedWard, _listsStorage.Wards);
+
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteWardMessages.OperationSuccessPrompt,
+                selectedWard.Name));
         }
     }
 }

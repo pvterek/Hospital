@@ -37,7 +37,7 @@ namespace Hospital.Test.ManageEmployeesTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Employees)
-                .Returns([]);
+                            .Returns([]);
 
             deleteEmployeeCommand.Execute();
 
@@ -51,28 +51,30 @@ namespace Hospital.Test.ManageEmployeesTests
             SetUpMocks();
 
             var mockEmployee = new Mock<Employee>();
+            mockEmployee.SetupAllProperties();
+            mockEmployee.Object.IsDeleted = false;
+
             var employeesList = new List<Employee> { mockEmployee.Object };
 
-            mockListsStorage.Setup(x => x.Employees)
-                .Returns(employeesList);
-            mockMenuHandler.Setup(x => x.ShowInteractiveMenu(mockListsStorage.Object.Employees))
-                .Returns(mockEmployee.Object);
+            mockListsStorage.Setup(x => x.Employees).Returns(employeesList);
 
-            mockDatabaseOperations.Setup(x => x.Delete(It.IsAny<Employee>(), It.IsAny<ISession>()))
-                .Returns(true);
-            mockListManage.Setup(x => x.Remove(It.IsAny<Employee>(), It.IsAny<List<Employee>>()))
-                .Callback((Employee item, List<Employee> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Delete(item, new Mock<ISession>().Object))
-                    {
-                        list.Remove(item);
-                    }
-                });
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Employee>>(), It.IsAny<string>()))
+                           .Returns(mockEmployee.Object);
+
+            mockDatabaseOperations.Setup(x => x.Update(It.IsAny<Employee>(), It.IsAny<ISession>()))
+                                  .Returns(true);
+
+            mockListManage.Setup(x => x.SoftDelete(It.IsAny<Employee>(), It.IsAny<List<Employee>>()))
+                          .Callback((Employee employee, List<Employee> list) =>
+                          {
+                              employee.IsDeleted = true;
+                              list.Remove(employee);
+                          });
 
             deleteEmployeeCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt, mockEmployee.Object.Position, mockEmployee.Object.Name, mockEmployee.Object.Surname)), Times.Once());
             Assert.DoesNotContain(mockEmployee.Object, employeesList);
+            Assert.True(mockEmployee.Object.IsDeleted);
         }
     }
 }

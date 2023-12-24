@@ -29,13 +29,13 @@ namespace Hospital.Commands.ManageEmployees
                 return;
             }
 
-            _menuHandler.ShowMessage(UiMessages.DeleteEmployeeMessages.SelectPrompt);
+            var selectedEmployee = _menuHandler.SelectObject(
+                _listsStorage.Employees, UiMessages.DeleteEmployeeMessages.SelectPrompt);
 
-            var employee = _menuHandler.ShowInteractiveMenu(_listsStorage.Employees);
-            _listManage.Remove(employee, _listsStorage.Employees);
+            _listManage.SoftDelete(selectedEmployee, _listsStorage.Employees);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt,
-                employee.Position, employee.Name, employee.Surname));
+                selectedEmployee.Position, selectedEmployee.Name, selectedEmployee.Surname));
         }
     }
 }

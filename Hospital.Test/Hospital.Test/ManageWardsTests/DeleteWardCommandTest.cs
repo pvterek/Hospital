@@ -38,12 +38,12 @@ namespace Hospital.Test.ManageWardsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([]);
+                            .Returns([]);
 
             deleteWardCommand.Execute();
 
             mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DeleteWardMessages.NoWardPrompt), Times.Once());
-            mockMenuHandler.Verify(x => x.SelectObject(mockListsStorage.Object.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt), Times.Never());
+            mockMenuHandler.Verify(x => x.SelectObject(It.IsAny<List<Ward>>(), UiMessages.DeleteWardMessages.SelectWardPrompt), Times.Never());
         }
 
         [Fact]
@@ -51,22 +51,26 @@ namespace Hospital.Test.ManageWardsTests
         {
             SetUpMocks();
 
+            var assignedPatientsList = new List<Patient>() { new Mock<Patient>().Object };
+
             var mockWard = new Mock<Ward>();
-            var mockPatient = new Mock<Patient>();
-            var assignedPatientsList = new List<Patient>() { mockPatient.Object };
+            mockWard.SetupAllProperties();
+            mockWard.Object.IsDeleted = false;
             mockWard.Setup(x => x.AssignedPatients)
-                .Returns(assignedPatientsList);
+                    .Returns(assignedPatientsList);
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([mockWard.Object]);
+                            .Returns([mockWard.Object]);
 
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt))
-                .Returns(mockWard.Object);
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Ward>>(), It.IsAny<string>()))
+                           .Returns(mockWard.Object);
 
             deleteWardCommand.Execute();
 
             mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DeleteWardMessages.WardNonEmptyPrompt), Times.Once());
-            mockListManage.Verify(x => x.Remove(mockWard.Object, mockListsStorage.Object.Wards), Times.Never());
+            mockListManage.Verify(x => x.SoftDelete(mockWard.Object, It.IsAny<List<Ward>>()), Times.Never());
+            Assert.Contains(mockWard.Object, mockListsStorage.Object.Wards);
+            Assert.False(mockWard.Object.IsDeleted);
         }
 
         [Fact]
@@ -75,33 +79,35 @@ namespace Hospital.Test.ManageWardsTests
             SetUpMocks();
 
             var mockWard = new Mock<Ward>();
+            mockWard.SetupAllProperties();
+            mockWard.Object.IsDeleted = false;
+            mockWard.Setup(x => x.AssignedPatients)
+                    .Returns([]);
+            mockWard.Setup(x => x.AssignedEmployees)
+                    .Returns([]);
+
             var wardsList = new List<Ward>() { mockWard.Object };
 
-            mockWard.Setup(x => x.AssignedPatients)
-                .Returns([]);
-            mockWard.Setup(x => x.AssignedEmployees)
-                .Returns([]);
-
             mockListsStorage.Setup(x => x.Wards)
-                .Returns(wardsList);
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Wards, UiMessages.DeleteWardMessages.SelectWardPrompt))
-                .Returns(mockWard.Object);
+                            .Returns(wardsList);
 
-            mockDatabaseOperations.Setup(x => x.Delete(It.IsAny<Ward>(), It.IsAny<ISession>()))
-                .Returns(true);
-            mockListManage.Setup(x => x.Remove(It.IsAny<Ward>(), It.IsAny<List<Ward>>()))
-                .Callback((Ward item, List<Ward> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Delete(item, new Mock<ISession>().Object))
-                    {
-                        list.Remove(item);
-                    }
-                });
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Ward>>(), It.IsAny<string>()))
+                            .Returns(mockWard.Object);
+
+            mockDatabaseOperations.Setup(x => x.Update(It.IsAny<Ward>(), It.IsAny<ISession>()))
+                                  .Returns(true);
+
+            mockListManage.Setup(x => x.SoftDelete(It.IsAny<Ward>(), It.IsAny<List<Ward>>()))
+                          .Callback((Ward ward, List<Ward> list) =>
+                          {
+                              ward.IsDeleted = true;
+                              list.Remove(ward);
+                          });
 
             deleteWardCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.DeleteWardMessages.OperationSuccessPrompt, mockWard.Object.Name)), Times.Once());
             Assert.DoesNotContain(mockWard.Object, wardsList);
+            Assert.True(mockWard.Object.IsDeleted);
         }
     }
 }

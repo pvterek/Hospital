@@ -33,16 +33,19 @@ namespace Hospital.Commands.ManageUsers
                 return;
             }
 
-            var user = _menuHandler.SelectObject(_listsStorage.Users, UiMessages.DeleteUserMessages.SelectUserPrompt);
-            if (_loginCommand.CurrentlyLoggedIn == user)
+            var selectedUser = _menuHandler.SelectObject(
+                _listsStorage.Users, UiMessages.DeleteUserMessages.SelectUserPrompt);
+
+            if (_loginCommand.CurrentlyLoggedIn == selectedUser)
             {
                 _menuHandler.ShowMessage(UiMessages.DeleteUserMessages.CurrentAccountErrorPrompt);
                 return;
             }
 
-            _listManage.Remove(user, _listsStorage.Users);
+            _listManage.SoftDelete(selectedUser, _listsStorage.Users);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteUserMessages.OperationSuccessPrompt, user.Login));
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeleteUserMessages.OperationSuccessPrompt,
+                selectedUser.Login));
         }
     }
 }

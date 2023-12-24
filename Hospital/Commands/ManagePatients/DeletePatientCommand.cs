@@ -33,11 +33,16 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 return;
             }
 
-            var patient = _menuHandler.SelectObject(_listsStorage.Patients, UiMessages.DeletePatientMessages.DeletePrompt);
-            _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.RemovePatient);
-            _listManage.Remove(patient, _listsStorage.Patients);
+            var selectedPatient = _menuHandler.SelectObject(
+                _listsStorage.Patients, UiMessages.DeletePatientMessages.DeletePrompt);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.DeletePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
+            _listManage.SoftDelete(selectedPatient, _listsStorage.Patients);
+
+            _manageCapacity.UpdateWardCapacity(selectedPatient.AssignedWard, selectedPatient,
+                OperationType.Operation.RemovePatient);
+
+            _menuHandler.ShowMessage(string.Format(UiMessages.DeletePatientMessages.OperationSuccessPrompt,
+                selectedPatient.Name, selectedPatient.Surname));
         }
     }
 }

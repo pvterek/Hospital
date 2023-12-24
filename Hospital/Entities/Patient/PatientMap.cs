@@ -11,6 +11,7 @@ namespace Hospital.PeopleCategories.PatientClass
             Map(x => x.Surname).Not.Nullable();
             Map(x => x.Gender).Not.Nullable();
             Map(x => x.Birthday).CustomType<DateTime>().Not.Nullable();
+            Map(x => x.IsDeleted).CustomType<bool>().Not.Nullable();
             Map(x => x.Pesel).Not.Nullable();
             Map(x => x.IntroduceString).Not.Nullable();
             Map(x => x.HealthStatus);

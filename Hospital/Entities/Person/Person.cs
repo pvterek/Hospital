@@ -2,7 +2,7 @@
 
 namespace Hospital.PeopleCategories.PersonClass
 {
-    public abstract class Person : IHasIntroduceString, IIdentifier
+    public abstract class Person : IHasIntroduceString, IIdentifier, IIsDeleted
     {
         public virtual int Id { get; set; }
 
@@ -16,6 +16,8 @@ namespace Hospital.PeopleCategories.PersonClass
 
         public virtual DateTime Birthday { get; set; }
 
+        public virtual bool IsDeleted { get; set; }
+
         protected Person() { }
 
         protected Person(
@@ -28,6 +30,7 @@ namespace Hospital.PeopleCategories.PersonClass
             Surname = surname;
             Gender = gender;
             Birthday = birthday;
+            IsDeleted = false;
         }
     }
 }

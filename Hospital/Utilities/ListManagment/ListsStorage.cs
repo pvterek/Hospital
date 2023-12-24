@@ -35,15 +35,19 @@ namespace Hospital.Utilities.ListManagment
         {
             using var session = _createSession.SessionFactory.OpenSession();
 
-            Employees = _databaseOperations.GetAll<Employee>(session);
-            Wards = _databaseOperations.GetAll<Ward>(session);
+            Employees = _databaseOperations.GetAll<Employee>(session)
+                .Where(employee => !employee.IsDeleted).ToList();
+            Wards = _databaseOperations.GetAll<Ward>(session)
+                .Where(ward => !ward.IsDeleted).ToList();
             foreach (var ward in Wards)
             {
                 NHibernateUtil.Initialize(ward.AssignedPatients);
                 NHibernateUtil.Initialize(ward.AssignedEmployees);
             }
-            Patients = _databaseOperations.GetAll<Patient>(session);
-            Users = _databaseOperations.GetAll<User>(session);
+            Patients = _databaseOperations.GetAll<Patient>(session)
+                .Where(patient => !patient.IsDeleted).ToList();
+            Users = _databaseOperations.GetAll<User>(session)
+                .Where(user => !user.IsDeleted).ToList();
             Pesels = Patients.Select(patient => patient.Pesel).ToHashSet();
             Logins = Users.Select(user => user.Login).ToHashSet();
             WardsNames = Wards.Select(ward => ward.Name).ToHashSet();
