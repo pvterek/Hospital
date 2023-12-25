@@ -5,7 +5,7 @@
         //ManagePatients
         public static class CreatePatientMessages
         {
-            public const string Introduce = "Admit a patient.";
+            public const string Introduce = "Admit a patient";
             public const string NoWardErrorPrompt = "No wards created to assign patient! Please create one first.";
             public const string OperationSuccessPrompt = "Patient {0} {1} admited sucesfully!";
         }
@@ -21,20 +21,20 @@
 
         public static class ChangeHealthStatusMessages
         {
-            public const string Introduce = "Change health status.";
+            public const string Introduce = "Change health status";
             public const string SelectPatientPrompt = "Pick for which patient you want change health status";
             public const string OperationSuccessPrompt = "Health status of {0} {1} was changed successfully!";
         }
 
         public static class DisplayPatientsMessages
         {
-            public const string Introduce = "Display all patients.";
+            public const string Introduce = "Display all patients";
             public const string NoPatientsPrompt = "There is no patients in your hospital! Please add one first.";
         }
 
         public static class ManagePatientsMessages
         {
-            public const string Introduce = "Manage patients.";
+            public const string Introduce = "Manage patients";
         }
 
         public static class DeletePatientMessages
@@ -112,24 +112,24 @@
         //Factory
         public static class FactoryMessages
         {
-            public const string ProvideNamePrompt = "Enter a name: ";
-            public const string ProvideSurnamePrompt = "Enter a surname: ";
+            public const string ProvideNamePrompt = "Enter a name: (Enter 'STOP' to abort the operation)";
+            public const string ProvideSurnamePrompt = "Enter a surname: (Enter 'STOP' to abort the operation)";
             public const string EmptyFieldPrompt = "Field can't be empty!";
             public const string ProvideGenderPrompt = "Enter a gender (Male, Female): ";
             public const string InvalidGenderPrompt = "Invalid input. Please choose 'Male' or 'Female'.";
-            public const string ProvidePeselPrompt = "Enter a PESEL: ";
+            public const string ProvidePeselPrompt = "Enter a PESEL: (Enter 'STOP' to abort the operation)";
             public const string InvalidPeselPrompt = "Invalid PESEL. It should be an 11-digit number. Please try again.";
-            public const string ProvideBirthdayPrompt = "Enter a birthday (e.g., DD-MM-YYYY):";
+            public const string ProvideBirthdayPrompt = "Enter a birthday (e.g., DD-MM-YYYY): (Enter 'STOP' to abort the operation)";
             public const string InvalidBirthdayPrompt = "Birthday cannot be a future date. Please try again.";
             public const string InvalidDateFormatPrompt = "Invalid date format. Please try again.";
             public const string InvalidDatePrompt = "Invalid date. Please try again.";
-            public const string ProvideCapacityPrompt = "Please enter a positive capacity value:";
+            public const string ProvideCapacityPrompt = "Please enter a positive capacity value: (Enter 'STOP' to abort the operation)";
             public const string NotValidNumberPrompt = "Please enter a valid number.";
             public const string FullWardPrompt = "This ward is full. Create a new one!";
-            public const string ProvideLoginPrompt = "Enter login: ";
+            public const string ProvideLoginPrompt = "Enter login: (Enter 'STOP' to abort the operation)";
             public const string EmptyLoginPrompt = "Login can't be empty!";
             public const string TakenLoginPrompt = "This login already exists! Try a different one";
-            public const string ProvidePasswordPrompt = "Enter password: ";
+            public const string ProvidePasswordPrompt = "Enter password: (Enter 'STOP' to abort the operation)";
             public const string EmptyPasswordPrompt = "Login can't be empty!";
             public const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
             public const string NoWardErrorPrompt = "No wards created to assign employee! Please create one first.";
@@ -207,11 +207,11 @@
         public static class DatabaseExceptions
         {
             public const string QueryException = "Exception occured while trying to gather data from database!";
-            public const string ItemNull = "The provided item is null.";
-            public const string AddException = "Exception occurred while adding: {0}";
-            public const string RemoveException = "Exception occurred while removing: {0}";
-            public const string ItemNotFound = "Item of type {0} with ID {1} not found in the list.";
-            public const string UpdateException = "Exception occurred while updating: {0}";
+            public const string ItemNull = "The provided item is null!";
+            public const string AddException = "Exception occurred while adding: {0}!";
+            public const string RemoveException = "Exception occurred while removing: {0}!";
+            public const string ItemNotFound = "Item of type {0} with ID {1} not found in the list!";
+            public const string UpdateException = "Exception occurred while updating: {0}!";
         }
 
         public static class ExceptionMessages
@@ -225,9 +225,15 @@
             public const string WardName = "Provided invalid or already taken ward name!";
             public const string Capacity = "Provided invalid capacity!";
             public const string Command = "Invalid command selected!";
-            public const string EntityType = "Unsupported entity type {0}.";
-            public const string DTOValidation = "DTO validation failed.";
+            public const string EntityType = "Unsupported entity type {0}!";
+            public const string DTOValidation = "DTO validation failed!";
             public const string WardFull = "Ward you want to assign patient is already full!";
+            public const string OperationTerminated = "Operation terminated!";
+        }
+
+        public static class InputHandler
+        {
+            public const string StopMessage = "STOP";
         }
     }
 }

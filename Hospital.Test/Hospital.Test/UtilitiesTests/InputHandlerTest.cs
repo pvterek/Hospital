@@ -23,12 +23,24 @@ namespace Hospital.Test.UtilitiesTests
             SetUpMocks();
 
             var expectedValue = "Test Input";
+
             mockConsoleService.Setup(x => x.ReadLine())
-                .Returns(expectedValue);
+                              .Returns(expectedValue);
 
             var result = inputHandler.GetInput("");
 
             Assert.Equal(expectedValue, result);
+        }
+
+        [Fact]
+        public void GetInput_WhenStopMessageProvided_ShouldThrowException()
+        {
+            SetUpMocks();
+
+            mockConsoleService.Setup(x => x.ReadLine())
+                              .Returns(UiMessages.InputHandler.StopMessage);
+
+            Assert.Throws<Exception>(() => inputHandler.GetInput(""));
         }
 
         [Fact]
@@ -37,12 +49,25 @@ namespace Hospital.Test.UtilitiesTests
             SetUpMocks();
 
             var expectedValue = 12;
+
             mockConsoleService.Setup(x => x.ReadLine())
-                .Returns("12");
+                              .Returns("12");
 
             var result = inputHandler.GetIntInput("");
 
             Assert.Equal(expectedValue, result);
+        }
+
+        [Fact]
+        public void GetIntInput_WhenStopMessageProvided_ShouldThrowException()
+        {
+            SetUpMocks();
+
+            mockConsoleService.Setup(x => x.ReadLine())
+                              .Returns(UiMessages.InputHandler.StopMessage);
+
+            var exception = Assert.Throws<Exception>(() => inputHandler.GetIntInput(""));
+            Assert.Equal(UiMessages.ExceptionMessages.OperationTerminated, exception.Message);
         }
 
         [Fact]
@@ -51,14 +76,14 @@ namespace Hospital.Test.UtilitiesTests
             SetUpMocks();
 
             mockConsoleService.SetupSequence(x => x.ReadLine())
-                .Returns("invalid")
-                .Returns("5");
+                              .Returns("invalid")
+                              .Returns("5");
 
             var result = inputHandler.GetIntInput("");
 
-            Assert.Equal(5, result);
             mockConsoleService.Verify(x => x.WriteLine(""), Times.Exactly(2));
             mockConsoleService.Verify(x => x.ReadLine(), Times.Exactly(2));
+            Assert.Equal(5, result);
         }
 
         [Fact]
@@ -68,11 +93,23 @@ namespace Hospital.Test.UtilitiesTests
 
             var expectedValue = new DateTime(1990, 1, 1);
             mockConsoleService.SetupSequence(x => x.ReadLine())
-                .Returns("1990-1-1");
+                              .Returns("1990-1-1");
 
             var result = inputHandler.GetDateTimeInput("");
 
             Assert.Equal(expectedValue, result);
+        }
+
+        [Fact]
+        public void GetDateTimeInput_WhenStopMessageProvided_ShouldThrowException()
+        {
+            SetUpMocks();
+
+            mockConsoleService.Setup(x => x.ReadLine())
+                              .Returns(UiMessages.InputHandler.StopMessage);
+
+            var exception = Assert.Throws<Exception>(() => inputHandler.GetDateTimeInput(""));
+            Assert.Equal(UiMessages.ExceptionMessages.OperationTerminated, exception.Message);
         }
 
         [Fact]
@@ -82,8 +119,8 @@ namespace Hospital.Test.UtilitiesTests
 
             var expectedValue = new DateTime(1990, 1, 1);
             mockConsoleService.SetupSequence(x => x.ReadLine())
-                .Returns("invalid")
-                .Returns("1990-1-1");
+                              .Returns("invalid")
+                              .Returns("1990-1-1");
 
             var result = inputHandler.GetDateTimeInput("");
 

@@ -13,41 +13,36 @@ namespace Hospital.Utilities.UserInterface
 
         public string GetInput(string prompt)
         {
-            _consoleService.Clear();
-            _consoleService.WriteLine(prompt);
-            return _consoleService.ReadLine().ToString();
+            return GetInputWithValidation<string>(prompt, input => true);
         }
 
         public int GetIntInput(string prompt)
         {
-            string? input;
-            int result;
-
-            do
-            {
-                _consoleService.Clear();
-                _consoleService.WriteLine(prompt);
-                input = _consoleService.ReadLine();
-            }
-            while (!int.TryParse(input, out result));
-
-            return result;
+            return GetInputWithValidation<int>(prompt, input => int.TryParse(input, out _));
         }
 
         public DateTime GetDateTimeInput(string prompt)
         {
+            return GetInputWithValidation<DateTime>(prompt, input => DateTime.TryParse(input, out _));
+        }
+
+        private T GetInputWithValidation<T>(string prompt, Func<string, bool> validationFunc)
+        {
             string? input;
-            DateTime result;
 
             do
             {
                 _consoleService.Clear();
                 _consoleService.WriteLine(prompt);
                 input = _consoleService.ReadLine();
-            }
-            while (!DateTime.TryParse(input, out result));
 
-            return result;
+                if (input == UiMessages.InputHandler.StopMessage)
+                    throw new Exception(UiMessages.ExceptionMessages.OperationTerminated);
+
+                if (validationFunc(input))
+                    return (T)Convert.ChangeType(input, typeof(T));
+
+            } while (true);
         }
     }
 }
