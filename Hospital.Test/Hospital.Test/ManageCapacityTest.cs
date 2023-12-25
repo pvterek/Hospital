@@ -3,6 +3,7 @@ using Hospital.Commands.ManageWards;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.UserInterface;
 using Moq;
 
 namespace Hospital.Test
@@ -29,18 +30,25 @@ namespace Hospital.Test
         {
             SetUpMocks();
 
-            var mockWard = new Mock<Ward>().SetupAllProperties();
             var mockPatient = new Mock<Patient>();
+            var mockWard = new Mock<Ward>().SetupAllProperties();
             mockWard.Setup(x => x.AssignedPatients)
-                .Returns([]);
+                    .Returns([]);
+            mockWard.Setup(x => x.Capacity)
+                    .Returns(2);
+
+            var excpetedPatientsNumber = 1;
+            var expectedIntroduceString = string.Format(UiMessages.WardObjectMessages.Introduce,
+                mockWard.Object.Name, excpetedPatientsNumber, mockWard.Object.Capacity);
 
             mockListsStorage.Setup(x => x.Wards)
                 .Returns([mockWard.Object]);
 
-            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, OperationType.Operation.AddPatient);
+            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.CreatePatient);
 
             Assert.Contains(mockPatient.Object, mockWard.Object.AssignedPatients);
-            Assert.True(mockWard.Object.PatientsNumber == 1);
+            Assert.True(mockWard.Object.PatientsNumber == excpetedPatientsNumber);
+            Assert.True(mockWard.Object.IntroduceString == expectedIntroduceString);
         }
 
         [Fact]
@@ -52,12 +60,17 @@ namespace Hospital.Test
             var mockPatient = new Mock<Patient>();
             mockWard.Object.PatientsNumber = 1;
             mockWard.Setup(x => x.AssignedPatients)
-                .Returns([mockPatient.Object]);
+                    .Returns([mockPatient.Object]);
 
-            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, OperationType.Operation.RemovePatient);
+            var excpetedPatientsNumber = 0;
+            var expectedIntroduceString = string.Format(UiMessages.WardObjectMessages.Introduce,
+                mockWard.Object.Name, excpetedPatientsNumber, mockWard.Object.Capacity);
+
+            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.DeletePatient);
 
             Assert.DoesNotContain(mockPatient.Object, mockWard.Object.AssignedPatients);
-            Assert.True(mockWard.Object.PatientsNumber == 0);
+            Assert.True(mockWard.Object.PatientsNumber == excpetedPatientsNumber);
+            Assert.True(mockWard.Object.IntroduceString == expectedIntroduceString);
         }
     }
 }

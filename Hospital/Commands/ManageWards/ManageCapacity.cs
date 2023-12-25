@@ -17,15 +17,15 @@ namespace Hospital.Commands.ManageWards
             _listsStorage = listStorage;
         }
 
-        public void UpdateWardCapacity(Ward ward, Patient patient, OperationType.Operation operation)
+        public void UpdateWardCapacity(Ward ward, Patient patient, Operation operation)
         {
             switch (operation)
             {
-                case OperationType.Operation.AddPatient:
+                case Operation.CreatePatient:
                     ward.AssignedPatients.Add(patient);
                     ward.PatientsNumber++;
                     break;
-                case OperationType.Operation.RemovePatient:
+                case Operation.DeletePatient:
                     ward.AssignedPatients.Remove(patient);
                     ward.PatientsNumber--;
                     break;

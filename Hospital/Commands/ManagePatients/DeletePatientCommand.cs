@@ -39,7 +39,7 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
             _listManage.SoftDelete(selectedPatient, _listsStorage.Patients);
 
             _manageCapacity.UpdateWardCapacity(selectedPatient.AssignedWard, selectedPatient,
-                OperationType.Operation.RemovePatient);
+                Operation.DeletePatient);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.DeletePatientMessages.OperationSuccessPrompt,
                 selectedPatient.Name, selectedPatient.Surname));

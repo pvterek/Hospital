@@ -49,12 +49,13 @@ namespace Hospital.Commands.ManagePatients
                 return;
             }
 
-            var patient = _objectsFactory.CreatePatient(patientDTO);
-            _manageCapacity.UpdateWardCapacity(patient.AssignedWard, patient, OperationType.Operation.AddPatient);
-            _listManage.Add(patient, _listsStorage.Patients);
+            var createdPatient = _objectsFactory.CreatePatient(patientDTO);
+            _manageCapacity.UpdateWardCapacity(createdPatient.AssignedWard, createdPatient,
+                Operation.CreatePatient);
+            _listManage.Add(createdPatient, _listsStorage.Patients);
 
-            _menuHandler.ShowMessage(string.Format(
-                UiMessages.CreatePatientMessages.OperationSuccessPrompt, patient.Name, patient.Surname));
+            _menuHandler.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt,
+                createdPatient.Name, createdPatient.Surname));
         }
     }
 }

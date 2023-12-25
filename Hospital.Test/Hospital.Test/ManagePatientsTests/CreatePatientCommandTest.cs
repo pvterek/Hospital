@@ -53,7 +53,7 @@ namespace Hospital.Test.ManagePatientsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([]);
+                            .Returns([]);
 
             createPatientCommand.Execute();
 
@@ -68,11 +68,11 @@ namespace Hospital.Test.ManagePatientsTests
 
             var ward = new Mock<Ward>();
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([ward.Object]);
+                            .Returns([ward.Object]);
             mockDtoFactory.Setup(x => x.GatherPatientData(It.IsAny<List<Ward>>()))
-                .Returns(new PatientDTO(new PersonDTO()));
+                          .Returns(new PatientDTO(new PersonDTO()));
             mockValidateObjects.Setup(x => x.ValidatePatientObject(It.IsAny<PatientDTO>()))
-                .Returns(false);
+                               .Returns(false);
 
             createPatientCommand.Execute();
 
@@ -89,28 +89,28 @@ namespace Hospital.Test.ManagePatientsTests
             var mockWard = new Mock<Ward>();
             var wardsList = new List<Ward>() { mockWard.Object };
             mockListsStorage.Setup(x => x.Wards)
-                .Returns(wardsList);
+                            .Returns(wardsList);
             mockListsStorage.Setup(x => x.Patients)
-                .Returns(patientsList);
+                            .Returns(patientsList);
             mockDtoFactory.Setup(x => x.GatherPatientData(wardsList))
-                .Returns(new PatientDTO(new PersonDTO()));
+                           .Returns(new PatientDTO(new PersonDTO()));
             mockValidateObjects.Setup(x => x.ValidatePatientObject(It.IsAny<PatientDTO>()))
-                .Returns(true);
+                               .Returns(true);
 
             var mockPatient = new Mock<Patient>();
             mockObjectsFactory.Setup(x => x.CreatePatient(It.IsAny<PatientDTO>()))
-                .Returns(mockPatient.Object);
+                              .Returns(mockPatient.Object);
 
             mockDatabaseOperations.Setup(x => x.Add(It.IsAny<Patient>(), It.IsAny<ISession>()))
-                .Returns(true);
+                                  .Returns(true);
             mockListManage.Setup(x => x.Add(It.IsAny<Patient>(), It.IsAny<List<Patient>>()))
-                .Callback((Patient item, List<Patient> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
-                    {
-                        list.Add(item);
-                    }
-                });
+                          .Callback((Patient item, List<Patient> list) =>
+                          {
+                              if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
+                              {
+                                  list.Add(item);
+                              }
+                          });
 
             createPatientCommand.Execute();
 

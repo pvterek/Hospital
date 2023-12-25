@@ -52,8 +52,9 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             var validPesel = "12345678901";
+
             mockListsStorage.Setup(x => x.Pesels)
-                .Returns(["12345678900"]);
+                            .Returns(["12345678900"]);
 
             var result = validators.ValidatePesel(validPesel);
 
@@ -69,7 +70,7 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             mockListsStorage.Setup(x => x.Pesels)
-                .Returns(["12345678900"]);
+                            .Returns(["12345678900"]);
 
             var result = validators.ValidatePesel(input);
 
@@ -166,8 +167,9 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             var login = "valid";
+
             mockListsStorage.Setup(x => x.Logins)
-                .Returns(["test"]);
+                            .Returns(["test"]);
 
             var result = validators.ValidateLogin(login);
 
@@ -184,7 +186,7 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             mockListsStorage.Setup(x => x.Logins)
-                .Returns(["test"]);
+                            .Returns(["test"]);
 
             var result = validators.ValidateLogin(input);
 
@@ -223,8 +225,9 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             var validWardName = "test";
+
             mockListsStorage.Setup(x => x.WardsNames)
-                .Returns(["wardname"]);
+                            .Returns(["wardname"]);
 
             var result = validators.ValidateWardName(validWardName);
 
@@ -241,7 +244,7 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             mockListsStorage.Setup(x => x.WardsNames)
-                .Returns(["test"]);
+                            .Returns(["test"]);
 
             var result = validators.ValidateWardName(input);
 
@@ -255,9 +258,9 @@ namespace Hospital.Test.UtilitiesTests
 
             var mockWard = new Mock<Ward>();
             mockWard.Setup(x => x.Capacity)
-                .Returns(10);
+                    .Returns(10);
             mockWard.Setup(x => x.AssignedPatients)
-                .Returns([]);
+                    .Returns([]);
 
             var result = validators.ValidatePossibiltyAssignToWard(mockWard.Object);
 
@@ -269,13 +272,13 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var mockWard = new Mock<Ward>();
             var mockPatient = new Mock<Patient>();
 
+            var mockWard = new Mock<Ward>();
             mockWard.Setup(x => x.Capacity)
-                .Returns(1);
+                    .Returns(1);
             mockWard.Setup(x => x.AssignedPatients)
-                .Returns([mockPatient.Object]);
+                    .Returns([mockPatient.Object]);
 
             var result = validators.ValidatePossibiltyAssignToWard(mockWard.Object);
 
@@ -296,7 +299,7 @@ namespace Hospital.Test.UtilitiesTests
         }
 
         [Fact]
-        public void VValidatePosition_WhenInvalidInput_ShouldReturnFalse()
+        public void ValidatePosition_WhenInvalidInput_ShouldReturnFalse()
         {
             SetupMocks();
 
