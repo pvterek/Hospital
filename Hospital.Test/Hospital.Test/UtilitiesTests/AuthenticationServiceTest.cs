@@ -27,9 +27,10 @@ namespace Hospital.Test.UtilitiesTests
             var mockUser = new Mock<User>();
 
             mockUser.Setup(x => x.Login)
-                .Returns(login);
+                    .Returns(login);
+
             mockListsStorage.Setup(x => x.Users)
-                .Returns([mockUser.Object]);
+                            .Returns([mockUser.Object]);
 
             var userObject = authenticationService.GetUserByLogin(login);
 
@@ -45,7 +46,7 @@ namespace Hospital.Test.UtilitiesTests
             var login = "testuser";
 
             mockListsStorage.Setup(x => x.Users)
-                .Returns([new Mock<User>().Object]);
+                            .Returns([new Mock<User>().Object]);
 
             var result = authenticationService.GetUserByLogin(login);
 

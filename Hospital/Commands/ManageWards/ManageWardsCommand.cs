@@ -40,8 +40,8 @@ namespace Hospital.Commands.ManageWards
                 _deleteWardCommand.Value,
                 _backCommand.Value
             };
-
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+
             _navigationService.Queue((Command)selectedCommand);
 
             switch (selectedCommand.IntroduceString)

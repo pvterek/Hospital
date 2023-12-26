@@ -1,7 +1,7 @@
 ﻿using Hospital.Commands.ManageUsers;
 using Hospital.Database.Interfaces;
-using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.UserClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -47,7 +47,7 @@ namespace Hospital.Test.ManageUsers
             SetUpMocks();
 
             mockValidateObjects.Setup(x => x.ValidateUserObject(It.IsAny<UserDTO>()))
-                .Returns(false);
+                               .Returns(false);
 
             createAccountCommand.Execute();
 
@@ -63,22 +63,25 @@ namespace Hospital.Test.ManageUsers
             var usersList = new List<User>();
 
             mockValidateObjects.Setup(x => x.ValidateUserObject(It.IsAny<UserDTO>()))
-                .Returns(true);
+                               .Returns(true);
+
             mockObjectsFactory.Setup(x => x.CreateUser(It.IsAny<UserDTO>()))
-                .Returns(mockUser.Object);
+                              .Returns(mockUser.Object);
+
             mockListsStorage.Setup(x => x.Users)
-                .Returns(usersList);
+                            .Returns(usersList);
 
             mockDatabaseOperations.Setup(x => x.Add(It.IsAny<User>(), It.IsAny<ISession>()))
-                .Returns(true);
+                                  .Returns(true);
+
             mockListManage.Setup(x => x.Add(It.IsAny<User>(), usersList))
-                .Callback((User item, List<User> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
-                    {
-                        list.Add(item);
-                    }
-                });
+                          .Callback((User item, List<User> list) =>
+                          {
+                              if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
+                              {
+                                  list.Add(item);
+                              }
+                          });
 
             createAccountCommand.Execute();
 

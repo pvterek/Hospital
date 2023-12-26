@@ -1,5 +1,5 @@
 ﻿using Hospital.Commands.ManageWards;
-using Hospital.PeopleCategories.Factory.Interfaces;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -50,8 +50,10 @@ namespace Hospital.Commands.ManagePatients
             }
 
             var createdPatient = _objectsFactory.CreatePatient(patientDTO);
+
             _manageCapacity.UpdateWardCapacity(createdPatient.AssignedWard, createdPatient,
                 Operation.CreatePatient);
+
             _listManage.Add(createdPatient, _listsStorage.Patients);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.CreatePatientMessages.OperationSuccessPrompt,

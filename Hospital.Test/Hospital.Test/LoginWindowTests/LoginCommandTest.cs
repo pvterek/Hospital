@@ -33,7 +33,7 @@ namespace Hospital.Test.LoginWindowTest
             SetUpMocks();
 
             mockAuthenticationService.Setup(x => x.GetUserByLogin(It.IsAny<string>()))
-                .Returns((User)null);
+                                     .Returns((User)null);
 
             loginCommand.Execute();
 
@@ -49,9 +49,9 @@ namespace Hospital.Test.LoginWindowTest
             var mockUser = new Mock<User>();
 
             mockAuthenticationService.Setup(x => x.GetUserByLogin(mockUser.Object.Login))
-                .Returns(mockUser.Object);
+                                     .Returns(mockUser.Object);
             mockAuthenticationService.Setup(x => x.Authenticate(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(false);
+                                     .Returns(false);
 
             loginCommand.Execute();
 
@@ -67,15 +67,13 @@ namespace Hospital.Test.LoginWindowTest
             var mockUser = new Mock<User>();
 
             mockAuthenticationService.Setup(x => x.GetUserByLogin(mockUser.Object.Login))
-                .Returns(mockUser.Object);
+                                     .Returns(mockUser.Object);
             mockAuthenticationService.Setup(x => x.Authenticate(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(true);
+                                     .Returns(true);
 
-            var command = loginCommand;
+            loginCommand.Execute();
 
-            command.Execute();
-
-            Assert.True(command.IsLoggedIn);
+            Assert.True(loginCommand.IsLoggedIn);
         }
     }
 }

@@ -41,7 +41,6 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
             var doctor = _menuHandler.SelectObject(doctors,
                 UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
-
             patient.AssignedDoctor = doctor;
             _listManage.Update(patient, _listsStorage.Patients);
 

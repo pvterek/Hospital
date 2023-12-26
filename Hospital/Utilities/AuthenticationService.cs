@@ -8,11 +8,12 @@ namespace Hospital.Utilities
     {
         private readonly IListsStorage _listsStorage;
 
-        public AuthenticationService(IListsStorage listsStorage)
+        public AuthenticationService(
+            IListsStorage listsStorage)
         {
             _listsStorage = listsStorage;
         }
-        
+
         public bool Authenticate(string userPassword, string inputPassword)
         {
             return userPassword == inputPassword;

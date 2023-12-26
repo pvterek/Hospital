@@ -83,7 +83,7 @@
         {
             public const string Introduce = "Delete ward";
             public const string OperationSuccessPrompt = "Ward removed: {0}!";
-            public const string WardNonEmptyPrompt = "Connot delete a ward to which patients or employees are assigned";
+            public const string WardNonEmptyPrompt = "Connot delete a ward to which patients or employees are assigned!";
             public const string SelectWardPrompt = "Select ward which you want to delete.";
             public const string NoWardPrompt = "There are no ward that can be deleted! Please create one first.";
         }
@@ -130,7 +130,7 @@
             public const string EmptyLoginPrompt = "Login can't be empty!";
             public const string TakenLoginPrompt = "This login already exists! Try a different one";
             public const string ProvidePasswordPrompt = "Enter password: (Enter 'STOP' to abort the operation)";
-            public const string EmptyPasswordPrompt = "Login can't be empty!";
+            public const string EmptyPasswordPrompt = "Password can't be empty!";
             public const string TooShortPasswordPrompt = "The password is too short. It must be at least 9 characters long.";
             public const string NoWardErrorPrompt = "No wards created to assign employee! Please create one first.";
             public const string AbortedOperationPrompt = "User aborted the operation.";
@@ -219,10 +219,10 @@
             public const string String = "Invalid or empty value provided!";
             public const string Gender = "Invalid gender provided!";
             public const string Date = "Invalid date provided!";
-            public const string Login = "Login is already taken!";
-            public const string Password = "Password don't meet requirements!";
+            public const string Login = "Provided login already taken or empty!";
+            public const string Password = "Provided password don't meet requirements!";
             public const string Pesel = "Provided pesel already taken or don't meet requirements!";
-            public const string WardName = "Provided invalid or already taken ward name!";
+            public const string WardName = "Provided ward name already taken or don't meet requirements!";
             public const string Capacity = "Provided invalid capacity!";
             public const string Command = "Invalid command selected!";
             public const string EntityType = "Unsupported entity type {0}!";

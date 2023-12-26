@@ -23,11 +23,12 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetUpMocks();
 
-            var exception = new Exception("Test exception");
+            var exceptionMessage = "Test exception";
+            var exception = new Exception(exceptionMessage);
 
             logger.WriteLog(exception);
 
-            mockStreamWriter.Verify(sw => sw.WriteLine(It.Is<string>(s => s.Contains("Test exception"))), Times.Once());
+            mockStreamWriter.Verify(sw => sw.WriteLine(It.Is<string>(s => s.Contains(exceptionMessage))), Times.Once());
             mockStreamWriter.Verify(sw => sw.Flush(), Times.Once());
         }
     }

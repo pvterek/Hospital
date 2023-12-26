@@ -11,7 +11,8 @@ namespace Hospital.Utilities
         private readonly IListsStorage _listsStorage;
         private readonly int MaxAge = 150;
 
-        public Validators(IListsStorage populateLists)
+        public Validators(
+            IListsStorage populateLists)
         {
             _listsStorage = populateLists;
         }

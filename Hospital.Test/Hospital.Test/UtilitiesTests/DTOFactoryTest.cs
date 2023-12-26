@@ -35,13 +35,14 @@ namespace Hospital.Test.UtilitiesTests
             var expectedBirthday = new DateTime(1990, 1, 1);
 
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvideNamePrompt))
-                .Returns(expectedName);
+                            .Returns(expectedName);
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvideSurnamePrompt))
-                .Returns(expectedSurname);
-            mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Gender>())
-                .Returns(expectedGender);
+                            .Returns(expectedSurname);
             mockInputHandler.Setup(x => x.GetDateTimeInput(It.IsAny<string>()))
-                .Returns(expectedBirthday);
+                            .Returns(expectedBirthday);
+
+            mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Gender>())
+                           .Returns(expectedGender);
 
             var personDTO = dtoFactory.GatherPersonData();
 
@@ -61,9 +62,9 @@ namespace Hospital.Test.UtilitiesTests
             var expectedPosition = Position.Doctor;
 
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu(wardsList))
-                .Returns(mockWard.Object);
+                           .Returns(mockWard.Object);
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Position>())
-                .Returns(expectedPosition);
+                           .Returns(expectedPosition);
 
             var employeeDTO = dtoFactory.GatherEmployeeData(wardsList);
 
@@ -82,9 +83,9 @@ namespace Hospital.Test.UtilitiesTests
             var wardsList = new List<Ward>() { mockWard.Object };
 
             mockInputHandler.Setup(x => x.GetInput(It.IsAny<string>()))
-                .Returns(expectedPesel);
+                            .Returns(expectedPesel);
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu(wardsList))
-                .Returns(mockWard.Object);
+                           .Returns(mockWard.Object);
 
             var patientDTO = dtoFactory.GatherPatientData(wardsList);
 
@@ -101,9 +102,9 @@ namespace Hospital.Test.UtilitiesTests
             var expectedPassword = "passwordpassword";
 
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt))
-                .Returns(expectedLogin);
+                            .Returns(expectedLogin);
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt))
-                .Returns(expectedPassword);
+                            .Returns(expectedPassword);
 
             var userDTO = dtoFactory.GatherUserData();
 
@@ -120,9 +121,9 @@ namespace Hospital.Test.UtilitiesTests
             var excpectedCapacity = 10;
 
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvideNamePrompt))
-                .Returns(excpectedName);
+                            .Returns(excpectedName);
             mockInputHandler.Setup(x => x.GetIntInput(UiMessages.FactoryMessages.ProvideCapacityPrompt))
-                .Returns(excpectedCapacity);
+                            .Returns(excpectedCapacity);
 
             var wardDTO = dtoFactory.GatherWardData();
 

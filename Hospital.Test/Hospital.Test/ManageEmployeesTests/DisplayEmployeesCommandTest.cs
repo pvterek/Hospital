@@ -29,8 +29,9 @@ namespace Hospital.Test.ManageEmployeesTests
         public void Execute_WhenNoEmployee_ShouldReturnEarly()
         {
             SetUpMocks();
+
             mockListsStorage.SetupGet(x => x.Employees)
-                .Returns([]);
+                            .Returns([]);
 
             displayEmployeesCommand.Execute();
 
@@ -43,8 +44,9 @@ namespace Hospital.Test.ManageEmployeesTests
         public void Execute_WhenIsEmployee_ShouldDisplayEmployees()
         {
             SetUpMocks();
+
             mockListsStorage.Setup(x => x.Employees)
-                .Returns([It.IsAny<Employee>()]);
+                            .Returns([It.IsAny<Employee>()]);
 
             displayEmployeesCommand.Execute();
 

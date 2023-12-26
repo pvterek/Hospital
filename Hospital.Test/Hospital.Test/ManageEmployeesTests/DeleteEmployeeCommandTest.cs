@@ -56,7 +56,8 @@ namespace Hospital.Test.ManageEmployeesTests
 
             var employeesList = new List<Employee> { mockEmployee.Object };
 
-            mockListsStorage.Setup(x => x.Employees).Returns(employeesList);
+            mockListsStorage.Setup(x => x.Employees)
+                            .Returns(employeesList);
 
             mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Employee>>(), It.IsAny<string>()))
                            .Returns(mockEmployee.Object);

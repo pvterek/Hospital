@@ -30,7 +30,7 @@ namespace Hospital.Test.ManageWardsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([]);
+                            .Returns([]);
 
             displayWardCommand.Execute();
 
@@ -44,7 +44,7 @@ namespace Hospital.Test.ManageWardsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([It.IsAny<Ward>()]);
+                            .Returns([It.IsAny<Ward>()]);
 
             displayWardCommand.Execute();
 

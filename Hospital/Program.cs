@@ -21,10 +21,11 @@ namespace Hospital
         private static void InitializeApplication()
         {
             FileService fileService = new();
+            AutofacConfig config = new();
+
             fileService.CreateDirectory();
             fileService.CreateLogFile();
 
-            AutofacConfig config = new();
             Container = config.ConfigureContainer();
         }
 
@@ -33,13 +34,12 @@ namespace Hospital
             var loginCommand = Container.Resolve<LoginCommand>();
             var loginWindow = Container.Resolve<LoginWindowCommand>();
             var mainWindow = Container.Resolve<MainWindowCommand>();
-
-            var mainQueue = Container.Resolve<INavigationService>();
-            mainQueue.Queue(loginWindow);
-            mainQueue.Queue(mainWindow);
-
             var logger = Container.Resolve<ILogger>();
             var menuHandler = Container.Resolve<IMenuHandler>();
+            var mainQueue = Container.Resolve<INavigationService>();
+
+            mainQueue.Queue(loginWindow);
+            mainQueue.Queue(mainWindow);
 
             while (true)
             {

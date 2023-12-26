@@ -16,21 +16,26 @@ namespace Hospital.Test.ManageUsers
         private Mock<IMenuHandler> mockMenuHandler;
         private Mock<IListManage> mockListManage;
         private Mock<IListsStorage> mockListsStorage;
-        private LoginCommand loginCommand;
+        private Mock<IAuthenticationService> mockAuthenticationService;
+        private Mock<IInputHandler> mockInputHandler;
         private Mock<IDatabaseOperations> mockDatabaseOperations;
 
+        private LoginCommand loginCommand;
         private DeleteUserCommand deleteUserCommand;
 
         private void SetUpMocks()
         {
             mockMenuHandler = new Mock<IMenuHandler>();
             mockListManage = new Mock<IListManage>();
+            mockAuthenticationService = new Mock<IAuthenticationService>();
+            mockInputHandler = new Mock<IInputHandler>();
             mockListsStorage = new Mock<IListsStorage>();
-            loginCommand = new LoginCommand(
-                new Mock<IAuthenticationService>().Object,
-                mockMenuHandler.Object,
-                new Mock<IInputHandler>().Object);
             mockDatabaseOperations = new Mock<IDatabaseOperations>();
+
+            loginCommand = new LoginCommand(
+                mockAuthenticationService.Object,
+                mockMenuHandler.Object,
+                mockInputHandler.Object);
 
             deleteUserCommand = new DeleteUserCommand(
                 mockMenuHandler.Object,

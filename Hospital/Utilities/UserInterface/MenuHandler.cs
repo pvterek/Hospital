@@ -1,6 +1,6 @@
-﻿using System.Text;
-using Hospital.Entities.Interfaces;
+﻿using Hospital.Entities.Interfaces;
 using Hospital.Utilities.UserInterface.Interfaces;
+using System.Text;
 
 namespace Hospital.Utilities.UserInterface
 {
@@ -79,6 +79,7 @@ namespace Hospital.Utilities.UserInterface
         private void UpdateInteractiveMenu<T>(List<T> items, int selectedIndex) where T : IHasIntroduceString
         {
             _consoleService.Clear();
+
             for (int i = 0; i < items.Count; i++)
             {
                 bool isSelected = i == selectedIndex;
@@ -92,6 +93,7 @@ namespace Hospital.Utilities.UserInterface
         private void UpdateInteractiveMenu(List<string> options, int selectedIndex)
         {
             _consoleService.Clear();
+
             for (int i = 0; i < options.Count; i++)
             {
                 bool isSelected = i == selectedIndex;
@@ -120,6 +122,7 @@ namespace Hospital.Utilities.UserInterface
         {
             ShowMessage(selectString);
             var obj = ShowInteractiveMenu(list);
+
             return obj;
         }
 

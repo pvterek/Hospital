@@ -9,11 +9,11 @@ namespace Hospital.Database
     public class DatabaseService : IDatabaseService
     {
         private readonly ILogger _logger;
-
         private const string DatabaseName = "HospitalDB.db";
         public static string DatabasePath = GetDatabasePath();
 
-        public DatabaseService(ILogger logger)
+        public DatabaseService(
+            ILogger logger)
         {
             _logger = logger;
         }

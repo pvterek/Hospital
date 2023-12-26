@@ -1,21 +1,23 @@
 ﻿using Hospital.Entities.Employee;
-using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
-namespace Hospital.PeopleCategories.Factory
+namespace Hospital.Utilities.EntitiesFactory
 {
     public class ValidateObjects : IValidateObjects
     {
         private readonly IValidators _validate;
         private readonly IMenuHandler _menuHandler;
 
-        public ValidateObjects(IValidators validate, IMenuHandler menuHandler)
+        public ValidateObjects(
+            IValidators validate,
+            IMenuHandler menuHandler)
         {
             _validate = validate;
             _menuHandler = menuHandler;

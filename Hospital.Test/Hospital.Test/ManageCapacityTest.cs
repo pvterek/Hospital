@@ -32,6 +32,7 @@ namespace Hospital.Test
 
             var mockPatient = new Mock<Patient>();
             var mockWard = new Mock<Ward>().SetupAllProperties();
+
             mockWard.Setup(x => x.AssignedPatients)
                     .Returns([]);
             mockWard.Setup(x => x.Capacity)
@@ -58,13 +59,13 @@ namespace Hospital.Test
 
             var mockWard = new Mock<Ward>().SetupAllProperties();
             var mockPatient = new Mock<Patient>();
-            mockWard.Object.PatientsNumber = 1;
-            mockWard.Setup(x => x.AssignedPatients)
-                    .Returns([mockPatient.Object]);
-
             var excpetedPatientsNumber = 0;
             var expectedIntroduceString = string.Format(UiMessages.WardObjectMessages.Introduce,
                 mockWard.Object.Name, excpetedPatientsNumber, mockWard.Object.Capacity);
+
+            mockWard.Object.PatientsNumber = 1;
+            mockWard.Setup(x => x.AssignedPatients)
+                    .Returns([mockPatient.Object]);
 
             manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.DeletePatient);
 

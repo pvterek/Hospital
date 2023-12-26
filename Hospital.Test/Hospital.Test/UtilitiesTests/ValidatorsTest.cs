@@ -82,9 +82,9 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var birthday = DateTime.Today.AddYears(-30);
+            var validBirthday = DateTime.Today.AddYears(-30);
 
-            var result = validators.ValidateBirthday(birthday);
+            var result = validators.ValidateBirthday(validBirthday);
 
             Assert.True(result);
         }
@@ -94,9 +94,9 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var birthday = DateTime.Today.AddYears(-160);
+            var invalidBirthday = DateTime.Today.AddYears(-160);
 
-            var result = validators.ValidateBirthday(birthday);
+            var result = validators.ValidateBirthday(invalidBirthday);
 
             Assert.False(result);
         }
@@ -106,9 +106,9 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var birthday = DateTime.Today;
+            var invalidBirthday = DateTime.Today;
 
-            var result = validators.ValidateBirthday(birthday);
+            var result = validators.ValidateBirthday(invalidBirthday);
 
             Assert.False(result);
         }
@@ -142,9 +142,9 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var input = 10;
+            var validInput = 10;
 
-            var result = validators.ValidateCapacity(input);
+            var result = validators.ValidateCapacity(validInput);
 
             Assert.True(result);
         }
@@ -154,9 +154,9 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var input = -2;
+            var invalidInput = -2;
 
-            var result = validators.ValidateCapacity(input);
+            var result = validators.ValidateCapacity(invalidInput);
 
             Assert.False(result);
         }
@@ -166,12 +166,12 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetupMocks();
 
-            var login = "valid";
+            var validLogin = "valid";
 
             mockListsStorage.Setup(x => x.Logins)
                             .Returns(["test"]);
 
-            var result = validators.ValidateLogin(login);
+            var result = validators.ValidateLogin(validLogin);
 
             Assert.True(result);
         }
@@ -257,6 +257,7 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             var mockWard = new Mock<Ward>();
+
             mockWard.Setup(x => x.Capacity)
                     .Returns(10);
             mockWard.Setup(x => x.AssignedPatients)
@@ -273,8 +274,8 @@ namespace Hospital.Test.UtilitiesTests
             SetupMocks();
 
             var mockPatient = new Mock<Patient>();
-
             var mockWard = new Mock<Ward>();
+
             mockWard.Setup(x => x.Capacity)
                     .Returns(1);
             mockWard.Setup(x => x.AssignedPatients)

@@ -1,4 +1,4 @@
-﻿using Hospital.PeopleCategories.Factory.Interfaces;
+﻿using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -47,6 +47,7 @@ namespace Hospital.Commands.ManageEmployees
 
             var employee = _objectsFactory.CreateEmployee(employeeDTO);
             _listManage.Add(employee, _listsStorage.Employees);
+
             _menuHandler.ShowMessage(string.Format(UiMessages.CreateEmployeeMessages.OperationSuccessPrompt,
                 employee.Position, employee.Name, employee.Surname));
         }

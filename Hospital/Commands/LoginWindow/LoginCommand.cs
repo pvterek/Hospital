@@ -28,7 +28,8 @@ namespace Hospital.Commands.LoginWindow
         public override void Execute()
         {
             var login = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt);
-            User? user = _authenticationService.GetUserByLogin(login);
+            var user = _authenticationService.GetUserByLogin(login);
+
             if (user is null)
             {
                 _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.CantFindLoginPrompt);
@@ -36,6 +37,7 @@ namespace Hospital.Commands.LoginWindow
             }
 
             var inputPassword = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt);
+
             if (!_authenticationService.Authenticate(user.Password, inputPassword))
             {
                 _menuHandler.ShowMessage(UiMessages.LoginCommandMessages.WrongPasswordPrompt);

@@ -1,7 +1,7 @@
 ﻿using Hospital.Commands.ManageWards;
 using Hospital.Database.Interfaces;
-using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -47,7 +47,7 @@ namespace Hospital.Test.ManageWardsTests
             SetUpMocks();
 
             mockValidateObjects.Setup(x => x.ValidateWardObject(It.IsAny<WardDTO>()))
-                .Returns(false);
+                               .Returns(false);
 
             createWardCommand.Execute();
 
@@ -63,22 +63,25 @@ namespace Hospital.Test.ManageWardsTests
             var mockWard = new Mock<Ward>();
 
             mockValidateObjects.Setup(x => x.ValidateWardObject(It.IsAny<WardDTO>()))
-                .Returns(true);
+                               .Returns(true);
+
             mockObjectsFactory.Setup(x => x.CreateWard(It.IsAny<WardDTO>()))
-                .Returns(mockWard.Object);
+                              .Returns(mockWard.Object);
+
             mockListsStorage.Setup(x => x.Wards)
-                .Returns(wardsList);
+                            .Returns(wardsList);
 
             mockDatabaseOperations.Setup(x => x.Add(It.IsAny<Ward>(), It.IsAny<ISession>()))
-                .Returns(true);
+                                  .Returns(true);
+
             mockListManage.Setup(x => x.Add(It.IsAny<Ward>(), wardsList))
-                .Callback((Ward item, List<Ward> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
-                    {
-                        list.Add(item);
-                    }
-                });
+                          .Callback((Ward item, List<Ward> list) =>
+                          {
+                              if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
+                              {
+                                  list.Add(item);
+                              }
+                          });
 
             createWardCommand.Execute();
 

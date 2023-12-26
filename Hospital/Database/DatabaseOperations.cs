@@ -41,6 +41,7 @@ namespace Hospital.Database
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Save(e)))
                 return true;
+
             return false;
         }
 
@@ -48,6 +49,7 @@ namespace Hospital.Database
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Delete(e)))
                 return true;
+
             return false;
         }
 
@@ -55,6 +57,7 @@ namespace Hospital.Database
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Update(e)))
                 return true;
+
             return false;
         }
 

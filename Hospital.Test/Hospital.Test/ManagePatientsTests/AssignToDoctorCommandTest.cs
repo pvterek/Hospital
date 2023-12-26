@@ -34,13 +34,13 @@ namespace Hospital.Test.ManagePatientsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns([]);
+                            .Returns([]);
 
             assignToDoctorCommand.Execute();
 
             mockMenuHandler.Verify(x => x.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt), Times.Once());
             mockListsStorage.Verify(x => x.Employees, Times.Never());
-            mockMenuHandler.Verify(x => x.SelectObject(mockListsStorage.Object.Patients, UiMessages.AssignToDoctorMessages.SelectPatientPrompt), Times.Never());
+            mockMenuHandler.Verify(x => x.SelectObject(It.IsAny<List<Patient>>(), UiMessages.AssignToDoctorMessages.SelectPatientPrompt), Times.Never());
         }
 
         [Fact]
@@ -49,9 +49,9 @@ namespace Hospital.Test.ManagePatientsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns([It.IsAny<Patient>()]);
+                            .Returns([It.IsAny<Patient>()]);
             mockListsStorage.Setup(x => x.Employees)
-                .Returns([]);
+                            .Returns([]);
 
             assignToDoctorCommand.Execute();
 
@@ -67,18 +67,18 @@ namespace Hospital.Test.ManagePatientsTests
             var patientsList = new List<Patient>() { mockPatient.Object };
             var mockDoctor = new Mock<Employee>();
             mockDoctor.Setup(x => x.Position)
-                .Returns(Position.Doctor);
+                      .Returns(Position.Doctor);
             var employeesList = new List<Employee>() { mockDoctor.Object };
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns(patientsList);
+                            .Returns(patientsList);
             mockListsStorage.Setup(x => x.Employees)
-                .Returns(employeesList);
+                            .Returns(employeesList);
 
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Patients, UiMessages.AssignToDoctorMessages.SelectPatientPrompt))
-                .Returns(mockPatient.Object);
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Employees, UiMessages.AssignToDoctorMessages.SelectDoctorPrompt))
-                .Returns(mockDoctor.Object);
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Patient>>(), It.IsAny<string>()))
+                           .Returns(mockPatient.Object);
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Employee>>(), It.IsAny<string>()))
+                           .Returns(mockDoctor.Object);
 
             assignToDoctorCommand.Execute();
 

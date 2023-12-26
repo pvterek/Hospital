@@ -66,6 +66,7 @@ namespace Hospital.Test.UtilitiesTests
             mockConsoleService.Setup(x => x.ReadLine())
                               .Returns(UiMessages.InputHandler.StopMessage);
 
+            Assert.Throws<Exception>(() => inputHandler.GetIntInput(""));
             var exception = Assert.Throws<Exception>(() => inputHandler.GetIntInput(""));
             Assert.Equal(UiMessages.ExceptionMessages.OperationTerminated, exception.Message);
         }
@@ -92,6 +93,7 @@ namespace Hospital.Test.UtilitiesTests
             SetUpMocks();
 
             var expectedValue = new DateTime(1990, 1, 1);
+
             mockConsoleService.SetupSequence(x => x.ReadLine())
                               .Returns("1990-1-1");
 
@@ -118,6 +120,7 @@ namespace Hospital.Test.UtilitiesTests
             SetUpMocks();
 
             var expectedValue = new DateTime(1990, 1, 1);
+
             mockConsoleService.SetupSequence(x => x.ReadLine())
                               .Returns("invalid")
                               .Returns("1990-1-1");

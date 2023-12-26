@@ -31,7 +31,6 @@ namespace Hospital.Commands.ManageEmployees
 
             var selectedEmployee = _menuHandler.SelectObject(
                 _listsStorage.Employees, UiMessages.DeleteEmployeeMessages.SelectPrompt);
-
             _listManage.SoftDelete(selectedEmployee, _listsStorage.Employees);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.DeleteEmployeeMessages.OperationSuccessPrompt,

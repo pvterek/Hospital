@@ -30,7 +30,7 @@ namespace Hospital.Test.ManagePatientsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns([]);
+                            .Returns([]);
 
             displayPatientsCommand.Execute();
 
@@ -44,7 +44,7 @@ namespace Hospital.Test.ManagePatientsTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns([It.IsAny<Patient>()]);
+                            .Returns([It.IsAny<Patient>()]);
 
             displayPatientsCommand.Execute();
 

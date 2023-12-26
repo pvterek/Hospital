@@ -32,7 +32,8 @@ namespace Hospital.Test.ManagePatientsTests
         {
             SetUpMocks();
 
-            mockListsStorage.Setup(x => x.Patients).Returns([]);
+            mockListsStorage.Setup(x => x.Patients)
+                            .Returns([]);
 
             changeHealthStatusCommand.Execute();
 
@@ -48,12 +49,12 @@ namespace Hospital.Test.ManagePatientsTests
             var mockPatient = new Mock<Patient>().SetupAllProperties();
 
             mockListsStorage.Setup(x => x.Patients)
-                .Returns([mockPatient.Object]);
+                            .Returns([mockPatient.Object]);
 
-            mockMenuHandler.Setup(x => x.SelectObject(mockListsStorage.Object.Patients, UiMessages.ChangeHealthStatusMessages.SelectPatientPrompt))
-                .Returns(mockPatient.Object);
+            mockMenuHandler.Setup(x => x.SelectObject(It.IsAny<List<Patient>>(), It.IsAny<string>()))
+                           .Returns(mockPatient.Object);
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Health>())
-                .Returns(Health.Good);
+                           .Returns(Health.Good);
 
             changeHealthStatusCommand.Execute();
 

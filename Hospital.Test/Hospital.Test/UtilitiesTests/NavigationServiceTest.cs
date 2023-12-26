@@ -79,6 +79,7 @@ namespace Hospital.Test.UtilitiesTests
         public void GetCurrentCommand_WhenCalled_ShouldReturnTopCommand()
         {
             var command = CreateMockManageWardsCommand();
+
             navigationService.Queue(command);
 
             var result = navigationService.GetCurrentCommand();
@@ -104,6 +105,7 @@ namespace Hospital.Test.UtilitiesTests
         public void GetPreviousCommand_WhenSingleCommand_ShouldThrowException()
         {
             var command = CreateMockManageWardsCommand();
+
             navigationService.Queue(command);
 
             Assert.Throws<InvalidOperationException>(navigationService.GetPreviousCommand);

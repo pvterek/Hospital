@@ -8,10 +8,10 @@ namespace Hospital.Utilities.UserInterface.Interfaces
 {
     public interface IDTOFactory
     {
-        public PersonDTO GatherPersonData();
-        public EmployeeDTO GatherEmployeeData(List<Ward> wards);
-        public PatientDTO GatherPatientData(List<Ward> wards);
-        public UserDTO GatherUserData();
-        public WardDTO GatherWardData();
+        PersonDTO GatherPersonData();
+        EmployeeDTO GatherEmployeeData(List<Ward> wards);
+        PatientDTO GatherPatientData(List<Ward> wards);
+        UserDTO GatherUserData();
+        WardDTO GatherWardData();
     }
 }

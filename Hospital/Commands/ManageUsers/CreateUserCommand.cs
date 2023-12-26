@@ -1,4 +1,4 @@
-﻿using Hospital.PeopleCategories.Factory.Interfaces;
+﻿using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;

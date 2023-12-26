@@ -49,8 +49,8 @@ namespace Hospital.Commands
                 _deleteUserCommand.Value,
                 _logoutCommand.Value
             };
-
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
+
             _navigationService.Queue((Command)selectedCommand);
 
             switch (selectedCommand.IntroduceString)

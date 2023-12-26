@@ -1,10 +1,10 @@
 ﻿using Hospital.Entities.Employee;
-using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 
-namespace Hospital.PeopleCategories.Factory
+namespace Hospital.Utilities.EntitiesFactory
 {
     public class ObjectsFactory : IObjectsFactory
     {

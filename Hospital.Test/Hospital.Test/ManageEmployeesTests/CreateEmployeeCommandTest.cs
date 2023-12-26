@@ -1,8 +1,8 @@
 ﻿using Hospital.Commands.ManageEmployees;
 using Hospital.Database.Interfaces;
 using Hospital.Entities.Employee;
-using Hospital.PeopleCategories.Factory.Interfaces;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -48,7 +48,7 @@ namespace Hospital.Test.ManageEmployeesTests
             SetUpMocks();
 
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([]);
+                            .Returns([]);
 
             createEmployeeCommand.Execute();
 
@@ -62,10 +62,12 @@ namespace Hospital.Test.ManageEmployeesTests
             SetUpMocks();
 
             var mockWard = new Mock<Ward>();
+
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([mockWard.Object]);
+                            .Returns([mockWard.Object]);
+
             mockValidateObjects.Setup(x => x.ValidateEmployeeObject(It.IsAny<EmployeeDTO>()))
-                .Returns(false);
+                               .Returns(false);
 
             createEmployeeCommand.Execute();
 
@@ -80,25 +82,29 @@ namespace Hospital.Test.ManageEmployeesTests
             var mockWard = new Mock<Ward>();
             var mockEmployee = new Mock<Employee>();
             var employeesList = new List<Employee>();
+
             mockListsStorage.Setup(x => x.Wards)
-                .Returns([mockWard.Object]);
+                            .Returns([mockWard.Object]);
             mockListsStorage.Setup(x => x.Employees)
-                .Returns(employeesList);
+                            .Returns(employeesList);
+
             mockValidateObjects.Setup(x => x.ValidateEmployeeObject(It.IsAny<EmployeeDTO>()))
-                .Returns(true);
+                               .Returns(true);
+
             mockObjectsFactory.Setup(x => x.CreateEmployee(It.IsAny<EmployeeDTO>()))
-                .Returns(mockEmployee.Object);
+                              .Returns(mockEmployee.Object);
 
             mockDatabaseOperations.Setup(x => x.Add(It.IsAny<Employee>(), It.IsAny<ISession>()))
-                .Returns(true);
+                                  .Returns(true);
+
             mockListManage.Setup(x => x.Add(It.IsAny<Employee>(), It.IsAny<List<Employee>>()))
-                .Callback((Employee item, List<Employee> list) =>
-                {
-                    if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
-                    {
-                        list.Add(item);
-                    }
-                });
+                          .Callback((Employee item, List<Employee> list) =>
+                          {
+                              if (mockDatabaseOperations.Object.Add(item, new Mock<ISession>().Object))
+                              {
+                                  list.Add(item);
+                              }
+                          });
 
             createEmployeeCommand.Execute();
 
