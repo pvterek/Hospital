@@ -21,7 +21,7 @@ namespace Hospital.Commands.ManageUsers
             IMenuHandler menuHandler,
             IListManage listManage,
             IListsStorage listsStorage)
-            : base(UiMessages.CreateAccountCommandMessages.Introduce)
+            : base(UiMessages.CreateUserCommandMessages.Introduce)
         {
             _objectsFactory = objectsFactory;
             _validateObjects = validateObjects;
@@ -42,7 +42,7 @@ namespace Hospital.Commands.ManageUsers
             var user = _objectsFactory.CreateUser(userDTO);
             _listManage.Add(user, _listsStorage.Users);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.CreateAccountCommandMessages.CreatedAccountPrompt, user.Login));
+            _menuHandler.ShowMessage(string.Format(UiMessages.CreateUserCommandMessages.CreatedAccountPrompt, user.Login));
         }
     }
 }

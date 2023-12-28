@@ -51,7 +51,7 @@ namespace Hospital.Test.ManageUsers
 
             createAccountCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(It.Is<string>(s => s.Contains(UiMessages.CreateAccountCommandMessages.CreatedAccountPrompt))), Times.Never());
+            mockMenuHandler.Verify(x => x.ShowMessage(It.Is<string>(s => s.Contains(UiMessages.CreateUserCommandMessages.CreatedAccountPrompt))), Times.Never());
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace Hospital.Test.ManageUsers
 
             createAccountCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreateAccountCommandMessages.CreatedAccountPrompt, mockUser.Object.Login)), Times.Once());
+            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreateUserCommandMessages.CreatedAccountPrompt, mockUser.Object.Login)), Times.Once());
             Assert.Contains(mockUser.Object, usersList);
         }
     }

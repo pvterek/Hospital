@@ -2,8 +2,11 @@
 using Hospital.Commands;
 using Hospital.Commands.LoginWindow;
 using Hospital.Commands.Navigation;
+using Hospital.PeopleCategories.PersonClass;
+using Hospital.PeopleCategories.UserClass;
 using Hospital.Utilities;
 using Hospital.Utilities.ErrorLogger;
+using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital
@@ -14,19 +17,34 @@ namespace Hospital
 
         private static void Main()
         {
-            InitializeApplication();
+            var fileService = new FileService();
+            var config = new AutofacConfig();
+
+            InitializeApplication(fileService, config);
             ExecuteApplication();
         }
 
-        private static void InitializeApplication()
+        private static void InitializeApplication(FileService fileService, AutofacConfig config)
         {
-            FileService fileService = new();
-            AutofacConfig config = new();
-
             fileService.CreateDirectory();
             fileService.CreateLogFile();
-
             Container = config.ConfigureContainer();
+        }
+
+        private static void CreateDefaultUser(IListsStorage listStorage, IListManage listManage)
+        {
+            if (!listStorage.Users.Any())
+            {
+                var user = new User(
+                    "admin",
+                    "admin",
+                    Gender.Male,
+                    new DateTime(),
+                    "admin",
+                    "admin");
+
+                listManage.Add(user, listStorage.Users);
+            }
         }
 
         private static void ExecuteApplication()
@@ -40,6 +58,8 @@ namespace Hospital
 
             mainQueue.Queue(loginWindow);
             mainQueue.Queue(mainWindow);
+
+            CreateDefaultUser(Container.Resolve<IListsStorage>(), Container.Resolve<IListManage>());
 
             while (true)
             {

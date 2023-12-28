@@ -74,7 +74,7 @@ namespace Hospital.Commands.ManagePatients
                     _backCommand.Value.Execute();
                     break;
                 default:
-                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
                     break;
             }
         }

@@ -59,7 +59,7 @@ namespace Hospital.Commands.ManageWards
                     _backCommand.Value.Execute();
                     break;
                 default:
-                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
                     break;
             }
         }

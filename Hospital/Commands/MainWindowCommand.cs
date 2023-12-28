@@ -15,7 +15,7 @@ namespace Hospital.Commands
         private readonly Lazy<ManagePatientsCommand> _managePatientsCommand;
         private readonly Lazy<ManageEmployeesCommand> _manageEmployeesCommand;
         private readonly Lazy<ManageWardsCommand> _manageWardsCommand;
-        private readonly Lazy<DeleteUserCommand> _deleteUserCommand;
+        private readonly Lazy<ManageUsersCommand> _manageUsersCommand;
         private readonly Lazy<LogoutCommand> _logoutCommand;
         private readonly INavigationService _navigationService;
         private readonly IMenuHandler _menuHandler;
@@ -24,7 +24,7 @@ namespace Hospital.Commands
             Lazy<ManagePatientsCommand> managePatientsCommand,
             Lazy<ManageEmployeesCommand> manageEmployeesCommand,
             Lazy<ManageWardsCommand> manageWardsCommand,
-            Lazy<DeleteUserCommand> deleteUserCommand,
+            Lazy<ManageUsersCommand> manageUsersCommand,
             Lazy<LogoutCommand> logoutCommand,
             INavigationService navigationService,
             IMenuHandler menuHandler)
@@ -33,7 +33,7 @@ namespace Hospital.Commands
             _managePatientsCommand = managePatientsCommand;
             _manageEmployeesCommand = manageEmployeesCommand;
             _manageWardsCommand = manageWardsCommand;
-            _deleteUserCommand = deleteUserCommand;
+            _manageUsersCommand = manageUsersCommand;
             _logoutCommand = logoutCommand;
             _navigationService = navigationService;
             _menuHandler = menuHandler;
@@ -46,7 +46,7 @@ namespace Hospital.Commands
                 _managePatientsCommand.Value,
                 _manageEmployeesCommand.Value,
                 _manageWardsCommand.Value,
-                _deleteUserCommand.Value,
+                _manageUsersCommand.Value,
                 _logoutCommand.Value
             };
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
@@ -64,14 +64,14 @@ namespace Hospital.Commands
                 case UiMessages.ManageWardsMessages.Introduce:
                     _manageWardsCommand.Value.Execute();
                     break;
-                case UiMessages.DeleteUserMessages.Introduce:
-                    _deleteUserCommand.Value.Execute();
+                case UiMessages.ManageUsersMessages.Introduce:
+                    _manageUsersCommand.Value.Execute();
                     break;
                 case UiMessages.LogoutCommandMessages.Introduce:
                     _logoutCommand.Value.Execute();
                     break;
                 default:
-                    Console.WriteLine(UiMessages.ExceptionMessages.Command);
+                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
                     break;
             }
         }

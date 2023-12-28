@@ -17,6 +17,7 @@
             public const string SelectDoctorPrompt = "Pick to which doctor you want to assing the patient";
             public const string NoDoctorsPrompt = "There is no doctor to assigned! Please add one first.";
             public const string OperationSuccessPrompt = "{0} {1} has been assgined to the {2} {3}";
+            public const string WrongWardPrompt = "The doctor you want to assign to the patient is assigned to a different ward than the patient!";
         }
 
         public static class ChangeHealthStatusMessages
@@ -100,6 +101,22 @@
         }
 
         //ManageUsers
+        public static class ManageUsersMessages
+        {
+            public const string Introduce = "Manage users";
+        }
+
+        public static class CreateUserCommandMessages
+        {
+            public const string Introduce = "Create account";
+            public const string CreatedAccountPrompt = "User {0} created successfully!";
+        }
+
+        public static class DisplayUsersCommandMessages
+        {
+            public const string Introduce = "Display users";
+        }
+
         public static class DeleteUserMessages
         {
             public const string Introduce = "Delete user";
@@ -159,12 +176,6 @@
         public static class LoginWindowCommandMessages
         {
             public const string Introduce = "Login window";
-        }
-
-        public static class CreateAccountCommandMessages
-        {
-            public const string Introduce = "Create account";
-            public const string CreatedAccountPrompt = "User {0} created successfully!";
         }
 
         public static class LoginCommandMessages

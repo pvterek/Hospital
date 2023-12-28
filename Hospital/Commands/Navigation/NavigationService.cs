@@ -1,5 +1,6 @@
 ﻿using Hospital.Commands.ManageEmployees;
 using Hospital.Commands.ManagePatients;
+using Hospital.Commands.ManageUsers;
 using Hospital.Commands.ManageWards;
 
 namespace Hospital.Commands.Navigation
@@ -12,7 +13,8 @@ namespace Hospital.Commands.Navigation
             typeof(MainWindowCommand),
             typeof(ManageEmployeesCommand),
             typeof(ManagePatientsCommand),
-            typeof(ManageWardsCommand)
+            typeof(ManageWardsCommand),
+            typeof(ManageUsersCommand)
         };
 
         public Command GetPreviousCommand()

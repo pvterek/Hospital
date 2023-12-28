@@ -41,6 +41,13 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
                 UiMessages.AssignToDoctorMessages.SelectPatientPrompt);
             var doctor = _menuHandler.SelectObject(doctors,
                 UiMessages.AssignToDoctorMessages.SelectDoctorPrompt);
+
+            if (patient.AssignedWard != doctor.AssignedWard)
+            {
+                _menuHandler.ShowMessage(UiMessages.AssignToDoctorMessages.WrongWardPrompt);
+                return;
+            }
+
             patient.AssignedDoctor = doctor;
             _listManage.Update(patient, _listsStorage.Patients);
 

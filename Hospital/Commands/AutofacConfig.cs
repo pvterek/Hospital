@@ -70,7 +70,9 @@ namespace Hospital.Commands
 
             //ManageUsersCommand
             builder.RegisterType<CreateUserCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<DisplayUsersCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DeleteUserCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<ManageUsersCommand>().AsSelf().SingleInstance();
 
             //ManageWardsCommand
             builder.RegisterType<CreateWardCommand>().AsSelf().SingleInstance();
