@@ -1,4 +1,5 @@
-﻿using Hospital.Utilities.ListManagment;
+﻿using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.ListManagment;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -26,7 +27,23 @@ namespace Hospital.Commands.ManageWards
                 return;
             }
 
-            _menuHandler.DisplayList(_listsStorage.Wards);
+            var selectedWard = _menuHandler.SelectObject(_listsStorage.Wards, UiMessages.DisplayWardMessages.SelectWardPrompt);
+
+            DisplayWardInformation(selectedWard);
+        }
+
+        private void DisplayWardInformation(Ward ward)
+        {
+            string wardInformation = string.Format(
+                UiMessages.DisplayWardMessages.DisplayInformationsPrompt,
+                ward.Name,
+                ward.PatientsNumber,
+                ward.Capacity,
+                ward.PatientsNumber / ward.Capacity,
+                ward.AssignedEmployees.Count
+            );
+
+            _menuHandler.ShowMessage(wardInformation);
         }
     }
 }

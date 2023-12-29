@@ -93,6 +93,9 @@
         {
             public const string Introduce = "Display wards";
             public const string NoWardPrompt = "There are no ward that can be displayed!";
+            public const string SelectWardPrompt = "Select for which ward you want to display details.";
+            public const string DisplayInformationsPrompt = "\t=== [ {0} ] ===\nAssigned patients amount: [ {1} ]" +
+                "\nWard capacity: [ {2} ]\nOccupancy rate: [ {3}% ]\nAssigned employees amount: [ {4} ]";
         }
 
         public static class ManageWardsMessages
@@ -193,7 +196,7 @@
         //Entities
         public static class WardObjectMessages
         {
-            public const string Introduce = "Ward: {0} [{1}/{2}]";
+            public const string Introduce = "Ward: {0}";
             public const string ProvideNamePrompt = "Provide ward name: ";
             public const string EmptyNamePrompt = "Name can't be empty.";
         }

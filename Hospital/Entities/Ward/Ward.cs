@@ -43,7 +43,7 @@ namespace Hospital.PeopleCategories.WardClass
             AssignedEmployees = assignedEmployees;
             IsDeleted = false;
             IntroduceString = string.Format(
-                UiMessages.WardObjectMessages.Introduce, name, PatientsNumber, Capacity);
+                UiMessages.WardObjectMessages.Introduce, name);
         }
     }
 }
