@@ -1,5 +1,7 @@
-﻿using Hospital.Utilities.EntitiesFactory.Interfaces;
-using Hospital.Utilities.ListManagment;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.EntitiesFactory.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -33,16 +35,19 @@ namespace Hospital.Commands.ManageWards
 
         public override void Execute()
         {
-            var wardDTO = _dtoFactory.GatherWardData();
+            WardDTO wardDTO = _dtoFactory.GatherWardData();
+
             if (!_validateObjects.ValidateWardObject(wardDTO))
             {
                 return;
             }
 
-            var ward = _objectsFactory.CreateWard(wardDTO);
+            Ward ward = _objectsFactory.CreateWard(wardDTO);
+            ward.AssignedUsers.Add(LoginCommand.CurrentlyLoggedIn);
             _listManage.Add(ward, _listsStorage.Wards);
 
-            _menuHandler.ShowMessage(string.Format(UiMessages.CreateWardMessages.OperationSuccessPrompt, ward.Name));
+            _menuHandler.ShowMessage(string.Format(UiMessages.CreateWardMessages.OperationSuccessPrompt,
+                ward.Name));
         }
     }
 }

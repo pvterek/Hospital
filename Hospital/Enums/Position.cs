@@ -1,4 +1,4 @@
-﻿namespace Hospital.Entities.Employee
+﻿namespace Hospital.Enums
 {
     public enum Position
     {

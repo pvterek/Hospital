@@ -4,7 +4,7 @@ namespace Hospital.Utilities
 {
     public class FileService : IFileService
     {
-        private const string DirectoryName = "Hospital management program";
+        private const string DirectoryName = "Hospital management files";
         public static readonly string DirectoryPath = GetDirectoryPath();
         private const string LogFileName = "log.txt";
         public static readonly string LogFilePath = GetFilePath();

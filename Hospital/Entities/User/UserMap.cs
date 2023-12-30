@@ -14,9 +14,13 @@ namespace Hospital.PeopleCategories.UserClass
             Map(x => x.IsDeleted).CustomType<bool>().Not.Nullable();
             Map(x => x.Login).Not.Nullable();
             Map(x => x.Password).Not.Nullable();
+            Map(x => x.Rank).Not.Nullable();
             Map(x => x.IntroduceString).Not.Nullable();
 
-            References(x => x.AssignedWard);
+            HasManyToMany(x => x.AssignedWards)
+                .Cascade.All()
+                .Inverse()
+                .Table("User_Ward");
         }
     }
 }

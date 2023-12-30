@@ -2,11 +2,12 @@
 using Hospital.Commands;
 using Hospital.Commands.LoginWindow;
 using Hospital.Commands.Navigation;
-using Hospital.PeopleCategories.PersonClass;
+using Hospital.Enums;
 using Hospital.PeopleCategories.UserClass;
+using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities;
 using Hospital.Utilities.ErrorLogger;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface.Interfaces;
 
 namespace Hospital
@@ -41,7 +42,9 @@ namespace Hospital
                     Gender.Male,
                     new DateTime(),
                     "admin",
-                    "admin");
+                    "admin",
+                    Rank.Admin,
+                    new List<Ward>());
 
                 listManage.Add(user, listStorage.Users);
             }

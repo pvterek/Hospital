@@ -1,8 +1,10 @@
-﻿using Hospital.Commands.ManageWards;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.Commands.ManageWards;
 using Hospital.Database.Interfaces;
+using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.EntitiesFactory.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;
@@ -44,29 +46,37 @@ namespace Hospital.Test.ManageWardsTests
         [Fact]
         public void Execute_WhenWardDataNotPassValidation_ShouldReturnEarly()
         {
+            //Arrange
             SetUpMocks();
 
             mockValidateObjects.Setup(x => x.ValidateWardObject(It.IsAny<WardDTO>()))
                                .Returns(false);
 
+            //Act
             createWardCommand.Execute();
 
+            //Assert
             mockObjectsFactory.Verify(x => x.CreateWard(It.IsAny<WardDTO>()), Times.Never());
         }
 
         [Fact]
         public void Execute_WhenValidationPassed_ShouldCreateWard()
         {
+            //Arrange
             SetUpMocks();
 
             var wardsList = new List<Ward>();
-            var mockWard = new Mock<Ward>();
+            var mockWard = Mock.Of<Ward>();
+            mockWard.AssignedUsers = new List<User>();
+            var mockUser = Mock.Of<User>();
+
+            LoginCommand.CurrentlyLoggedIn = mockUser;
 
             mockValidateObjects.Setup(x => x.ValidateWardObject(It.IsAny<WardDTO>()))
                                .Returns(true);
 
             mockObjectsFactory.Setup(x => x.CreateWard(It.IsAny<WardDTO>()))
-                              .Returns(mockWard.Object);
+                              .Returns(mockWard);
 
             mockListsStorage.Setup(x => x.Wards)
                             .Returns(wardsList);
@@ -83,10 +93,13 @@ namespace Hospital.Test.ManageWardsTests
                               }
                           });
 
+            //Act
             createWardCommand.Execute();
 
-            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreateWardMessages.OperationSuccessPrompt, mockWard.Object.Name)), Times.Once());
-            Assert.Contains(mockWard.Object, wardsList);
+            //Assert
+            mockMenuHandler.Verify(x => x.ShowMessage(string.Format(UiMessages.CreateWardMessages.OperationSuccessPrompt, mockWard.Name)), Times.Once());
+            Assert.Contains(mockWard, wardsList);
+            Assert.True(mockWard.AssignedUsers.First() == mockUser);
         }
     }
 }

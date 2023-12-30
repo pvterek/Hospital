@@ -1,5 +1,6 @@
-﻿using Hospital.PeopleCategories.PatientClass;
-using Hospital.Utilities.ListManagment;
+﻿using Hospital.Enums;
+using Hospital.PeopleCategories.PatientClass;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -24,16 +25,19 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
 
         public override void Execute()
         {
-            if (!_listsStorage.Patients.Any())
+            List<Patient> patientsList = _listsStorage.Patients;
+
+            if (!patientsList.Any())
             {
                 _menuHandler.ShowMessage(UiMessages.DisplayPatientsMessages.NoPatientsPrompt);
                 return;
             }
 
-            var patient = _menuHandler.SelectObject(_listsStorage.Patients,
+            Patient patient = _menuHandler.SelectObject(patientsList,
                 UiMessages.ChangeHealthStatusMessages.SelectPatientPrompt);
             patient.HealthStatus = _menuHandler.ShowInteractiveMenu<Health>();
-            _listManage.Update(patient, _listsStorage.Patients);
+
+            _listManage.Update(patient, patientsList);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.ChangeHealthStatusMessages.OperationSuccessPrompt,
                 patient.Name, patient.Surname));

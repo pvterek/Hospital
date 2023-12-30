@@ -1,4 +1,4 @@
-﻿namespace Hospital.PeopleCategories.PatientClass
+﻿namespace Hospital.Enums
 {
     public enum Health
     {

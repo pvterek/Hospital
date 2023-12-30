@@ -7,16 +7,16 @@
         {
             public const string Introduce = "Admit a patient";
             public const string NoWardErrorPrompt = "No wards created to assign patient! Please create one first.";
-            public const string OperationSuccessPrompt = "Patient {0} {1} admited sucesfully!";
+            public const string OperationSuccessPrompt = "Patient {0} {1} admitted successfully!";
         }
 
         public static class AssignToDoctorMessages
         {
             public const string Introduce = "Assign to doctor";
-            public const string SelectPatientPrompt = "Pick for which patient you want assing doctor";
-            public const string SelectDoctorPrompt = "Pick to which doctor you want to assing the patient";
+            public const string SelectPatientPrompt = "Pick for which patient you want assign doctor";
+            public const string SelectDoctorPrompt = "Pick to which doctor you want to assign the patient";
             public const string NoDoctorsPrompt = "There is no doctor to assigned! Please add one first.";
-            public const string OperationSuccessPrompt = "{0} {1} has been assgined to the {2} {3}";
+            public const string OperationSuccessPrompt = "{0} {1} has been assigned to the {2} {3}";
             public const string WrongWardPrompt = "The doctor you want to assign to the patient is assigned to a different ward than the patient!";
         }
 
@@ -42,7 +42,7 @@
         {
             public const string Introduce = "Sign out patient";
             public const string DeletePrompt = "Pick which patient you want sign out.";
-            public const string OperationSuccessPrompt = "Patient {0} {1} removed sucesfully!";
+            public const string OperationSuccessPrompt = "Patient {0} {1} removed successfully!";
         }
 
         //ManageEmployees
@@ -64,7 +64,7 @@
         {
             public const string Introduce = "Hire employee";
             public const string OperationSuccessPrompt = "{0} {1} {2} hired!";
-            public const string ErrorCreateEmployeePrompt = "Error occured while trying to hire employee!";
+            public const string ErrorCreateEmployeePrompt = "Error occurred while trying to hire employee!";
             public const string UnsupportedEntityPrompt = "Unsupported entity type {0}.";
         }
 
@@ -84,7 +84,7 @@
         {
             public const string Introduce = "Delete ward";
             public const string OperationSuccessPrompt = "Ward removed: {0}!";
-            public const string WardNonEmptyPrompt = "Connot delete a ward to which patients or employees are assigned!";
+            public const string WardNonEmptyPrompt = "Cannot delete a ward to which patients or employees are assigned!";
             public const string SelectWardPrompt = "Select ward which you want to delete.";
             public const string NoWardPrompt = "There are no ward that can be deleted! Please create one first.";
         }
@@ -93,9 +93,21 @@
         {
             public const string Introduce = "Display wards";
             public const string NoWardPrompt = "There are no ward that can be displayed!";
+            public const string NoWardAssignedToUser = "User don't have any ward that can be displayed!";
             public const string SelectWardPrompt = "Select for which ward you want to display details.";
-            public const string DisplayInformationsPrompt = "\t=== [ {0} ] ===\nAssigned patients amount: [ {1} ]" +
+            public const string DisplayInformationPrompt = "\t=== [ {0} ] ===\nAssigned patients amount: [ {1} ]" +
                 "\nWard capacity: [ {2} ]\nOccupancy rate: [ {3}% ]\nAssigned employees amount: [ {4} ]";
+        }
+
+        public static class ChangeWardOwners
+        {
+            public const string Introduce = "Change ward owners";
+            public const string SelectUserPrompt = "Select the user for whom you want to change the assigned wards.";
+            public const string NoWardPrompt = "User does not have any wards assigned to him!";
+            public const string AssignUserToWardPrompt = "Select ward to which you want assign the user.";
+            public const string NoWardToAssign = "There is no ward that can be added to user!";
+            public const string RemoveUserFromWardPrompt = "Select the ward from which you want to remove the user.";
+            public const string OperationSuccessPrompt = "Ward {0} has been {1} from/to user {2}!";
         }
 
         public static class ManageWardsMessages
@@ -125,8 +137,16 @@
             public const string Introduce = "Delete user";
             public const string NoUserPrompt = "There are no users that can be deleted! Please create one first.";
             public const string SelectUserPrompt = "Select user which you want to delete.";
-            public const string OperationSuccessPrompt = "User {0} removed sucesfully!";
+            public const string OperationSuccessPrompt = "User {0} removed successfully!";
             public const string CurrentAccountErrorPrompt = "You cannot delete the account you are currently using!";
+        }
+
+        public static class ChangeUserRankMessages
+        {
+            public const string Introduce = "Change user rank";
+            public const string NoUsersPrompt = "There are no users for which rank can be changed! Please create one first.";
+            public const string SelectUserPrompt = "Select user for which you want to change the rank.";
+            public const string OperationSuccessPrompt = "Rank for user {0} was changed to {1}";
         }
 
         //Factory
@@ -220,7 +240,7 @@
         //Exceptions
         public static class DatabaseExceptions
         {
-            public const string QueryException = "Exception occured while trying to gather data from database!";
+            public const string QueryException = "Exception occurred while trying to gather data from database!";
             public const string ItemNull = "The provided item is null!";
             public const string AddException = "Exception occurred while adding: {0}!";
             public const string RemoveException = "Exception occurred while removing: {0}!";

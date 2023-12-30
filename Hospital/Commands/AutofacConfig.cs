@@ -13,7 +13,8 @@ using Hospital.Utilities.EntitiesFactory;
 using Hospital.Utilities.EntitiesFactory.Interfaces;
 using Hospital.Utilities.ErrorLogger;
 using Hospital.Utilities.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -70,6 +71,7 @@ namespace Hospital.Commands
 
             //ManageUsersCommand
             builder.RegisterType<CreateUserCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<ChangeUserRankCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DisplayUsersCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DeleteUserCommand>().AsSelf().SingleInstance();
             builder.RegisterType<ManageUsersCommand>().AsSelf().SingleInstance();
@@ -77,6 +79,7 @@ namespace Hospital.Commands
             //ManageWardsCommand
             builder.RegisterType<CreateWardCommand>().AsSelf().SingleInstance();
             builder.RegisterType<DisplayWardCommand>().AsSelf().SingleInstance();
+            builder.RegisterType<ChangeWardOwners>().AsSelf().SingleInstance();
             builder.RegisterType<DeleteWardCommand>().AsSelf().SingleInstance();
             builder.RegisterType<ManageWardsCommand>().AsSelf().SingleInstance();
 

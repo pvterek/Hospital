@@ -1,6 +1,7 @@
 ﻿using Hospital.Commands.ManagePatients.ManagePatient;
+using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;

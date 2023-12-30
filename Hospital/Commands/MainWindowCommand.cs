@@ -5,6 +5,7 @@ using Hospital.Commands.ManageUsers;
 using Hospital.Commands.ManageWards;
 using Hospital.Commands.Navigation;
 using Hospital.Entities.Interfaces;
+using Hospital.Enums;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -19,6 +20,7 @@ namespace Hospital.Commands
         private readonly Lazy<LogoutCommand> _logoutCommand;
         private readonly INavigationService _navigationService;
         private readonly IMenuHandler _menuHandler;
+        private Rank _currentUserRank;
 
         public MainWindowCommand(
             Lazy<ManagePatientsCommand> managePatientsCommand,
@@ -41,14 +43,8 @@ namespace Hospital.Commands
 
         public override void Execute()
         {
-            var commands = new List<IHasIntroduceString>
-            {
-                _managePatientsCommand.Value,
-                _manageEmployeesCommand.Value,
-                _manageWardsCommand.Value,
-                _manageUsersCommand.Value,
-                _logoutCommand.Value
-            };
+            _currentUserRank = LoginCommand.CurrentlyLoggedIn.Rank;
+            var commands = GetAvailableCommands();
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
 
             _navigationService.Queue((Command)selectedCommand);
@@ -57,23 +53,42 @@ namespace Hospital.Commands
             {
                 case UiMessages.ManagePatientsMessages.Introduce:
                     _managePatientsCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.ManageEmployeesMessages.Introduce:
                     _manageEmployeesCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.ManageWardsMessages.Introduce:
                     _manageWardsCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.ManageUsersMessages.Introduce:
                     _manageUsersCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.LogoutCommandMessages.Introduce:
                     _logoutCommand.Value.Execute();
-                    break;
-                default:
-                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
-                    break;
+                    return;
             }
+        }
+
+        private List<IIntroduceString> GetAvailableCommands()
+        {
+            return _currentUserRank switch
+            {
+                Rank.Default => new List<IIntroduceString>
+                {
+                    _managePatientsCommand.Value,
+                    _manageEmployeesCommand.Value,
+                    _manageWardsCommand.Value,
+                    _logoutCommand.Value
+                },
+                Rank.Admin => new List<IIntroduceString>
+                {
+                    _managePatientsCommand.Value,
+                    _manageEmployeesCommand.Value,
+                    _manageWardsCommand.Value,
+                    _manageUsersCommand.Value,
+                    _logoutCommand.Value
+                }
+            };
         }
     }
 }

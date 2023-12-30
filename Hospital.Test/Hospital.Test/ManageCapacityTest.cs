@@ -1,8 +1,8 @@
-﻿using Hospital.Commands.ManagePatients;
-using Hospital.Commands.ManageWards;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.WardClass;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Moq;
 
@@ -45,7 +45,7 @@ namespace Hospital.Test
             mockListsStorage.Setup(x => x.Wards)
                 .Returns([mockWard.Object]);
 
-            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.CreatePatient);
+            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.Add);
 
             Assert.Contains(mockPatient.Object, mockWard.Object.AssignedPatients);
             Assert.True(mockWard.Object.PatientsNumber == excpetedPatientsNumber);
@@ -67,7 +67,7 @@ namespace Hospital.Test
             mockWard.Setup(x => x.AssignedPatients)
                     .Returns([mockPatient.Object]);
 
-            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.DeletePatient);
+            manageCapacity.UpdateWardCapacity(mockWard.Object, mockPatient.Object, Operation.Remove);
 
             Assert.DoesNotContain(mockPatient.Object, mockWard.Object.AssignedPatients);
             Assert.True(mockWard.Object.PatientsNumber == excpetedPatientsNumber);

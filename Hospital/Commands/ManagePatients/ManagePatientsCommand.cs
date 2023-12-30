@@ -1,6 +1,8 @@
-﻿using Hospital.Commands.ManagePatients.ManagePatient;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.Commands.ManagePatients.ManagePatient;
 using Hospital.Commands.Navigation;
 using Hospital.Entities.Interfaces;
+using Hospital.Enums;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -16,6 +18,7 @@ namespace Hospital.Commands.ManagePatients
         private readonly Lazy<BackCommand> _backCommand;
         private readonly INavigationService _navigationService;
         private readonly IMenuHandler _menuHandler;
+        private Rank _currentUserRank;
 
         public ManagePatientsCommand(
             Lazy<CreatePatientCommand> createPatientCommand,
@@ -40,15 +43,8 @@ namespace Hospital.Commands.ManagePatients
 
         public override void Execute()
         {
-            var commands = new List<IHasIntroduceString>
-            {
-                _createPatientCommand.Value,
-                _displayPatientsCommand.Value,
-                _assignToDoctorCommand.Value,
-                _changeHealthStatusCommand.Value,
-                _deletePatientCommand.Value,
-                _backCommand.Value
-            };
+            _currentUserRank = LoginCommand.CurrentlyLoggedIn.Rank;
+            var commands = GetAvailableCommands();
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
 
             _navigationService.Queue((Command)selectedCommand);
@@ -57,26 +53,46 @@ namespace Hospital.Commands.ManagePatients
             {
                 case UiMessages.CreatePatientMessages.Introduce:
                     _createPatientCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.DisplayPatientsMessages.Introduce:
                     _displayPatientsCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.AssignToDoctorMessages.Introduce:
                     _assignToDoctorCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.ChangeHealthStatusMessages.Introduce:
                     _changeHealthStatusCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.DeletePatientMessages.Introduce:
                     _deletePatientCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.BackCommandMessages.Introduce:
                     _backCommand.Value.Execute();
-                    break;
-                default:
-                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
-                    break;
+                    return;
             }
+        }
+
+        private List<IIntroduceString> GetAvailableCommands()
+        {
+            return _currentUserRank switch
+            {
+                Rank.Default => new List<IIntroduceString>
+                {
+                    _displayPatientsCommand.Value,
+                    _assignToDoctorCommand.Value,
+                    _changeHealthStatusCommand.Value,
+                    _backCommand.Value
+                },
+                Rank.Admin => new List<IIntroduceString>
+                {
+                    _createPatientCommand.Value,
+                    _displayPatientsCommand.Value,
+                    _assignToDoctorCommand.Value,
+                    _changeHealthStatusCommand.Value,
+                    _deletePatientCommand.Value,
+                    _backCommand.Value
+                }
+            };
         }
     }
 }

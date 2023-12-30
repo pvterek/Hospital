@@ -14,6 +14,7 @@ namespace Hospital.Test.UtilitiesTests
 
         private readonly Mock<Lazy<CreateWardCommand>> mockCreateWardCommand = new();
         private readonly Mock<Lazy<DisplayWardCommand>> mockDisplayWardCommand = new();
+        private readonly Mock<Lazy<ChangeWardOwners>> mockChangeWardOwners = new();
         private readonly Mock<Lazy<DeleteWardCommand>> mockDeleteWardCommand = new();
         private readonly Mock<Lazy<BackCommand>> mockBackCommand = new();
         private readonly Mock<INavigationService> mockNavigationService = new();
@@ -30,6 +31,7 @@ namespace Hospital.Test.UtilitiesTests
             return new ManageWardsCommand(
                 mockCreateWardCommand.Object,
                 mockDisplayWardCommand.Object,
+                mockChangeWardOwners.Object,
                 mockDeleteWardCommand.Object,
                 mockBackCommand.Object,
                 mockNavigationService.Object,

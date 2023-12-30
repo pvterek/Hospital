@@ -1,4 +1,5 @@
-﻿using Hospital.PeopleCategories.PatientClass;
+﻿using Hospital.Enums;
+using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 

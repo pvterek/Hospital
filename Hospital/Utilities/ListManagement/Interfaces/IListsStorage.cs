@@ -3,7 +3,7 @@ using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
 
-namespace Hospital.Utilities.ListManagment
+namespace Hospital.Utilities.ListManagement.Interfaces
 {
     public interface IListsStorage
     {

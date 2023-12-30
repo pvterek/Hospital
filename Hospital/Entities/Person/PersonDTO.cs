@@ -1,4 +1,6 @@
-﻿namespace Hospital.PeopleCategories.PersonClass
+﻿using Hospital.Enums;
+
+namespace Hospital.PeopleCategories.PersonClass
 {
     public class PersonDTO
     {

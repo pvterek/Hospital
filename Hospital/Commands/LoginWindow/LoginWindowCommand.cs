@@ -24,7 +24,7 @@ namespace Hospital.Commands.LoginWindow
 
         public override void Execute()
         {
-            var commands = new List<IHasIntroduceString>
+            var commands = new List<IIntroduceString>
             {
                 _loginCommand.Value,
                 _exitCommand.Value
@@ -36,13 +36,10 @@ namespace Hospital.Commands.LoginWindow
             {
                 case UiMessages.LoginCommandMessages.Introduce:
                     _loginCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.ExitCommandMessages.Introduce:
                     _exitCommand.Value.Execute();
-                    break;
-                default:
-                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
-                    break;
+                    return;
             }
         }
     }

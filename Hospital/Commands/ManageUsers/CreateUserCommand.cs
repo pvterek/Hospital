@@ -1,5 +1,5 @@
 ﻿using Hospital.Utilities.EntitiesFactory.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 

@@ -1,4 +1,5 @@
 ﻿using Hospital.Entities.Employee;
+using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.UserClass;
@@ -67,11 +68,15 @@ namespace Hospital.Utilities.UserInterface
             PersonDTO baseData = GatherPersonData();
             string login = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt);
             string password = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt);
+            Rank rank = _menuHandler.ShowInteractiveMenu<Rank>();
+            List<Ward> assignedWards = new();
 
             return new UserDTO(baseData)
             {
                 Login = login,
-                Password = password
+                Password = password,
+                Rank = rank,
+                AssignedWards = assignedWards
             };
         }
 
@@ -81,13 +86,15 @@ namespace Hospital.Utilities.UserInterface
             int capacity = _inputHandler.GetIntInput(UiMessages.FactoryMessages.ProvideCapacityPrompt);
             List<Patient> assignedPatients = new();
             List<Employee> assignedEmployees = new();
+            List<User> assignedUsers = new();
 
             return new WardDTO()
             {
                 Name = name,
                 Capacity = capacity,
                 AssignedPatients = assignedPatients,
-                AssignedEmployees = assignedEmployees
+                AssignedEmployees = assignedEmployees,
+                AssignedUsers = assignedUsers
             };
         }
     }

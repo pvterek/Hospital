@@ -1,4 +1,4 @@
-﻿using Hospital.Entities.Interfaces;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
@@ -6,14 +6,11 @@ using Hospital.Utilities.UserInterface;
 
 namespace Hospital.Entities.Employee
 {
-    public class Employee : Person, IHasIntroduceString
+    public class Employee : Person
     {
         public virtual int Id { get; set; }
-
         public virtual Ward AssignedWard { get; set; }
-
         public virtual Position Position { get; }
-
         public virtual IList<Patient> AssignedPatients { get; set; }
 
         protected Employee() { }

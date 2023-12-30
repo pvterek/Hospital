@@ -1,5 +1,6 @@
-﻿using Hospital.Commands.ManageWards;
-using Hospital.Utilities.ListManagment;
+﻿using Hospital.Enums;
+using Hospital.Utilities.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -39,7 +40,7 @@ namespace Hospital.Commands.ManagePatients.ManagePatient
             _listManage.SoftDelete(selectedPatient, _listsStorage.Patients);
 
             _manageCapacity.UpdateWardCapacity(selectedPatient.AssignedWard, selectedPatient,
-                Operation.DeletePatient);
+                Operation.Remove);
 
             _menuHandler.ShowMessage(string.Format(UiMessages.DeletePatientMessages.OperationSuccessPrompt,
                 selectedPatient.Name, selectedPatient.Surname));

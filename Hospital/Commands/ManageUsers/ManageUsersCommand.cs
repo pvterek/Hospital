@@ -8,6 +8,7 @@ namespace Hospital.Commands.ManageUsers
     internal class ManageUsersCommand : Command
     {
         private readonly Lazy<CreateUserCommand> _createUserCommand;
+        private readonly Lazy<ChangeUserRankCommand> _changeUserRankCommand;
         private readonly Lazy<DisplayUsersCommand> _displayUsersCommand;
         private readonly Lazy<DeleteUserCommand> _deleteUserCommand;
         private readonly Lazy<BackCommand> _backCommand;
@@ -16,6 +17,7 @@ namespace Hospital.Commands.ManageUsers
 
         public ManageUsersCommand(
             Lazy<CreateUserCommand> createUserCommand,
+            Lazy<ChangeUserRankCommand> changeUserRankCommand,
             Lazy<DisplayUsersCommand> displayUsersCommand,
             Lazy<DeleteUserCommand> deleteUserCommand,
             Lazy<BackCommand> backCommand,
@@ -24,6 +26,7 @@ namespace Hospital.Commands.ManageUsers
             : base(UiMessages.ManageUsersMessages.Introduce)
         {
             _createUserCommand = createUserCommand;
+            _changeUserRankCommand = changeUserRankCommand;
             _displayUsersCommand = displayUsersCommand;
             _deleteUserCommand = deleteUserCommand;
             _backCommand = backCommand;
@@ -33,13 +36,13 @@ namespace Hospital.Commands.ManageUsers
 
         public override void Execute()
         {
-            var commands = new List<IHasIntroduceString>
+            var commands = new List<IIntroduceString>
             {
                 _createUserCommand.Value,
+                _changeUserRankCommand.Value,
                 _displayUsersCommand.Value,
                 _deleteUserCommand.Value,
                 _backCommand.Value
-
             };
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
 
@@ -49,19 +52,19 @@ namespace Hospital.Commands.ManageUsers
             {
                 case UiMessages.CreateUserCommandMessages.Introduce:
                     _createUserCommand.Value.Execute();
-                    break;
+                    return;
+                case UiMessages.ChangeUserRankMessages.Introduce:
+                    _changeUserRankCommand.Value.Execute();
+                    return;
                 case UiMessages.DisplayUsersCommandMessages.Introduce:
                     _displayUsersCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.DeleteUserMessages.Introduce:
                     _deleteUserCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.BackCommandMessages.Introduce:
                     _backCommand.Value.Execute();
-                    break;
-                default:
-                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
-                    break;
+                    return;
             }
         }
     }

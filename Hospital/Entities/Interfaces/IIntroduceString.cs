@@ -1,6 +1,6 @@
 ﻿namespace Hospital.Entities.Interfaces
 {
-    public interface IHasIntroduceString
+    public interface IIntroduceString
     {
         string IntroduceString { get; }
     }

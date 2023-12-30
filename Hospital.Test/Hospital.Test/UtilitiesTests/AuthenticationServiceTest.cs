@@ -1,6 +1,6 @@
 ﻿using Hospital.PeopleCategories.UserClass;
 using Hospital.Utilities;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Moq;
 
 namespace Hospital.Test.UtilitiesTests

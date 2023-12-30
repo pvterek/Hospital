@@ -8,7 +8,7 @@ namespace Hospital.Commands.LoginWindow
     public class LoginCommand : Command
     {
         public bool IsLoggedIn;
-        public User CurrentlyLoggedIn;
+        public static User CurrentlyLoggedIn;
 
         private readonly IAuthenticationService _authenticationService;
         private readonly IMenuHandler _menuHandler;

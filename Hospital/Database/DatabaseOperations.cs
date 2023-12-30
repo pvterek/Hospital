@@ -37,7 +37,7 @@ namespace Hospital.Database
             }
         }
 
-        public bool Add<T>(T entity, ISession session) where T : IHasIntroduceString
+        public bool Add<T>(T entity, ISession session) where T : IIntroduceString
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Save(e)))
                 return true;
@@ -45,7 +45,7 @@ namespace Hospital.Database
             return false;
         }
 
-        public bool Delete<T>(T entity, ISession session) where T : IHasIntroduceString
+        public bool Delete<T>(T entity, ISession session) where T : IIntroduceString
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Delete(e)))
                 return true;
@@ -53,7 +53,7 @@ namespace Hospital.Database
             return false;
         }
 
-        public bool Update<T>(T entity, ISession session) where T : IHasIntroduceString
+        public bool Update<T>(T entity, ISession session) where T : IIntroduceString
         {
             if (ExecuteInTransaction(entity, session, (e, s) => s.Update(e)))
                 return true;
@@ -61,7 +61,7 @@ namespace Hospital.Database
             return false;
         }
 
-        public List<T> GetAll<T>(ISession session) where T : IHasIntroduceString
+        public List<T> GetAll<T>(ISession session) where T : IIntroduceString
         {
             try
             {

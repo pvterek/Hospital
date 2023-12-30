@@ -1,7 +1,7 @@
 ﻿using Hospital.Database;
 using Hospital.Database.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement;
 using Moq;
 using NHibernate;
 

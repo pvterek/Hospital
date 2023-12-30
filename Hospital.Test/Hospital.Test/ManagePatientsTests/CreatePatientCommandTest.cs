@@ -1,11 +1,11 @@
 ﻿using Hospital.Commands.ManagePatients;
-using Hospital.Commands.ManageWards;
 using Hospital.Database.Interfaces;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.EntitiesFactory.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;

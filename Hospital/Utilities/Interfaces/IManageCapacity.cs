@@ -1,8 +1,8 @@
-﻿using Hospital.Commands.ManagePatients;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.WardClass;
 
-namespace Hospital.Commands.ManageWards
+namespace Hospital.Utilities.Interfaces
 {
     public interface IManageCapacity
     {

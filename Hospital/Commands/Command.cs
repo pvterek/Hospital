@@ -2,7 +2,7 @@
 
 namespace Hospital.Commands
 {
-    public abstract class Command : IHasIntroduceString
+    public abstract class Command : IIntroduceString
     {
         public string IntroduceString { get; }
 

@@ -1,6 +1,6 @@
 ﻿using Hospital.Commands.ManageUsers;
 using Hospital.PeopleCategories.UserClass;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;
 

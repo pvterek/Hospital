@@ -1,6 +1,7 @@
-﻿using Hospital.Commands.ManageWards;
+﻿using Hospital.Enums;
 using Hospital.Utilities.EntitiesFactory.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -52,7 +53,7 @@ namespace Hospital.Commands.ManagePatients
             var createdPatient = _objectsFactory.CreatePatient(patientDTO);
 
             _manageCapacity.UpdateWardCapacity(createdPatient.AssignedWard, createdPatient,
-                Operation.CreatePatient);
+                Operation.Add);
 
             _listManage.Add(createdPatient, _listsStorage.Patients);
 

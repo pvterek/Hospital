@@ -2,8 +2,7 @@
 using Hospital.Commands.ManageUsers;
 using Hospital.Database.Interfaces;
 using Hospital.PeopleCategories.UserClass;
-using Hospital.Utilities.Interfaces;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 using Moq;
@@ -16,32 +15,22 @@ namespace Hospital.Test.ManageUsers
         private Mock<IMenuHandler> mockMenuHandler;
         private Mock<IListManage> mockListManage;
         private Mock<IListsStorage> mockListsStorage;
-        private Mock<IAuthenticationService> mockAuthenticationService;
-        private Mock<IInputHandler> mockInputHandler;
         private Mock<IDatabaseOperations> mockDatabaseOperations;
 
-        private LoginCommand loginCommand;
         private DeleteUserCommand deleteUserCommand;
 
         private void SetUpMocks()
         {
             mockMenuHandler = new Mock<IMenuHandler>();
             mockListManage = new Mock<IListManage>();
-            mockAuthenticationService = new Mock<IAuthenticationService>();
-            mockInputHandler = new Mock<IInputHandler>();
             mockListsStorage = new Mock<IListsStorage>();
             mockDatabaseOperations = new Mock<IDatabaseOperations>();
 
-            loginCommand = new LoginCommand(
-                mockAuthenticationService.Object,
-                mockMenuHandler.Object,
-                mockInputHandler.Object);
 
             deleteUserCommand = new DeleteUserCommand(
                 mockMenuHandler.Object,
                 mockListManage.Object,
-                mockListsStorage.Object,
-                loginCommand);
+                mockListsStorage.Object);
         }
 
         [Fact]
@@ -69,7 +58,7 @@ namespace Hospital.Test.ManageUsers
 
             var usersList = new List<User>() { mockUser.Object };
 
-            loginCommand.CurrentlyLoggedIn = mockUser.Object;
+            LoginCommand.CurrentlyLoggedIn = mockUser.Object;
 
             mockListsStorage.Setup(x => x.Users)
                             .Returns(usersList);

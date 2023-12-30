@@ -1,9 +1,10 @@
 ﻿using Hospital.Database;
 using Hospital.Database.Interfaces;
 using Hospital.Entities.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 
-namespace Hospital.Utilities.ListManagment
+namespace Hospital.Utilities.ListManagement
 {
     public class ListManage : IListManage
     {
@@ -18,7 +19,7 @@ namespace Hospital.Utilities.ListManagment
             _createSession = createSession;
         }
 
-        public void Add<T>(T item, List<T> list) where T : IHasIntroduceString
+        public void Add<T>(T item, List<T> list) where T : IIntroduceString
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
@@ -32,7 +33,7 @@ namespace Hospital.Utilities.ListManagment
             list.Add(item);
         }
 
-        public void Delete<T>(T item, List<T> list) where T : IHasIntroduceString
+        public void Delete<T>(T item, List<T> list) where T : IIntroduceString
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
@@ -46,7 +47,7 @@ namespace Hospital.Utilities.ListManagment
             list.Remove(item);
         }
 
-        public void Update<T>(T item, List<T> list) where T : IIdentifier, IHasIntroduceString
+        public void Update<T>(T item, List<T> list) where T : IIdentifier, IIntroduceString
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);
@@ -67,7 +68,7 @@ namespace Hospital.Utilities.ListManagment
             list[index] = item;
         }
 
-        public void SoftDelete<T>(T item, List<T> list) where T : IIsDeleted, IIdentifier, IHasIntroduceString
+        public void SoftDelete<T>(T item, List<T> list) where T : IIsDeleted, IIdentifier, IIntroduceString
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item), UiMessages.DatabaseExceptions.ItemNull);

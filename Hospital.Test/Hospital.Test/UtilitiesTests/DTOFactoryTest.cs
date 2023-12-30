@@ -1,5 +1,4 @@
-﻿using Hospital.Entities.Employee;
-using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
@@ -100,16 +99,20 @@ namespace Hospital.Test.UtilitiesTests
 
             var expectedLogin = "login";
             var expectedPassword = "passwordpassword";
+            var expectedRank = Rank.Admin;
 
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvideLoginPrompt))
                             .Returns(expectedLogin);
             mockInputHandler.Setup(x => x.GetInput(UiMessages.FactoryMessages.ProvidePasswordPrompt))
                             .Returns(expectedPassword);
+            mockMenuHandler.Setup(x => x.ShowInteractiveMenu<Rank>())
+                           .Returns(expectedRank);
 
             var userDTO = dtoFactory.GatherUserData();
 
             Assert.Equal(expectedLogin, userDTO.Login);
             Assert.Equal(expectedPassword, userDTO.Password);
+            Assert.Equal(expectedRank, userDTO.Rank);
         }
 
         [Fact]

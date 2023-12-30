@@ -19,6 +19,10 @@ namespace Hospital.PeopleCategories.WardClass
             HasMany(x => x.AssignedEmployees)
                 .Inverse()
                 .KeyColumn("WardId");
+
+            HasManyToMany(x => x.AssignedUsers)
+                .Cascade.All()
+                .Table("User_Ward");
         }
     }
 }

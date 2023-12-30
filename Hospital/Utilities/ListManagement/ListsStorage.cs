@@ -4,9 +4,10 @@ using Hospital.Entities.Employee;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.ListManagement.Interfaces;
 using NHibernate;
 
-namespace Hospital.Utilities.ListManagment
+namespace Hospital.Utilities.ListManagement
 {
     public class ListsStorage : IListsStorage
     {
@@ -63,6 +64,10 @@ namespace Hospital.Utilities.ListManagment
                 ward.AssignedEmployees = session.Query<Employee>()
                                                 .Where(employee => employee.AssignedWard == ward && !employee.IsDeleted)
                                                 .ToList();
+
+                ward.AssignedUsers = session.Query<User>()
+                                                .Where(user => user.AssignedWards.Contains(ward) && !user.IsDeleted)
+                                                .ToList();
             }
         }
 
@@ -76,6 +81,13 @@ namespace Hospital.Utilities.ListManagment
         {
             Users = _databaseOperations.GetAll<User>(session)
                                        .Where(user => !user.IsDeleted).ToList();
+
+            foreach (var user in Users)
+            {
+                user.AssignedWards = session.Query<Ward>()
+                                            .Where(ward => ward.AssignedUsers.Contains(user) && !ward.IsDeleted)
+                                            .ToList();
+            }
         }
 
         private void ExtractUniqueIdentifiers()

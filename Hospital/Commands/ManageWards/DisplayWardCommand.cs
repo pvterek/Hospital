@@ -1,5 +1,6 @@
-﻿using Hospital.PeopleCategories.WardClass;
-using Hospital.Utilities.ListManagment;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.PeopleCategories.WardClass;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -21,13 +22,22 @@ namespace Hospital.Commands.ManageWards
 
         public override void Execute()
         {
-            if (!_listsStorage.Wards.Any())
+            List<Ward> wardsList = _listsStorage.Wards;
+
+            if (!wardsList.Any())
             {
                 _menuHandler.ShowMessage(UiMessages.DisplayWardMessages.NoWardPrompt);
                 return;
             }
 
-            var selectedWard = _menuHandler.SelectObject(_listsStorage.Wards, UiMessages.DisplayWardMessages.SelectWardPrompt);
+            List<Ward> availableWardsForUser = LoginCommand.CurrentlyLoggedIn.AssignedWards.ToList();
+            if (!availableWardsForUser.Any())
+            {
+                _menuHandler.ShowMessage(UiMessages.DisplayWardMessages.NoWardAssignedToUser);
+                return;
+            }
+
+            Ward selectedWard = _menuHandler.SelectObject(availableWardsForUser, UiMessages.DisplayWardMessages.SelectWardPrompt);
 
             DisplayWardInformation(selectedWard);
         }
@@ -35,7 +45,7 @@ namespace Hospital.Commands.ManageWards
         private void DisplayWardInformation(Ward ward)
         {
             string wardInformation = string.Format(
-                UiMessages.DisplayWardMessages.DisplayInformationsPrompt,
+                UiMessages.DisplayWardMessages.DisplayInformationPrompt,
                 ward.Name,
                 ward.PatientsNumber,
                 ward.Capacity,

@@ -1,6 +1,6 @@
 ﻿using Hospital.Entities.Employee;
+using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.UserClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities.EntitiesFactory.Interfaces;

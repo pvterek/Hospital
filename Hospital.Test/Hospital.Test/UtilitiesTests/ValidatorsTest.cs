@@ -1,9 +1,8 @@
-﻿using Hospital.Entities.Employee;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
-using Hospital.PeopleCategories.PersonClass;
 using Hospital.PeopleCategories.WardClass;
 using Hospital.Utilities;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Moq;
 
 namespace Hospital.Test.UtilitiesTests

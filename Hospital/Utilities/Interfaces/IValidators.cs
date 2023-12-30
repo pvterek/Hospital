@@ -1,5 +1,4 @@
-﻿using Hospital.Entities.Employee;
-using Hospital.PeopleCategories.PersonClass;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.WardClass;
 
 namespace Hospital.Utilities.Interfaces

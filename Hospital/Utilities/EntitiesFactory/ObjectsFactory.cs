@@ -39,7 +39,9 @@ namespace Hospital.Utilities.EntitiesFactory
                 dto.Gender,
                 dto.Birthday,
                 dto.Login,
-                dto.Password);
+                dto.Password,
+                dto.Rank,
+                dto.AssignedWards);
         }
 
         public Ward CreateWard(WardDTO dto)
@@ -48,7 +50,8 @@ namespace Hospital.Utilities.EntitiesFactory
                 dto.Name,
                 dto.Capacity,
                 dto.AssignedPatients,
-                dto.AssignedEmployees);
+                dto.AssignedEmployees,
+                dto.AssignedUsers);
         }
     }
 }

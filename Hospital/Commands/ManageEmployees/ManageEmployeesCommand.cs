@@ -1,5 +1,7 @@
-﻿using Hospital.Commands.Navigation;
+﻿using Hospital.Commands.LoginWindow;
+using Hospital.Commands.Navigation;
 using Hospital.Entities.Interfaces;
+using Hospital.Enums;
 using Hospital.Utilities.UserInterface;
 using Hospital.Utilities.UserInterface.Interfaces;
 
@@ -13,6 +15,7 @@ namespace Hospital.Commands.ManageEmployees
         private readonly Lazy<BackCommand> _backCommand;
         private readonly INavigationService _navigationService;
         private readonly IMenuHandler _menuHandler;
+        private Rank _currentUserRank;
 
         public ManageEmployeesCommand(
             Lazy<CreateEmployeeCommand> createEmployeeCommand,
@@ -33,13 +36,8 @@ namespace Hospital.Commands.ManageEmployees
 
         public override void Execute()
         {
-            var commands = new List<IHasIntroduceString>
-            {
-                _createEmployeeCommand.Value,
-                _displayEmployeesCommand.Value,
-                _deleteEmployeeCommand.Value,
-                _backCommand.Value
-            };
+            _currentUserRank = LoginCommand.CurrentlyLoggedIn.Rank;
+            var commands = GetAvailableCommands();
             var selectedCommand = _menuHandler.ShowInteractiveMenu(commands);
 
             _navigationService.Queue((Command)selectedCommand);
@@ -48,20 +46,36 @@ namespace Hospital.Commands.ManageEmployees
             {
                 case UiMessages.CreateEmployeeMessages.Introduce:
                     _createEmployeeCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.DisplayEmployeesMessages.Introduce:
                     _displayEmployeesCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.DeleteEmployeeMessages.Introduce:
                     _deleteEmployeeCommand.Value.Execute();
-                    break;
+                    return;
                 case UiMessages.BackCommandMessages.Introduce:
                     _backCommand.Value.Execute();
-                    break;
-                default:
-                    _menuHandler.ShowMessage(UiMessages.ExceptionMessages.Command);
-                    break;
+                    return;
             }
+        }
+
+        private List<IIntroduceString> GetAvailableCommands()
+        {
+            return _currentUserRank switch
+            {
+                Rank.Default => new List<IIntroduceString>
+                {
+                    _displayEmployeesCommand.Value,
+                    _backCommand.Value
+                },
+                Rank.Admin => new List<IIntroduceString>
+                {
+                    _createEmployeeCommand.Value,
+                    _displayEmployeesCommand.Value,
+                    _deleteEmployeeCommand.Value,
+                    _backCommand.Value
+                }
+            };
         }
     }
 }

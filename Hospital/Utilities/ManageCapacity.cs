@@ -1,10 +1,11 @@
-﻿using Hospital.Commands.ManagePatients;
+﻿using Hospital.Enums;
 using Hospital.PeopleCategories.PatientClass;
 using Hospital.PeopleCategories.WardClass;
-using Hospital.Utilities.ListManagment;
+using Hospital.Utilities.Interfaces;
+using Hospital.Utilities.ListManagement.Interfaces;
 using Hospital.Utilities.UserInterface;
 
-namespace Hospital.Commands.ManageWards
+namespace Hospital.Utilities
 {
     public class ManageCapacity : IManageCapacity
     {
@@ -21,11 +22,11 @@ namespace Hospital.Commands.ManageWards
         {
             switch (operation)
             {
-                case Operation.CreatePatient:
+                case Operation.Add:
                     ward.AssignedPatients.Add(patient);
                     ward.PatientsNumber++;
                     break;
-                case Operation.DeletePatient:
+                case Operation.Remove:
                     ward.AssignedPatients.Remove(patient);
                     ward.PatientsNumber--;
                     break;

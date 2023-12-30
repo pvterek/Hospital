@@ -13,7 +13,7 @@ namespace Hospital.Utilities.UserInterface
             _consoleService = consoleService;
         }
 
-        public T ShowInteractiveMenu<T>(List<T> items) where T : IHasIntroduceString
+        public T ShowInteractiveMenu<T>(List<T> items) where T : IIntroduceString
         {
             var selectedLineIndex = 0;
             ConsoleKey pressedKey;
@@ -76,7 +76,7 @@ namespace Hospital.Utilities.UserInterface
             return (T)Enum.Parse(typeof(T), options[selectedLineIndex]);
         }
 
-        private void UpdateInteractiveMenu<T>(List<T> items, int selectedIndex) where T : IHasIntroduceString
+        private void UpdateInteractiveMenu<T>(List<T> items, int selectedIndex) where T : IIntroduceString
         {
             _consoleService.Clear();
 
@@ -118,7 +118,7 @@ namespace Hospital.Utilities.UserInterface
             } while (pressedKey != ConsoleKey.Enter);
         }
 
-        public T SelectObject<T>(List<T> list, string selectString) where T : IHasIntroduceString
+        public T SelectObject<T>(List<T> list, string selectString) where T : IIntroduceString
         {
             ShowMessage(selectString);
             var obj = ShowInteractiveMenu(list);
@@ -126,7 +126,7 @@ namespace Hospital.Utilities.UserInterface
             return obj;
         }
 
-        public void DisplayList<TEntity>(List<TEntity> objects) where TEntity : IHasIntroduceString
+        public void DisplayList<TEntity>(List<TEntity> objects) where TEntity : IIntroduceString
         {
             StringBuilder introduceStrings = new();
 
