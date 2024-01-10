@@ -9,7 +9,7 @@ namespace Hospital.PeopleCategories.PatientClass
     public class Patient : Person
     {
         public virtual int Id { get; set; }
-        public virtual string Pesel { get; set; }
+        public virtual string PersonalIdNumber { get; set; }
         public virtual Health? HealthStatus { get; set; }
         public virtual Ward AssignedWard { get; set; }
         public virtual Employee? AssignedDoctor { get; set; }
@@ -21,17 +21,17 @@ namespace Hospital.PeopleCategories.PatientClass
             string surname,
             Gender gender,
             DateTime birthday,
-            string pesel,
+            string personalIdNumber,
             Ward assignedWard)
             : base(name,
                   surname,
                   gender,
                   birthday)
         {
-            Pesel = pesel;
+            PersonalIdNumber = personalIdNumber;
             AssignedWard = assignedWard;
             IntroduceString = string.Format(
-                UiMessages.PatientObjectMessages.Introduce, name, surname, pesel, AssignedWard.Name);
+                UiMessages.PatientObjectMessages.Introduce, name, surname, personalIdNumber, AssignedWard.Name);
         }
     }
 }

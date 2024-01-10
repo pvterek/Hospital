@@ -53,12 +53,12 @@ namespace Hospital.Utilities.UserInterface
         public PatientDTO GatherPatientData(List<Ward> wards)
         {
             PersonDTO baseData = GatherPersonData();
-            string pesel = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePeselPrompt);
+            string personalIdNumber = _inputHandler.GetInput(UiMessages.FactoryMessages.ProvidePersonalIdNumberPrompt);
             Ward ward = _menuHandler.ShowInteractiveMenu(wards);
 
             return new PatientDTO(baseData)
             {
-                Pesel = pesel,
+                PersonalIdNumber = personalIdNumber,
                 AssignedWard = ward
             };
         }

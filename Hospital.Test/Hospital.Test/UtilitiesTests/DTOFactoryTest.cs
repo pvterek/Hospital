@@ -77,18 +77,18 @@ namespace Hospital.Test.UtilitiesTests
         {
             SetUpMocks();
 
-            var expectedPesel = "12345678901";
+            var expectedPersonalIdNumber = "12345678901";
             var mockWard = new Mock<Ward>();
             var wardsList = new List<Ward>() { mockWard.Object };
 
             mockInputHandler.Setup(x => x.GetInput(It.IsAny<string>()))
-                            .Returns(expectedPesel);
+                            .Returns(expectedPersonalIdNumber);
             mockMenuHandler.Setup(x => x.ShowInteractiveMenu(wardsList))
                            .Returns(mockWard.Object);
 
             var patientDTO = dtoFactory.GatherPatientData(wardsList);
 
-            Assert.Equal(expectedPesel, patientDTO.Pesel);
+            Assert.Equal(expectedPersonalIdNumber, patientDTO.PersonalIdNumber);
             Assert.Equal(mockWard.Object, patientDTO.AssignedWard);
         }
 

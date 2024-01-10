@@ -11,7 +11,7 @@ namespace Hospital.Utilities.ListManagement.Interfaces
         List<Ward> Wards { get; }
         List<Patient> Patients { get; }
         List<User> Users { get; }
-        HashSet<string> Pesels { get; }
+        HashSet<string> PersonalIdNumbers { get; }
         HashSet<string> Logins { get; }
         HashSet<string> WardsNames { get; }
     }
