@@ -15,7 +15,7 @@ namespace Hospital.Utilities.EntitiesFactory
                 dto.Surname,
                 dto.Gender,
                 dto.Birthday,
-                dto.Pesel,
+                dto.PersonalIdNumber,
                 dto.AssignedWard);
         }
 

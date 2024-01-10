@@ -18,12 +18,12 @@ namespace Hospital.Utilities
 
         public bool ValidateString(string input) => !string.IsNullOrWhiteSpace(input);
 
-        public bool ValidatePesel(string input)
+        public bool ValidatePersonalIdNumber(string input)
         {
             return !string.IsNullOrWhiteSpace(input)
                 && input.Length == 11
                 && input.All(char.IsDigit)
-                && _listsStorage.Pesels.Add(input);
+                && _listsStorage.PersonalIdNumbers.Add(input);
         }
 
         public bool ValidateBirthday(DateTime birthday)
@@ -43,7 +43,7 @@ namespace Hospital.Utilities
         public bool ValidateWardName(string input)
             => !string.IsNullOrWhiteSpace(input) && _listsStorage.WardsNames.Add(input);
 
-        public bool ValidatePossibiltyAssignToWard(Ward ward)
+        public bool ValidatePossibilityAssignToWard(Ward ward)
             => ward.AssignedPatients.Count < ward.Capacity;
 
         public bool ValidatePosition(Position position)

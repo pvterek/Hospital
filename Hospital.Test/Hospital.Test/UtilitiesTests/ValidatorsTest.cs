@@ -46,16 +46,16 @@ namespace Hospital.Test.UtilitiesTests
         }
 
         [Fact]
-        public void ValidatePesel_WhenValidInput_ShouldReturnTrue()
+        public void ValidatePersonalIdNumber_WhenValidInput_ShouldReturnTrue()
         {
             SetupMocks();
 
-            var validPesel = "12345678901";
+            var validPersonalIdNumber = "12345678901";
 
-            mockListsStorage.Setup(x => x.Pesels)
+            mockListsStorage.Setup(x => x.PersonalIdNumbers)
                             .Returns(["12345678900"]);
 
-            var result = validators.ValidatePesel(validPesel);
+            var result = validators.ValidatePersonalIdNumber(validPersonalIdNumber);
 
             Assert.True(result);
         }
@@ -64,14 +64,14 @@ namespace Hospital.Test.UtilitiesTests
         [InlineData("123456789")]
         [InlineData("12345678900")]
         [InlineData("")]
-        public void ValidatePesel_WhenInvalidInput_ShouldReturnFalse(string input)
+        public void ValidatePersonalIdNumber_WhenInvalidInput_ShouldReturnFalse(string input)
         {
             SetupMocks();
 
-            mockListsStorage.Setup(x => x.Pesels)
+            mockListsStorage.Setup(x => x.PersonalIdNumbers)
                             .Returns(["12345678900"]);
 
-            var result = validators.ValidatePesel(input);
+            var result = validators.ValidatePersonalIdNumber(input);
 
             Assert.False(result);
         }
@@ -262,7 +262,7 @@ namespace Hospital.Test.UtilitiesTests
             mockWard.Setup(x => x.AssignedPatients)
                     .Returns([]);
 
-            var result = validators.ValidatePossibiltyAssignToWard(mockWard.Object);
+            var result = validators.ValidatePossibilityAssignToWard(mockWard.Object);
 
             Assert.True(result);
         }
@@ -280,7 +280,7 @@ namespace Hospital.Test.UtilitiesTests
             mockWard.Setup(x => x.AssignedPatients)
                     .Returns([mockPatient.Object]);
 
-            var result = validators.ValidatePossibiltyAssignToWard(mockWard.Object);
+            var result = validators.ValidatePossibilityAssignToWard(mockWard.Object);
 
             Assert.False(result);
         }

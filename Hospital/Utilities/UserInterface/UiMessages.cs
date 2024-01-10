@@ -157,8 +157,8 @@
             public const string EmptyFieldPrompt = "Field can't be empty!";
             public const string ProvideGenderPrompt = "Enter a gender (Male, Female): ";
             public const string InvalidGenderPrompt = "Invalid input. Please choose 'Male' or 'Female'.";
-            public const string ProvidePeselPrompt = "Enter a PESEL: (Enter 'STOP' to abort the operation)";
-            public const string InvalidPeselPrompt = "Invalid PESEL. It should be an 11-digit number. Please try again.";
+            public const string ProvidePersonalIdNumberPrompt = "Enter a personal ID number: (Enter 'STOP' to abort the operation)";
+            public const string InvalidPersonalIdNumberPrompt = "Invalid personal ID number. Please try again.";
             public const string ProvideBirthdayPrompt = "Enter a birthday (e.g., DD-MM-YYYY): (Enter 'STOP' to abort the operation)";
             public const string InvalidBirthdayPrompt = "Birthday cannot be a future date. Please try again.";
             public const string InvalidDateFormatPrompt = "Invalid date format. Please try again.";
@@ -255,7 +255,7 @@
             public const string Date = "Invalid date provided!";
             public const string Login = "Provided login already taken or empty!";
             public const string Password = "Provided password don't meet requirements!";
-            public const string Pesel = "Provided pesel already taken or don't meet requirements!";
+            public const string PersonalIdNumber = "Provided personal ID number already taken or don't meet requirements!";
             public const string WardName = "Provided ward name already taken or don't meet requirements!";
             public const string Capacity = "Provided invalid capacity!";
             public const string Command = "Invalid command selected!";

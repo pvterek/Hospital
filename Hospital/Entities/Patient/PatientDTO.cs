@@ -13,7 +13,7 @@ namespace Hospital.PeopleCategories.PatientClass
             Birthday = person.Birthday;
         }
 
-        public string Pesel { get; set; }
+        public string PersonalIdNumber { get; set; }
         public Ward AssignedWard { get; set; }
     }
 }

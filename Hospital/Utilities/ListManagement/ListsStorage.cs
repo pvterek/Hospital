@@ -28,7 +28,7 @@ namespace Hospital.Utilities.ListManagement
         public List<Ward> Wards { get; private set; }
         public List<Patient> Patients { get; private set; }
         public List<User> Users { get; private set; }
-        public HashSet<string> Pesels { get; private set; }
+        public HashSet<string> PersonalIdNumbers { get; private set; }
         public HashSet<string> Logins { get; private set; }
         public HashSet<string> WardsNames { get; private set; }
 
@@ -92,7 +92,7 @@ namespace Hospital.Utilities.ListManagement
 
         private void ExtractUniqueIdentifiers()
         {
-            Pesels = Patients.Select(patient => patient.Pesel).ToHashSet();
+            PersonalIdNumbers = Patients.Select(patient => patient.PersonalIdNumber).ToHashSet();
             Logins = Users.Select(user => user.Login).ToHashSet();
             WardsNames = Wards.Select(ward => ward.Name).ToHashSet();
         }

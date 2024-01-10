@@ -51,8 +51,8 @@ namespace Hospital.Utilities.EntitiesFactory
         public bool ValidatePatientObject(PatientDTO dto)
         {
             return ValidatePerson(dto.Name, dto.Surname, dto.Gender, dto.Birthday)
-                && ValidateField(dto.Pesel, _validate.ValidatePesel, UiMessages.ExceptionMessages.Pesel)
-                && ValidateField(dto.AssignedWard, _validate.ValidatePossibiltyAssignToWard, UiMessages.ExceptionMessages.WardFull);
+                && ValidateField(dto.PersonalIdNumber, _validate.ValidatePersonalIdNumber, UiMessages.ExceptionMessages.PersonalIdNumber)
+                && ValidateField(dto.AssignedWard, _validate.ValidatePossibilityAssignToWard, UiMessages.ExceptionMessages.WardFull);
         }
 
         public bool ValidateUserObject(UserDTO dto)
